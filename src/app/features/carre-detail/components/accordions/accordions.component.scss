@@ -1,0 +1,203 @@
+@use 'styles/tokens' as tokens;
+
+:host {
+  display: block;
+  width: 100%;
+  background-color: var(--hermes-bg-panel);
+}
+
+.product-details-wrapper {
+  background-color: var(--hermes-bg-panel);
+  border-top: 1px solid var(--hermes-border-light);
+  border-bottom: 1px solid var(--hermes-border-light);
+}
+
+.product-details {
+  padding: 32px 15px;
+  margin: 0 auto;
+
+  @media (min-width: 1024px) {
+    width: calc(100% - 48px);
+    max-width: 1258px;
+    padding: 48px 24px;
+  }
+}
+
+.product-title-section {
+  max-width: 800px;
+  margin-bottom: 24px;
+
+  @media (min-width: 1024px) {
+    margin-bottom: 32px;
+  }
+}
+
+.carre-detail-title {
+  font-family: var(--font-edito);
+  font-size: 24px;
+  line-height: 32px;
+  font-style: italic;
+  font-weight: 400;
+  color: #000;
+  margin: 0;
+
+  @media (min-width: 1024px) {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+/* Accordéons ISO Hermès */
+.expansion-panel {
+  border-top: 1px solid var(--hermes-border-light);
+
+  &:last-child {
+    border-bottom: 1px solid var(--hermes-border-light);
+  }
+}
+
+.expansion-panel-header-btn {
+  min-height: 3.5rem; // 56px
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s ease;
+
+  @media (min-width: 1024px) {
+    padding: 0 24px;
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.015);
+  }
+
+  .header-title {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+  }
+
+  .header-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    flex: 0 0 24px;
+    flex-shrink: 0;
+    line-height: 1;
+    color: #000;
+    overflow: visible;
+
+    .accordion-chevron {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 14px;
+      height: 14px;
+      min-width: 14px;
+      min-height: 14px;
+      flex-shrink: 0;
+      transform-origin: 50% 56.25%;
+      transform: rotate(0deg);
+      transition: transform 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+      will-change: transform;
+      backface-visibility: hidden;
+
+      &.is-expanded {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+}
+
+.expansion-panel-collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  visibility: hidden;
+  transition: grid-template-rows 0.45s cubic-bezier(0.25, 0.1, 0.25, 1),
+              opacity 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
+              visibility 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: grid-template-rows, opacity;
+
+  &.is-expanded {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .expansion-panel-collapse-inner {
+    overflow: hidden;
+    min-height: 0;
+  }
+}
+
+.expansion-panel-content {
+  padding: 16px 16px 24px;
+  background-color: var(--hermes-bg-panel);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--hermes-text-secondary);
+
+  @media (min-width: 1024px) {
+    padding: 16px 24px 32px;
+  }
+
+  p {
+    margin: 0 0 12px 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .medium-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 8px;
+      line-height: 22px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      strong {
+        color: #000;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .exchange-text {
+    margin: 0;
+    line-height: 22px;
+    color: var(--hermes-text-secondary);
+  }
+
+  ul:not(.medium-list) {
+    margin: 0;
+    padding-left: 20px;
+    list-style-type: disc;
+
+    li {
+      margin-bottom: 6px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

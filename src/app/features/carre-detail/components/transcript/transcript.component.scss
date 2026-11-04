@@ -1,0 +1,430 @@
+@use 'styles/tokens' as tokens;
+
+:host {
+  display: block;
+  width: 100%;
+  background-color: var(--hermes-bg-canvas);
+}
+
+.transcript-section {
+  padding: 36px 15px 70px;
+
+  @media (min-width: 1024px) {
+    padding: 50px 24px 100px;
+  }
+}
+
+.transcript-container {
+  max-width: 760px; // Largeur de lecture éditoriale noble Hermès
+  margin: 0 auto;
+  position: relative;
+}
+
+// -------------------------------------------------------------
+// EN-TÊTE ÉDITORIAL ÉPURÉ (Sous-titre Muted & Caviardage)
+// -------------------------------------------------------------
+.transcript-header {
+  text-align: center;
+  margin-bottom: 24px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 30px;
+  }
+
+  .transcript-subtitle-muted {
+    font-family: var(--font-secondary);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--hermes-text-secondary, #696969);
+    margin: 0;
+    line-height: 1.6;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .redacted-bar {
+    display: inline-block;
+    background-color: #000000;
+    width: 52px;
+    height: 0.85em;
+    vertical-align: middle;
+    border-radius: 1px;
+    user-select: none;
+    cursor: default;
+  }
+}
+
+// -------------------------------------------------------------
+// CONTENEUR DU SCROLL & GESTION REPLIÉ / DÉPLIÉ
+// -------------------------------------------------------------
+.transcript-wrapper {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.transcript-scroll-area {
+  width: 100%;
+  box-sizing: border-box;
+  transition: max-height 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  &.is-collapsed {
+    max-height: 460px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-top: 12px;
+    padding-bottom: 40px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      max-height: 520px;
+    }
+  }
+
+  &:not(.is-collapsed) {
+    max-height: none;
+    overflow: visible;
+    padding-top: 12px;
+    padding-bottom: 24px;
+  }
+}
+
+// -------------------------------------------------------------
+// LISTE DES RÉPLIQUES / SEGMENTS ÉDITORIAUX
+// -------------------------------------------------------------
+.transcript-turns-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.transcript-turn {
+  position: relative;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px 20px;
+  border-radius: 3px;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  text-align: left;
+  background-color: transparent;
+  transition: background-color 0.22s ease,
+              opacity 0.25s ease,
+              border-color 0.22s ease,
+              box-shadow 0.22s ease;
+  outline: none;
+
+  // Compensation critique du Sticky Bar (+ Header) lors du scrollIntoView
+  scroll-margin-top: calc(var(--header-menu-height, 46px) + 96px);
+
+  @media (max-width: 767px) {
+    padding: 14px 16px;
+    scroll-margin-top: calc(var(--header-height-mobile, 50px) + 90px);
+  }
+
+  // --- ÉTAT INACTIF PENDANT LA LECTURE ---
+  &.is-inactive {
+    opacity: 0.48;
+
+    &:hover {
+      opacity: 0.9;
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+  }
+
+  // --- SURVOL AU REPOS (non joué) ---
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.025);
+  }
+
+  // --- ÉTAT ACTIF SYNCHRONISÉ ---
+  &.is-active {
+    opacity: 1 !important;
+    background-color: #faf6f0; // Doux crème contrasté Hermès
+    border-left-color: #000000; // Repère vertical sobre et distingué Hermès
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+
+    &:hover {
+      background-color: #f6efe6;
+    }
+
+    .turn-text {
+      color: #000000;
+      font-weight: 450;
+    }
+
+    .speaker-name {
+      color: #000000;
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: -2px;
+  }
+}
+
+// -------------------------------------------------------------
+// ÉLÉMENTS DE LA RÉPLIQUE (MÉTA & TEXTE)
+// -------------------------------------------------------------
+.turn-meta {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.speaker-name {
+  font-family: var(--font-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #2b2826;
+  transition: color 0.2s ease;
+}
+
+.turn-timestamp {
+  font-family: var(--font-secondary, monospace);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  color: var(--hermes-text-secondary);
+}
+
+.speaker-role {
+  font-family: var(--font-primary);
+  font-size: 11px;
+  font-style: italic;
+  color: var(--hermes-text-secondary);
+}
+
+.turn-text {
+  font-family: var(--font-edito);
+  font-size: 1.125rem; // 18px
+  line-height: 1.8;
+  color: #262422;
+  margin: 0;
+  padding: 0;
+  transition: color 0.2s ease;
+
+  @media (min-width: 768px) {
+    font-size: 1.25rem; // 20px
+    line-height: 1.9;
+  }
+
+  em, i {
+    font-style: italic;
+  }
+
+  strong, b {
+    font-weight: 600;
+  }
+}
+
+// -------------------------------------------------------------
+// DÉGRADÉS FONDUS EN MODE REPLIÉ
+// -------------------------------------------------------------
+.fade-overlay-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: linear-gradient(
+    to bottom,
+    rgba(252, 247, 241, 1) 0%,
+    rgba(252, 247, 241, 0.8) 50%,
+    rgba(252, 247, 241, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.fade-overlay-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: linear-gradient(
+    to top,
+    rgba(252, 247, 241, 1) 0%,
+    rgba(252, 247, 241, 0.85) 50%,
+    rgba(252, 247, 241, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+// -------------------------------------------------------------
+// ÉTATS DE CHARGEMENT & VIDE
+// -------------------------------------------------------------
+.transcript-loading,
+.transcript-empty {
+  padding: 48px 16px;
+  text-align: center;
+
+  .loading-text,
+  .empty-text {
+    font-family: var(--font-primary);
+    font-size: 13px;
+    color: var(--hermes-text-secondary);
+    letter-spacing: 0.5px;
+  }
+}
+
+// -------------------------------------------------------------
+// BOUTON DE DÉPLOIEMENT HERMÈS
+// -------------------------------------------------------------
+.transcript-toggle-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.button,
+.transcript-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.125rem; // 34px
+  padding: 0 1.25rem; // 20px
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 0.125rem; // 2px exact Hermès .button-radius-small
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+
+  &:hover {
+    background-color: #fafafa;
+    border-color: rgba(0, 0, 0, 0.2);
+    color: #000000;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+  }
+}
+
+.button-label {
+  font-family: var(--font-secondary, monospace);
+  font-size: var(--font-size-body-m, 0.75rem); // 12px
+  line-height: 16px;
+  letter-spacing: 0.6px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+// -------------------------------------------------------------
+// BOUTON FLOTTANT : REPRENDRE LE SUIVI AUDIO
+// -------------------------------------------------------------
+.resume-follow-container {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  pointer-events: auto;
+  animation: fadeInPill 0.25s ease-out;
+}
+
+@keyframes fadeInPill {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.resume-follow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 38px;
+  padding: 0 18px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+  transition: background-color 0.15s ease, transform 0.15s ease;
+
+  &:hover {
+    background-color: #000000;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+  }
+}
+
+.resume-follow-label {
+  font-family: var(--font-secondary, monospace);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+// Pulsation discrète
+.pulse-indicator {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 10px;
+}
+
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #e67e22; // Ambre Hermès
+}
+
+.pulse-ring {
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 1.5px solid #e67e22;
+  animation: pulseRipple 1.8s infinite ease-out;
+}
+
+@keyframes pulseRipple {
+  0% {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}

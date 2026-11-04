@@ -1,0 +1,187 @@
+@use 'styles/tokens' as tokens;
+
+:host {
+  display: block;
+  width: 100%;
+  min-height: calc(100vh - var(--header-height-mobile));
+  background-color: #ffffff;
+
+  @media (min-width: 1024px) {
+    min-height: calc(100vh - var(--header-height-desktop-with-menu));
+  }
+}
+
+.artwork-text-page {
+  background-color: #ffffff;
+  padding: 48px 20px 100px;
+
+  @media (min-width: 768px) {
+    padding: 64px 24px 120px;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 88px 24px 140px;
+  }
+}
+
+.editorial-container {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+// ---------------------------------------------------------------------------
+// EN-TÊTE SOBRE
+// Ordre strict :
+// 1. Nom de l'artiste en gras
+// 2. Titre du texte gras italique
+// 3. Nom de l'écrivain (non italique, "par [auteur]")
+// Tout le texte est aligné à gauche
+// ---------------------------------------------------------------------------
+.artwork-text-header {
+  text-align: left;
+  margin-bottom: 44px;
+
+  @media (min-width: 1024px) {
+    margin-bottom: 56px;
+  }
+}
+
+// 1. Nom de l'artiste en gras
+.artist-name {
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--hermes-text-primary);
+  margin: 0 0 12px 0;
+
+  @media (min-width: 1024px) {
+    font-size: 14px;
+    letter-spacing: 2.5px;
+    margin-bottom: 14px;
+  }
+}
+
+// 2. Titre du texte en gras italique (Police sobre Manrope, taille resserrée)
+.artwork-title {
+  font-family: var(--font-primary);
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  color: #000;
+  margin: 0 0 10px 0;
+
+  @media (min-width: 768px) {
+    font-size: 28px;
+    line-height: 1.28;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 32px;
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+}
+
+// 3. Nom de l'écrivain (non italique)
+.author-name {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  line-height: 1.35;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--hermes-text-secondary);
+  margin: 0;
+
+  @media (min-width: 1024px) {
+    font-size: 15px;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// CORPS DU TEXTE (LITTÉRAIRE HERMÈS)
+// Aéré, digeste, interligne ajusté 1.6 - 1.65
+// ---------------------------------------------------------------------------
+.artwork-text-body {
+  margin-top: 16px;
+}
+
+.artwork-paragraph {
+  font-family: var(--font-edito);
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+  color: #1a1a1a;
+  text-align: left;
+  margin: 0 0 24px 0;
+  text-wrap: pretty;
+
+  @media (min-width: 768px) {
+    font-size: 19px;
+    line-height: 1.62;
+    margin-bottom: 28px;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 20px;
+    line-height: 1.65;
+    margin-bottom: 30px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  em, i, cite {
+    font-style: italic;
+  }
+
+  strong, b {
+    font-weight: 700;
+    color: #000;
+  }
+
+  sup {
+    font-size: 0.75em;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+    top: -0.5em;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// PIED DE PAGE DU TEXTE
+// Marque de fin de lecture centrée
+// ---------------------------------------------------------------------------
+.artwork-text-footer {
+  margin-top: 64px;
+  text-align: center;
+
+  @media (min-width: 1024px) {
+    margin-top: 80px;
+  }
+}
+
+.reading-end-mark {
+  font-family: var(--font-edito);
+  font-size: 16px;
+  letter-spacing: 4px;
+  color: var(--hermes-text-secondary);
+  user-select: none;
+  text-align: center;
+}
+
+.loading-state,
+.error-state {
+  padding: 40px 0;
+  text-align: center;
+  font-family: var(--font-edito);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--hermes-text-secondary);
+}
+

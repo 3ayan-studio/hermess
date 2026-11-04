@@ -1,0 +1,51 @@
+:host {
+  display: contents;
+}
+
+.notification-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--hermes-bg-canvas, #fcf7f1);
+  z-index: 9999;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.35s ease;
+  pointer-events: auto;
+  user-select: none;
+  -webkit-user-select: none;
+
+  &.opaque {
+    background-color: var(--hermes-bg-canvas, #fcf7f1);
+  }
+
+  &.is-fading-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .loader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+  }
+
+  .image-loader {
+    // 12.5rem (200px) — Taille ISO Hermès
+    width: 12.5rem;
+    height: auto;
+    max-width: 80vw;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+}
+

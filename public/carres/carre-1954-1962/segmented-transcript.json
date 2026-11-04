@@ -1,0 +1,2002 @@
+{
+    "metadata": {
+        "speakers": {
+            "S1": {
+                "name": "Anonyme"
+            },
+            "S2": {
+                "name": "Fatima-Marwa"
+            }
+        }
+    },
+    "segments": [
+        {
+            "id": "seg-0",
+            "speaker": "S2",
+            "start": 3.0,
+            "end": 5.0,
+            "text": "Tu avais quel âge quand ça a commencé ?"
+        },
+        {
+            "id": "seg-1",
+            "speaker": "S1",
+            "start": 5.0,
+            "end": 12.0,
+            "text": "J'avais quatre ans quand la guerre d'Algérie a commencé, je ne me rappelle pas de la première année. En 1956, je commençais à..."
+        },
+        {
+            "id": "seg-2",
+            "speaker": "S2",
+            "start": 12.0,
+            "end": 14.0,
+            "text": "À te rendre compte."
+        },
+        {
+            "id": "seg-3",
+            "speaker": "S1",
+            "start": 14.0,
+            "end": 22.0,
+            "text": "À comprendre un petit peu, à me rappeler. Il y avait les bombardements des avions, tout ça."
+        },
+        {
+            "id": "seg-4",
+            "speaker": "S1",
+            "start": 22.0,
+            "end": 42.0,
+            "text": "Je te dis, je me rappelle qu'en 1955, je commençais à comprendre qu'il y avait une guerre, je ne sais pas, des bombardements d'avions, tout ça. On était dans les montagnes, dans les Aurès, dans notre montagne au-dessus de Kbach."
+        },
+        {
+            "id": "seg-5",
+            "speaker": "S1",
+            "start": 42.0,
+            "end": 53.0,
+            "text": "Et puis, quelque temps après, je ne sais pas, on a déménagé à Kbach directement. On a habité à Kbach au bout de je ne sais pas combien de temps."
+        },
+        {
+            "id": "seg-6",
+            "speaker": "S1",
+            "start": 53.0,
+            "end": 72.0,
+            "text": "Et puis, la France nous a dit : « Vous ne restez pas ici. » On a pris la route, on est venus de Kbach, on a traversé notre pays, le Ksar d'Ahyou, après Loulach."
+        },
+        {
+            "id": "seg-7",
+            "speaker": "S2",
+            "start": 72.0,
+            "end": 73.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-8",
+            "speaker": "S1",
+            "start": 73.0,
+            "end": 78.0,
+            "text": "On a habité à Loulach quelque temps, il y avait même ton père et tes grands-parents."
+        },
+        {
+            "id": "seg-9",
+            "speaker": "S2",
+            "start": 78.0,
+            "end": 79.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-10",
+            "speaker": "S1",
+            "start": 79.0,
+            "end": 80.0,
+            "text": "On était dans une grande pièce."
+        },
+        {
+            "id": "seg-11",
+            "speaker": "S2",
+            "start": 80.0,
+            "end": 81.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-12",
+            "speaker": "S1",
+            "start": 81.0,
+            "end": 86.0,
+            "text": "Je crois que c'était un mausolée, c'était un mausolée."
+        },
+        {
+            "id": "seg-13",
+            "speaker": "S2",
+            "start": 86.0,
+            "end": 87.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-14",
+            "speaker": "S1",
+            "start": 87.0,
+            "end": 91.0,
+            "text": "Je ne sais pas, c'était un mausolée, mais on n'avait pas le choix. On habitait dedans."
+        },
+        {
+            "id": "seg-15",
+            "speaker": "S2",
+            "start": 91.0,
+            "end": 92.0,
+            "text": "Et vous étiez combien ?"
+        },
+        {
+            "id": "seg-16",
+            "speaker": "S1",
+            "start": 92.0,
+            "end": 94.0,
+            "text": "Je ne sais pas combien de familles."
+        },
+        {
+            "id": "seg-17",
+            "speaker": "S2",
+            "start": 94.0,
+            "end": 94.0,
+            "text": "Beaucoup ?"
+        },
+        {
+            "id": "seg-18",
+            "speaker": "S1",
+            "start": 94.0,
+            "end": 99.0,
+            "text": "Bon, déjà, nous, on était quatre : moi et mes deux frères..."
+        },
+        {
+            "id": "seg-19",
+            "speaker": "S2",
+            "start": 99.0,
+            "end": 100.0,
+            "text": "Oui."
+        },
+        {
+            "id": "seg-20",
+            "speaker": "S1",
+            "start": 100.0,
+            "end": 109.0,
+            "text": "Et ma petite sœur qui venait juste de naître. Quand elle est née, elle n'avait même pas sept jours qu'on a déménagé. C'était en 1956, là. On est restés, il y avait tes grands-parents..."
+        },
+        {
+            "id": "seg-21",
+            "speaker": "S2",
+            "start": 109.0,
+            "end": 110.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-22",
+            "speaker": "S1",
+            "start": 110.0,
+            "end": 132.0,
+            "text": "Avec tes oncles, ta grand-mère, ton grand-père. Il y avait une autre famille à côté, et il y avait deux autres familles de Témissa qui étaient à côté de nous, ils avaient quatre enfants. Nous, on était tous dans la même pièce. Ma mère et les femmes cuisinaient dedans, tout ça. Mais on n'est pas restés longtemps, on est partis à M'Chouneche."
+        },
+        {
+            "id": "seg-23",
+            "speaker": "S2",
+            "start": 132.0,
+            "end": 133.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-24",
+            "speaker": "S1",
+            "start": 133.0,
+            "end": 154.0,
+            "text": "On est allés à M'Chouneche, et puis on a habité là-bas, on est restés de 1956 jusqu'à 1958. Après, on est partis à... Non, tu veux que je te raconte comment c'était ? À M'Chouneche, tous les soirs..."
+        },
+        {
+            "id": "seg-25",
+            "speaker": "S2",
+            "start": 154.0,
+            "end": 155.0,
+            "text": "Des bombardements."
+        },
+        {
+            "id": "seg-26",
+            "speaker": "S1",
+            "start": 155.0,
+            "end": 157.0,
+            "text": "On entendait des coups de fusil et tout ça. Il y avait le FLN..."
+        },
+        {
+            "id": "seg-27",
+            "speaker": "S2",
+            "start": 157.0,
+            "end": 158.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-28",
+            "speaker": "S1",
+            "start": 158.0,
+            "end": 164.0,
+            "text": "D'un côté, et la France de l'autre côté. La nuit, à partir d'une certaine heure, on n'avait pas le droit de sortir."
+        },
+        {
+            "id": "seg-29",
+            "speaker": "S2",
+            "start": 164.0,
+            "end": 165.0,
+            "text": "Il y avait le couvre-feu."
+        },
+        {
+            "id": "seg-30",
+            "speaker": "S1",
+            "start": 165.0,
+            "end": 182.0,
+            "text": "Nous, on était des enfants, mais personne n'avait le droit de sortir jusqu'au lendemain matin, dans la journée. Bon, on est restés là de 1956 jusqu'à 1958, puis on est partis à Chekfa, à côté de Jijel, dans le département de Jijel, ça doit être le département de Jijel."
+        },
+        {
+            "id": "seg-31",
+            "speaker": "S1",
+            "start": 182.0,
+            "end": 185.0,
+            "text": "On est restés quatre ans et demi là-bas. Après, il y a eu l'indépendance."
+        },
+        {
+            "id": "seg-32",
+            "speaker": "S2",
+            "start": 185.0,
+            "end": 187.0,
+            "text": "Oui."
+        },
+        {
+            "id": "seg-33",
+            "speaker": "S1",
+            "start": 187.0,
+            "end": 193.0,
+            "text": "On est revenus à M'Chouneche. On est revenus à M'Chouneche et puis, ça n'allait pas."
+        },
+        {
+            "id": "seg-34",
+            "speaker": "S2",
+            "start": 193.0,
+            "end": 195.0,
+            "text": "Pourquoi ça n'allait pas ?"
+        },
+        {
+            "id": "seg-35",
+            "speaker": "S1",
+            "start": 195.0,
+            "end": 200.0,
+            "text": "Ça n'allait pas parce qu'il y avait tout un chamboulement après l'indépendance."
+        },
+        {
+            "id": "seg-36",
+            "speaker": "S2",
+            "start": 200.0,
+            "end": 201.0,
+            "text": "Oui."
+        },
+        {
+            "id": "seg-37",
+            "speaker": "S1",
+            "start": 201.0,
+            "end": 207.0,
+            "text": "Il y avait tout un chamboulement. Là, on est repartis à El M'Zaraa."
+        },
+        {
+            "id": "seg-38",
+            "speaker": "S2",
+            "start": 207.0,
+            "end": 209.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-39",
+            "speaker": "S1",
+            "start": 209.0,
+            "end": 219.0,
+            "text": "Bah, on est restés, je ne sais pas, de fin août jusqu'au mois de mars. Puis on est venus ici."
+        },
+        {
+            "id": "seg-40",
+            "speaker": "S1",
+            "start": 219.0,
+            "end": 226.0,
+            "text": "Et on est partis là-bas parce que ce n'était pas bien. À M'Chouneche, on ne se sentait pas..."
+        },
+        {
+            "id": "seg-41",
+            "speaker": "S2",
+            "start": 226.0,
+            "end": 227.0,
+            "text": "Pas à l'aise."
+        },
+        {
+            "id": "seg-42",
+            "speaker": "S1",
+            "start": 227.0,
+            "end": 233.0,
+            "text": "Pas à l'aise. Bah, tu sais, comme nos parents étaient du côté... ils avaient été forcés de combattre du côté de la France."
+        },
+        {
+            "id": "seg-43",
+            "speaker": "S2",
+            "start": 233.0,
+            "end": 234.0,
+            "text": "Pour la France."
+        },
+        {
+            "id": "seg-44",
+            "speaker": "S1",
+            "start": 234.0,
+            "end": 239.0,
+            "text": "C'était de force. Alors..."
+        },
+        {
+            "id": "seg-45",
+            "speaker": "S2",
+            "start": 239.0,
+            "end": 240.0,
+            "text": "Du coup, il y avait des..."
+        },
+        {
+            "id": "seg-46",
+            "speaker": "S1",
+            "start": 240.0,
+            "end": 243.0,
+            "text": "Du coup, quand on est arrivés à M'Chouneche, on était mal vus là-bas."
+        },
+        {
+            "id": "seg-47",
+            "speaker": "S2",
+            "start": 243.0,
+            "end": 244.0,
+            "text": "Oui, d'accord."
+        },
+        {
+            "id": "seg-48",
+            "speaker": "S1",
+            "start": 244.0,
+            "end": 249.0,
+            "text": "On est repartis chez nous, à El M'Zaraa. On est repartis là-bas, il n'y avait rien, on était là-bas."
+        },
+        {
+            "id": "seg-49",
+            "speaker": "S2",
+            "start": 249.0,
+            "end": 250.0,
+            "text": "Oui."
+        },
+        {
+            "id": "seg-50",
+            "speaker": "S1",
+            "start": 250.0,
+            "end": 260.0,
+            "text": "Et puis, depuis fin août jusqu'au mois de mars, fin mars. Après..."
+        },
+        {
+            "id": "seg-51",
+            "speaker": "S1",
+            "start": 260.0,
+            "end": 265.0,
+            "text": "On est partis. Enfin, il y avait mon père, il y avait le père de Rkia..."
+        },
+        {
+            "id": "seg-52",
+            "speaker": "S2",
+            "start": 265.0,
+            "end": 266.0,
+            "text": "Hum."
+        },
+        {
+            "id": "seg-53",
+            "speaker": "S1",
+            "start": 266.0,
+            "end": 276.0,
+            "text": "Il y avait mon père, le père de Rkia, monsieur Djimi, il y avait ton père, il y avait un autre monsieur qui s'appelle... qui s'appelle Refrafi."
+        },
+        {
+            "id": "seg-54",
+            "speaker": "S2",
+            "start": 276.0,
+            "end": 277.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-55",
+            "speaker": "S1",
+            "start": 277.0,
+            "end": 280.0,
+            "text": "Qui sont partis. Ils sont partis à cinq. Il y avait l'oncle Bouyala."
+        },
+        {
+            "id": "seg-56",
+            "speaker": "S2",
+            "start": 280.0,
+            "end": 281.0,
+            "text": "Oui."
+        },
+        {
+            "id": "seg-57",
+            "speaker": "S1",
+            "start": 281.0,
+            "end": 287.0,
+            "text": "Ils sont tous partis en premier, les hommes sont partis. Ils sont rentrés dans le camp français..."
+        },
+        {
+            "id": "seg-58",
+            "speaker": "S2",
+            "start": 287.0,
+            "end": 288.0,
+            "text": "Oui."
+        },
+        {
+            "id": "seg-59",
+            "speaker": "S1",
+            "start": 288.0,
+            "end": 305.0,
+            "text": "À Constantine. Après une semaine, je ne sais pas, je ne me rappelle pas si c'était une semaine, le père de Rkia est venu chercher sa famille, et puis madame Bouyala, Aïcha, avec son fils."
+        },
+        {
+            "id": "seg-60",
+            "speaker": "S1",
+            "start": 305.0,
+            "end": 320.0,
+            "text": "Ils sont restés une semaine, et puis après, mon père est venu nous chercher. On habitait... Du centre d'El M'Zaraa, enfin tu vois El M'Zaraa ? De là, on est venus à pied la nuit. En pleine nuit !"
+        },
+        {
+            "id": "seg-61",
+            "speaker": "S2",
+            "start": 320.0,
+            "end": 321.0,
+            "text": "Jusqu'à où ?"
+        },
+        {
+            "id": "seg-62",
+            "speaker": "S1",
+            "start": 321.0,
+            "end": 324.0,
+            "text": "Jusqu'à, tu sais, la route qui va de Biskra à El M'Zaraa."
+        },
+        {
+            "id": "seg-63",
+            "speaker": "S2",
+            "start": 324.0,
+            "end": 325.0,
+            "text": "Ah oui, d'accord !"
+        },
+        {
+            "id": "seg-64",
+            "speaker": "S1",
+            "start": 325.0,
+            "end": 330.0,
+            "text": "Bah, on marchait, on marchait la nuit, il n'y avait rien, il n'y avait pas de lumière, il n'y avait rien."
+        },
+        {
+            "id": "seg-65",
+            "speaker": "S2",
+            "start": 330.0,
+            "end": 331.0,
+            "text": "Oh là là !"
+        },
+        {
+            "id": "seg-66",
+            "speaker": "S1",
+            "start": 331.0,
+            "end": 337.0,
+            "text": "Ouais. Et bah, on a pris la voiture et on est rentrés directement..."
+        },
+        {
+            "id": "seg-67",
+            "speaker": "S2",
+            "start": 337.0,
+            "end": 338.0,
+            "text": "Jusqu'à Constantine ?"
+        },
+        {
+            "id": "seg-68",
+            "speaker": "S1",
+            "start": 338.0,
+            "end": 348.0,
+            "text": "Jusqu'à Constantine, à quatre heures du matin. Je me rappelle, à quatre heures du matin, il commençait à... quelque temps après, il commençait à faire jour. On est restés quatre jours là-bas."
+        },
+        {
+            "id": "seg-69",
+            "speaker": "S2",
+            "start": 348.0,
+            "end": 349.0,
+            "text": "À Constantine."
+        },
+        {
+            "id": "seg-70",
+            "speaker": "S1",
+            "start": 349.0,
+            "end": 357.0,
+            "text": "Nous, on est restés quatre jours à Constantine. Ils nous ont emmenés dans des camions GMC, c'étaient des trucs cachés comme ça, pour que personne ne nous voie."
+        },
+        {
+            "id": "seg-71",
+            "speaker": "S2",
+            "start": 357.0,
+            "end": 357.0,
+            "text": "Oui."
+        },
+        {
+            "id": "seg-72",
+            "speaker": "S1",
+            "start": 357.0,
+            "end": 361.0,
+            "text": "Jusqu'à Skikda."
+        },
+        {
+            "id": "seg-73",
+            "speaker": "S2",
+            "start": 361.0,
+            "end": 361.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-74",
+            "speaker": "S1",
+            "start": 361.0,
+            "end": 369.0,
+            "text": "On est restés quatre jours. Après, c'est pareil, rebelote la nuit, ils nous ont emmenés à Annaba pour débarquer ici, en France."
+        },
+        {
+            "id": "seg-75",
+            "speaker": "S2",
+            "start": 369.0,
+            "end": 373.0,
+            "text": "Et quand vous étiez à Skikda et à Constantine, vous étiez dans des camps ?"
+        },
+        {
+            "id": "seg-76",
+            "speaker": "S1",
+            "start": 373.0,
+            "end": 388.0,
+            "text": "Oui. À Constantine, c'était une grande ville, c'étaient des appartements, enfin des maisons quoi. Mais à Skikda, c'étaient des trucs... des tentes."
+        },
+        {
+            "id": "seg-77",
+            "speaker": "S2",
+            "start": 388.0,
+            "end": 389.0,
+            "text": "Des tentes."
+        },
+        {
+            "id": "seg-78",
+            "speaker": "S1",
+            "start": 389.0,
+            "end": 401.0,
+            "text": "C'étaient des tentes et des lits de camp. Quand il pleuvait à mort, quand il pleuvait la nuit sous la tente, il y avait de l'eau qui coulait, et nous on était dedans."
+        },
+        {
+            "id": "seg-79",
+            "speaker": "S1",
+            "start": 401.0,
+            "end": 406.0,
+            "text": "Et le lendemain... Il y avait deux personnes, un couple avec deux enfants."
+        },
+        {
+            "id": "seg-80",
+            "speaker": "S2",
+            "start": 406.0,
+            "end": 407.0,
+            "text": "Hum."
+        },
+        {
+            "id": "seg-81",
+            "speaker": "S1",
+            "start": 407.0,
+            "end": 417.0,
+            "text": "Avant, ils étaient à côté de nous. Une nuit passe, et le lendemain, on ne les a plus vus. La France les a foutus dehors, sur la route."
+        },
+        {
+            "id": "seg-82",
+            "speaker": "S2",
+            "start": 417.0,
+            "end": 418.0,
+            "text": "Pourquoi ?"
+        },
+        {
+            "id": "seg-83",
+            "speaker": "S1",
+            "start": 418.0,
+            "end": 420.0,
+            "text": "« Eh ben, débrouillez-vous ! » C'est comme ça."
+        },
+        {
+            "id": "seg-84",
+            "speaker": "S2",
+            "start": 420.0,
+            "end": 421.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-85",
+            "speaker": "S1",
+            "start": 421.0,
+            "end": 422.0,
+            "text": "Oui."
+        },
+        {
+            "id": "seg-86",
+            "speaker": "S2",
+            "start": 422.0,
+            "end": 423.0,
+            "text": "Avec deux enfants ?"
+        },
+        {
+            "id": "seg-87",
+            "speaker": "S1",
+            "start": 423.0,
+            "end": 449.0,
+            "text": "Avec deux enfants, oui. Et bah nous, on est restés quatre jours. Après, on a embarqué d'Annaba. D'Annaba, je me rappelle même, on y a été plusieurs fois, et quand je vois le port, les souvenirs me remontent : comment, à l'époque où j'étais petite – enfin j'avais treize ans –, je m'étais dit : « C'est grand, c'est un grand port ! » Mais en fin de compte, tu sais..."
+        },
+        {
+            "id": "seg-88",
+            "speaker": "S2",
+            "start": 449.0,
+            "end": 451.0,
+            "text": "Maintenant... C'est tout petit."
+        },
+        {
+            "id": "seg-89",
+            "speaker": "S1",
+            "start": 451.0,
+            "end": 460.0,
+            "text": "On croyait que c'était grand, mais c'est un tout petit truc où on a embarqué, c'est tout. Ouais. Et puis, je te dis..."
+        },
+        {
+            "id": "seg-90",
+            "speaker": "S2",
+            "start": 460.0,
+            "end": 461.0,
+            "text": "Et vous êtes montés dans le..."
+        },
+        {
+            "id": "seg-91",
+            "speaker": "S1",
+            "start": 461.0,
+            "end": 469.0,
+            "text": "Oui, on est montés dans le bateau. On a fait je ne sais pas combien, vingt-quatre heures à mon avis, vingt-quatre heures. On est montés le matin, jusqu'au lendemain après-midi."
+        },
+        {
+            "id": "seg-92",
+            "speaker": "S2",
+            "start": 469.0,
+            "end": 470.0,
+            "text": "Oui."
+        },
+        {
+            "id": "seg-93",
+            "speaker": "S1",
+            "start": 470.0,
+            "end": 480.0,
+            "text": "Le lendemain après-midi. C'était un bateau de bestioles, ils mettaient des animaux dedans. Nous, on est restés assis sur des chaises de..."
+        },
+        {
+            "id": "seg-94",
+            "speaker": "S2",
+            "start": 480.0,
+            "end": 481.0,
+            "text": "Des transats."
+        },
+        {
+            "id": "seg-95",
+            "speaker": "S1",
+            "start": 481.0,
+            "end": 482.0,
+            "text": "Des chaises de camping."
+        },
+        {
+            "id": "seg-96",
+            "speaker": "S2",
+            "start": 482.0,
+            "end": 482.0,
+            "text": "Ouais, de toile."
+        },
+        {
+            "id": "seg-97",
+            "speaker": "S1",
+            "start": 482.0,
+            "end": 486.0,
+            "text": "C'étaient des chaises de camping, on est restés assis vingt-quatre heures dedans."
+        },
+        {
+            "id": "seg-98",
+            "speaker": "S2",
+            "start": 486.0,
+            "end": 487.0,
+            "text": "Vous avez dormi dedans ?"
+        },
+        {
+            "id": "seg-99",
+            "speaker": "S1",
+            "start": 487.0,
+            "end": 503.0,
+            "text": "On a dormi dedans, oui. Et c'est ton père qui nous servait du café, et monsieur Refrafi qui nous servait du lait. On n'a pas mangé du tout, ils ne nous ont pas donné à manger. À mon avis, il y avait des tickets, je ne sais pas, mais ils ne nous les ont pas donnés, on n'a pas mangé. On est restés vingt-quatre heures."
+        },
+        {
+            "id": "seg-100",
+            "speaker": "S2",
+            "start": 503.0,
+            "end": 504.0,
+            "text": "Sans manger."
+        },
+        {
+            "id": "seg-101",
+            "speaker": "S1",
+            "start": 504.0,
+            "end": 518.0,
+            "text": "Bah, sans manger, sauf des biscuits. Il y avait des biscuits salés qu'ils donnaient, c'est comme des petits TUC, mais ce sont des gros biscuits salés. Et puis après, on a pris..."
+        },
+        {
+            "id": "seg-102",
+            "speaker": "S1",
+            "start": 518.0,
+            "end": 536.0,
+            "text": "On a pris le soir, pas tout à fait dans la soirée, à la fin de l'après-midi, on a pris le train. De là-bas, de Marseille, jusqu'à Rivesaltes."
+        },
+        {
+            "id": "seg-103",
+            "speaker": "S2",
+            "start": 536.0,
+            "end": 536.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-104",
+            "speaker": "S1",
+            "start": 536.0,
+            "end": 556.0,
+            "text": "On arrive à Rivesaltes, dans un camp... dans un camp de je ne sais pas quoi, dans un hangar. C'était un hangar pour moi, parce que c'était un grand hangar plein de gens, plein de gens, plein de gens ! Enfin, les gens du bateau, à mon avis, ils étaient tous là, et on était là."
+        },
+        {
+            "id": "seg-105",
+            "speaker": "S1",
+            "start": 556.0,
+            "end": 574.0,
+            "text": "Mais après, ils nous ont emmenés dans des camions à Rivesaltes, dans ce qu'ils appellent des villages. C'étaient des villages, quoi. Dans un village, il y avait une pièce qui ne faisait même pas la moitié de ça, la moitié de cette pièce où on est. On était cinq dedans. Sept dedans !"
+        },
+        {
+            "id": "seg-106",
+            "speaker": "S1",
+            "start": 574.0,
+            "end": 585.0,
+            "text": "Pas chauffée. Si, il y avait un poêle, et je ne sais même pas d'où ils ramenaient le bois, je ne sais même pas. Et on habitait dedans. C'était pareil, c'étaient des lits de..."
+        },
+        {
+            "id": "seg-107",
+            "speaker": "S2",
+            "start": 585.0,
+            "end": 586.0,
+            "text": "De camp."
+        },
+        {
+            "id": "seg-108",
+            "speaker": "S1",
+            "start": 586.0,
+            "end": 596.0,
+            "text": "De camp. On est restés du mois d'avril, début avril, ça devait être fin mars ou début avril, je ne sais pas la date exacte, jusqu'à..."
+        },
+        {
+            "id": "seg-109",
+            "speaker": "S2",
+            "start": 596.0,
+            "end": 597.0,
+            "text": "Quelle année ?"
+        },
+        {
+            "id": "seg-110",
+            "speaker": "S1",
+            "start": 597.0,
+            "end": 598.0,
+            "text": "En 1963."
+        },
+        {
+            "id": "seg-111",
+            "speaker": "S2",
+            "start": 598.0,
+            "end": 599.0,
+            "text": "1963."
+        },
+        {
+            "id": "seg-112",
+            "speaker": "S1",
+            "start": 599.0,
+            "end": 609.0,
+            "text": "1963. On est venus d'Algérie en 1963, on est venus fin mars 1963, ou début avril 1963, à Rivesaltes."
+        },
+        {
+            "id": "seg-113",
+            "speaker": "S1",
+            "start": 609.0,
+            "end": 621.0,
+            "text": "Et puis... Je ne t'ai pas dit, avant, quand on habitait à Chekfa et tout ça, bah j'ai abrégé tout ça, il y a des trucs que je..."
+        },
+        {
+            "id": "seg-114",
+            "speaker": "S2",
+            "start": 621.0,
+            "end": 622.0,
+            "text": "Pourquoi ?"
+        },
+        {
+            "id": "seg-115",
+            "speaker": "S1",
+            "start": 622.0,
+            "end": 656.0,
+            "text": "Bah non, pourquoi ? Parce que la France était partie, elle nous a laissés à Chekfa. Heureusement, bon, mon père n'était pas quelqu'un qui avait fait du mal aux Algériens, non, il était toujours bien avec tout le monde. Il était toujours bien avec tout le monde, c'est pour ça qu'on est restés au moins quinze jours. Ils ont été désarmés, on leur a enlevé les armes. Une fois désarmés, on est restés quelques jours, quelques semaines, je ne sais pas."
+        },
+        {
+            "id": "seg-116",
+            "speaker": "S1",
+            "start": 656.0,
+            "end": 665.0,
+            "text": "Après, on est rentrés à M'Chouneche, et puis à M'Chouneche, ça n'allait pas. Ça n'allait pas là-bas, et c'est pour ça que nous, on est rentrés."
+        },
+        {
+            "id": "seg-117",
+            "speaker": "S2",
+            "start": 665.0,
+            "end": 668.0,
+            "text": "D'accord. C'est avec ton père que ça n'allait pas ?"
+        },
+        {
+            "id": "seg-118",
+            "speaker": "S1",
+            "start": 668.0,
+            "end": 669.0,
+            "text": "Avec tout le monde !"
+        },
+        {
+            "id": "seg-119",
+            "speaker": "S2",
+            "start": 669.0,
+            "end": 670.0,
+            "text": "Avec tout le monde."
+        },
+        {
+            "id": "seg-120",
+            "speaker": "S1",
+            "start": 670.0,
+            "end": 673.0,
+            "text": "Avec tout le monde, avec tous ceux qui étaient avec la France."
+        },
+        {
+            "id": "seg-121",
+            "speaker": "S2",
+            "start": 673.0,
+            "end": 680.0,
+            "text": "D'accord. Ah oui, d'accord. Et toi aussi, ils étaient... Vous avez vécu des trucs ? Non."
+        },
+        {
+            "id": "seg-122",
+            "speaker": "S1",
+            "start": 680.0,
+            "end": 686.0,
+            "text": "Non, on était des enfants, nous, on était des enfants. Que ce soit à M'Chouneche ou ailleurs, on était des enfants, on n'avait rien à voir avec ça."
+        },
+        {
+            "id": "seg-123",
+            "speaker": "S2",
+            "start": 686.0,
+            "end": 689.0,
+            "text": "D'accord. C'est ton père qui a..."
+        },
+        {
+            "id": "seg-124",
+            "speaker": "S1",
+            "start": 689.0,
+            "end": 698.0,
+            "text": "Oui. Bah oui, c'est le père, et puis beaucoup d'autres, ils étaient mal vus, c'est pour ça."
+        },
+        {
+            "id": "seg-125",
+            "speaker": "S2",
+            "start": 698.0,
+            "end": 700.0,
+            "text": "Oui, d'accord."
+        },
+        {
+            "id": "seg-126",
+            "speaker": "S1",
+            "start": 700.0,
+            "end": 706.0,
+            "text": "Dieu merci, ils ne nous ont rien fait, ni du côté du FLN, ni d'ailleurs, ils n'ont rien fait. Mais à la fin, je te dis..."
+        },
+        {
+            "id": "seg-127",
+            "speaker": "S2",
+            "start": 706.0,
+            "end": 708.0,
+            "text": "Oui, c'est dangereux en fait, en soi."
+        },
+        {
+            "id": "seg-128",
+            "speaker": "S1",
+            "start": 708.0,
+            "end": 711.0,
+            "text": "Ah bah oui, c'est dangereux, oui."
+        },
+        {
+            "id": "seg-129",
+            "speaker": "S2",
+            "start": 711.0,
+            "end": 715.0,
+            "text": "Oui, d'accord. Et à Rivesaltes, vous êtes restés combien de temps ?"
+        },
+        {
+            "id": "seg-130",
+            "speaker": "S1",
+            "start": 715.0,
+            "end": 723.0,
+            "text": "On est restés du mois d'avril jusqu'au mois d'octobre. Ou fin septembre, quelque chose comme ça."
+        },
+        {
+            "id": "seg-131",
+            "speaker": "S2",
+            "start": 723.0,
+            "end": 724.0,
+            "text": "D'accord. Et tu travaillais ?"
+        },
+        {
+            "id": "seg-132",
+            "speaker": "S1",
+            "start": 724.0,
+            "end": 726.0,
+            "text": "Je ne faisais rien, jamais !"
+        },
+        {
+            "id": "seg-133",
+            "speaker": "S2",
+            "start": 726.0,
+            "end": 727.0,
+            "text": "Tu avais quel âge ?"
+        },
+        {
+            "id": "seg-134",
+            "speaker": "S1",
+            "start": 727.0,
+            "end": 728.0,
+            "text": "J'avais treize ans."
+        },
+        {
+            "id": "seg-135",
+            "speaker": "S2",
+            "start": 728.0,
+            "end": 729.0,
+            "text": "Ah, d'accord."
+        },
+        {
+            "id": "seg-136",
+            "speaker": "S1",
+            "start": 729.0,
+            "end": 732.0,
+            "text": "J'avais treize ans, je n'avais jamais été à l'école, non."
+        },
+        {
+            "id": "seg-137",
+            "speaker": "S2",
+            "start": 732.0,
+            "end": 732.0,
+            "text": "Ah oui, d'accord."
+        },
+        {
+            "id": "seg-138",
+            "speaker": "S1",
+            "start": 732.0,
+            "end": 746.0,
+            "text": "Bah, il y avait du travail, il y avait des gens qui avaient... Enfin, on a travaillé quelques jours pour ramasser..."
+        },
+        {
+            "id": "seg-139",
+            "speaker": "S2",
+            "start": 746.0,
+            "end": 747.0,
+            "text": "Les abricots ?"
+        },
+        {
+            "id": "seg-140",
+            "speaker": "S1",
+            "start": 747.0,
+            "end": 766.0,
+            "text": "Les abricots, oui, la cueillette d'abricots, avec Rkia et sa mère, il y avait plusieurs personnes, des grandes personnes, des petites filles et des petits garçons comme nous. On a travaillé un petit peu. Mais là-bas, tout le temps qu'on est restés à Rivesaltes : rien ! Pas un centime ils ne nous donnaient ! Il y avait des gens qui mouraient de faim."
+        },
+        {
+            "id": "seg-141",
+            "speaker": "S2",
+            "start": 766.0,
+            "end": 769.0,
+            "text": "Ouais. Et toi, ton père, il a travaillé ?"
+        },
+        {
+            "id": "seg-142",
+            "speaker": "S1",
+            "start": 769.0,
+            "end": 789.0,
+            "text": "Là-bas ? Non, il n'a pas travaillé. Mon père était dans la cuisine, il servait tous les jours, il leur donnait à manger tous les jours. Au début, tout au début quand on est arrivés, ils nous donnaient la nourriture cuite. Après, chacun faisait sa cuisine."
+        },
+        {
+            "id": "seg-143",
+            "speaker": "S2",
+            "start": 789.0,
+            "end": 790.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-144",
+            "speaker": "S1",
+            "start": 790.0,
+            "end": 803.0,
+            "text": "Ils leur donnaient des rations, je ne sais pas comment, et chacun faisait sa cuisine. Les gens avaient un pain par jour..."
+        },
+        {
+            "id": "seg-145",
+            "speaker": "S2",
+            "start": 803.0,
+            "end": 804.0,
+            "text": "Par famille ?"
+        },
+        {
+            "id": "seg-146",
+            "speaker": "S1",
+            "start": 804.0,
+            "end": 816.0,
+            "text": "Par famille, ça dépend. Quand tu étais une famille nombreuse, ils te donnaient un pain et demi, deux pains. Mais ceux qui étaient, par exemple, juste un couple, c'était un pain par jour. Même pas, ils le coupaient..."
+        },
+        {
+            "id": "seg-147",
+            "speaker": "S2",
+            "start": 816.0,
+            "end": 817.0,
+            "text": "En deux. D'accord."
+        },
+        {
+            "id": "seg-148",
+            "speaker": "S1",
+            "start": 817.0,
+            "end": 821.0,
+            "text": "Ils avaient faim, oui, ils avaient faim, ce n'était pas..."
+        },
+        {
+            "id": "seg-149",
+            "speaker": "S2",
+            "start": 821.0,
+            "end": 822.0,
+            "text": "Du coup, vous ne mangiez que du pain ?"
+        },
+        {
+            "id": "seg-150",
+            "speaker": "S1",
+            "start": 822.0,
+            "end": 836.0,
+            "text": "Du pain ? Si, ils nous donnaient à manger : des légumes, des fruits et tout ça, ils en donnaient. Non, non, ils nous en donnaient. Mais normalement, on avait droit aux allocations familiales : rien ! Zéro, zéro ! Il n'y avait pas d'allocations familiales, il n'y avait rien."
+        },
+        {
+            "id": "seg-151",
+            "speaker": "S2",
+            "start": 836.0,
+            "end": 837.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-152",
+            "speaker": "S1",
+            "start": 837.0,
+            "end": 848.0,
+            "text": "Il n'y avait rien, ils ne donnaient rien. Et puis mon père, je te dis... Quelque temps après, il y a monsieur Kayassi et monsieur Kiberi qui sont venus nous voir, parce qu'eux, ils étaient déjà à Rouen."
+        },
+        {
+            "id": "seg-153",
+            "speaker": "S2",
+            "start": 848.0,
+            "end": 849.0,
+            "text": "Oui."
+        },
+        {
+            "id": "seg-154",
+            "speaker": "S1",
+            "start": 849.0,
+            "end": 863.0,
+            "text": "Bah, ils ont dit : « Qu'est-ce que vous faites ici ? Si vous restez là, vous n'allez rien faire, il faut aller travailler ! » Bah, ils sont venus, et on est venus ici, en Normandie. Et je ne t'ai pas dit : là-bas, les toilettes, c'était dehors !"
+        },
+        {
+            "id": "seg-155",
+            "speaker": "S2",
+            "start": 863.0,
+            "end": 864.0,
+            "text": "Oui."
+        },
+        {
+            "id": "seg-156",
+            "speaker": "S1",
+            "start": 864.0,
+            "end": 866.0,
+            "text": "Des douches, il n'y en avait pas."
+        },
+        {
+            "id": "seg-157",
+            "speaker": "S2",
+            "start": 866.0,
+            "end": 867.0,
+            "text": "Ah, vous ne vous douchiez pas ?"
+        },
+        {
+            "id": "seg-158",
+            "speaker": "S1",
+            "start": 867.0,
+            "end": 877.0,
+            "text": "Rien du tout ! Tu te douchais soit dans la pièce où on vivait, et après qu'on se soit douchés, ma mère sortait l'eau par la porte."
+        },
+        {
+            "id": "seg-159",
+            "speaker": "S2",
+            "start": 877.0,
+            "end": 878.0,
+            "text": "Ah oui, d'accord."
+        },
+        {
+            "id": "seg-160",
+            "speaker": "S1",
+            "start": 878.0,
+            "end": 887.0,
+            "text": "Il n'y avait rien ! Et puis les toilettes, c'était dehors. Celui qui avait la diarrhée la nuit, eh bah il faisait sur place, parce que dehors, c'était loin !"
+        },
+        {
+            "id": "seg-161",
+            "speaker": "S2",
+            "start": 887.0,
+            "end": 889.0,
+            "text": "Ah oui, d'accord."
+        },
+        {
+            "id": "seg-162",
+            "speaker": "S1",
+            "start": 889.0,
+            "end": 898.0,
+            "text": "C'étaient des toilettes communes, enfin communales. De là où nous on habitait, c'était comme d'ici jusqu'à presque le bureau de tabac."
+        },
+        {
+            "id": "seg-163",
+            "speaker": "S2",
+            "start": 898.0,
+            "end": 899.0,
+            "text": "Ah ouais !"
+        },
+        {
+            "id": "seg-164",
+            "speaker": "S1",
+            "start": 899.0,
+            "end": 932.0,
+            "text": "Ah oui ! Bah c'est ça, c'étaient des espèces de baraques, et puis nous, chacun avait une pièce comme ça. On était avec les Guerza, on était avec la famille Djimi, les Guerza, les Bouyala, tous ceux-là étaient ensemble. Et les gens célibataires, comme ton père, comme mon oncle Mâali – après il est venu avec nous, quand on est partis, il est venu avec nous –, eux, ils habitaient dans le camp des célibataires, tout seuls. Eux, ils étaient tout seuls."
+        },
+        {
+            "id": "seg-165",
+            "speaker": "S2",
+            "start": 932.0,
+            "end": 935.0,
+            "text": "Ah, les familles avaient une pièce et les célibataires avaient..."
+        },
+        {
+            "id": "seg-166",
+            "speaker": "S1",
+            "start": 935.0,
+            "end": 941.0,
+            "text": "Ils avaient plus, ils habitaient dans un autre village. Nous, ça s'appelait le « Village 8 », on était dans le « Village 8 »."
+        },
+        {
+            "id": "seg-167",
+            "speaker": "S2",
+            "start": 941.0,
+            "end": 941.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-168",
+            "speaker": "S1",
+            "start": 941.0,
+            "end": 993.0,
+            "text": "Et les autres, je ne sais pas où, il y en avait plusieurs. Il y avait plein de monde de la famille. À la suite de ça, on est venus ici, en Normandie. Quand on est arrivés à Paris, c'est la gendarmerie qui est venue nous accueillir. Ils nous ont emmenés jusqu'au train, à Saint-Lazare. Après, on a pris le train de la gare Saint-Lazare jusqu'à Rouen. Et là, c'est pareil, c'est la police ou les gendarmes, je ne sais pas, qui sont venus. Ils nous ont emmenés jusqu'à l'endroit où on a habité. On a habité quelque temps rue de Lyons, à Rouen, juste en face de Charles-Nicolle. On a habité là-bas, ils nous donnaient à manger. Après, comme mon père travaillait, il a décidé : « Moi, je ne vais pas rester ici, je vais aller... » On a été rue Saint-Gilles, à côté de notre dernier logement, ce n'est pas loin de là."
+        },
+        {
+            "id": "seg-169",
+            "speaker": "S2",
+            "start": 993.0,
+            "end": 994.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-170",
+            "speaker": "S1",
+            "start": 994.0,
+            "end": 1037.0,
+            "text": "On a habité là-bas, on est restés jusqu'au 1er mai. On a passé un hiver horrible ! Horrible, je m'en rappelle toujours, le froid qu'il faisait. Ils nous avaient donné des draps froids. Dans les pièces, il y avait un poêle à bois qui ne prenait même pas le bois. C'était à la fois pour faire la cuisine – ma mère cuisinait dessus – et pour chauffer, mais ça ne chauffait rien ! Ça ne chauffait rien du tout. Quand elle cuisinait, elle mettait du bois ou du charbon de bois, mais on ne pouvait pas en mettre beaucoup, ce n'était pas suffisant. Ce n'était pas comme les poêles d'ici où tu mets beaucoup de bois, c'était un truc rikiki."
+        },
+        {
+            "id": "seg-171",
+            "speaker": "S2",
+            "start": 1037.0,
+            "end": 1039.0,
+            "text": "C'est tout petit. Oui, d'accord."
+        },
+        {
+            "id": "seg-172",
+            "speaker": "S1",
+            "start": 1039.0,
+            "end": 1057.0,
+            "text": "Rikiki. Moi, je dirais que c'étaient des poêles rikiki. Oui, et ça ne chauffait pas, ça. Et puis, on est restés du mois de décembre, ça devait être du mois de décembre jusqu'au 1er mai 1964. Après, on est venus à Grand-Couronne."
+        },
+        {
+            "id": "seg-173",
+            "speaker": "S2",
+            "start": 1057.0,
+            "end": 1058.0,
+            "text": "Oui."
+        },
+        {
+            "id": "seg-174",
+            "speaker": "S1",
+            "start": 1058.0,
+            "end": 1068.0,
+            "text": "Rue Pasteur. Nous, on a habité là-bas, mon père a travaillé et tout ça. Après, on est revenus ici..."
+        },
+        {
+            "id": "seg-175",
+            "speaker": "S2",
+            "start": 1068.0,
+            "end": 1069.0,
+            "text": "À Elbeuf."
+        },
+        {
+            "id": "seg-176",
+            "speaker": "S1",
+            "start": 1069.0,
+            "end": 1075.0,
+            "text": "À Elbeuf, oui, en 1971. Le 21 novembre 1971, on est venus à Elbeuf."
+        },
+        {
+            "id": "seg-177",
+            "speaker": "S2",
+            "start": 1075.0,
+            "end": 1076.0,
+            "text": "Tout ce périple !"
+        },
+        {
+            "id": "seg-178",
+            "speaker": "S1",
+            "start": 1076.0,
+            "end": 1087.0,
+            "text": "Ça, moi, jusqu'à présent, quand je vois... J'ai vu le film de Smaïn, je l'ai vu deux fois, et quand je le vois, je pleure. Je me dis : « C'est ce qui nous est arrivé. » C'était vraiment..."
+        },
+        {
+            "id": "seg-179",
+            "speaker": "S2",
+            "start": 1087.0,
+            "end": 1088.0,
+            "text": "C'est quoi le nom du film ?"
+        },
+        {
+            "id": "seg-180",
+            "speaker": "S1",
+            "start": 1088.0,
+            "end": 1093.0,
+            "text": "Hein ? Le film, je ne sais pas, c'est Smaïn qui a fait le film, mais je ne me rappelle pas de son nom."
+        },
+        {
+            "id": "seg-181",
+            "speaker": "S2",
+            "start": 1093.0,
+            "end": 1094.0,
+            "text": "D'accord. Bah, je regarderai."
+        },
+        {
+            "id": "seg-182",
+            "speaker": "S1",
+            "start": 1094.0,
+            "end": 1113.0,
+            "text": "À chaque fois, le titre du film, je ne m'en rappelle pas. Mais quand je le vois, c'est exactement ce qui s'est passé. Ce qui s'est passé. Mais nous, encore, c'était un moindre mal ! Parce que nos parents ont fait vite, ils se sont débrouillés. Ton père est parti à Lille, lui."
+        },
+        {
+            "id": "seg-183",
+            "speaker": "S2",
+            "start": 1113.0,
+            "end": 1115.0,
+            "text": "Oui, il est parti à Lille."
+        },
+        {
+            "id": "seg-184",
+            "speaker": "S1",
+            "start": 1115.0,
+            "end": 1116.0,
+            "text": "Ton père est parti à Lille."
+        },
+        {
+            "id": "seg-185",
+            "speaker": "S2",
+            "start": 1116.0,
+            "end": 1117.0,
+            "text": "Et après, il est revenu."
+        },
+        {
+            "id": "seg-186",
+            "speaker": "S1",
+            "start": 1117.0,
+            "end": 1123.0,
+            "text": "Bah après, il est revenu par là, tout le monde, mon oncle Mâali aussi, ils sont tous partis à Lille."
+        },
+        {
+            "id": "seg-187",
+            "speaker": "S2",
+            "start": 1123.0,
+            "end": 1123.0,
+            "text": "Oui."
+        },
+        {
+            "id": "seg-188",
+            "speaker": "S1",
+            "start": 1123.0,
+            "end": 1132.0,
+            "text": "Après, ils sont revenus par là. Mais nous, on est venus directement ici, en Normandie. On n'a pas quitté la Normandie."
+        },
+        {
+            "id": "seg-189",
+            "speaker": "S2",
+            "start": 1132.0,
+            "end": 1135.0,
+            "text": "C'était la misère quand même, même si ce n'est pas..."
+        },
+        {
+            "id": "seg-190",
+            "speaker": "S1",
+            "start": 1135.0,
+            "end": 1137.0,
+            "text": "Oui, c'était la misère, oui."
+        },
+        {
+            "id": "seg-191",
+            "speaker": "S2",
+            "start": 1137.0,
+            "end": 1142.0,
+            "text": "Et en Algérie, toi, tu as vu des trucs pendant la guerre ou tu as juste vu des bombardements et..."
+        },
+        {
+            "id": "seg-192",
+            "speaker": "S1",
+            "start": 1142.0,
+            "end": 1226.0,
+            "text": "Bah, les bombardements, pour ce qui est de voir, je n'ai pas vu. J'ai vu une fois, mais je n'ai pas vu des gens... Une fois, quand on était à Chekfa, à la fin de l'après-midi, j'ai vu une Jeep qui descendait dans les montagnes pour aller à Bordj Tahar – ça s'appelle Bordj Tahar. Je voyais une Jeep aller comme ça. Et puis, on entendait dire : « Telle personne est morte, telle personne... » Même que ce soit à M'Chouneche ou ailleurs, on entendait que telle personne avait été tuée, mais je n'ai pas vu exactement. Mais il y a des endroits, par exemple quand on était à Chekfa, il y avait des parachutistes, il y avait des trucs comme ça. On voyait, à un endroit, des gens qui ramenaient des civils. Parce que nous, comme on était curieux – à l'époque je n'avais pas treize ans, j'avais quoi, dix ans ? J'avais dix ans –, on regardait les camions qui passaient, des GMC, ça s'appelle des GMC, qui passaient. Et il y avait des soldats de chaque côté, ils ouvraient un petit peu la bâche, et il y avait plein de monde, des civils et tout ça."
+        },
+        {
+            "id": "seg-193",
+            "speaker": "S2",
+            "start": 1226.0,
+            "end": 1227.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-194",
+            "speaker": "S1",
+            "start": 1227.0,
+            "end": 1236.0,
+            "text": "À mon avis, ils les tuaient ! À mon avis, ils les tuaient. Et le lendemain, à cet endroit, on voyait que la terre avait été retournée et tout ça."
+        },
+        {
+            "id": "seg-195",
+            "speaker": "S2",
+            "start": 1236.0,
+            "end": 1237.0,
+            "text": "Ah oui, d'accord."
+        },
+        {
+            "id": "seg-196",
+            "speaker": "S1",
+            "start": 1237.0,
+            "end": 1258.0,
+            "text": "La terre était retournée, il n'y avait pas de... On voyait ça. Bon, celui qui s'en fout, il s'en fout, mais moi j'étais... J'étais en train de regarder, et quand je regardais, je me disais : « Ah, ce sont des gens qui sont morts et ils les ont mis dans la fosse. » Oui, oui, de toute façon, c'était la guerre."
+        },
+        {
+            "id": "seg-197",
+            "speaker": "S1",
+            "start": 1258.0,
+            "end": 1267.0,
+            "text": "Et moi, je suis retournée en Algérie en 1980. Depuis 1963 jusqu'en 1980."
+        },
+        {
+            "id": "seg-198",
+            "speaker": "S2",
+            "start": 1267.0,
+            "end": 1269.0,
+            "text": "Et tu avais quel âge, du coup ?"
+        },
+        {
+            "id": "seg-199",
+            "speaker": "S1",
+            "start": 1269.0,
+            "end": 1271.0,
+            "text": "Bah, en 1980, j'avais trente ans."
+        },
+        {
+            "id": "seg-200",
+            "speaker": "S2",
+            "start": 1271.0,
+            "end": 1271.0,
+            "text": "Ah ouais !"
+        },
+        {
+            "id": "seg-201",
+            "speaker": "S1",
+            "start": 1271.0,
+            "end": 1272.0,
+            "text": "Oui."
+        },
+        {
+            "id": "seg-202",
+            "speaker": "S2",
+            "start": 1272.0,
+            "end": 1274.0,
+            "text": "Mais tu y es retournée tard !"
+        },
+        {
+            "id": "seg-203",
+            "speaker": "S1",
+            "start": 1274.0,
+            "end": 1295.0,
+            "text": "Bah oui, j'y suis retournée tard. Tu sais, je n'avais pas envie. Enfin, ce n'est pas que je n'avais pas envie, mais après je me suis mariée. Je me suis mariée, et après il y avait les enfants, on ne pouvait pas y aller. En 1984, ils étaient un petit peu plus grands, et pendant les vacances, on passait une année en Algérie et une année dans le Sud."
+        },
+        {
+            "id": "seg-204",
+            "speaker": "S2",
+            "start": 1295.0,
+            "end": 1297.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-205",
+            "speaker": "S1",
+            "start": 1297.0,
+            "end": 1331.0,
+            "text": "On a vu un truc sur l'Algérie là-bas, à Rouen. Et en sortant, une femme m'a dit : « Ouais, le FLN... les harkis, ce sont des collabos. » Je lui ai dit : « Je vous arrête tout de suite ! » Je lui ai dit : « Je vous arrête tout de suite, ce ne sont pas des collabos. Il y a des gens, quand la France prend un fusil et vous le met comme ça : \"Tu vas combattre avec moi ou je te tue, toi et ta famille\", qu'est-ce que tu vas choisir ? »"
+        },
+        {
+            "id": "seg-206",
+            "speaker": "S2",
+            "start": 1331.0,
+            "end": 1332.0,
+            "text": "Bah, c'est clair."
+        },
+        {
+            "id": "seg-207",
+            "speaker": "S1",
+            "start": 1332.0,
+            "end": 1367.0,
+            "text": "Elle m'a dit : « Ah, moi je ne savais pas. » Je lui ai dit : « C'est ça qui s'est passé en Algérie. » Je lui ai dit : « Il y en a qui se sont engagés de leur propre gré. Mais il y en a, c'était à cause de la faim ! » Parce que chez nous, dans les montagnes, je te dis : les Ouled Abderrahmane, les Aït Melkem, les Aït Slimane Ou Aïssa, Ahyou... Là, je te dis, en Algérie – moi je n'ai pas vu d'autres endroits en Algérie –, mais ceux-là, ils ont été les plus déracinés. Ils ont été déracinés, ils n'avaient même pas de nourriture, rien ! Ils ont été déracinés de leur..."
+        },
+        {
+            "id": "seg-208",
+            "speaker": "S2",
+            "start": 1367.0,
+            "end": 1368.0,
+            "text": "De leur bled."
+        },
+        {
+            "id": "seg-209",
+            "speaker": "S1",
+            "start": 1368.0,
+            "end": 1373.0,
+            "text": "De leur bled, de leur terre, de leur maison. Ils ont tout laissé !"
+        },
+        {
+            "id": "seg-210",
+            "speaker": "S2",
+            "start": 1373.0,
+            "end": 1374.0,
+            "text": "Non, on leur a tout retiré."
+        },
+        {
+            "id": "seg-211",
+            "speaker": "S1",
+            "start": 1374.0,
+            "end": 1385.0,
+            "text": "Là-bas, on leur a tout retiré, on leur a enlevé tout ce qu'ils avaient. Et puis ils sont venus à M'Chouneche, et là, c'était la pagaille."
+        },
+        {
+            "id": "seg-212",
+            "speaker": "S2",
+            "start": 1385.0,
+            "end": 1386.0,
+            "text": "Bah oui."
+        },
+        {
+            "id": "seg-213",
+            "speaker": "S1",
+            "start": 1386.0,
+            "end": 1392.0,
+            "text": "Et je me rappelle, une fois, ils ont fait une rafle. C'était une rafle en hiver."
+        },
+        {
+            "id": "seg-214",
+            "speaker": "S2",
+            "start": 1392.0,
+            "end": 1393.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-215",
+            "speaker": "S1",
+            "start": 1393.0,
+            "end": 1418.0,
+            "text": "Je me rappelle, nous, on habitait à M'Chouneche, ma mère était malade. Mon père, je ne sais même pas où il était, mais il n'était pas là. Parce que mon père était commerçant avant, il avait un café. Mais là, à cette époque-là, il n'était pas là, il était parti je ne sais pas où. Ils nous ont ramassés de M'Chouneche directement vers Mihouri, la nouvelle ville."
+        },
+        {
+            "id": "seg-216",
+            "speaker": "S2",
+            "start": 1418.0,
+            "end": 1419.0,
+            "text": "Oui."
+        },
+        {
+            "id": "seg-217",
+            "speaker": "S1",
+            "start": 1419.0,
+            "end": 1434.0,
+            "text": "Ils nous ont ramassés là, c'était un terrain vague : il n'y avait ni arbres, ni palmiers, ni rien, comme ça ! Ils ont mis tout le monde là, deux nuits dans le froid !"
+        },
+        {
+            "id": "seg-218",
+            "speaker": "S1",
+            "start": 1434.0,
+            "end": 1470.0,
+            "text": "Nous, heureusement, il y avait ma grand-mère. Ma mère était malade – paix à son âme, à ma mère et à ma grand-mère –, elle était malade comme ça. Et nous, c'est ma grand-mère qui a essayé de ramener je ne sais pas quelle petite couverture. Elle n'avait pas pu prendre grand-chose parce qu'ils avaient dit : « Allez, vite, dans le camion ! » Heureusement, il y avait la tante de Friha, qui s'était mariée avec quelqu'un qui travaillait là, il nous a ramené quelque chose et sa tante nous a fait à manger, elle nous a fait de la galette. Elle nous a ramené ça, autrement on n'avait rien !"
+        },
+        {
+            "id": "seg-219",
+            "speaker": "S2",
+            "start": 1470.0,
+            "end": 1471.0,
+            "text": "Bah oui, pendant deux jours."
+        },
+        {
+            "id": "seg-220",
+            "speaker": "S1",
+            "start": 1471.0,
+            "end": 1474.0,
+            "text": "Rien, pendant deux jours ! Ah oui, c'était..."
+        },
+        {
+            "id": "seg-221",
+            "speaker": "S2",
+            "start": 1474.0,
+            "end": 1476.0,
+            "text": "À M'Chouneche, ils ont ramené des camions et ils vous ont tous mis dedans ?"
+        },
+        {
+            "id": "seg-222",
+            "speaker": "S1",
+            "start": 1476.0,
+            "end": 1479.0,
+            "text": "Ah oui, ils nous ont tous descendus à Mihouri. Ça s'appelle Mihouri."
+        },
+        {
+            "id": "seg-223",
+            "speaker": "S2",
+            "start": 1479.0,
+            "end": 1480.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-224",
+            "speaker": "S1",
+            "start": 1480.0,
+            "end": 1484.0,
+            "text": "Ils nous ont mis là-bas, on y est restés deux nuits, dans le froid."
+        },
+        {
+            "id": "seg-225",
+            "speaker": "S2",
+            "start": 1484.0,
+            "end": 1485.0,
+            "text": "Dans le froid comme ça, ils vous ont..."
+        },
+        {
+            "id": "seg-226",
+            "speaker": "S1",
+            "start": 1485.0,
+            "end": 1486.0,
+            "text": "Ah oui, comme ça."
+        },
+        {
+            "id": "seg-227",
+            "speaker": "S2",
+            "start": 1486.0,
+            "end": 1490.0,
+            "text": "Et il y avait des bébés, des enfants ?"
+        },
+        {
+            "id": "seg-228",
+            "speaker": "S1",
+            "start": 1490.0,
+            "end": 1507.0,
+            "text": "Il y avait de tout : des bébés, des vieillards, des jeunes, de tout. Nous, la nuit, on était à côté de ma grand-mère – paix à son âme –, on grelottait. Avec ce qu'elle avait sur elle, elle nous a couverts comme ça, elle était comme une poule avec ses poussins. Ma mère était malade, allongée."
+        },
+        {
+            "id": "seg-229",
+            "speaker": "S2",
+            "start": 1507.0,
+            "end": 1508.0,
+            "text": "Oui."
+        },
+        {
+            "id": "seg-230",
+            "speaker": "S1",
+            "start": 1508.0,
+            "end": 1512.0,
+            "text": "Et c'est tout. Pendant deux nuits, je m'en rappelle ! Moi, j'avais huit ans."
+        },
+        {
+            "id": "seg-231",
+            "speaker": "S2",
+            "start": 1512.0,
+            "end": 1513.0,
+            "text": "Ah oui, d'accord."
+        },
+        {
+            "id": "seg-232",
+            "speaker": "S1",
+            "start": 1513.0,
+            "end": 1528.0,
+            "text": "J'avais huit ans. Ah oui, c'est... Je te dis, quand cette femme a commencé à parler, je lui ai dit : « Je vous arrête tout de suite ! » Je lui ai dit : « Moi, je l'ai vécu. Ce n'est pas qu'on me l'a dit, j'ai vécu là-bas ! »"
+        },
+        {
+            "id": "seg-233",
+            "speaker": "S2",
+            "start": 1528.0,
+            "end": 1529.0,
+            "text": "C'est clair."
+        },
+        {
+            "id": "seg-234",
+            "speaker": "S1",
+            "start": 1529.0,
+            "end": 1534.0,
+            "text": "C'est ça. Elle m'a dit : « Ah, je ne savais pas ça. » Je lui ai dit : « Comme ça, maintenant vous savez ! »"
+        },
+        {
+            "id": "seg-235",
+            "speaker": "S2",
+            "start": 1534.0,
+            "end": 1535.0,
+            "text": "Maintenant vous savez."
+        },
+        {
+            "id": "seg-236",
+            "speaker": "S1",
+            "start": 1535.0,
+            "end": 1538.0,
+            "text": "« Vous savez tout ce qui s'est passé. »"
+        },
+        {
+            "id": "seg-237",
+            "speaker": "S2",
+            "start": 1538.0,
+            "end": 1542.0,
+            "text": "Parce que « harki », c'est trop vu comme « collabo », alors qu'ils ne savent pas la..."
+        },
+        {
+            "id": "seg-238",
+            "speaker": "S1",
+            "start": 1542.0,
+            "end": 1580.0,
+            "text": "Oui ! Je lui ai dit : « Il y en a qui avaient faim, il y avait des jeunes qui n'avaient rien, ils se sont retrouvés là, leurs parents étaient morts aussi. Leurs pères étaient morts, parfois même les deux parents, ils n'avaient rien ! Ils étaient obligés d'aller s'engager pour manger. » C'était pour manger. Et nous, les gens des villages que je t'ai cités, s'ils se sont mis avec la France, c'était parce qu'ils n'avaient rien à manger. Parce qu'ils étaient comme une plante qu'on a arrachée avec ses racines et qu'on a jetée comme ça !"
+        },
+        {
+            "id": "seg-239",
+            "speaker": "S1",
+            "start": 1580.0,
+            "end": 1594.0,
+            "text": "Nous, c'est Aït Melkem, Ouled Abderrahmane, Ahyou, Aït Slimane Ou Aïssa : ces quatre douars-là, ils n'avaient plus rien. Tout ce qu'ils avaient, ils l'avaient laissé là-bas, et ils sont venus comme ça."
+        },
+        {
+            "id": "seg-240",
+            "speaker": "S2",
+            "start": 1594.0,
+            "end": 1595.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-241",
+            "speaker": "S1",
+            "start": 1595.0,
+            "end": 1604.0,
+            "text": "Et moi, je me rappelle, ma mère venait d'accoucher à Kbach, eh bah ils nous ont tous..."
+        },
+        {
+            "id": "seg-242",
+            "speaker": "S2",
+            "start": 1604.0,
+            "end": 1605.0,
+            "text": "Tout retiré ?"
+        },
+        {
+            "id": "seg-243",
+            "speaker": "S1",
+            "start": 1605.0,
+            "end": 1619.0,
+            "text": "Non, ils ont dit : « Il faut partir ! Il ne faut pas rester ici, il ne faut pas rester ici. » Parce que si les gens restaient là-bas, ils allaient nourrir le FLN et tout ça. Alors ils ont dit : « Vous allez tous partir. »"
+        },
+        {
+            "id": "seg-244",
+            "speaker": "S2",
+            "start": 1619.0,
+            "end": 1620.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-245",
+            "speaker": "S1",
+            "start": 1620.0,
+            "end": 1657.0,
+            "text": "« On va faire un camp. » Eh bah, ils les ont emmenés à M'Chouneche, tous les gens étaient là-bas, personne ne bougeait, ils les ont tous ramenés. Moi, je me rappelle, j'avais six ans quand j'ai marché à pied. Parce que mon père – que Dieu ait son âme – avait son mulet rempli de provisions, un petit peu de semoule, un petit peu de ceci, un petit peu de cela. Il y avait mes deux frères qui étaient plus petits que moi : Messaoud – que Dieu ait son âme – qui était plus petit que moi, et Moh qui était beaucoup plus petit, il n'avait même pas trois ans, je ne sais pas."
+        },
+        {
+            "id": "seg-246",
+            "speaker": "S1",
+            "start": 1657.0,
+            "end": 1690.0,
+            "text": "Et Fatma, ma petite sœur qui venait de naître, elle avait six jours. Ma mère l'a portée tout le long, sur je ne sais pas combien de kilomètres. Nous, on a marché à pied, ma mère me tenait la main, et ma petite sœur, elle l'avait attachée contre elle je ne sais pas comment. Et puis, heureusement, il y avait deux femmes que ma mère connaissait, de chez nous, qui m'ont prise tout le trajet. Elles accompagnaient ma mère et elles me prenaient sur leur dos. J'avais six ans ! À huit ans, on était à M'Chouneche."
+        },
+        {
+            "id": "seg-247",
+            "speaker": "S2",
+            "start": 1690.0,
+            "end": 1691.0,
+            "text": "Ah oui, d'accord."
+        },
+        {
+            "id": "seg-248",
+            "speaker": "S1",
+            "start": 1691.0,
+            "end": 1708.0,
+            "text": "Ouais. Eh bah, je te dis, ce n'était pas... Après, il y avait l'armée, les militaires français qui étaient à gauche et à droite : « Allez, marchez tous en ligne ! » Je me rappelle, dans les montagnes, on marchait en ligne, en ligne."
+        },
+        {
+            "id": "seg-249",
+            "speaker": "S2",
+            "start": 1708.0,
+            "end": 1709.0,
+            "text": "En ligne, tout le monde..."
+        },
+        {
+            "id": "seg-250",
+            "speaker": "S1",
+            "start": 1709.0,
+            "end": 1712.0,
+            "text": "Tout le monde devait s'aligner, il fallait..."
+        },
+        {
+            "id": "seg-251",
+            "speaker": "S2",
+            "start": 1712.0,
+            "end": 1714.0,
+            "text": "Comme ce qui se passe en Palestine là, maintenant."
+        },
+        {
+            "id": "seg-252",
+            "speaker": "S1",
+            "start": 1714.0,
+            "end": 1716.0,
+            "text": "Oui, bah oui !"
+        },
+        {
+            "id": "seg-253",
+            "speaker": "S2",
+            "start": 1716.0,
+            "end": 1717.0,
+            "text": "C'est tout pareil."
+        },
+        {
+            "id": "seg-254",
+            "speaker": "S1",
+            "start": 1717.0,
+            "end": 1726.0,
+            "text": "Ah bah, moi je te dis, il y avait des villages entiers qui étaient brûlés et tout ça. Oui, brûlés ! Oui, oui."
+        },
+        {
+            "id": "seg-255",
+            "speaker": "S1",
+            "start": 1726.0,
+            "end": 1733.0,
+            "text": "Moi, je te dis, on entendait dire que des gens mouraient, mais voir quelqu'un se faire tuer devant nous, je n'ai pas vu."
+        },
+        {
+            "id": "seg-256",
+            "speaker": "S2",
+            "start": 1733.0,
+            "end": 1734.0,
+            "text": "Non, tu n'as pas vu."
+        },
+        {
+            "id": "seg-257",
+            "speaker": "S1",
+            "start": 1734.0,
+            "end": 1756.0,
+            "text": "Non, je n'ai pas vu parce que nous, les enfants, on ne pouvait pas voir ça. Mais on entendait : « Telle personne est morte, telle personne... » Des femmes, et parfois des villages entiers qu'ils brûlaient comme ça. Même sans avoir vu les gens mourir, quand on est partis, je te dis, c'était difficile, difficile, difficile."
+        },
+        {
+            "id": "seg-258",
+            "speaker": "S1",
+            "start": 1756.0,
+            "end": 1782.0,
+            "text": "Et puis, même quand on est venus en France en 1963, en 1964, en 1965, quand j'entendais le bruit d'un avion, ça résonnait, ça me faisait peur ! Ça me faisait peur. Et les cauchemars qu'on a faits ! J'ai fait des cauchemars avec l'armée qui courait toujours derrière les gens, derrière tout ça..."
+        },
+        {
+            "id": "seg-259",
+            "speaker": "S2",
+            "start": 1782.0,
+            "end": 1783.0,
+            "text": "C'est resté, quoi."
+        },
+        {
+            "id": "seg-260",
+            "speaker": "S1",
+            "start": 1783.0,
+            "end": 1787.0,
+            "text": "Ah bah, c'est resté ! C'est un truc qui ne sort pas de la tête."
+        },
+        {
+            "id": "seg-261",
+            "speaker": "S2",
+            "start": 1787.0,
+            "end": 1790.0,
+            "text": "Bah oui. Maintenant, ça va ?"
+        },
+        {
+            "id": "seg-262",
+            "speaker": "S1",
+            "start": 1790.0,
+            "end": 1800.0,
+            "text": "Maintenant, je te dis, quand on arrive à un certain âge, on oublie. Ça fait longtemps. C'est bon, c'était la guerre, c'est ce qui s'est passé."
+        },
+        {
+            "id": "seg-263",
+            "speaker": "S1",
+            "start": 1800.0,
+            "end": 1841.0,
+            "text": "Et puis, la France n'a pas reconnu que c'était une guerre jusqu'en 1999. C'est là où des Français – parce qu'eux aussi étaient là-bas, ils étaient forcés de faire le service militaire, ils étaient forcés d'aller combattre, ils ne voulaient pas mais ils étaient obligés – ont dit : « C'était la guerre ! » Moi, je me rappelle, depuis tout ce temps, c'était la guerre. Ce n'était pas une simple révolution, ou comme quand ils disaient : « Ce sont des bandits, les gens du FLN. » Non, non, c'était une guerre, une vraie guerre."
+        },
+        {
+            "id": "seg-264",
+            "speaker": "S1",
+            "start": 1841.0,
+            "end": 1863.0,
+            "text": "Mon père avait son café. Quand il est venu à M'Chouneche, il avait son commerce et tout ça. Mon père a toujours été commerçant. Avant, il était toujours commerçant, et là, il avait son café. Mais après, il ne pouvait plus. Il allait à Biskra pour ramener de la marchandise. Il a fait le café, et après il a fait la boucherie."
+        },
+        {
+            "id": "seg-265",
+            "speaker": "S2",
+            "start": 1863.0,
+            "end": 1864.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-266",
+            "speaker": "S1",
+            "start": 1864.0,
+            "end": 1874.0,
+            "text": "Il a fait la boucherie. Et une fois... Quand tu allais à Biskra, tu y passais une nuit, parce qu'il fallait y aller avec le convoi de M'Chouneche jusqu'à Biskra."
+        },
+        {
+            "id": "seg-267",
+            "speaker": "S2",
+            "start": 1874.0,
+            "end": 1875.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-268",
+            "speaker": "S1",
+            "start": 1875.0,
+            "end": 1902.0,
+            "text": "Et quand tu passais la nuit à l'hôtel, le lendemain, il fallait que tu ramènes une feuille attestant que tu avais dormi à l'hôtel. Si tu avais dormi dans la famille, il fallait que tu ramènes une permission attestant que tu avais dormi dans telle famille. Et mon père, une fois, il était un petit peu en retard parce qu'il avait acheté des moutons et des chèvres pour sa boucherie."
+        },
+        {
+            "id": "seg-269",
+            "speaker": "S1",
+            "start": 1902.0,
+            "end": 1914.0,
+            "text": "Il est parti, il est arrivé à l'endroit d'où partait le convoi, mais ils étaient déjà partis. Il ne pouvait pas rester là-bas, alors il est parti à pied avec son troupeau."
+        },
+        {
+            "id": "seg-270",
+            "speaker": "S2",
+            "start": 1914.0,
+            "end": 1915.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-271",
+            "speaker": "S1",
+            "start": 1915.0,
+            "end": 1934.0,
+            "text": "Les Français l'ont attrapé – enfin, il y avait des Français, des harkis et tout ça –, et ils lui ont dit : « Tu vas ramener ça au FLN ! » Il leur a dit : « Moi, j'habite à M'Chouneche », et il leur a montré le papier prouvant qu'il tenait la boucherie. Il leur a dit : « Non, non ! » Plusieurs fois, ils ont voulu le tuer."
+        },
+        {
+            "id": "seg-272",
+            "speaker": "S2",
+            "start": 1934.0,
+            "end": 1935.0,
+            "text": "Ah ouais !"
+        },
+        {
+            "id": "seg-273",
+            "speaker": "S1",
+            "start": 1935.0,
+            "end": 1959.0,
+            "text": "Ah bah, plusieurs fois, deux ou trois fois ! Et puis il y avait des gens là-bas : les jeunes lui disaient : « Mon oncle, il ne faut pas que tu restes ici », et les vieux lui disaient : « Mon fils, il ne faut pas que tu restes ici, il faut que tu partes. Soit à gauche, soit à droite ! Tu as deux routes : soit tu vas avec les Français, soit tu vas avec le FLN. »"
+        },
+        {
+            "id": "seg-274",
+            "speaker": "S1",
+            "start": 1959.0,
+            "end": 1968.0,
+            "text": "Mon père est allé voir le FLN, mais ils ont dit : « Celui qui n'a pas de fusil, on n'a pas besoin de lui. »"
+        },
+        {
+            "id": "seg-275",
+            "speaker": "S2",
+            "start": 1968.0,
+            "end": 1969.0,
+            "text": "Ah, d'accord."
+        },
+        {
+            "id": "seg-276",
+            "speaker": "S1",
+            "start": 1969.0,
+            "end": 1991.0,
+            "text": "Oui. Et puis après, qu'est-ce qu'il lui restait ? S'il restait comme ça, c'était la mort. C'est pour ça qu'on est allés à Chekfa, à Chekfa on était loin de tout. Bah, on est restés là-bas. Même ton père y était, et mon oncle Mâali – que Dieu ait son âme. Mon oncle Mâali était jeune, il faisait son service militaire. Avec mon père, ils avaient deux ou trois ans de différence."
+        },
+        {
+            "id": "seg-277",
+            "speaker": "S1",
+            "start": 1991.0,
+            "end": 2004.0,
+            "text": "Ils étaient là-bas. Même ton oncle Ahmed – que Dieu ait son âme – était avec mon père. Mais eux, ils étaient loin dans la montagne à côté de Chekfa, ça s'appelle Bordj Tahar."
+        },
+        {
+            "id": "seg-278",
+            "speaker": "S2",
+            "start": 2004.0,
+            "end": 2005.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-279",
+            "speaker": "S1",
+            "start": 2005.0,
+            "end": 2013.0,
+            "text": "Ils sont restés là-bas jusqu'en 1962, quand tout le monde est retourné chez soi."
+        },
+        {
+            "id": "seg-280",
+            "speaker": "S2",
+            "start": 2013.0,
+            "end": 2015.0,
+            "text": "Et après... D'accord."
+        },
+        {
+            "id": "seg-281",
+            "speaker": "S1",
+            "start": 2015.0,
+            "end": 2042.0,
+            "text": "Oui, ils sont passés à M'Chouneche aussi, et après nous, on est partis à El M'Zaraa. Tout le monde est rentré au bercail. Mais après, là-bas aussi, il y avait des gens qui n'étaient pas honnêtes. Ils n'étaient pas honnêtes, ils ont commencé à dire... Au début ça allait, mais quelque temps après : « Ah, vous, vous êtes des harkis », ils commençaient. Alors après, nos parents ont dit : « C'est bon, on s'en va. »"
+        },
+        {
+            "id": "seg-282",
+            "speaker": "S2",
+            "start": 2042.0,
+            "end": 2043.0,
+            "text": "On s'en va."
+        },
+        {
+            "id": "seg-283",
+            "speaker": "S1",
+            "start": 2043.0,
+            "end": 2044.0,
+            "text": "Ouais, on s'en va."
+        }
+    ]
+}

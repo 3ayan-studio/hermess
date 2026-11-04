@@ -1,0 +1,143 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.footer-wrapper {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+// Partie sombre : Logo Hermès centré & Bottom mentions
+.footer-dark {
+  background-color: var(--hermes-bg-secondary); // #f6f1eb (ton beige chaud plus soutenu)
+  position: relative;
+  width: 100%;
+}
+
+// Logo Hermès centré
+.footer-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 56px 15px 44px;
+
+  @media (min-width: 1024px) {
+    padding: 88px 24px 64px;
+  }
+}
+
+.footer-logo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 4px;
+  }
+}
+
+.icon-hermes-logo {
+  display: block;
+  width: 5.25rem; // 84px mobile
+  height: 3rem;   // 48px mobile
+  fill: #000;
+
+  @media (min-width: 1024px) {
+    width: 6.25rem; // 100px desktop (ISO Hermès .parallax-inner .icon-hermes-logo)
+    height: 3.58rem; // 57.3px desktop (ratio ISO 1.745)
+  }
+}
+
+// Séparateur fin ISO
+.footer-separator {
+  border: none;
+  border-top: 1px solid rgb(226, 216, 206);
+  margin: 0 15px;
+  max-width: 1872px;
+
+  @media (min-width: 1024px) {
+    margin: 0 24px;
+    border-top-color: rgb(203, 203, 203);
+  }
+
+  @media (min-width: 1920px) {
+    margin-inline: auto;
+  }
+}
+
+// Bottom du footer & petites mentions
+.sub-footer {
+  padding: 20px 15px 24px;
+  max-width: 1920px;
+  margin: 0 auto;
+
+  @media (min-width: 1024px) {
+    padding: 20px 24px 28px;
+  }
+}
+
+.sub-footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    gap: 24px;
+  }
+}
+
+.sub-footer-legal {
+  display: flex;
+  align-items: center;
+}
+
+.paragraph-xsmall {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-body-default, 0.6875rem); // 11px
+  line-height: 18px;
+  font-weight: var(--font-weight-400, 400);
+  color: var(--hermes-text-secondary, #696969);
+  margin: 0;
+  letter-spacing: 0;
+}
+
+.sub-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 1024px) {
+    justify-content: flex-end;
+  }
+}
+
+.legal-link {
+  text-decoration: none;
+  color: var(--hermes-text-secondary, #696969);
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #000;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}

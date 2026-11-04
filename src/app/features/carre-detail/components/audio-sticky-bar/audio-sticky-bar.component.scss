@@ -1,0 +1,308 @@
+@use 'styles/tokens' as tokens;
+
+:host {
+  display: block;
+  position: sticky;
+  top: var(--header-height-mobile); // 50px sur mobile
+  z-index: 40;
+  width: 100%;
+  background-color: rgba(252, 247, 241, 0.98); // #fcf7f1 avec flou soyeux
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid var(--hermes-border-light);
+  border-bottom: 1px solid var(--hermes-border-light);
+  box-shadow: none;
+
+  // Sur Desktop (>= 1024px) : le header se replie à 46px au scroll
+  @media (min-width: 1024px) {
+    top: var(--header-menu-height); // 46px exact
+  }
+}
+
+.sticky-bar-container {
+  max-width: 1258px;
+  margin: 0 auto;
+  padding: 10px 15px 12px;
+
+  @media (min-width: 1024px) {
+    padding: 12px 24px 14px;
+  }
+}
+
+// -------------------------------------------------------------
+// RANGÉE 1 : Groupe compact, soigné et sobre aligné à gauche
+// -------------------------------------------------------------
+.sticky-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.cluster-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  @media (min-width: 768px) {
+    gap: 16px;
+    flex-wrap: nowrap;
+  }
+}
+
+// Visuel du Carré
+.track-thumbnail {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+// Contrôles Audio (Stop, -10s, Play/Pause, +10s, Mute)
+.audio-controls-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+
+  @media (min-width: 640px) {
+    gap: 5px;
+  }
+}
+
+.control-btn {
+  background: transparent;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+    color: #000;
+  }
+
+  &:active {
+    transform: scale(0.92);
+  }
+
+  &.play-btn {
+    width: 34px;
+    height: 34px;
+    background: transparent;
+    color: #000;
+    box-shadow: none;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.08);
+      transform: scale(1.08);
+    }
+
+    &:active {
+      transform: scale(0.94);
+    }
+
+    .play-icon-offset {
+      margin-left: 2px; // Centrage optique du triangle de lecture
+    }
+  }
+
+  &.stop-btn {
+    width: 28px;
+    height: 28px;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.06);
+    }
+  }
+
+  &.skip-btn {
+    width: 30px;
+    height: 30px;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.06);
+    }
+  }
+
+  &.mute-btn {
+    width: 30px;
+    height: 30px;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.06);
+    }
+  }
+}
+
+// Séparateur vertical discret entre les blocs
+.cluster-divider {
+  display: none;
+  width: 1px;
+  height: 18px;
+  background-color: rgba(0, 0, 0, 0.12);
+  margin: 0 2px;
+
+  @media (min-width: 640px) {
+    display: block;
+  }
+}
+
+// Identité du morceau (Titre & statut)
+.track-identity {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+
+  .title-with-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .status-indicator-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #9ca3af;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease;
+
+    &.is-playing {
+      background-color: #10b981; // Vert émeraude
+      animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+  }
+
+  .track-title {
+    font-family: var(--font-primary);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+// Durée actuelle / Durée totale
+.track-timers {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-secondary);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+
+  .current-time {
+    color: #000;
+    font-weight: 600;
+  }
+
+  .timer-separator {
+    margin: 0 4px;
+    color: #9ca3af;
+  }
+
+  .duration-time {
+    color: var(--hermes-text-secondary);
+  }
+}
+
+// -------------------------------------------------------------
+// RANGÉE 2 : Waveform vocale ultra-dense (traits) avec Hover Preview
+// -------------------------------------------------------------
+.waveform-container {
+  position: relative;
+  width: 100%;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  touch-action: none;
+  padding: 2px 0;
+  border-radius: 4px;
+
+  &:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+  }
+}
+
+.waveform-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+// Badge Tooltip flottant au survol avec timestamp
+.waveform-tooltip {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 2px 7px;
+  border-radius: 2px;
+  font-family: var(--font-secondary);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 30;
+  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  // Petite flèche sous le tooltip
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 3px solid transparent;
+    border-top-color: #000;
+  }
+
+  .tooltip-time {
+    display: block;
+    line-height: 1.2;
+  }
+}
+
+// Ligne repère verticale (hairline) au survol
+.waveform-hover-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1.5px;
+  background-color: #000;
+  pointer-events: none;
+  z-index: 20;
+  transform: translateX(-50%);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}

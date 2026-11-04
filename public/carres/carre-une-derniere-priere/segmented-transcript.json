@@ -1,0 +1,584 @@
+{
+    "metadata": {
+        "speakers": {
+            "S1": {
+                "name": "Anonyme 1"
+            },
+            "S2": {
+                "name": "Anonyme 2"
+            },
+            "S3": {
+                "name": "Fatima-Marwa"
+            }
+        }
+    },
+    "segments": [
+        {
+            "id": "seg-0",
+            "speaker": "S1",
+            "start": 0.0,
+            "end": 16.0,
+            "text": "Raconte-lui aussi pour l'oncle Abdellah, comment il est devenu aveugle. Raconte-lui pour Lalla Louisa, comment ils ont pris le bétail de son père, ses brebis, ses vaches, comment ils l'ont ligoté et ont tué son père. Raconte-lui aussi pour Ammar Ou Nser, comment ils ont pris son bétail..."
+        },
+        {
+            "id": "seg-1",
+            "speaker": "S2",
+            "start": 16.0,
+            "end": 18.0,
+            "text": "Ah oui..."
+        },
+        {
+            "id": "seg-2",
+            "speaker": "S1",
+            "start": 18.0,
+            "end": 22.0,
+            "text": "Là-bas, ils ont énormément souffert, ces gens-là, n'est-ce pas ?"
+        },
+        {
+            "id": "seg-3",
+            "speaker": "S2",
+            "start": 22.0,
+            "end": 24.0,
+            "text": "Toi et mon père, ils l'ont emmené en prison."
+        },
+        {
+            "id": "seg-4",
+            "speaker": "S1",
+            "start": 24.0,
+            "end": 26.0,
+            "text": "Mon père, ils l'ont emmené en prison ? Ah."
+        },
+        {
+            "id": "seg-5",
+            "speaker": "S2",
+            "start": 26.0,
+            "end": 28.0,
+            "text": "Toi et je ne sais plus combien avec l'oncle Bachir."
+        },
+        {
+            "id": "seg-6",
+            "speaker": "S1",
+            "start": 28.0,
+            "end": 30.0,
+            "text": "Oui."
+        },
+        {
+            "id": "seg-7",
+            "speaker": "S2",
+            "start": 30.0,
+            "end": 33.0,
+            "text": "Lui et... mon père et Bachir."
+        },
+        {
+            "id": "seg-8",
+            "speaker": "S1",
+            "start": 33.0,
+            "end": 35.0,
+            "text": "Mon père et Bachir ?"
+        },
+        {
+            "id": "seg-9",
+            "speaker": "S2",
+            "start": 35.0,
+            "end": 37.0,
+            "text": "Oui, ils ont failli tuer ton père aussi."
+        },
+        {
+            "id": "seg-10",
+            "speaker": "S1",
+            "start": 37.0,
+            "end": 41.0,
+            "text": "Et... ils ont emmené... mon père, ils l'ont mis en prison avec mon oncle."
+        },
+        {
+            "id": "seg-11",
+            "speaker": "S3",
+            "start": 41.0,
+            "end": 42.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-12",
+            "speaker": "S1",
+            "start": 42.0,
+            "end": 48.0,
+            "text": "Après, ils sont restés en prison... 40 jours."
+        },
+        {
+            "id": "seg-13",
+            "speaker": "S3",
+            "start": 48.0,
+            "end": 49.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-14",
+            "speaker": "S1",
+            "start": 49.0,
+            "end": 63.0,
+            "text": "Dans la prison. Le jour où ils sont sortis, ils ont fait... ils allaient faire un barrage pour tuer tous les... (S'adressant au téléphone) : Ces soldats qui ont fait ça, c'était l'armée algérienne qui allait les tuer ? Euh mon père, et... les Français."
+        },
+        {
+            "id": "seg-15",
+            "speaker": "S3",
+            "start": 63.0,
+            "end": 64.0,
+            "text": "Ah c'est l'Algérie ?"
+        },
+        {
+            "id": "seg-16",
+            "speaker": "S1",
+            "start": 64.0,
+            "end": 84.0,
+            "text": "Oui c'est l'Algérie qui va... je ne sais pas, enfin parce que mon père est sorti de prison, pour qu'ils s'enfuient... il a continué chez nous, l'armée avait posé une bombe au soufre (une mine). Pour tuer les Français, et mon père et tout le monde, parce que mon père avait été pris en prison, tu as compris comment ?"
+        },
+        {
+            "id": "seg-17",
+            "speaker": "S3",
+            "start": 84.0,
+            "end": 87.0,
+            "text": "Oui dans tous les cas ils voulaient tuer les Français mais euh... il y avait des Algériens avec eux quoi."
+        },
+        {
+            "id": "seg-18",
+            "speaker": "S1",
+            "start": 87.0,
+            "end": 92.0,
+            "text": "Voilà ! Voilà, il y avait des Algériens avec eux, il y avait beaucoup d'Algériens."
+        },
+        {
+            "id": "seg-19",
+            "speaker": "S3",
+            "start": 92.0,
+            "end": 93.0,
+            "text": "Mais c'était le FLN qui voulait faire ça ?"
+        },
+        {
+            "id": "seg-20",
+            "speaker": "S1",
+            "start": 93.0,
+            "end": 96.0,
+            "text": "Oui, c'est le FLN qui allait faire ça. (À l'intervieweuse) : Tu ne l'éteins pas ?"
+        },
+        {
+            "id": "seg-21",
+            "speaker": "S3",
+            "start": 96.0,
+            "end": 97.0,
+            "text": "Non."
+        },
+        {
+            "id": "seg-22",
+            "speaker": "S1",
+            "start": 97.0,
+            "end": 97.0,
+            "text": "Tu vas manger ?"
+        },
+        {
+            "id": "seg-23",
+            "speaker": "S3",
+            "start": 97.0,
+            "end": 98.0,
+            "text": "Oui."
+        },
+        {
+            "id": "seg-24",
+            "speaker": "S1",
+            "start": 98.0,
+            "end": 99.0,
+            "text": "Ah alors attends un instant."
+        },
+        {
+            "id": "seg-25",
+            "speaker": "S3",
+            "start": 99.0,
+            "end": 100.0,
+            "text": "Non vas-y t'inquiète."
+        },
+        {
+            "id": "seg-26",
+            "speaker": "S1",
+            "start": 100.0,
+            "end": 111.0,
+            "text": "Après, ils sont partis, après mon père est passé, mais il y a les autres qui sont venus derrière. Quand ils sont arrivés là, il y a eu 40 ou bien 50 personnes qui sont mortes. Les prisonniers. Ils sont morts."
+        },
+        {
+            "id": "seg-27",
+            "speaker": "S3",
+            "start": 111.0,
+            "end": 115.0,
+            "text": "Des prisonniers ? Ah c'est quand ils sont passés sur le... le terrain de mines."
+        },
+        {
+            "id": "seg-28",
+            "speaker": "S1",
+            "start": 115.0,
+            "end": 129.0,
+            "text": "Oui mon père est passé... Mon père, mon oncle et beaucoup de monde de chez nous sont passés. Mais les autres qui étaient derrière, après, sont morts. Je crois que c'est 100 ou bien... 40 ou je ne sais combien qui sont morts."
+        },
+        {
+            "id": "seg-29",
+            "speaker": "S3",
+            "start": 129.0,
+            "end": 130.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-30",
+            "speaker": "S1",
+            "start": 130.0,
+            "end": 155.0,
+            "text": "Après, il y a mon cousin, ils ont tué son grand-père, ils ont tué tout le monde, il ne restait que lui, c'était un bébé. Les Français ont fouillé chez eux. Quand ils sont arrivés, ils ont trouvé un bébé de 40 jours. Ils l'ont pris par le pied et l'ont jeté sur le tas de bois. Ils l'ont jeté sur le bois, mais il a survécu."
+        },
+        {
+            "id": "seg-31",
+            "speaker": "S3",
+            "start": 155.0,
+            "end": 155.0,
+            "text": "Oui wesh."
+        },
+        {
+            "id": "seg-32",
+            "speaker": "S1",
+            "start": 155.0,
+            "end": 178.0,
+            "text": "Mais il est vivant, quand même il est vivant, Dieu le bénisse. Après, elle m'a dit encore... elle m'a dit qu'à ma tante, ils ont pris 300 chèvres et 15 euh... 15 vaches. Ils ont pris 3 chevaux..."
+        },
+        {
+            "id": "seg-33",
+            "speaker": "S3",
+            "start": 178.0,
+            "end": 179.0,
+            "text": "Chevaux."
+        },
+        {
+            "id": "seg-34",
+            "speaker": "S1",
+            "start": 179.0,
+            "end": 194.0,
+            "text": "Chevaux. Après ils ont pris son mari, ils l'ont emmené à la campagne, à la montagne, et ils l'ont tué avec euh..."
+        },
+        {
+            "id": "seg-35",
+            "speaker": "S3",
+            "start": 194.0,
+            "end": 194.0,
+            "text": "Une pierre ?"
+        },
+        {
+            "id": "seg-36",
+            "speaker": "S1",
+            "start": 194.0,
+            "end": 210.0,
+            "text": "Une pierre sur la tête. Ils lui ont coupé les doigts, ils ont tout enlevé, les ongles, les yeux, tout ! Après ils ont pris un bâton et ils l'ont frappé sur la tête. Après il y a un monsieur qui a pris ses... ses baskets."
+        },
+        {
+            "id": "seg-37",
+            "speaker": "S3",
+            "start": 210.0,
+            "end": 211.0,
+            "text": "Ouais."
+        },
+        {
+            "id": "seg-38",
+            "speaker": "S1",
+            "start": 211.0,
+            "end": 229.0,
+            "text": "Il a pris ses baskets et il est parti en prison. Quand il est arrivé en prison, il a lavé les baskets pour les mettre à ses pieds. Après il a regardé, il a trouvé deux garçons. Deux garçons qui avaient été emmenés en prison. L'un d'eux était le fils de ce monsieur qu'ils avaient tué."
+        },
+        {
+            "id": "seg-39",
+            "speaker": "S3",
+            "start": 229.0,
+            "end": 229.0,
+            "text": "D'accord."
+        },
+        {
+            "id": "seg-40",
+            "speaker": "S1",
+            "start": 229.0,
+            "end": 257.0,
+            "text": "Après, il a dit aux deux garçons : \"Vous êtes jeunes, morts pour morts, venez, je vais vous faire sortir de prison et vous courez. Morts pour morts, si vous vous sauvez, tant mieux, si vous n'êtes pas sauvés, vous mourrez.\" Après les deux sont partis de là, ils sont rentrés chez eux. Quand ils sont arrivés chez eux, ils ont frappé à la porte, mais leur famille ne voulait pas ouvrir."
+        },
+        {
+            "id": "seg-41",
+            "speaker": "S3",
+            "start": 257.0,
+            "end": 257.0,
+            "text": "Parce qu'ils avaient peur."
+        },
+        {
+            "id": "seg-42",
+            "speaker": "S1",
+            "start": 257.0,
+            "end": 272.0,
+            "text": "Parce qu'ils avaient peur, ils croyaient qu'il y avait les Français avec eux. Ils n'ont pas ouvert, puis finalement, quand le jour s'est levé ou je ne sais quand, ils ont vu que c'étaient leurs deux enfants."
+        },
+        {
+            "id": "seg-43",
+            "speaker": "S3",
+            "start": 272.0,
+            "end": 273.0,
+            "text": "Ah ils ont vu que c'était leurs enfants."
+        },
+        {
+            "id": "seg-44",
+            "speaker": "S1",
+            "start": 273.0,
+            "end": 315.0,
+            "text": "Oui, leurs enfants, alors ils ont ouvert la porte et les ont pris. Après il y a une dame dont ils ont tué le mari. Elle est partie, et un jour ils l'ont attrapée, ils l'ont frappée avec des bâtons, comme ça, sans arrêt. Après ils ont creusé sa tombe, ou elle a creusé sa tombe, et ils lui ont dit : \"Rentre dedans pour qu'on te tue.\" Elle a dit : \"Excusez-moi, laissez-moi faire deux prières, une prière, et après vous me tuez.\" Quand elle a fait sa prière, elle est morte. Quand ils sont venus pour la tuer, elle était déjà morte, ça y est."
+        },
+        {
+            "id": "seg-45",
+            "speaker": "S3",
+            "start": 315.0,
+            "end": 316.0,
+            "text": "Ah quand elle a fait sa prière ?"
+        },
+        {
+            "id": "seg-46",
+            "speaker": "S1",
+            "start": 316.0,
+            "end": 321.0,
+            "text": "Oui, oui. Elle a laissé deux enfants, deux bébés."
+        },
+        {
+            "id": "seg-47",
+            "speaker": "S3",
+            "start": 321.0,
+            "end": 322.0,
+            "text": "Ah oui d'accord."
+        },
+        {
+            "id": "seg-48",
+            "speaker": "S1",
+            "start": 322.0,
+            "end": 336.0,
+            "text": "Bah oui. Elle m'a dit aussi : \"Moi quand j'allais à l'école française, on passait près d'une petite prison\", à côté d'un..."
+        },
+        {
+            "id": "seg-49",
+            "speaker": "S3",
+            "start": 336.0,
+            "end": 337.0,
+            "text": "Un camp."
+        },
+        {
+            "id": "seg-50",
+            "speaker": "S1",
+            "start": 337.0,
+            "end": 345.0,
+            "text": "Un camp, elle a dit : \"On entendait comment ils frappaient les prisonniers, ils pleuraient.\" Parce qu'ils les torturaient."
+        },
+        {
+            "id": "seg-51",
+            "speaker": "S3",
+            "start": 345.0,
+            "end": 346.0,
+            "text": "Ils torturent."
+        },
+        {
+            "id": "seg-52",
+            "speaker": "S1",
+            "start": 346.0,
+            "end": 352.0,
+            "text": "Ils torturent. Elle a dit : \"On les entendait crier, crier, crier. Même les femmes on les entendait crier.\""
+        },
+        {
+            "id": "seg-53",
+            "speaker": "S3",
+            "start": 352.0,
+            "end": 353.0,
+            "text": "Ah il y avait même des dames ?"
+        },
+        {
+            "id": "seg-54",
+            "speaker": "S1",
+            "start": 353.0,
+            "end": 354.0,
+            "text": "Oui !"
+        },
+        {
+            "id": "seg-55",
+            "speaker": "S3",
+            "start": 354.0,
+            "end": 355.0,
+            "text": "Qui se sont fait torturer ?"
+        },
+        {
+            "id": "seg-56",
+            "speaker": "S1",
+            "start": 355.0,
+            "end": 357.0,
+            "text": "Oui, oui, oui, il y avait beaucoup, beaucoup de choses."
+        },
+        {
+            "id": "seg-57",
+            "speaker": "S3",
+            "start": 357.0,
+            "end": 359.0,
+            "text": "Ah oui OK."
+        },
+        {
+            "id": "seg-58",
+            "speaker": "S1",
+            "start": 359.0,
+            "end": 368.0,
+            "text": "Ils ont arrêté ma tante, parce que ma tante faisait des remèdes avec les plantes, tout ça."
+        },
+        {
+            "id": "seg-59",
+            "speaker": "S3",
+            "start": 368.0,
+            "end": 370.0,
+            "text": "Ah oui, OK, elle connaît les plantes quoi."
+        },
+        {
+            "id": "seg-60",
+            "speaker": "S1",
+            "start": 370.0,
+            "end": 375.0,
+            "text": "Elle connaît les plantes, quand quelqu'un avait une fracture, elle faisait..."
+        },
+        {
+            "id": "seg-61",
+            "speaker": "S3",
+            "start": 375.0,
+            "end": 376.0,
+            "text": "Oui elle soigne avec les plantes."
+        },
+        {
+            "id": "seg-62",
+            "speaker": "S1",
+            "start": 376.0,
+            "end": 428.0,
+            "text": "Elle soigne avec les plantes tout ça. Alors ils lui ont dit : \"Toi tu aides le FLN, tu fais des choses pour le FLN.\" Ils l'ont mise en prison. Elle est restée je ne sais pas, deux ou trois mois, puis elle est sortie quand même. Ils ont aussi pris mon oncle, le frère de mon père, pendant 9 mois en prison, personne ne savait où il était. Après il est sorti. Et un autre oncle, le frère de ma mère, ils l'ont pris à la montagne, ils lui ont fait subir plein de tortures. Ils lui ont mis l'électricité sur la langue, ils lui ont fait sur... ça (elle désigne les parties intimes). Je ne dis pas ça."
+        },
+        {
+            "id": "seg-63",
+            "speaker": "S3",
+            "start": 428.0,
+            "end": 429.0,
+            "text": "Non mais t'inquiète."
+        },
+        {
+            "id": "seg-64",
+            "speaker": "S1",
+            "start": 429.0,
+            "end": 451.0,
+            "text": "Après ils lui ont fait plein de choses. Il est resté 9 mois, et quand il est sorti, il n'arrivait plus à se retenir d'uriner, ça coulait tout seul, et il ne parlait plus très bien parce que sa langue avait été un peu coupée. Il était traumatisé."
+        },
+        {
+            "id": "seg-65",
+            "speaker": "S3",
+            "start": 451.0,
+            "end": 452.0,
+            "text": "Bah oui."
+        },
+        {
+            "id": "seg-66",
+            "speaker": "S1",
+            "start": 452.0,
+            "end": 457.0,
+            "text": "Jusqu'à son décès. Quand l'armée française allait chez les gens..."
+        },
+        {
+            "id": "seg-67",
+            "speaker": "S3",
+            "start": 457.0,
+            "end": 458.0,
+            "text": "Chez les gens ?"
+        },
+        {
+            "id": "seg-68",
+            "speaker": "S1",
+            "start": 458.0,
+            "end": 469.0,
+            "text": "Chez les gens, ils violaient les femmes. Alors qu'est-ce qu'elles faisaient les femmes ? Elles allaient là où il y avait les chèvres, et elles s'enduisaient le corps des saletés des chèvres."
+        },
+        {
+            "id": "seg-69",
+            "speaker": "S3",
+            "start": 469.0,
+            "end": 470.0,
+            "text": "Des excréments de chèvres."
+        },
+        {
+            "id": "seg-70",
+            "speaker": "S1",
+            "start": 470.0,
+            "end": 505.0,
+            "text": "Voilà, pour que l'armée ne touche pas aux femmes. Mais ils violaient quand même les femmes. Ma tante, ils l'ont violée, et elle est tombée enceinte suite à ça. Après, ma mère m'a encore raconté que l'armée française était entrée chez eux par surprise. Ma mère était enceinte, elle a eu tellement peur que quand mon frère est né, il avait une boule dans le ventre."
+        },
+        {
+            "id": "seg-71",
+            "speaker": "S3",
+            "start": 505.0,
+            "end": 507.0,
+            "text": "Ah quand il est né il avait une boule dans son ventre ?"
+        },
+        {
+            "id": "seg-72",
+            "speaker": "S1",
+            "start": 507.0,
+            "end": 508.0,
+            "text": "Voilà, il est né avec..."
+        },
+        {
+            "id": "seg-73",
+            "speaker": "S3",
+            "start": 508.0,
+            "end": 509.0,
+            "text": "À cause du stress."
+        },
+        {
+            "id": "seg-74",
+            "speaker": "S1",
+            "start": 509.0,
+            "end": 533.0,
+            "text": "À cause du stress, de la peur, ils avaient peur de tout, parce qu'ils rentraient comme ça par surprise. Après, une fille de 10 ans, notre voisine, ils leur ont pris 300 chèvres. Elle pleurait : \"Redonnez-moi ma petite chèvre, redonnez-moi ma petite chèvre\", mais rien du tout, ils ne lui ont pas rendu sa petite chèvre."
+        },
+        {
+            "id": "seg-75",
+            "speaker": "S3",
+            "start": 533.0,
+            "end": 534.0,
+            "text": "Ah ils l'ont prise."
+        },
+        {
+            "id": "seg-76",
+            "speaker": "S1",
+            "start": 534.0,
+            "end": 548.0,
+            "text": "Voilà. Après, une autre fois, ma tante dormait avec son bébé. Quand l'armée française est entrée chez eux par surprise, le bébé dormait au sol, ils ont marché sur lui."
+        },
+        {
+            "id": "seg-77",
+            "speaker": "S3",
+            "start": 548.0,
+            "end": 549.0,
+            "text": "Oh !"
+        },
+        {
+            "id": "seg-78",
+            "speaker": "S1",
+            "start": 549.0,
+            "end": 551.0,
+            "text": "Oui, ils ont marché sur le bébé."
+        },
+        {
+            "id": "seg-79",
+            "speaker": "S3",
+            "start": 551.0,
+            "end": 552.0,
+            "text": "Et il est mort ?"
+        },
+        {
+            "id": "seg-80",
+            "speaker": "S1",
+            "start": 552.0,
+            "end": 553.0,
+            "text": "Non il n'est pas mort. Heureusement il n'est pas mort."
+        }
+    ]
+}

@@ -1,0 +1,689 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.panel-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+  margin: 0;
+
+  @media (min-width: 1024px) {
+    display: block;
+  }
+}
+
+.carousel-panel {
+  position: relative;
+  width: 100%;
+  background-color: var(--hermes-bg-canvas);
+
+  @media (min-width: 1024px) {
+    height: calc(100vh - var(--header-height-desktop-with-menu, 110px));
+  }
+}
+
+.carousel-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  @media (min-width: 1024px) {
+    height: 100%;
+  }
+}
+
+.carousel.auto-slides {
+  position: relative;
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    height: 100%;
+  }
+}
+
+.swiper-container {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pan-y;
+  outline: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: 1023px) {
+    scroll-snap-type: x mandatory;
+  }
+
+  @media (min-width: 1024px) {
+    height: 100%;
+  }
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  position: relative;
+  margin-right: 2px; // Gap exact Hermès
+
+  @media (max-width: 1023px) {
+    width: 100vw;
+    aspect-ratio: 1 / 1;
+    scroll-snap-align: center;
+  }
+
+  @media (min-width: 1024px) {
+    height: 100%;
+    width: auto;
+    aspect-ratio: 3 / 4;
+  }
+}
+
+.asset-wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+
+  &.f34 {
+    aspect-ratio: 3 / 4;
+  }
+}
+
+.slide-image-btn {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: zoom-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+
+    &.contain-mode {
+      object-fit: contain;
+      padding: 36px;
+
+      @media (max-width: 1023px) {
+        padding: 16px 20px;
+        max-height: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+// Espace de fin desktop pour ne pas cacher la dernière image sous le sélecteur
+.slides-end-spacer {
+  display: none;
+
+  @media (min-width: 1024px) {
+    display: block;
+    flex-shrink: 0;
+    width: 423px; // slides-offset-after ISO Hermès
+    height: 100%;
+    pointer-events: none;
+  }
+}
+
+// Navigation flèches gauche/droite
+.navigation-controls {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+
+  @media (max-width: 1023px) {
+    display: none;
+  }
+}
+
+.carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: color-mix(in srgb, #fff 80%, transparent);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  pointer-events: all;
+  opacity: 0;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    background-color: #fff;
+  }
+
+  &.left-control {
+    left: 8px;
+  }
+
+  &.right-control {
+    right: 8px;
+  }
+}
+
+.carousel-container:hover .carousel-nav-btn {
+  opacity: 1;
+}
+
+// Pagination mobile par points centrés
+.mobile-dots-pagination {
+  display: none;
+
+  @media (max-width: 1023px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.25);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+
+    &.active {
+      background-color: #000;
+      transform: scale(1.2);
+    }
+  }
+}
+
+// Miniatures Galerie (Angle inférieur gauche desktop)
+.images-galery {
+  display: none;
+
+  @media (min-width: 1024px) {
+    display: flex;
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    z-index: 3;
+  }
+
+  .images-gallery-container {
+    display: flex;
+    flex-direction: row;
+    padding: 4px;
+    background-color: #ffffffba;
+    position: relative;
+    transition: background-color 0.3s ease-out;
+
+    &:hover {
+      background-color: #fff;
+    }
+  }
+
+  .gallery-wrapper {
+    display: flex;
+    gap: 4px;
+  }
+
+  .gallery-button {
+    width: 32px;
+    aspect-ratio: 3 / 4;
+    border: none;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.5;
+      transition: opacity 0.2s ease;
+    }
+
+    &.checked img,
+    &:hover img {
+      opacity: 1;
+    }
+  }
+
+  .animation-image-gallery {
+    position: absolute;
+    bottom: 2px;
+    height: 2px;
+    width: 32px;
+    background-color: #000;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 2;
+  }
+}
+
+// Panel Superposé Flottant ISO Hermès
+.selector-panel {
+  width: 100%;
+  background-color: var(--hermes-bg-panel);
+
+  @media (max-width: 1023px) {
+    width: 100%;
+    background-color: #fffcf7;
+  }
+
+  @media (min-width: 1024px) {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    top: 24px;
+    width: 375px;
+    max-height: 100%;
+    pointer-events: none; // Laisse passer les clics vers le haut
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; // Ancré en bas à droite
+    background-color: transparent;
+  }
+}
+
+.selector-template-wrapper {
+  width: 100%;
+}
+
+.product-selector {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background-color: #fffcf7;
+  width: 100%;
+  pointer-events: all;
+  box-sizing: border-box;
+
+  @media (max-width: 1023px) {
+    padding: 12px 15px 14px;
+  }
+}
+
+.product-header {
+  order: 0;
+  padding-bottom: 8px;
+
+  @media (max-width: 1023px) {
+    padding-bottom: 2px;
+  }
+}
+
+.product-title {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  line-height: 24px;
+  font-weight: 400;
+  color: #000;
+  margin: 0;
+
+  @media (max-width: 1023px) {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+
+.product-ref {
+  font-family: var(--font-primary);
+  font-size: 11px;
+  color: var(--hermes-text-secondary);
+  margin-top: 2px;
+
+  @media (max-width: 1023px) {
+    font-size: 10px;
+    margin-top: 1px;
+  }
+}
+
+.selector-container {
+  order: 1;
+  margin-top: 10px;
+
+  @media (max-width: 1023px) {
+    margin-top: 6px;
+  }
+}
+
+.selector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+
+  @media (max-width: 1023px) {
+    font-size: 10px;
+    margin-bottom: 4px;
+  }
+}
+
+.selector-label {
+  color: #000;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.current-value {
+  color: var(--hermes-text-secondary);
+  font-size: 12px;
+  text-transform: capitalize;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 60%;
+
+  @media (max-width: 1023px) {
+    font-size: 11px;
+  }
+}
+
+// Grille des carrés (Sélecteur de coloris ISO)
+.box-group-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px 2px;
+
+  @media (max-width: 1023px) {
+    gap: 6px;
+  }
+}
+
+.box-image {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  .image {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: 100%;
+    outline: 1px solid transparent;
+    transition: outline-color 40ms ease-in-out;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  &.selected .image {
+    outline: 1px solid #000;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset-inline: 0;
+      bottom: 0;
+      height: 2px;
+      background: #000;
+      z-index: 2;
+    }
+  }
+
+  &:hover:not(.selected) .image {
+    outline: 1px solid #919191;
+  }
+}
+
+.product-selector-footer {
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+
+  @media (max-width: 1023px) {
+    margin-top: 10px;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .button {
+      @media (max-width: 1023px) {
+        min-height: 44px;
+        height: 44px;
+        padding: 8px 16px;
+      }
+    }
+  }
+
+  .micro-equalizer {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 2.5px;
+    height: 14px;
+    width: 14px;
+    margin-right: 2px;
+
+    .eq-bar {
+      width: 2.5px;
+      background-color: #fff;
+      border-radius: 1px;
+      animation: eq-bounce 0.8s ease-in-out infinite alternate;
+
+      &.eq-bar-1 {
+        height: 35%;
+        animation-delay: 0s;
+      }
+      &.eq-bar-2 {
+        height: 90%;
+        animation-delay: 0.25s;
+      }
+      &.eq-bar-3 {
+        height: 55%;
+        animation-delay: 0.15s;
+      }
+    }
+  }
+}
+
+@keyframes eq-bounce {
+  0% {
+    height: 25%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+.interview-meta {
+  text-align: center;
+  font-family: var(--font-primary);
+  font-size: 11px;
+  color: var(--hermes-text-secondary);
+  margin-top: 8px;
+  margin-bottom: 4px;
+
+  @media (max-width: 1023px) {
+    font-size: 10px;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    line-height: 14px;
+  }
+}
+
+.transcript-link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 8px 0;
+  font-family: var(--font-primary);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #000;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  @media (max-width: 1023px) {
+    font-size: 11px;
+    padding: 3px 0 0;
+    margin-top: 2px;
+  }
+
+  &:hover {
+    color: var(--hermes-text-secondary);
+  }
+}
+
+.contemplation-banner {
+  padding: 12px;
+  background-color: #f6f1eb;
+  border: 1px solid var(--hermes-border-light);
+  text-align: center;
+  border-radius: 2px;
+}
+
+.contemplation-text {
+  font-family: var(--font-secondary);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--hermes-text-secondary);
+}
+
+// Lightbox Plein Écran ISO Hermès
+.fullscreen-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+
+  .fullscreen-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.15s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .fullscreen-image-container {
+    max-width: 90vw;
+    max-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+
+    img {
+      max-width: 100%;
+      max-height: 85vh;
+      object-fit: contain;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  .fullscreen-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background-color: color-mix(in srgb, #fff 80%, transparent);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #fff;
+    }
+
+    &.prev {
+      left: 24px;
+    }
+
+    &.next {
+      right: 24px;
+    }
+  }
+
+  .fullscreen-counter {
+    position: absolute;
+    bottom: 24px;
+    font-family: var(--font-primary);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: var(--hermes-text-secondary);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

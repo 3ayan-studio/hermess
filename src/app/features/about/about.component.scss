@@ -1,0 +1,128 @@
+@use 'styles/tokens' as tokens;
+
+:host {
+  display: block;
+  width: 100%;
+  background-color: var(--hermes-bg-canvas);
+}
+
+.about-page {
+  padding: 40px 15px 80px;
+
+  @media (min-width: 1024px) {
+    padding: 80px 24px 120px;
+  }
+}
+
+.editorial-container {
+  max-width: 629px; // Largeur éditoriale ISO Hermès
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-family: var(--font-edito);
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 440;
+  text-align: center;
+  color: #000;
+  margin: 0 0 16px 0;
+
+  @media (min-width: 1024px) {
+    font-size: 44px;
+    line-height: 52px;
+  }
+}
+
+.chapo {
+  font-family: var(--font-edito);
+  font-style: italic;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  color: var(--hermes-text-secondary);
+  margin-bottom: 40px;
+
+  @media (min-width: 1024px) {
+    font-size: 22px;
+    line-height: 32px;
+    margin-bottom: 60px;
+  }
+}
+
+.section-label {
+  font-family: var(--font-secondary);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--hermes-text-secondary);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.section-heading {
+  font-family: var(--font-edito);
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 440;
+  color: #000;
+  margin: 0 0 16px 0;
+}
+
+.editorial-text {
+  font-family: var(--font-primary);
+  font-size: 15px;
+  line-height: 26px;
+  color: #222;
+  margin-bottom: 24px;
+}
+
+.pull-quote {
+  border-left: 2px solid #000;
+  padding: 12px 0 12px 24px;
+  margin: 40px 0;
+  font-family: var(--font-edito);
+  font-style: italic;
+  font-size: 20px;
+  line-height: 30px;
+  color: #000;
+
+  cite {
+    display: block;
+    font-family: var(--font-primary);
+    font-size: 11px;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--hermes-text-secondary);
+    margin-top: 12px;
+  }
+}
+
+.media-duo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 48px 0;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  figure {
+    margin: 0;
+
+    img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+    }
+
+    figcaption {
+      font-family: var(--font-primary);
+      font-size: 11px;
+      color: var(--hermes-text-secondary);
+      margin-top: 8px;
+    }
+  }
+}

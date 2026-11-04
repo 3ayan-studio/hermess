@@ -1,0 +1,125 @@
+// Design Tokens ISO Hermès — Extraits déterministes de _references/ et hermes.com
+:root {
+  // --- FAMILLES TYPOGRAPHIQUES HERMÈS ---
+  --font-primary: "Manrope", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-edito: "EBGaramond", "EB Garamond", "Bell MT", "Times New Roman", serif;
+  --font-secondary: "Overpass Mono", "Gill Sans MT", calibri, sans-serif;
+  --font-filosofia: "Filosofia", serif;
+  --font-akkurat: "Akkurat", serif;
+  --font-jungle-love: "Jungle-Regular", serif;
+  --font-brides-de-gala: "BridesdeGala-Regular", serif;
+  --font-mors-a-jouet: "Mors-Regular-Auto", serif;
+
+  // --- TAILLES DE POLICE HERMÈS (:root exact hermes.css) ---
+  --font-size-heading-xxl: 2.125rem;   // 34px
+  --font-size-heading-xl: 1.875rem;    // 30px
+  --font-size-heading-l: 1.625rem;     // 26px
+  --font-size-heading-m: 1.5rem;       // 24px
+  --font-size-heading-default: 1.375rem; // 22px
+  --font-size-heading-s: 1.25rem;      // 20px
+  --font-size-heading-xs: 1.125rem;    // 18px
+  --font-size-body-xl: 1rem;           // 16px
+  --font-size-body-l: .875rem;         // 14px
+  --font-size-body-m: .75rem;          // 12px
+  --font-size-body-default: .6875rem;  // 11px
+  --font-size-body-s: .625rem;         // 10px
+  --font-size-body-xs: .5rem;          // 8px
+
+  // --- GRAISSES DE POLICE HERMÈS ---
+  --font-weight-100: 100;
+  --font-weight-200: 200;
+  --font-weight-300: 300;
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+  --font-weight-800: 800;
+
+  // --- COULEURS EXACTES HERMÈS ---
+  --hermes-bg-canvas: #fcf7f1;        // rgb(252, 247, 241) : Fond principal iconique
+  --hermes-bg-panel: #fffcf7;         // Blanc crème chaud des cartes et overlay
+  --hermes-bg-secondary: #f6f1eb;     // rgb(246, 241, 235) : Footer & fonds secondaires
+  --hermes-border-light: #f6f1eb;
+  --hermes-border-hairline: rgb(246, 241, 235);
+  --hermes-border-subtle: #fcf7f1;
+
+  --hermes-text-primary: #000000;
+  --hermes-text-secondary: #696969;   // Gris neutre pour libellés et métadonnées
+  --hermes-text-disabled: #919191;
+
+  // --- BOUTONS HERMÈS ---
+  --button-backgound-color: rgb(255, 255, 255);
+  --button-border-radius: 0;
+  --button-height: 2.125rem;
+  --button-icon-size: 1rem;
+  --button-padding-inline: 1rem;
+  --hermes-btn-primary-bg: #000000;
+  --hermes-btn-primary-hover: #2e2d2d;
+  --hermes-btn-primary-text: #ffffff;
+  --hermes-btn-secondary-bg: #ffffff;
+  --hermes-btn-secondary-text: #000000;
+
+  // --- HEADER & MENU DIMENSIONS ---
+  --header-menu-top: 58px;
+  --header-height-desktop-with-menu: 110px;
+  --header-height-desktop: 64px;
+  --header-menu-height: 46px;
+  --header-height-mobile: 50px;
+  --header-height-desktop-with-skip-links: 91px;
+
+  // --- CARROUSEL, NAVIGATOR & SWIPER ---
+  --carousel-navigator-background-color: rgb(226, 216, 206); // #e2d8ce
+  --carousel-navigator-indicator-color: rgb(0, 0, 0);
+  --swiper-theme-color: #007aff;
+  --swiper-navigation-size: 44px;
+  --swiper-pagination-bullet-height: 5px;
+  --swiper-pagination-bullet-width: 5px;
+  --swiper-pagination-bullet-inactive-color: rgb(105, 105, 105);
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-preloader-color: #ffffff;
+
+  // --- GRILLES, BOX GROUP & COLUMNS ---
+  --columns: 6;
+  --gap-between-columns: 2px;
+  --box-group-desktop-columns: 6;
+  --box-group-mobile-columns: 6;
+  --box-group-gap: 8px 2px;
+  --start-space: 2px;
+  --category-max-height: 350px;
+  --category-min-height: 42px;
+  --focus-offset: -2px;
+
+  // --- MODAL & OVERLAY HERMÈS ---
+  --modal-close-background: rgb(232, 232, 237);
+  --modal-close-background-active: #dfdfe4;
+  --modal-close-background-hover: #ececf0;
+  --modal-close-border-radius: 50%;
+  --modal-close-button-offset-inline-start: 16px;
+  --modal-close-button-offset-top: 16px;
+  --modal-close-button-position: static;
+  --modal-close-button-size: 44px;
+  --modal-close-color: rgba(0, 0, 0, 0.56);
+  --modal-close-color-hover: rgba(0, 0, 0, 0.72);
+  --modal-close-icon-size: 36px;
+  --modal-close-icon-svg-size: 20px;
+  --modal-overlay-background: rgb(255, 255, 255);
+  --modal-overlay-border-radius-top: 18px;
+  --modal-overlay-border-radius-bottom: var(--modal-overlay-border-radius-top);
+  --modal-overlay-margin-top: 40px;
+  --modal-overlay-margin-bottom: var(--modal-overlay-margin-top);
+  --modal-overlay-padding-top: 76px;
+  --modal-overlay-padding-inline: 76px;
+  --modal-overlay-padding-bottom: 76px;
+  --modal-overlay-width: 816.6666666667px;
+  --modal-scrim-background: rgba(0, 0, 0, 0.48);
+
+  // --- INDICATEURS & OMBRES ---
+  --progress-indicator-color: rgba(0, 0, 0, 0.56);
+  --progress-indicator-size: 40px;
+  --shadow-color: rgb(0, 0, 0);
+  --scroll-y: 0px;
+
+  // --- EASINGS HERMÈS ---
+  --ease-hermes-quart: cubic-bezier(.165, .84, .44, 1);
+  --ease-hermes-cubic: cubic-bezier(.215, .61, .355, 1);
+}

@@ -1,0 +1,279 @@
+// Typography rules & @font-face ISO Hermès
+
+// 1. Déclarations exactes des polices variables Hermès hébergées localement
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/manrope-variable.woff2') format('woff2-variations'),
+       url('/assets/fonts/manrope-variable.woff2') format('woff2-variations');
+  font-display: swap;
+  font-weight: 200 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'EBGaramond';
+  src: url('/fonts/ebgaramond-variable.woff2') format('woff2-variations'),
+       url('/assets/fonts/ebgaramond-variable.woff2') format('woff2-variations');
+  font-display: swap;
+  font-weight: 400 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'EBGaramond';
+  src: url('/fonts/ebgaramond-italic-variable.woff2') format('woff2-variations'),
+       url('/assets/fonts/ebgaramond-italic-variable.woff2') format('woff2-variations');
+  font-display: swap;
+  font-weight: 400 800;
+  font-style: italic;
+}
+
+// Alias pour compatibilité Google Fonts / EB Garamond avec espace
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/fonts/ebgaramond-variable.woff2') format('woff2-variations'),
+       url('/assets/fonts/ebgaramond-variable.woff2') format('woff2-variations');
+  font-display: swap;
+  font-weight: 400 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/fonts/ebgaramond-italic-variable.woff2') format('woff2-variations'),
+       url('/assets/fonts/ebgaramond-italic-variable.woff2') format('woff2-variations');
+  font-display: swap;
+  font-weight: 400 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Overpass Mono';
+  src: url('/fonts/overpassmono-variable.woff2') format('woff2-variations'),
+       url('/assets/fonts/overpassmono-variable.woff2') format('woff2-variations');
+  font-display: swap;
+  font-weight: 300 700;
+  font-style: normal;
+  ascent-override: 100%;
+}
+
+// 2. Règles fondamentales HTML / Body ISO Hermès
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+  background-color: var(--hermes-bg-canvas);
+  font-family: var(--font-primary);
+  color: var(--hermes-text-primary);
+  font-size: 75%; // 12px de base ISO Hermès
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// 3. Balises H1-H5 & Classes .heading-1 à 5 ISO Hermès (Overpass Mono, Uppercase, Poids 300)
+h1, .heading-1 {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-heading-m); // 24px
+  line-height: 34px;
+  font-weight: var(--font-weight-300);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+h2, .heading-2 {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-heading-s); // 20px
+  line-height: 28px;
+  font-weight: var(--font-weight-300);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+h3, .heading-3 {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-body-xl); // 16px
+  line-height: 24px;
+  font-weight: var(--font-weight-300);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+h4, .heading-4 {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-body-l); // 14px
+  line-height: 22px;
+  font-weight: var(--font-weight-300);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+h5, .heading-5 {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-body-m); // 12px
+  line-height: 18px;
+  font-weight: var(--font-weight-300);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+// 4. Typographie éditoriale Hermès (Prend la priorité absolue sur les balises h1-h5)
+.edito-1, h1.edito-1, h2.edito-1, h3.edito-1 {
+  font-family: var(--font-edito) !important;
+  font-size: var(--font-size-heading-xxl); // 34px
+  line-height: normal;
+  font-style: italic;
+  letter-spacing: 0;
+  font-weight: 440;
+  text-transform: none !important;
+}
+
+.edito-2, h2.edito-2, h3.edito-2 {
+  font-family: var(--font-edito) !important;
+  font-size: var(--font-size-heading-xl); // 30px
+  line-height: normal;
+  font-style: italic;
+  letter-spacing: 0;
+  font-weight: var(--font-weight-400);
+  text-transform: none !important;
+}
+
+.edito-subtitle {
+  font-family: var(--font-edito) !important;
+  font-size: var(--font-size-heading-s); // 20px
+  line-height: normal;
+  font-style: italic;
+  letter-spacing: 0;
+  font-weight: var(--font-weight-400);
+  text-transform: none !important;
+}
+
+.edito-text {
+  font-family: var(--font-edito) !important;
+  font-size: var(--font-size-body-xl); // 16px
+  line-height: normal;
+  letter-spacing: 0;
+  font-weight: var(--font-weight-400);
+  text-transform: none !important;
+}
+
+// 5. Titres Headline (Manrope, Initial case)
+.headline-1 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-heading-m);
+  line-height: 34px;
+  font-weight: var(--font-weight-400);
+  letter-spacing: 0;
+  text-transform: initial;
+}
+
+.headline-3 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-body-xl);
+  line-height: 24px;
+  font-weight: var(--font-weight-400);
+  letter-spacing: 0;
+  text-transform: initial;
+}
+
+.headline-5 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-body-l);
+  line-height: 22px;
+  font-weight: var(--font-weight-400);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+// 6. Labels & Étiquettes de boutons / navigation
+.label-medium {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-body-m); // 12px
+  line-height: 16px;
+  letter-spacing: 0;
+  font-weight: var(--font-weight-500);
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+.label-small {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-body-s); // 10px
+  line-height: 14px;
+  letter-spacing: 0;
+  font-weight: var(--font-weight-500);
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+.label-menu-nav {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-body-s); // 10px
+  line-height: 14px;
+  letter-spacing: 1px;
+  font-weight: var(--font-weight-700);
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+// 7. Paragraphes de texte
+p, .paragraph {
+  font-family: var(--font-primary);
+  letter-spacing: normal;
+  margin: 0;
+}
+
+.paragraph-medium {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-body-l); // 14px
+  line-height: 22px;
+  font-weight: var(--font-weight-400);
+  letter-spacing: 0;
+  text-transform: inherit;
+}
+
+.paragraph-small {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-body-m); // 12px
+  line-height: 20px;
+  font-weight: var(--font-weight-400);
+  letter-spacing: 0;
+  text-transform: inherit;
+}
+
+.paragraph-xsmall {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-body-default); // 11px
+  line-height: 18px;
+  font-weight: var(--font-weight-400);
+  letter-spacing: 0;
+  text-transform: inherit;
+}
+
+// 8. Liens éditoriaux soulignés
+.editorial-link {
+  font-family: var(--font-secondary);
+  font-style: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
+  padding-block-end: 0;
+  border-block-end: 1px solid rgb(0, 0, 0);
+  font-size: var(--font-size-body-default);
+  letter-spacing: 0;
+  line-height: 16px;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-block-end: 1px solid transparent;
+  }
+}

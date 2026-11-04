@@ -1,0 +1,168 @@
+@use 'styles/tokens';
+@use 'styles/typography';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Critical Reset pour position: sticky (interdiction d'overflow: hidden sur les conteneurs racines) */
+html {
+  scrollbar-gutter: stable;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background-color: var(--hermes-bg-canvas);
+  color: var(--hermes-text-primary);
+  overflow-x: clip; // 'clip' prévient le débordement horizontal sans bloquer position: sticky (contrairement à hidden)
+
+  &.page-white-bg {
+    background-color: #ffffff;
+  }
+}
+
+app-root {
+  display: block;
+  min-height: 100vh;
+}
+
+/* Boutons ISO Hermès (Reprise exacte des classes du design system Hermès) */
+.button {
+  --button-icon-size: 1rem;
+  --button-height: 2.125rem;
+  --button-padding-inline: 1rem;
+  --button-border-radius: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: 0.15s background-color ease, 0.15s color ease, 0.15s border-color ease, 0.3s width ease;
+  position: relative;
+  border: none;
+  background: transparent;
+  text-decoration: none;
+  font-family: var(--font-primary);
+  font-size: 12px;
+  line-height: 13.8px;
+
+  &:focus-visible {
+    opacity: 1;
+    outline: none;
+    &:after {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border-radius: calc(var(--button-border-radius) + 4px);
+      outline-offset: -3px;
+      pointer-events: none;
+      outline: 1px solid rgb(0, 0, 0);
+      border: 2px solid rgb(255, 255, 255);
+    }
+  }
+
+  &[disabled] {
+    cursor: default;
+    background-color: var(--hermes-text-disabled);
+  }
+
+  .button-label {
+    display: inline;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.button-variant-filled {
+  &.button-color-primary {
+    background-color: #000;
+    color: #fff;
+    &:hover:not([disabled]) {
+      background-color: #2e2d2d;
+    }
+  }
+
+  &.button-color-secondary {
+    background-color: #fff;
+    color: #000;
+    &:hover:not([disabled]) {
+      color: #2e2d2d;
+    }
+  }
+}
+
+.button-radius-small {
+  --button-border-radius: 0.125rem; // 2px
+  border-radius: var(--button-border-radius);
+}
+
+.button-size-medium {
+  --button-icon-size: 1.5rem;
+  --button-height: 3rem; // 48px
+  --button-padding-inline: 32px;
+  padding: 8px var(--button-padding-inline);
+  block-size: var(--button-height);
+}
+
+.button-layout-full {
+  inline-size: 100%;
+}
+
+.button-layout-hug {
+  inline-size: max-content;
+}
+
+/* Bouton Pill superposé sur carrousel & visuels (ISO Hermès) */
+.editorial-cta {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s var(--ease-hermes-quart);
+  z-index: 5;
+
+  @media (min-width: 1024px) {
+    bottom: 32px;
+  }
+
+  &.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* Indicateur de défilement (Navigator ISO Hermès) */
+.navigator {
+  display: block;
+  inline-size: 120px;
+  block-size: 1px;
+  background-color: var(--carousel-navigator-background-color);
+  margin: 0 auto;
+  position: relative;
+
+  .indicator {
+    display: block;
+    block-size: 100%;
+    background: var(--carousel-navigator-indicator-color);
+    transition: margin-left 0.4s var(--ease-hermes-quart), width 0.4s var(--ease-hermes-quart);
+  }
+}
+
+/* Utilitaires d'accessibilité Hermès */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

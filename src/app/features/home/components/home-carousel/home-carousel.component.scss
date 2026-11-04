@@ -1,0 +1,314 @@
+@use 'styles/tokens' as tokens;
+
+:host {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--hermes-bg-canvas, #fcf7f1);
+}
+
+.home-carousel-section {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--hermes-bg-canvas, #fcf7f1);
+}
+
+// En-tête éditorial Hermès
+.block-text {
+  text-align: center;
+  position: relative;
+  padding: 24px 15px;
+
+  @media (min-width: 1024px) {
+    padding: 40px 0;
+    margin: 0 auto;
+    max-width: 629px;
+  }
+
+  .text {
+    margin: 0;
+  }
+
+  .edito-1 {
+    font-family: var(--font-edito, serif);
+    font-size: var(--font-size-heading-xxl, 2.125rem);
+    line-height: normal;
+    font-style: italic;
+    font-weight: 440;
+    letter-spacing: 0;
+    color: #000000;
+    margin: 0;
+    text-transform: none;
+  }
+}
+
+// Swiper container ISO Hermès
+.swiper-container {
+  display: block;
+  overflow: hidden;
+  inline-size: 100%;
+  width: 100%;
+  block-size: 98vi; // 98vw sur mobile
+  height: 98vw;
+  min-block-size: 229px;
+  min-height: 229px;
+  position: relative;
+  user-select: none;
+  touch-action: pan-y;
+
+  @media (min-width: 1024px) {
+    block-size: 35vi; // 35vw sur desktop
+    height: 35vw;
+    min-block-size: unset;
+    min-height: unset;
+  }
+}
+
+// Track contenant tous les slides
+.swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+  gap: 4px;
+  will-change: transform;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+
+  @media (min-width: 1024px) {
+    gap: 4px;
+  }
+
+  &.no-transition,
+  &.no-transition .swiper-slide,
+  &.no-transition .panel-slide-container,
+  &.no-transition .panel-slide-container::after,
+  &.no-transition .media-wrapper,
+  &.no-transition .full-parent,
+  &.no-transition .editorial-cta {
+    transition: none !important;
+  }
+}
+
+// Slide individuel ISO Hermès
+.swiper-slide {
+  flex: 0 0 auto;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-sizing: border-box;
+
+  // Largeur inactive Mobile : (26.66% - 2 * gap(4px)) / 2 = (26.66% - 8px) / 2
+  inline-size: calc((26.66% - 8px) / 2);
+  width: calc((26.66% - 8px) / 2);
+  transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              inline-size 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+
+  // Largeur inactive Desktop : (38.66% - 4 * gap(4px)) / 4 = (38.66% - 16px) / 4
+  @media (min-width: 1024px) {
+    inline-size: calc((38.66% - 16px) / 4);
+    width: calc((38.66% - 16px) / 4);
+  }
+
+  // Slide Actif ISO Hermès
+  &.swiper-slide-active,
+  &.is-active-slide {
+    inline-size: 73.34% !important;
+    width: 73.34% !important;
+    z-index: 5;
+
+    @media (min-width: 1024px) {
+      inline-size: 61.34% !important;
+      width: 61.34% !important;
+    }
+
+    &:focus-within:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      outline: 2px solid rgb(0, 0, 0);
+      outline-offset: -2px;
+    }
+  }
+}
+
+// Conteneur d'image avec ratios, vignetage sombre adouci et animation de zoom au hover ISO Hermès
+.panel-slide-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--hermes-bg-secondary, #f6f1eb);
+  transition: transform 0.6s ease;
+
+  // Effet de vignetage sombre subtil et progressif sur les cellules inactives
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0) 25%,
+      rgba(0, 0, 0, 0.1) 60%,
+      rgba(0, 0, 0, 0.28) 85%,
+      rgba(0, 0, 0, 0.42) 100%
+    );
+    box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    transition: opacity 0.4s ease;
+    z-index: 3;
+  }
+
+  // Vignetage sur la cellule active : 2 fois moins fort que sur les cellules inactives (opacity: 0.5)
+  .swiper-slide.is-active-slide &,
+  .swiper-slide.swiper-slide-active & {
+    &::after {
+      opacity: 0.5;
+    }
+  }
+
+  // RÈGLE ISO HERMÈS : Zoom au survol et adoucissement du vignetage au hover sur les slides inactifs (Desktop, avant le clic)
+  @media (min-width: 1024px) {
+    .swiper-slide:not(.is-active-slide):hover & {
+      transform: scale(1.05);
+      z-index: 10;
+
+      &::after {
+        opacity: 0.65;
+      }
+    }
+  }
+}
+
+.h-stop-bouncing-slide,
+.media-cta {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+}
+
+// Media wrapper : fixé à la largeur du slide actif ISO Hermès
+// Évite que l'image ne paraisse "reculée" en état inactif ou ne zoome lors du clic d'activation.
+.media-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--active-slide-width, 73.34vw);
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+
+  @media (min-width: 1024px) {
+    width: var(--active-slide-width, 61.34vw);
+  }
+}
+
+.media-link,
+.media-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+}
+
+.media-link {
+  display: block;
+  outline: none;
+}
+
+// Image plein conteneur sans zoom sur la cellule active
+.full-parent {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  pointer-events: none;
+}
+
+// Bouton Pill Hermès superposé
+.editorial-cta {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 4;
+  white-space: nowrap;
+
+  @media (min-width: 1024px) {
+    bottom: 32px;
+  }
+
+  &.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.125rem; // 34px
+  padding: 0 1.25rem; // 20px
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 0.125rem; // 2px exact Hermès .button-radius-small
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    background-color: #fafafa;
+    color: #2e2d2d;
+  }
+}
+
+.button-label {
+  font-family: var(--font-secondary, monospace);
+  font-size: var(--font-size-body-m, 0.75rem); // 12px
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+// Navigateur discret ISO Hermès (barre de 120px x 1px)
+.carousel-navigator {
+  display: block;
+  margin: 24px 0;
+
+  @media (min-width: 1024px) {
+    margin: 32px 0;
+  }
+}
+
+.navigator {
+  display: block;
+  width: 120px;
+  height: 1px;
+  background-color: rgb(226, 216, 206);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.navigator .indicator {
+  display: block;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  transition: margin-left 0.35s ease, width 0.35s ease;
+}

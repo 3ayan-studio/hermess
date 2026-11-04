@@ -1,0 +1,88 @@
+:host {
+  display: contents;
+}
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  right: calc(20px + env(safe-area-inset-right, 0px));
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  padding: 0;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 0.125rem; // 2px Hermès button-radius-small
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  z-index: 50;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.25s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.25s cubic-bezier(0.25, 1, 0.5, 1),
+              background-color 0.15s ease,
+              color 0.15s ease,
+              box-shadow 0.15s ease;
+
+  @media (min-width: 1024px) {
+    bottom: calc(32px + env(safe-area-inset-bottom, 0px));
+    right: calc(32px + env(safe-area-inset-right, 0px));
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  &:hover {
+    background-color: #fafafa;
+    color: #2e2d2d;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+
+    .arrow-icon {
+      transform: translateY(-2px);
+    }
+  }
+
+  &:active {
+    transform: translateY(0) scale(0.96);
+    background-color: #f5f2ed;
+  }
+
+  &:focus-visible {
+    outline: none;
+    &::after {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border-radius: calc(0.125rem + 4px);
+      outline-offset: -3px;
+      pointer-events: none;
+      outline: 1px solid rgb(0, 0, 0);
+      border: 2px solid rgb(255, 255, 255);
+    }
+  }
+
+  .arrow-icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+}
+
