@@ -1,7 +1,7 @@
 import { TranscriptSegment } from '../models/transcript.model';
 
 /**
- * Recherche haute performance du segment actif pour des transcripts d'interview de 20 min à 2h
+ * Recherche haute performance du segment actif pour des transcripts d'échange de 20 min à 2h
  * (1 500 à 2 500 segments) à 60 fps constants.
  *
  * Algorithme hybride :

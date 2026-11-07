@@ -57,128 +57,8 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
               </div>
             </div>
 
-            <!-- Droite : Actions (Audio en direct & Lien À Propos) -->
-            <div class="header-bar-icons header-bar-right">
-              @if (audioService.currentCarre(); as activeCarre) {
-                <div
-                  class="audio-pill-indicator"
-                  [class.is-playing]="audioService.isPlaying()"
-                  [class.is-paused]="!audioService.isPlaying()"
-                  [class.is-collapsed]="!isMobileAudioExpanded()"
-                  [class.is-expanded]="isMobileAudioExpanded()"
-                  (click)="onPillClick()"
-                  role="region"
-                  aria-label="Lecteur audio en arrière-plan"
-                >
-                  <!-- Onde sonore animée Hermès (centrée dans le bouton rond quand replié) -->
-                  <div
-                    class="audio-pill-equalizer"
-                    [class.is-playing]="audioService.isPlaying()"
-                    [class.paused]="!audioService.isPlaying()"
-                    aria-hidden="true"
-                    title="Onde sonore"
-                  >
-                    <span class="eq-bar bar-1"></span>
-                    <span class="eq-bar bar-2"></span>
-                    <span class="eq-bar bar-3"></span>
-                    <span class="eq-bar bar-4"></span>
-                  </div>
-
-                  <!-- Contenu de la pill dans le header (déployé en ligne) -->
-                  <div class="audio-pill-body">
-                    <!-- Groupe des 3 contrôles côte à côte : Lecture/Pause, Mute, Arrêt -->
-                    <div class="audio-pill-controls">
-                      <!-- 1. Bouton Lecture / Pause -->
-                      <button
-                        type="button"
-                        class="audio-pill-toggle-btn audio-pill-ctrl-btn"
-                        (click)="$event.stopPropagation(); audioService.togglePlay()"
-                        [attr.aria-label]="audioService.isPlaying() ? 'Mettre en pause' : 'Reprendre la lecture'"
-                        [title]="audioService.isPlaying() ? 'Mettre en pause' : 'Reprendre la lecture'"
-                      >
-                        @if (audioService.isPlaying()) {
-                          <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true">
-                            <line x1="4.5" y1="2.5" x2="4.5" y2="11.5"></line>
-                            <line x1="9.5" y1="2.5" x2="9.5" y2="11.5"></line>
-                          </svg>
-                        } @else {
-                          <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" class="play-icon" aria-hidden="true">
-                            <path d="M3.5 11.67V2.33L10.5 7L3.5 11.67Z"></path>
-                          </svg>
-                        }
-                      </button>
-
-                      <!-- 2. Bouton Mute -->
-                      <button
-                        type="button"
-                        class="audio-pill-mute-btn audio-pill-ctrl-btn"
-                        [class.is-muted]="audioService.isMuted()"
-                        (click)="$event.stopPropagation(); audioService.toggleMute()"
-                        [attr.aria-label]="audioService.isMuted() ? 'Rétablir le son' : 'Couper le son'"
-                        [title]="audioService.isMuted() ? 'Rétablir le son' : 'Couper le son'"
-                      >
-                        @if (audioService.isMuted()) {
-                          <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="M2.5 4.5H1.2C0.8 4.5 0.5 4.8 0.5 5.2V8.8C0.5 9.2 0.8 9.5 1.2 9.5H2.5L5 11.8C5.5 12.2 6.3 11.8 6.3 11.1V2.9C6.3 2.2 5.5 1.8 5 2.2L2.5 4.5Z"></path>
-                            <line x1="8.5" y1="5" x2="12" y2="9"></line>
-                            <line x1="12" y1="5" x2="8.5" y2="9"></line>
-                          </svg>
-                        } @else {
-                          <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="M2.5 4.5H1.2C0.8 4.5 0.5 4.8 0.5 5.2V8.8C0.5 9.2 0.8 9.5 1.2 9.5H2.5L5 11.8C5.5 12.2 6.3 11.8 6.3 11.1V2.9C6.3 2.2 5.5 1.8 5 2.2L2.5 4.5Z"></path>
-                            <path d="M8.5 4.5C9.2 5.2 9.5 6.1 9.5 7C9.5 7.9 9.2 8.8 8.5 9.5"></path>
-                            <path d="M10.5 3C11.5 4.1 12 5.5 12 7C12 8.5 11.5 9.9 10.5 11"></path>
-                          </svg>
-                        }
-                      </button>
-
-                      <!-- 3. Bouton Arrêt (carré stop remplaçant la croix) -->
-                      <button
-                        type="button"
-                        class="audio-pill-stop-btn audio-pill-close-btn audio-pill-ctrl-btn"
-                        (click)="$event.stopPropagation(); closePlayerAndCollapse()"
-                        title="Arrêter la lecture"
-                        aria-label="Arrêter la lecture"
-                      >
-                        <svg width="11" height="11" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
-                          <rect x="3" y="3" width="8" height="8"></rect>
-                        </svg>
-                      </button>
-                    </div>
-
-                    <!-- Séparateur vertical -->
-                    <span class="audio-pill-divider" aria-hidden="true"></span>
-
-                    <!-- Métadonnées de l'œuvre (Titre cliquable & Horodatage) -->
-                    <div class="audio-pill-track-info">
-                      <a
-                        [routerLink]="['/carre', activeCarre.slug]"
-                        (click)="closeMobileAudio()"
-                        class="audio-title-link"
-                        [title]="'Aller au carré ' + activeCarre.title"
-                      >
-                        <span class="audio-title">{{ activeCarre.title }}</span>
-                      </a>
-
-                      <div class="audio-pill-timers">
-                        <span class="audio-time">{{ audioService.formattedCurrentTime() }}</span>
-                        <span class="audio-time-sep" aria-hidden="true">/</span>
-                        <span class="audio-time-total">{{ audioService.formattedDuration() }}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Backdrop transparent mobile pour refermer si clic en dehors -->
-                @if (isMobileAudioExpanded()) {
-                  <div
-                    class="mobile-audio-backdrop"
-                    (click)="closeMobileAudio()"
-                    aria-hidden="true"
-                  ></div>
-                }
-              }
-            </div>
+            <!-- Droite : Actions (Zone préservée pour alignement flex) -->
+            <div class="header-bar-icons header-bar-right"></div>
           </div>
         </div>
 
@@ -245,7 +125,7 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
               <!-- 2. Texte de l'exposition -->
               <li class="item">
                 <a
-                  routerLink="/texte-oeuvre"
+                  routerLink="/her-story-her-mess"
                   class="category-link label-menu-nav"
                   (mouseenter)="onButtonMouseEnter()"
                   (mouseleave)="onButtonMouseLeave()"
@@ -254,7 +134,7 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
                 </a>
               </li>
 
-              <!-- 3. À Propos (en dernière position) -->
+              <!-- 3. À PROPOS (en dernière position) -->
               <li class="item">
                 <a
                   routerLink="/a-propos"
@@ -262,13 +142,142 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
                   (mouseenter)="onButtonMouseEnter()"
                   (mouseleave)="onButtonMouseLeave()"
                 >
-                  <span>À Propos</span>
+                  <span>À PROPOS</span>
                 </a>
               </li>
             </ul>
           </nav>
         </div>
       </div>
+
+      <!-- Module Audio Flottant ("en absolute par dessus tout le site" - ISO Hermès) -->
+      @if (audioService.currentCarre(); as activeCarre) {
+        <div
+          class="header-floating-player"
+          [class.is-hidden]="audioService.isExchangePlayerInViewport()"
+          [class.is-scrolled]="isScrolled()"
+          [class.is-menu-open]="isMenuOpen()"
+          [class.audio-expanded]="isMobileAudioExpanded()"
+        >
+          <div
+            class="audio-pill-indicator"
+            [class.is-playing]="audioService.isPlaying()"
+            [class.is-paused]="!audioService.isPlaying()"
+            [class.is-collapsed]="!isMobileAudioExpanded()"
+            [class.is-expanded]="isMobileAudioExpanded()"
+            (click)="onPillClick()"
+            role="region"
+            aria-label="Lecteur audio en arrière-plan"
+          >
+            <!-- Onde sonore animée Hermès (centrée dans le bouton rond quand replié) -->
+            <div
+              class="audio-pill-equalizer"
+              [class.is-playing]="audioService.isPlaying()"
+              [class.paused]="!audioService.isPlaying()"
+              aria-hidden="true"
+              title="Onde sonore"
+            >
+              <span class="eq-bar bar-1"></span>
+              <span class="eq-bar bar-2"></span>
+              <span class="eq-bar bar-3"></span>
+              <span class="eq-bar bar-4"></span>
+            </div>
+
+            <!-- Contenu de la pill dans le header (déployé en ligne) -->
+            <div class="audio-pill-body">
+              <!-- Groupe des 3 contrôles côte à côte : Lecture/Pause, Mute, Arrêt -->
+              <div class="audio-pill-controls">
+                <!-- 1. Bouton Lecture / Pause -->
+                <button
+                  type="button"
+                  class="audio-pill-toggle-btn audio-pill-ctrl-btn"
+                  (click)="$event.stopPropagation(); audioService.togglePlay()"
+                  [attr.aria-label]="audioService.isPlaying() ? 'Mettre en pause' : 'Reprendre la lecture'"
+                  [title]="audioService.isPlaying() ? 'Mettre en pause' : 'Reprendre la lecture'"
+                >
+                  @if (audioService.isPlaying()) {
+                    <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="butt" aria-hidden="true">
+                      <line x1="4.5" y1="2.5" x2="4.5" y2="11.5"></line>
+                      <line x1="9.5" y1="2.5" x2="9.5" y2="11.5"></line>
+                    </svg>
+                  } @else {
+                    <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="miter" class="play-icon" aria-hidden="true">
+                      <path d="M3.5 11.67V2.33L10.5 7L3.5 11.67Z"></path>
+                    </svg>
+                  }
+                </button>
+
+                <!-- 2. Bouton Mute -->
+                <button
+                  type="button"
+                  class="audio-pill-mute-btn audio-pill-ctrl-btn"
+                  [class.is-muted]="audioService.isMuted()"
+                  (click)="$event.stopPropagation(); audioService.toggleMute()"
+                  [attr.aria-label]="audioService.isMuted() ? 'Rétablir le son' : 'Couper le son'"
+                  [title]="audioService.isMuted() ? 'Rétablir le son' : 'Couper le son'"
+                >
+                  @if (audioService.isMuted()) {
+                    <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true">
+                      <path d="M2.5 4.5H1.2C0.8 4.5 0.5 4.8 0.5 5.2V8.8C0.5 9.2 0.8 9.5 1.2 9.5H2.5L5 11.8C5.5 12.2 6.3 11.8 6.3 11.1V2.9C6.3 2.2 5.5 1.8 5 2.2L2.5 4.5Z"></path>
+                      <line x1="8.5" y1="5" x2="12" y2="9"></line>
+                      <line x1="12" y1="5" x2="8.5" y2="9"></line>
+                    </svg>
+                  } @else {
+                    <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true">
+                      <path d="M2.5 4.5H1.2C0.8 4.5 0.5 4.8 0.5 5.2V8.8C0.5 9.2 0.8 9.5 1.2 9.5H2.5L5 11.8C5.5 12.2 6.3 11.8 6.3 11.1V2.9C6.3 2.2 5.5 1.8 5 2.2L2.5 4.5Z"></path>
+                      <path d="M8.5 4.5C9.2 5.2 9.5 6.1 9.5 7C9.5 7.9 9.2 8.8 8.5 9.5"></path>
+                      <path d="M10.5 3C11.5 4.1 12 5.5 12 7C12 8.5 11.5 9.9 10.5 11"></path>
+                    </svg>
+                  }
+                </button>
+
+                <!-- 3. Bouton Arrêt (carré stop remplaçant la croix) -->
+                <button
+                  type="button"
+                  class="audio-pill-stop-btn audio-pill-close-btn audio-pill-ctrl-btn"
+                  (click)="$event.stopPropagation(); closePlayerAndCollapse()"
+                  title="Arrêter la lecture"
+                  aria-label="Arrêter la lecture"
+                >
+                  <svg width="11" height="11" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+                    <rect x="3" y="3" width="8" height="8"></rect>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Séparateur vertical -->
+              <span class="audio-pill-divider" aria-hidden="true"></span>
+
+              <!-- Métadonnées de l'œuvre (Titre cliquable & Horodatage) -->
+              <div class="audio-pill-track-info">
+                <a
+                  [routerLink]="['/carre', activeCarre.slug]"
+                  (click)="closeMobileAudio()"
+                  class="audio-title-link"
+                  [title]="'Aller au carré ' + activeCarre.title"
+                >
+                  <span class="audio-title">{{ activeCarre.title }}</span>
+                </a>
+
+                <div class="audio-pill-timers">
+                  <span class="audio-time">{{ audioService.formattedCurrentTime() }}</span>
+                  <span class="audio-time-sep" aria-hidden="true">/</span>
+                  <span class="audio-time-total">{{ audioService.formattedDuration() }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backdrop transparent mobile pour refermer si clic en dehors -->
+          @if (isMobileAudioExpanded()) {
+            <div
+              class="mobile-audio-backdrop"
+              (click)="closeMobileAudio()"
+              aria-hidden="true"
+            ></div>
+          }
+        </div>
+      }
 
       <!-- Mobile Navigation Drawer / Tray (Uniquement Mobile, Plein Écran ISO Hermès) -->
       <div
@@ -362,7 +371,7 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
                 <!-- 2. Texte de l'exposition -->
                 <li class="tray-nav-item">
                   <a
-                    routerLink="/texte-oeuvre"
+                    routerLink="/her-story-her-mess"
                     (click)="closeMenu()"
                     class="tray-link"
                   >
@@ -370,20 +379,20 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
                   </a>
                 </li>
 
-                <!-- 3. À Propos (en dernier) -->
+                <!-- 3. À PROPOS (en dernier) -->
                 <li class="tray-nav-item">
                   <a
                     routerLink="/a-propos"
                     (click)="closeMenu()"
                     class="tray-link"
                   >
-                    <span>À Propos</span>
+                    <span>À PROPOS</span>
                   </a>
                 </li>
               </ul>
 
               @if (audioService.currentCarre(); as carre) {
-                <div class="tray-audio-player" role="region" aria-label="Lecteur audio de l'interview">
+                <div class="tray-audio-player" role="region" aria-label="Lecteur audio de l'échange">
                   <!-- Ligne Titre avec LED d'activité intégrée -->
                   <div class="tray-audio-title-row">
                     <span
@@ -434,13 +443,13 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
                       [title]="audioService.isPlaying() ? 'Mettre en pause' : 'Lancer la lecture'"
                     >
                       @if (audioService.isPlaying()) {
-                        <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true">
+                        <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="butt" aria-hidden="true">
                           <line x1="4.5" y1="2.5" x2="4.5" y2="11.5"></line>
                           <line x1="9.5" y1="2.5" x2="9.5" y2="11.5"></line>
                         </svg>
                         <span class="ctrl-label">Pause</span>
                       } @else {
-                        <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" class="play-icon-offset" aria-hidden="true">
+                        <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="miter" class="play-icon-offset" aria-hidden="true">
                           <path d="M3.5 11.67V2.33L10.5 7L3.5 11.67Z"></path>
                         </svg>
                         <span class="ctrl-label">Lecture</span>
@@ -457,14 +466,14 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
                       [attr.aria-label]="audioService.isMuted() ? 'Rétablir le son' : 'Couper le son'"
                     >
                       @if (audioService.isMuted()) {
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true">
                           <path d="M2.5 4.5H1.2C0.8 4.5 0.5 4.8 0.5 5.2V8.8C0.5 9.2 0.8 9.5 1.2 9.5H2.5L5 11.8C5.5 12.2 6.3 11.8 6.3 11.1V2.9C6.3 2.2 5.5 1.8 5 2.2L2.5 4.5Z"></path>
                           <line x1="8.5" y1="5" x2="12" y2="9"></line>
                           <line x1="12" y1="5" x2="8.5" y2="9"></line>
                         </svg>
                         <span class="ctrl-label">Muet</span>
                       } @else {
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true">
                           <path d="M2.5 4.5H1.2C0.8 4.5 0.5 4.8 0.5 5.2V8.8C0.5 9.2 0.8 9.5 1.2 9.5H2.5L5 11.8C5.5 12.2 6.3 11.8 6.3 11.1V2.9C6.3 2.2 5.5 1.8 5 2.2L2.5 4.5Z"></path>
                           <path d="M8.5 4.5C9.2 5.2 9.5 6.1 9.5 7C9.5 7.9 9.2 8.8 8.5 9.5"></path>
                           <path d="M10.5 3C11.5 4.1 12 5.5 12 7C12 8.5 11.5 9.9 10.5 11"></path>
@@ -509,7 +518,13 @@ export class HeaderComponent {
 
     readonly isHeaderWhite = computed(() => {
         const url = this.currentUrl();
-        const isArtworkTextRoute = url === '/texte-oeuvre' || url === '/texte' || url.startsWith('/texte-oeuvre') || url.startsWith('/texte');
+        const isArtworkTextRoute =
+            url === '/her-story-her-mess' ||
+            url.startsWith('/her-story-her-mess') ||
+            url === '/texte-oeuvre' ||
+            url === '/texte' ||
+            url.startsWith('/texte-oeuvre') ||
+            url.startsWith('/texte');
         return this.isButtonHovered() || this.isSubMenuOpen() || isArtworkTextRoute;
     });
 

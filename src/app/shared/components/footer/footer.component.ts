@@ -29,10 +29,19 @@ import { RouterLink } from '@angular/router';
                 © Hermess 2026. Exposition d'Art — Carrés &amp; Entretiens. Tous droits réservés.
               </p>
             </div>
-            <div class="sub-footer-links">
-              <a routerLink="/a-propos" class="legal-link paragraph-xsmall">Démarche curatoriale</a>
-              <a routerLink="/texte-oeuvre" class="legal-link paragraph-xsmall">Texte de l'œuvre</a>
-              <a routerLink="/" class="legal-link paragraph-xsmall">Accueil de l'exposition</a>
+            <div class="sub-footer-social">
+              <a
+                href="https://www.instagram.com/fatimamarwazouzal/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-social-link"
+                aria-label="Instagram de l'artiste @fatimamarwazouzal (nouvelle fenêtre)"
+              >
+                <svg class="icon-instagram" viewBox="0 0 512 512" role="presentation" focusable="false" aria-hidden="true">
+                  <use href="assets/icons/hermes-symbols.svg#ng__instagram"></use>
+                </svg>
+                <span class="social-handle">&#64;fatimamarwazouzal</span>
+              </a>
             </div>
           </div>
         </div>

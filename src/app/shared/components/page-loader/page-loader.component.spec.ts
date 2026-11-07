@@ -28,7 +28,16 @@ describe('PageLoaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should render overlay when loading initially on boot', () => {
+    const overlay = fixture.nativeElement.querySelector('.notification-overlay');
+    expect(overlay).not.toBeNull();
+    expect(overlay.classList.contains('opaque')).toBe(true);
+  });
+
   it('should not render overlay when not loading', () => {
+    loadingService.stopLoader();
+    fixture.detectChanges();
+
     const overlay = fixture.nativeElement.querySelector('.notification-overlay');
     expect(overlay).toBeNull();
   });
@@ -47,4 +56,3 @@ describe('PageLoaderComponent', () => {
     expect(img.getAttribute('alt')).toBe('Hermès');
   });
 });
-

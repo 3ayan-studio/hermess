@@ -35,10 +35,11 @@ export interface QuoteSlideItem {
         aria-roledescription="carousel"
         aria-label="Citations des récits audio de l'exposition"
         tabindex="0"
-        (mouseenter)="pauseAutoPlay()"
-        (mouseleave)="resumeAutoPlay()"
-        (focusin)="pauseAutoPlay()"
-        (focusout)="resumeAutoPlay()"
+        (mouseenter)="onMouseEnter()"
+        (mouseleave)="onMouseLeave()"
+        (mousemove)="onMouseMove()"
+        (focusin)="onFocusIn()"
+        (focusout)="onFocusOut()"
         (keydown.arrowleft)="onKeyArrowLeft($event)"
         (keydown.arrowright)="onKeyArrowRight($event)"
       >
@@ -82,25 +83,50 @@ export interface QuoteSlideItem {
                     <span class="carre-title">{{ item.quote.carreTitle }}</span>
                   </div>
 
-                  <!-- Bouton d'action et lien vers l'audio calé -->
+                  <!-- Bouton d'action et lien vers l'audio calé ou le texte de l'œuvre -->
                   <div class="quote-action">
-                    <button
-                      type="button"
-                      class="listen-button"
-                      (click)="onListenQuote(item.quote, $event)"
-                      [attr.tabindex]="item.isReal && item.realIndex === activeIndex() ? 0 : -1"
-                    >
-                      <svg
-                        class="icon-play"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        aria-hidden="true"
+                    @if (item.quote.type === 'artwork') {
+                      <button
+                        type="button"
+                        class="listen-button artwork-button"
+                        (click)="onOpenQuote(item.quote, $event)"
+                        [attr.tabindex]="item.isReal && item.realIndex === activeIndex() ? 0 : -1"
                       >
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                      <span>Écouter l'extrait ({{ item.quote.timestampFormatted }})</span>
-                      <span class="arrow" aria-hidden="true">→</span>
-                    </button>
+                        <svg
+                          class="icon-read"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.6"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                        <span>Lire plus</span>
+                        <span class="arrow" aria-hidden="true">→</span>
+                      </button>
+                    } @else {
+                      <button
+                        type="button"
+                        class="listen-button"
+                        (click)="onOpenQuote(item.quote, $event)"
+                        [attr.tabindex]="item.isReal && item.realIndex === activeIndex() ? 0 : -1"
+                      >
+                        <svg
+                          class="icon-play"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                        <span>Écouter l'extrait ({{ item.quote.timestampFormatted }})</span>
+                        <span class="arrow" aria-hidden="true">→</span>
+                      </button>
+                    }
                   </div>
                 </article>
               }
@@ -155,6 +181,8 @@ export class HomeQuoteCarouselComponent implements OnInit, OnDestroy {
   readonly dragOffset = signal<number>(0);
 
   readonly isPaused = signal<boolean>(false);
+  readonly isHovered = signal<boolean>(false);
+  readonly isFocused = signal<boolean>(false);
 
   // Slides affichées incluant les clones aux extrémités pour la boucle infinie
   readonly displaySlides = computed<QuoteSlideItem[]>(() => {
@@ -248,10 +276,44 @@ export class HomeQuoteCarouselComponent implements OnInit, OnDestroy {
 
   pauseAutoPlay(): void {
     this.isPaused.set(true);
+    this.stopAutoPlay();
   }
 
   resumeAutoPlay(): void {
     this.isPaused.set(false);
+    if (!this.isHovered() && !this.isFocused() && !this.isDragging()) {
+      this.startAutoPlay();
+    }
+  }
+
+  onMouseEnter(): void {
+    this.isHovered.set(true);
+    this.pauseAutoPlay();
+  }
+
+  onMouseLeave(): void {
+    this.isHovered.set(false);
+    if (!this.isFocused()) {
+      this.resumeAutoPlay();
+    }
+  }
+
+  onMouseMove(): void {
+    if (!this.isHovered()) {
+      this.onMouseEnter();
+    }
+  }
+
+  onFocusIn(): void {
+    this.isFocused.set(true);
+    this.pauseAutoPlay();
+  }
+
+  onFocusOut(): void {
+    this.isFocused.set(false);
+    if (!this.isHovered()) {
+      this.resumeAutoPlay();
+    }
   }
 
   nextQuote(): void {
@@ -344,6 +406,11 @@ export class HomeQuoteCarouselComponent implements OnInit, OnDestroy {
       this.resetTimeout = setTimeout(() => {
         this.isAnimating.set(false);
       }, 450);
+
+      // Réinitialise le compte à rebours de l'autoplay pour offrir les 7s complètes
+      if (!this.isPaused() && !this.isHovered() && !this.isFocused()) {
+        this.startAutoPlay();
+      }
     }
   }
 
@@ -419,7 +486,9 @@ export class HomeQuoteCarouselComponent implements OnInit, OnDestroy {
       // Si seuil non atteint, la piste revient élastiquement et naturellement sur trackIndex
     }
 
-    this.resumeAutoPlay();
+    if (!this.isHovered() && !this.isFocused()) {
+      this.resumeAutoPlay();
+    }
 
     if (this.hasDragged) {
       if (this.dragResetTimer) {
@@ -437,7 +506,9 @@ export class HomeQuoteCarouselComponent implements OnInit, OnDestroy {
     this.dragOffset.set(0);
     this.isDragging.set(false);
     this.withTransition.set(true);
-    this.resumeAutoPlay();
+    if (!this.isHovered() && !this.isFocused()) {
+      this.resumeAutoPlay();
+    }
     this.hasDragged = false;
   }
 
@@ -456,14 +527,24 @@ export class HomeQuoteCarouselComponent implements OnInit, OnDestroy {
   onKeyArrowLeft(event: Event): void {
     event.preventDefault();
     this.prevQuote();
+    if (!this.isPaused() && !this.isHovered() && !this.isFocused()) {
+      this.startAutoPlay();
+    }
   }
 
   onKeyArrowRight(event: Event): void {
     event.preventDefault();
     this.nextQuote();
+    if (!this.isPaused() && !this.isHovered() && !this.isFocused()) {
+      this.startAutoPlay();
+    }
   }
 
   onListenQuote(quote: AudioQuote, event?: Event): void {
+    this.onOpenQuote(quote, event);
+  }
+
+  onOpenQuote(quote: AudioQuote, event?: Event): void {
     if (event) {
       event.stopPropagation();
     }
@@ -472,16 +553,28 @@ export class HomeQuoteCarouselComponent implements OnInit, OnDestroy {
       return;
     }
 
-    const carre = this.carresDataService.getCarreBySlug(quote.carreSlug);
-    if (carre) {
-      this.audioPlayerService.playFromTime(carre, quote.timestampSeconds);
+    if (quote.type === 'artwork') {
+      const target = quote.routeUrl || '/her-story-her-mess';
+      this.router.navigate([target]).then(() => {
+        if (typeof window !== 'undefined') {
+          window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        }
+      });
+      return;
     }
 
-    this.router.navigate(['/carre', quote.carreSlug], {
-      queryParams: {
-        t: quote.timestampSeconds,
-        seg: quote.segmentId
+    if (quote.carreSlug) {
+      const carre = this.carresDataService.getCarreBySlug(quote.carreSlug);
+      if (carre && quote.timestampSeconds !== undefined) {
+        this.audioPlayerService.playFromTime(carre, quote.timestampSeconds);
       }
-    });
+
+      this.router.navigate(['/carre', quote.carreSlug], {
+        queryParams: {
+          t: quote.timestampSeconds,
+          seg: quote.segmentId
+        }
+      });
+    }
   }
 }

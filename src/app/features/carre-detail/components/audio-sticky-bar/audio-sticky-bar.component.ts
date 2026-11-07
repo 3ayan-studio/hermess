@@ -1,10 +1,14 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  DestroyRef,
   ElementRef,
+  NgZone,
   computed,
+  effect,
   inject,
   input,
+  linkedSignal,
   signal,
   viewChild
 } from '@angular/core';
@@ -37,7 +41,59 @@ function pseudoNoise(n: number): number {
   standalone: true,
   imports: [],
   template: `
-    <div class="sticky-bar-container" role="region" aria-label="Lecteur audio de l'interview">
+    <!-- Voile Flou Transparent avec Disclaimer Contenu Sensible -->
+    <div
+      class="audio-disclaimer-overlay"
+      [class.is-hidden]="!isOverlayVisible()"
+      (click)="startPlaybackAndDismiss($event)"
+      role="region"
+      aria-label="Avertissement contenu sensible et démarrage de l'écoute"
+    >
+      <div class="disclaimer-inner">
+        <div class="disclaimer-content">
+          <svg
+            class="warning-icon"
+            viewBox="0 0 24 24"
+            width="14"
+            height="14"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+            <line x1="12" y1="9" x2="12" y2="13" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+          <p class="disclaimer-text">
+            <strong class="warning-bold">Contenu sensible :</strong>
+            Cet enregistrement et sa transcription comportent des récits éprouvants.
+          </p>
+        </div>
+
+        <button
+          type="button"
+          class="disclaimer-cta-btn"
+          (click)="startPlaybackAndDismiss($event)"
+          aria-label="Écouter l'enregistrement"
+        >
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <polygon points="6,4 20,12 6,20"></polygon>
+          </svg>
+          <span>Écouter</span>
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="sticky-bar-container"
+      [class.is-veiled]="isOverlayVisible()"
+      role="region"
+      aria-label="Lecteur audio de l'échange"
+    >
       <!-- Rangée 1 : Groupe compact, sobre et soigné aligné à gauche -->
       <div class="sticky-header-row">
         <div class="cluster-left">
@@ -54,7 +110,7 @@ function pseudoNoise(n: number): number {
             <div class="title-with-status">
               <span
                 class="status-indicator-dot"
-                [class.is-playing]="audioService.isPlaying()"
+                [class.is-playing]="isCurrentPlaying()"
               ></span>
               <span class="track-title">{{ carre().title }}</span>
             </div>
@@ -73,7 +129,7 @@ function pseudoNoise(n: number): number {
               aria-label="Arrêter la lecture"
             >
               <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-                <rect x="5" y="5" width="14" height="14" rx="1.5"></rect>
+                <rect x="5" y="5" width="14" height="14"></rect>
               </svg>
             </button>
 
@@ -85,7 +141,7 @@ function pseudoNoise(n: number): number {
               title="Reculer de 10 secondes"
               aria-label="Reculer de 10 secondes"
             >
-              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter">
                 <path d="M3.5 12a8.5 8.5 0 1 0 8.5-8.5c-2.4 0-4.6.98-6.15 2.58L3.5 8.5"/>
                 <polyline points="3.5 3.5 3.5 8.5 8.5 8.5"/>
                 <text x="12" y="15.2" font-family="'Overpass Mono', monospace" font-size="7.5" font-weight="700" text-anchor="middle" fill="currentColor" stroke="none">10</text>
@@ -97,13 +153,13 @@ function pseudoNoise(n: number): number {
               type="button"
               class="control-btn play-btn"
               (click)="onPlayPause()"
-              [attr.aria-label]="audioService.isPlaying() ? 'Mettre en pause' : 'Lancer la lecture'"
-              [title]="audioService.isPlaying() ? 'Mettre en pause' : 'Lancer la lecture'"
+              [attr.aria-label]="isCurrentPlaying() ? 'Mettre en pause' : 'Lancer la lecture'"
+              [title]="isCurrentPlaying() ? 'Mettre en pause' : 'Lancer la lecture'"
             >
-              @if (audioService.isPlaying()) {
+              @if (isCurrentPlaying()) {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <rect x="5.5" y="4" width="4.2" height="16" rx="1.5"></rect>
-                  <rect x="14.3" y="4" width="4.2" height="16" rx="1.5"></rect>
+                  <rect x="5.5" y="4" width="4.2" height="16"></rect>
+                  <rect x="14.3" y="4" width="4.2" height="16"></rect>
                 </svg>
               } @else {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="play-icon-offset">
@@ -120,7 +176,7 @@ function pseudoNoise(n: number): number {
               title="Avancer de 10 secondes"
               aria-label="Avancer de 10 secondes"
             >
-              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter">
                 <path d="M20.5 12a8.5 8.5 0 1 1-8.5-8.5c2.4 0 4.6.98 6.15 2.58l2.35 2.42"/>
                 <polyline points="20.5 3.5 20.5 8.5 15.5 8.5"/>
                 <text x="12" y="15.2" font-family="'Overpass Mono', monospace" font-size="7.5" font-weight="700" text-anchor="middle" fill="currentColor" stroke="none">10</text>
@@ -136,13 +192,13 @@ function pseudoNoise(n: number): number {
               [attr.aria-label]="audioService.isMuted() ? 'Rétablir le son' : 'Couper le son'"
             >
               @if (audioService.isMuted()) {
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter">
                   <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"></polygon>
                   <line x1="23" y1="9" x2="17" y2="15"></line>
                   <line x1="17" y1="9" x2="23" y2="15"></line>
                 </svg>
               } @else {
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter">
                   <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"></polygon>
                   <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
                   <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
@@ -155,9 +211,9 @@ function pseudoNoise(n: number): number {
 
           <!-- Durée actuelle et durée totale -->
           <div class="track-timers">
-            <span class="current-time">{{ audioService.formattedCurrentTime() }}</span>
+            <span class="current-time">{{ displayCurrentTime() }}</span>
             <span class="timer-separator">/</span>
-            <span class="duration-time">{{ audioService.formattedDuration() }}</span>
+            <span class="duration-time">{{ displayDuration() }}</span>
           </div>
         </div>
       </div>
@@ -175,10 +231,10 @@ function pseudoNoise(n: number): number {
         (pointercancel)="onPointerUp($event)"
         role="slider"
         tabindex="0"
-        [attr.aria-valuenow]="audioService.currentTime()"
+        [attr.aria-valuenow]="isCurrentCarre() ? audioService.currentTime() : 0"
         [attr.aria-valuemin]="0"
-        [attr.aria-valuemax]="audioService.duration()"
-        aria-label="Progression de l'interview audio"
+        [attr.aria-valuemax]="isCurrentCarre() && audioService.duration() > 0 ? audioService.duration() : (carre().interview?.durationSeconds || 0)"
+        aria-label="Progression de l'échange audio"
       >
         <!-- Badge Tooltip avec Timestamp au survol -->
         @if (hoverTimeFormatted(); as hoverTime) {
@@ -232,7 +288,6 @@ function pseudoNoise(n: number): number {
                 [attr.y]="bar.y"
                 [attr.width]="bar.width"
                 [attr.height]="bar.height"
-                rx="0.75"
               ></rect>
             }
           </g>
@@ -246,7 +301,6 @@ function pseudoNoise(n: number): number {
                   [attr.y]="bar.y"
                   [attr.width]="bar.width"
                   [attr.height]="bar.height"
-                  rx="0.75"
                 ></rect>
               }
             </g>
@@ -260,7 +314,6 @@ function pseudoNoise(n: number): number {
                 [attr.y]="bar.y"
                 [attr.width]="bar.width"
                 [attr.height]="bar.height"
-                rx="0.75"
               ></rect>
             }
           </g>
@@ -275,16 +328,96 @@ export class AudioStickyBarComponent {
   readonly audioService = inject(AudioPlayerService);
   readonly carre = input.required<Carre>();
   readonly waveformContainer = viewChild<ElementRef<HTMLDivElement>>('waveformContainer');
+  private readonly el = inject(ElementRef);
+  private readonly ngZone = inject(NgZone);
+  private readonly destroyRef = inject(DestroyRef);
+
+  private observer: IntersectionObserver | null = null;
+  readonly isInViewport = signal<boolean>(false);
 
   private isScrubbing = false;
 
+  constructor() {
+    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
+      this.ngZone.runOutsideAngular(() => {
+        this.observer = new IntersectionObserver(
+          (entries) => {
+            const entry = entries[0];
+            const isIntersecting = entry ? entry.isIntersecting : false;
+            this.ngZone.run(() => {
+              this.isInViewport.set(isIntersecting);
+            });
+          },
+          { root: null, threshold: 0.05 }
+        );
+        this.observer.observe(this.el.nativeElement);
+      });
+    }
+
+    effect(() => {
+      const inViewport = this.isInViewport();
+      const currentCarre = this.audioService.currentCarre();
+      const thisCarre = this.carre();
+
+      const isMatch = inViewport && currentCarre !== null && currentCarre.id === thisCarre.id;
+      this.audioService.setExchangePlayerInViewport(isMatch);
+    });
+
+    this.destroyRef.onDestroy(() => {
+      if (this.observer) {
+        this.observer.disconnect();
+        this.observer = null;
+      }
+      if (this.audioService.currentCarre()?.id === this.carre().id) {
+        this.audioService.setExchangePlayerInViewport(false);
+      }
+    });
+  }
+
   readonly hoverPercentage = signal<number | null>(null);
   readonly hoverX = signal<number>(0);
+
+  readonly userDismissed = linkedSignal({
+    source: () => this.carre().id,
+    computation: () => false
+  });
+
+  readonly isCurrentCarre = computed(() => {
+    return this.audioService.currentCarre()?.id === this.carre().id;
+  });
+
+  readonly isCurrentPlaying = computed(() => {
+    return this.isCurrentCarre() && this.audioService.isPlaying();
+  });
+
+  readonly isOverlayVisible = computed(() => {
+    const cid = this.carre().id;
+    if (this.audioService.dismissedDisclaimerCarres().has(cid)) return false;
+    if (this.userDismissed()) return false;
+    if (this.isCurrentPlaying()) return false;
+    if (this.isCurrentCarre() && this.audioService.currentTime() > 0) return false;
+    return true;
+  });
+
+  readonly displayCurrentTime = computed(() => {
+    if (this.isCurrentCarre()) {
+      return this.audioService.formattedCurrentTime();
+    }
+    return '00:00:00';
+  });
+
+  readonly displayDuration = computed(() => {
+    if (this.isCurrentCarre() && this.audioService.duration() > 0) {
+      return this.audioService.formattedDuration();
+    }
+    return this.carre().interview?.durationFormatted || '00:00:00';
+  });
 
   readonly activeClipId = computed(() => `wf-active-${this.carre().id}`);
   readonly hoverClipId = computed(() => `wf-hover-${this.carre().id}`);
 
   readonly progressSvgWidth = computed(() => {
+    if (!this.isCurrentCarre()) return 0;
     const pct = this.audioService.progressPercentage();
     return Math.max(0, Math.min(1000, (pct / 100) * 1000));
   });
@@ -298,9 +431,10 @@ export class AudioStickyBarComponent {
   readonly hoverTimeFormatted = computed(() => {
     const pct = this.hoverPercentage();
     if (pct === null) return null;
-    const dur = this.audioService.duration();
-    const effectiveDur = dur > 0 ? dur : (this.carre().interview?.durationSeconds || 0);
-    const targetSeconds = (pct / 100) * effectiveDur;
+    const dur = this.isCurrentCarre() && this.audioService.duration() > 0
+      ? this.audioService.duration()
+      : (this.carre().interview?.durationSeconds || 0);
+    const targetSeconds = (pct / 100) * dur;
     return formatTimeHHMMSS(targetSeconds);
   });
 
@@ -352,6 +486,21 @@ export class AudioStickyBarComponent {
     return barsList;
   });
 
+  startPlaybackAndDismiss(event?: Event): void {
+    if (event) {
+      event.stopPropagation();
+    }
+    this.userDismissed.set(true);
+    this.audioService.dismissDisclaimer(this.carre().id);
+    if (!this.isCurrentPlaying()) {
+      if (this.audioService.currentCarre()?.id !== this.carre().id) {
+        this.audioService.playCarre(this.carre());
+      } else {
+        this.audioService.play();
+      }
+    }
+  }
+
   onPlayPause(): void {
     if (this.audioService.currentCarre()?.id !== this.carre().id) {
       this.audioService.playCarre(this.carre());
@@ -363,6 +512,7 @@ export class AudioStickyBarComponent {
   onStop(): void {
     if (this.audioService.currentCarre()?.id === this.carre().id) {
       this.audioService.stop();
+      this.userDismissed.set(false);
     }
   }
 

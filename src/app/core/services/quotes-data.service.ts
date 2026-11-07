@@ -132,7 +132,7 @@ export class QuotesDataService {
 
     const updated = await Promise.all(
       currentQuotes.map(async (q) => {
-        if (!q.carreSlug || !q.segmentId) {
+        if (q.type === 'artwork' || !q.carreSlug || !q.segmentId) {
           return q;
         }
 

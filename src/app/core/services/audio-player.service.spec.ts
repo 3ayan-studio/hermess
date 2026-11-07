@@ -25,7 +25,7 @@ const mockCarre: Carre = {
     audioUrl: 'https://example.com/audio.mp3',
     durationSeconds: 1800,
     durationFormatted: '00:30:00',
-    title: 'Entretien avec Fatima',
+    title: 'Échange avec Fatima',
     interviewees: ['Fatima Marwazouzal'],
     synopsis: 'Synopsis test',
     transcript: [
@@ -61,6 +61,7 @@ describe('AudioPlayerService', () => {
     expect(service.isPlaying()).toBe(false);
     expect(service.currentTime()).toBe(0);
     expect(service.currentCarre()).toBeNull();
+    expect(service.isExchangePlayerInViewport()).toBe(false);
   });
 
   it('should reset state completely when closePlayer is called', () => {
@@ -68,6 +69,7 @@ describe('AudioPlayerService', () => {
     service.isPlaying.set(true);
     service.currentTime.set(120);
     service.duration.set(1800);
+    service.setExchangePlayerInViewport(true);
 
     service.closePlayer();
 
@@ -75,6 +77,15 @@ describe('AudioPlayerService', () => {
     expect(service.currentTime()).toBe(0);
     expect(service.duration()).toBe(0);
     expect(service.currentCarre()).toBeNull();
+    expect(service.isExchangePlayerInViewport()).toBe(false);
+  });
+
+  it('should update isExchangePlayerInViewport when setExchangePlayerInViewport is called', () => {
+    expect(service.isExchangePlayerInViewport()).toBe(false);
+    service.setExchangePlayerInViewport(true);
+    expect(service.isExchangePlayerInViewport()).toBe(true);
+    service.setExchangePlayerInViewport(false);
+    expect(service.isExchangePlayerInViewport()).toBe(false);
   });
 
   it('should calculate progress percentage accurately', () => {

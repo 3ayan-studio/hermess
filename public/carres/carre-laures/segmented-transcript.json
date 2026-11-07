@@ -5,7 +5,7 @@
                 "name": "Anonyme"
             },
             "S2": {
-                "name": "Fatima-Marwa"
+                "name": "Fatima Marwa"
             }
         }
     },
@@ -36,7 +36,7 @@
             "speaker": "S1",
             "start": 16.0,
             "end": 36.0,
-            "text": "Et je me souviens d'un soir où ma mère a commencé à rassembler nos affaires. On a entendu des coups de feu et tout, et ma mère a rassemblé le peu de choses qu'elle avait. Je lui ai dit : <i>« Maman, où va-t-on ? »</i> Elle m'a répondu : <em>« La France nous chasse de nos montagnes, il faut que l'on parte d'ici. »</em>"
+            "text": "Et je me souviens d'un soir où ma mère a commencé à rassembler nos affaires. On a entendu des coups de feu et tout, et ma mère a rassemblé le peu de choses qu'elle avait. Je lui ai dit : <em> Maman, où va-t-on ? »</em> Elle m'a répondu : <em> La France nous chasse de nos montagnes, il faut que l'on parte d'ici. »</em>"
         },
         {
             "id": "seg-4",
@@ -64,7 +64,7 @@
             "speaker": "S1",
             "start": 55.0,
             "end": 58.0,
-            "text": "Toute la nuit, je me suis posé la question : « Où va-t-il m'emmener ? »"
+            "text": "Toute la nuit, je me suis posé la question : <em> Où va-t-il m'emmener ?  »</em>"
         },
         {
             "id": "seg-8",
@@ -106,7 +106,7 @@
             "speaker": "S1",
             "start": 87.0,
             "end": 96.0,
-            "text": "La France leur a dit : « Soit vous arrêtez, soit un jour, je braquerai les mortiers droit sur le village et je tirerai. »"
+            "text": "La France leur a dit : <em> Soit vous arrêtez, soit un jour, je braquerai les mortiers droit sur le village et je tirerai.  »</em>"
         },
         {
             "id": "seg-14",
@@ -190,7 +190,7 @@
             "speaker": "S1",
             "start": 171.0,
             "end": 185.0,
-            "text": "Enfin bref, après cela, nous sommes restés là-bas, puis la France leur a dit : « Vous ne devez pas rester ici, je vous emmène à M'Chouneche. » C'était la nuit du 27e jour, je m'en souviens très bien, le 27 du mois de Ramadan."
+            "text": "Enfin bref, après cela, nous sommes restés là-bas, puis la France leur a dit : <em> Vous ne devez pas rester ici, je vous emmène à M'Chouneche.  »</em> C'était la nuit du 27e jour, je m'en souviens très bien, le 27 du mois de Ramadan."
         },
         {
             "id": "seg-26",
@@ -316,7 +316,7 @@
             "speaker": "S1",
             "start": 276.0,
             "end": 283.0,
-            "text": "J'ai crié, j'ai dit : « Maman, ils ont tué mon oncle ! » Puis l'un d'eux m'a répondu en chaoui, je m'en souviens très bien..."
+            "text": "J'ai crié, j'ai dit : <em> Maman, ils ont tué mon oncle !  »</em> Puis l'un d'eux m'a répondu en chaoui, je m'en souviens très bien..."
         },
         {
             "id": "seg-44",
@@ -358,7 +358,7 @@
             "speaker": "S1",
             "start": 286.0,
             "end": 292.0,
-            "text": "Il m'a répondu en chaoui, il m'a dit : « S'il ne craint pas Dieu et qu'il travaille avec ces gens-là, alors nous le tuerons. » Je me souviens très bien de cette phrase."
+            "text": "Il m'a répondu en chaoui, il m'a dit : <em> S'il ne craint pas Dieu et qu'il travaille avec ces gens-là, alors nous le tuerons.  »</em> Je me souviens très bien de cette phrase."
         },
         {
             "id": "seg-50",
@@ -393,21 +393,21 @@
             "speaker": "S1",
             "start": 308.0,
             "end": 328.0,
-            "text": "Et cette dame est donc allée dire à ses enfants : « Essayez de vous porter garants pour lui. » Mon papa m'a raconté : « Nous étions dans une très grande cour, et il y avait l'homme qui frappait, qui... »"
+            "text": "Et cette dame est donc allée dire à ses enfants : <em> Essayez de vous porter garants pour lui.  »</em> Mon papa m'a raconté : <em> Nous étions dans une très grande cour, et il y avait l'homme qui frappait, qui...  »</em>"
         },
         {
             "id": "seg-55",
             "speaker": "S1",
             "start": 328.0,
             "end": 336.0,
-            "text": "« Il a attaché les prisonniers... » Comment dit-on en français ?"
+            "text": "<em> Il a attaché les prisonniers...  »</em> Comment dit-on en français ?"
         },
         {
             "id": "seg-56",
             "speaker": "S1",
             "start": 336.0,
             "end": 337.0,
-            "text": "« Il les frappait, il les... »"
+            "text": "<em> Il les frappait, il les...  »</em>"
         },
         {
             "id": "seg-57",
@@ -421,7 +421,7 @@
             "speaker": "S1",
             "start": 338.0,
             "end": 339.0,
-            "text": "« Il les torturait. »"
+            "text": "<em> Il les torturait.  »</em>"
         },
         {
             "id": "seg-59",
@@ -435,35 +435,35 @@
             "speaker": "S1",
             "start": 339.0,
             "end": 352.0,
-            "text": "« Il les torturait. » Puis il l'a fait sortir et lui a dit : « Toi, tu te lèves. » Mon père m'a raconté : « Il m'a pris et a commencé à me donner des coups de poing. J'avais du sang partout. » Il a vu son frère, qui était goumier,"
+            "text": "<em> Il les torturait.  »</em> Puis il l'a fait sortir et lui a dit : <em> Toi, tu te lèves.  »</em> Mon père m'a raconté : <em> Il m'a pris et a commencé à me donner des coups de poing. J'avais du sang partout.  »</em> Il a vu son frère, qui était goumier,"
         },
         {
             "id": "seg-61",
             "speaker": "S1",
             "start": 352.0,
             "end": 363.0,
-            "text": "il a vu son frère là-haut et m'a dit : « Je l'ai regardé et je lui ai dit : \"Ali, ne pleure pas, tu es un homme. Tout ce que je veux, c'est que tu prennes soin de ma femme et de mes filles.\" »"
+            "text": "il a vu son frère là-haut et m'a dit : <em> Je l'ai regardé et je lui ai dit : <em>Ali, ne pleure pas, tu es un homme. Tout ce que je veux, c'est que tu prennes soin de ma femme et de mes filles.»</em>  »</em>"
         },
         {
             "id": "seg-62",
             "speaker": "S1",
             "start": 363.0,
             "end": 374.0,
-            "text": "Il m'a dit : « L'autre a recommencé à me frapper. » Et quand mon oncle a vu qu'ils emmenaient mon père dans la salle de torture, il est allé chercher cet homme auprès de qui ma grand-mère, en allant voir sa mère, avait demandé qu'il se porte garant."
+            "text": "Il m'a dit : <em> L'autre a recommencé à me frapper.  »</em> Et quand mon oncle a vu qu'ils emmenaient mon père dans la salle de torture, il est allé chercher cet homme auprès de qui ma grand-mère, en allant voir sa mère, avait demandé qu'il se porte garant."
         },
         {
             "id": "seg-63",
             "speaker": "S1",
             "start": 374.0,
             "end": 387.0,
-            "text": "Cet homme est arrivé — ils se connaissaient tous, moi-même je connais leurs noms —, il lui a dit : « Ouvre la porte ! » L'autre a répondu : « Je ne l'ouvre pas. » Il lui a dit : « Je vais la casser ! » L'autre a répliqué : « Casse-la ! » Alors l'homme a défoncé la porte, a attrapé mon père et l'a tiré dehors,"
+            "text": "Cet homme est arrivé — ils se connaissaient tous, moi-même je connais leurs noms —, il lui a dit : <em> Ouvre la porte !  »</em> L'autre a répondu : <em> Je ne l'ouvre pas.  »</em> Il lui a dit : <em> Je vais la casser !  »</em> L'autre a répliqué : <em> Casse-la !  »</em> Alors l'homme a défoncé la porte, a attrapé mon père et l'a tiré dehors,"
         },
         {
             "id": "seg-64",
             "speaker": "S1",
             "start": 387.0,
             "end": 390.0,
-            "text": "puis il a pris sa mitraillette et a dit au bourreau : « Si tu bouges, je te tue. »"
+            "text": "puis il a pris sa mitraillette et a dit au bourreau : <em> Si tu bouges, je te tue.  »</em>"
         },
         {
             "id": "seg-65",
@@ -554,14 +554,14 @@
             "speaker": "S1",
             "start": 451.0,
             "end": 460.0,
-            "text": "Mon père est parti en colère, en laissant sa tasse de café sur place. J'ai demandé à ma mère : « Pourquoi vous disputez-vous dès le matin ? » Moi, j'allais partir à l'école."
+            "text": "Mon père est parti en colère, en laissant sa tasse de café sur place. J'ai demandé à ma mère : <em> Pourquoi vous disputez-vous dès le matin ?  »</em> Moi, j'allais partir à l'école."
         },
         {
             "id": "seg-78",
             "speaker": "S1",
             "start": 460.0,
             "end": 469.0,
-            "text": "Elle m'a répondu : « Tu sais, ma fille, je n'ai ni ma mère ni ma sœur ici. Ton père veut partir avec la France, mais moi, je ne peux pas. »"
+            "text": "Elle m'a répondu : <em> Tu sais, ma fille, je n'ai ni ma mère ni ma sœur ici. Ton père veut partir avec la France, mais moi, je ne peux pas.  »</em>"
         },
         {
             "id": "seg-79",
@@ -589,7 +589,7 @@
             "speaker": "S1",
             "start": 483.0,
             "end": 497.0,
-            "text": "Toujours est-il que mon papa est revenu nous chercher à M'ziraa pendant la nuit. En arrivant, il nous a trouvés en train de manger et a dit à ma mère : « Allez, prends les enfants, les enfants, les enfants ! »"
+            "text": "Toujours est-il que mon papa est revenu nous chercher à M'ziraa pendant la nuit. En arrivant, il nous a trouvés en train de manger et a dit à ma mère : <em> Allez, prends les enfants, les enfants, les enfants !  »</em>"
         },
         {
             "id": "seg-83",
@@ -673,7 +673,7 @@
             "speaker": "S1",
             "start": 540.0,
             "end": 550.0,
-            "text": "Mon père a dit au chauffeur : « Écoute, mets le moteur en route. Si la voiture tourne, tu démarres. Si elle ne tourne pas, je les laisse là et moi, je pars. »"
+            "text": "Mon père a dit au chauffeur : <em> Écoute, mets le moteur en route. Si la voiture tourne, tu démarres. Si elle ne tourne pas, je les laisse là et moi, je pars.  »</em>"
         },
         {
             "id": "seg-95",
@@ -750,7 +750,7 @@
             "speaker": "S1",
             "start": 587.0,
             "end": 590.0,
-            "text": "Et puis un jour, ils nous ont dit : « Vous allez partir en France. »"
+            "text": "Et puis un jour, ils nous ont dit : <em> Vous allez partir en France.  »</em>"
         },
         {
             "id": "seg-106",
@@ -792,7 +792,7 @@
             "speaker": "S1",
             "start": 610.0,
             "end": 626.0,
-            "text": "Ils nous ont donc emmenés à Skikda, où nous sommes restés, comme je te disais, du 10 mars... ou plutôt du 11 mars, parce que nous sommes entrés à Constantine le 10 et repartis le 11. Et le 28 avril, ils nous ont dit : « Vous allez partir, nous vous emmenons à Annaba, et demain vous prendrez le bateau. »"
+            "text": "Ils nous ont donc emmenés à Skikda, où nous sommes restés, comme je te disais, du 10 mars... ou plutôt du 11 mars, parce que nous sommes entrés à Constantine le 10 et repartis le 11. Et le 28 avril, ils nous ont dit : <em> Vous allez partir, nous vous emmenons à Annaba, et demain vous prendrez le bateau.  »</em>"
         },
         {
             "id": "seg-112",
@@ -890,7 +890,7 @@
             "speaker": "S1",
             "start": 724.0,
             "end": 738.0,
-            "text": "Mon papa a travaillé un petit peu à la cueillette des abricots, et moi aussi j'ai travaillé un peu. Au début, la dame ne voulait pas me prendre parce que j'avais onze ans, alors j'ai commencé à pleurer en lui disant : « Je n'ai pas de chaussures, mes chaussures sont déchirées. » Elle m'a prise quand même."
+            "text": "Mon papa a travaillé un petit peu à la cueillette des abricots, et moi aussi j'ai travaillé un peu. Au début, la dame ne voulait pas me prendre parce que j'avais onze ans, alors j'ai commencé à pleurer en lui disant : <em> Je n'ai pas de chaussures, mes chaussures sont déchirées.  »</em> Elle m'a prise quand même."
         },
         {
             "id": "seg-126",
@@ -1051,7 +1051,7 @@
             "speaker": "S1",
             "start": 825.0,
             "end": 835.0,
-            "text": "Puis ils ont dit : « L'un de nous va rester pour veiller sur les femmes. » Parce qu'à Rivesaltes, tu sais, nous habitions dans une pièce qui faisait treize mètres carrés."
+            "text": "Puis ils ont dit : <em> L'un de nous va rester pour veiller sur les femmes.  »</em> Parce qu'à Rivesaltes, tu sais, nous habitions dans une pièce qui faisait treize mètres carrés."
         },
         {
             "id": "seg-149",
@@ -1205,14 +1205,14 @@
             "speaker": "S1",
             "start": 968.0,
             "end": 978.0,
-            "text": "Alors de Gaulle leur a dit : « D'accord, si vous voulez, je ne les ramène pas. Mais qui va construire les routes ? Qui va ramasser les poubelles ? Qui va travailler sur les chantiers ? »"
+            "text": "Alors de Gaulle leur a dit : <em> D'accord, si vous voulez, je ne les ramène pas. Mais qui va construire les routes ? Qui va ramasser les poubelles ? Qui va travailler sur les chantiers ?  »</em>"
         },
         {
             "id": "seg-171",
             "speaker": "S1",
             "start": 978.0,
             "end": 989.0,
-            "text": "« Qui va travailler dans les usines où il y a des produits chimiques ? Vous, les Français, vous voulez tous les bureaux et la cravate, mais nous allons les ramener pour faire tout cela. » Et finalement, c'était bien ça."
+            "text": "<em> Qui va travailler dans les usines où il y a des produits chimiques ? Vous, les Français, vous voulez tous les bureaux et la cravate, mais nous allons les ramener pour faire tout cela.  »</em> Et finalement, c'était bien ça."
         },
         {
             "id": "seg-172",
@@ -1429,7 +1429,7 @@
             "speaker": "S1",
             "start": 1151.0,
             "end": 1168.0,
-            "text": "Ils les ont soumis aux travaux forcés sans les payer, et quand ils ont rassemblé tous les goumiers de M'ziraa, ils leur ont dit : « Vous n'aurez pas de travail, vous ne travaillerez plus jamais ici. Et baissez la tête, parce que normalement, vous auriez dû avoir bien plus d'ennuis que cela. »"
+            "text": "Ils les ont soumis aux travaux forcés sans les payer, et quand ils ont rassemblé tous les goumiers de M'ziraa, ils leur ont dit : <em> Vous n'aurez pas de travail, vous ne travaillerez plus jamais ici. Et baissez la tête, parce que normalement, vous auriez dû avoir bien plus d'ennuis que cela.  »</em>"
         },
         {
             "id": "seg-203",
@@ -1457,7 +1457,7 @@
             "speaker": "S1",
             "start": 1172.0,
             "end": 1186.0,
-            "text": "Ils se sont dit : « Nous avons défendu notre pays ; quand l'un des nôtres était en prison, nous allions veiller sur lui ; s'il avait une femme, nous subvenions à ses besoins... Et après tout cela, au bout du compte, quand nous revenons à M'ziraa auprès de nos frères les Ouled Abderrahmane, voilà ce qu'ils nous disent ? Il n'y a plus d'avenir ici, nous partons. »"
+            "text": "Ils se sont dit : <em> Nous avons défendu notre pays ; quand l'un des nôtres était en prison, nous allions veiller sur lui ; s'il avait une femme, nous subvenions à ses besoins... Et après tout cela, au bout du compte, quand nous revenons à M'ziraa auprès de nos frères les Ouled Abderrahmane, voilà ce qu'ils nous disent ? Il n'y a plus d'avenir ici, nous partons.  »</em>"
         },
         {
             "id": "seg-207",
@@ -1471,7 +1471,7 @@
             "speaker": "S1",
             "start": 1187.0,
             "end": 1188.0,
-            "text": "« Nous partons avec la France. »"
+            "text": "<em> Nous partons avec la France.  »</em>"
         },
         {
             "id": "seg-209",
@@ -1569,7 +1569,7 @@
             "speaker": "S1",
             "start": 1221.0,
             "end": 1243.0,
-            "text": "Il y est retourné en 81, clandestinement. Parce qu'au début, pour les harkis, en 68, 69 et 70, on les laissait entrer ; mais après 75, les autorités ont dit : « La France, c'est interdit... enfin, l'Algérie leur est interdite. »"
+            "text": "Il y est retourné en 81, clandestinement. Parce qu'au début, pour les harkis, en 68, 69 et 70, on les laissait entrer ; mais après 75, les autorités ont dit : <em> La France, c'est interdit... enfin, l'Algérie leur est interdite.  »</em>"
         },
         {
             "id": "seg-223",
@@ -1583,7 +1583,7 @@
             "speaker": "S1",
             "start": 1244.0,
             "end": 1256.0,
-            "text": "« Ils nous ont trahis, nous ne voulons plus de leur présence en Algérie. » On les arrêtait donc à la frontière. Mais en 81, mon père y est entré clandestinement :"
+            "text": "<em> Ils nous ont trahis, nous ne voulons plus de leur présence en Algérie.  »</em> On les arrêtait donc à la frontière. Mais en 81, mon père y est entré clandestinement :"
         },
         {
             "id": "seg-225",
@@ -1639,21 +1639,21 @@
             "speaker": "S1",
             "start": 1286.0,
             "end": 1299.0,
-            "text": "Il est venu chez nous, et mon mari lui a dit : « Je voudrais aller au bled pour voir ma mère, mais j'ai peur. » Parce qu'en 74, nous avions essayé d'entrer en passant par le Maroc, et nous avions été refoulés. Nous étions restés quinze jours au Maroc avant de revenir en France, et depuis, nous avions peur."
+            "text": "Il est venu chez nous, et mon mari lui a dit : <em> Je voudrais aller au bled pour voir ma mère, mais j'ai peur.  »</em> Parce qu'en 74, nous avions essayé d'entrer en passant par le Maroc, et nous avions été refoulés. Nous étions restés quinze jours au Maroc avant de revenir en France, et depuis, nous avions peur."
         },
         {
             "id": "seg-233",
             "speaker": "S1",
             "start": 1299.0,
             "end": 1313.0,
-            "text": "Alors quand mon mari lui a dit : « Je veux aller voir ma mère et mon pays, et y emmener ma femme et mes enfants », son cousin lui a répondu : « Tu réserves tes billets et tu m'appelles. » Et effectivement, à notre descente du bateau,"
+            "text": "Alors quand mon mari lui a dit : <em> Je veux aller voir ma mère et mon pays, et y emmener ma femme et mes enfants  »</em>, son cousin lui a répondu : <em> Tu réserves tes billets et tu m'appelles.  »</em> Et effectivement, à notre descente du bateau,"
         },
         {
             "id": "seg-234",
             "speaker": "S1",
             "start": 1313.0,
             "end": 1324.0,
-            "text": "un homme est sorti avec trois étoiles sur l'épaule — un lieutenant ou un capitaine, je ne sais plus —, il nous a fait entrer dans son bureau, a tamponné nos passeports et nous a dit : « Bon voyage ! »"
+            "text": "un homme est sorti avec trois étoiles sur l'épaule — un lieutenant ou un capitaine, je ne sais plus —, il nous a fait entrer dans son bureau, a tamponné nos passeports et nous a dit : <em> Bon voyage !  »</em>"
         },
         {
             "id": "seg-235",

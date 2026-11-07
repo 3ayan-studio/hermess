@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, linkedSignal } from '@angular/core';
 import { Carre } from '../../../../core/models/carre.model';
 import { SvgIconComponent } from '../../../../shared/components/svg-icon/svg-icon.component';
 
@@ -104,7 +104,10 @@ import { SvgIconComponent } from '../../../../shared/components/svg-icon/svg-ico
 })
 export class ZoneBAccordionsComponent {
   readonly carre = input.required<Carre>();
-  readonly openSection = signal<string | null>('medium');
+  readonly openSection = linkedSignal<string | null>(() => {
+    this.carre();
+    return 'medium';
+  });
 
   toggleSection(section: string): void {
     this.openSection.update(curr => (curr === section ? null : section));

@@ -125,6 +125,17 @@ describe('QuotesDataService', () => {
       expect(quotes.length).toBe(AUDIO_QUOTES_MOCK.length);
       expect(quotes[0].id).toBe('quote-laures-1');
     });
+
+    it('should leave artwork text quotes unchanged during hydration', async () => {
+      service = TestBed.inject(QuotesDataService);
+      await service.hydrateQuotesFromTranscripts();
+
+      const artworkQuote = service.getQuoteById('quote-artwork-1');
+      expect(artworkQuote).toBeDefined();
+      expect(artworkQuote?.type).toBe('artwork');
+      expect(artworkQuote?.routeUrl).toBe('/her-story-her-mess');
+      expect(artworkQuote?.quote).toContain('Les récits sont, pour la plupart, difficiles à entendre');
+    });
   });
 });
 

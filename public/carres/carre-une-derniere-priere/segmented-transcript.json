@@ -8,7 +8,7 @@
                 "name": "Anonyme 2"
             },
             "S3": {
-                "name": "Fatima-Marwa"
+                "name": "Fatima Marwa"
             }
         }
     },
@@ -18,7 +18,7 @@
             "speaker": "S1",
             "start": 0.0,
             "end": 16.0,
-            "text": "Raconte-lui aussi pour l'oncle Abdellah, comment il est devenu aveugle. Raconte-lui pour Lalla Louisa, comment ils ont pris le bétail de son père, ses brebis, ses vaches, comment ils l'ont ligoté et ont tué son père. Raconte-lui aussi pour Ammar Ou Nser, comment ils ont pris son bétail..."
+            "text": "Je lui ai raconté au sujet de mon oncle Abdallah, comment il a perdu la vue ; je lui ai parlé de Lalla Louiza, de son père, de ceux à qui ils ont confisqué les brebis, de ceux à qui ils ont pris les bœufs, et puis de ceux dont ils ont assassiné le père. Je lui ai raconté aussi au sujet de Ammar Ou-Nasr, à qui ils ont pris aussi les troupeaux..."
         },
         {
             "id": "seg-1",
@@ -32,14 +32,14 @@
             "speaker": "S1",
             "start": 18.0,
             "end": 22.0,
-            "text": "Là-bas, ils ont énormément souffert, ces gens-là, n'est-ce pas ?"
+            "text": "Moi, je ne connais pas grand-chose à ce sujet."
         },
         {
             "id": "seg-3",
             "speaker": "S2",
             "start": 22.0,
             "end": 24.0,
-            "text": "Toi et mon père, ils l'ont emmené en prison."
+            "text": "Papa aussi, ils l’ont emmené en prison."
         },
         {
             "id": "seg-4",
@@ -53,7 +53,7 @@
             "speaker": "S2",
             "start": 26.0,
             "end": 28.0,
-            "text": "Toi et je ne sais plus combien avec l'oncle Bachir."
+            "text": "Oui, il y est resté 3 mois."
         },
         {
             "id": "seg-6",
@@ -67,21 +67,21 @@
             "speaker": "S2",
             "start": 30.0,
             "end": 33.0,
-            "text": "Lui et... mon père et Bachir."
+            "text": "Lui et... notre oncle Baba el Bachir."
         },
         {
             "id": "seg-8",
             "speaker": "S1",
             "start": 33.0,
             "end": 35.0,
-            "text": "Mon père et Bachir ?"
+            "text": "Baba el Bachir ?"
         },
         {
             "id": "seg-9",
             "speaker": "S2",
             "start": 35.0,
             "end": 37.0,
-            "text": "Oui, ils ont failli tuer ton père aussi."
+            "text": "Mon père s'est disputé avec..."
         },
         {
             "id": "seg-10",
@@ -298,7 +298,7 @@
             "speaker": "S1",
             "start": 229.0,
             "end": 257.0,
-            "text": "Après, il a dit aux deux garçons : \"Vous êtes jeunes, morts pour morts, venez, je vais vous faire sortir de prison et vous courez. Morts pour morts, si vous vous sauvez, tant mieux, si vous n'êtes pas sauvés, vous mourrez.\" Après les deux sont partis de là, ils sont rentrés chez eux. Quand ils sont arrivés chez eux, ils ont frappé à la porte, mais leur famille ne voulait pas ouvrir."
+            "text": "Après, il a dit aux deux garçons : <em>«Vous êtes jeunes, morts pour morts, venez, je vais vous faire sortir de prison et vous courez. Morts pour morts, si vous vous sauvez, tant mieux, si vous n'êtes pas sauvés, vous mourrez.»</em> Après les deux sont partis de là, ils sont rentrés chez eux. Quand ils sont arrivés chez eux, ils ont frappé à la porte, mais leur famille ne voulait pas ouvrir."
         },
         {
             "id": "seg-41",
@@ -326,7 +326,7 @@
             "speaker": "S1",
             "start": 273.0,
             "end": 315.0,
-            "text": "Oui, leurs enfants, alors ils ont ouvert la porte et les ont pris. Après il y a une dame dont ils ont tué le mari. Elle est partie, et un jour ils l'ont attrapée, ils l'ont frappée avec des bâtons, comme ça, sans arrêt. Après ils ont creusé sa tombe, ou elle a creusé sa tombe, et ils lui ont dit : \"Rentre dedans pour qu'on te tue.\" Elle a dit : \"Excusez-moi, laissez-moi faire deux prières, une prière, et après vous me tuez.\" Quand elle a fait sa prière, elle est morte. Quand ils sont venus pour la tuer, elle était déjà morte, ça y est."
+            "text": "Oui, leurs enfants, alors ils ont ouvert la porte et les ont pris. Après il y a une dame dont ils ont tué le mari. Elle est partie, et un jour ils l'ont attrapée, ils l'ont frappée avec des bâtons, comme ça, sans arrêt. Après ils ont creusé sa tombe, ou elle a creusé sa tombe, et ils lui ont dit : <em> «Rentre dedans pour qu'on te tue. »</em> Elle a dit : <em> «Excusez-moi, laissez-moi faire deux prières, une prière, et après vous me tuez. »</em> Quand elle a fait sa prière, elle est morte. Quand ils sont venus pour la tuer, elle était déjà morte, ça y est."
         },
         {
             "id": "seg-45",
@@ -354,7 +354,7 @@
             "speaker": "S1",
             "start": 322.0,
             "end": 336.0,
-            "text": "Bah oui. Elle m'a dit aussi : \"Moi quand j'allais à l'école française, on passait près d'une petite prison\", à côté d'un..."
+            "text": "Bah oui. Elle m'a dit aussi : <em>« Moi quand j'allais à l'école française, on passait près d'une petite prison »</em>, à côté d'un..."
         },
         {
             "id": "seg-49",
@@ -368,7 +368,7 @@
             "speaker": "S1",
             "start": 337.0,
             "end": 345.0,
-            "text": "Un camp, elle a dit : \"On entendait comment ils frappaient les prisonniers, ils pleuraient.\" Parce qu'ils les torturaient."
+            "text": "Un camp, elle a dit : <em>« On entendait comment ils frappaient les prisonniers, ils pleuraient. »</em> Parce qu'ils les torturaient."
         },
         {
             "id": "seg-51",
@@ -382,7 +382,7 @@
             "speaker": "S1",
             "start": 346.0,
             "end": 352.0,
-            "text": "Ils torturent. Elle a dit : \"On les entendait crier, crier, crier. Même les femmes on les entendait crier.\""
+            "text": "Ils torturent. Elle a dit : <em> « On les entendait crier, crier, crier. Même les femmes on les entendait crier. » </em>"
         },
         {
             "id": "seg-53",
@@ -417,7 +417,7 @@
             "speaker": "S3",
             "start": 357.0,
             "end": 359.0,
-            "text": "Ah oui OK."
+            "text": "Ah oui ok."
         },
         {
             "id": "seg-58",
@@ -452,7 +452,7 @@
             "speaker": "S1",
             "start": 376.0,
             "end": 428.0,
-            "text": "Elle soigne avec les plantes tout ça. Alors ils lui ont dit : \"Toi tu aides le FLN, tu fais des choses pour le FLN.\" Ils l'ont mise en prison. Elle est restée je ne sais pas, deux ou trois mois, puis elle est sortie quand même. Ils ont aussi pris mon oncle, le frère de mon père, pendant 9 mois en prison, personne ne savait où il était. Après il est sorti. Et un autre oncle, le frère de ma mère, ils l'ont pris à la montagne, ils lui ont fait subir plein de tortures. Ils lui ont mis l'électricité sur la langue, ils lui ont fait sur... ça (elle désigne les parties intimes). Je ne dis pas ça."
+            "text": "Elle soigne avec les plantes tout ça. Alors ils lui ont dit : <em> «Toi tu aides le FLN, tu fais des choses pour le FLN. » </em> Ils l'ont mise en prison. Elle est restée je ne sais pas, deux ou trois mois, puis elle est sortie quand même. Ils ont aussi pris mon oncle, le frère de mon père, pendant 9 mois en prison, personne ne savait où il était. Après il est sorti. Et un autre oncle, le frère de ma mère, ils l'ont pris à la montagne, ils lui ont fait subir plein de tortures. Ils lui ont mis l'électricité sur la langue, ils lui ont fait sur... ça (elle désigne les parties intimes). Je ne dis pas ça."
         },
         {
             "id": "seg-63",
@@ -536,7 +536,7 @@
             "speaker": "S1",
             "start": 509.0,
             "end": 533.0,
-            "text": "À cause du stress, de la peur, ils avaient peur de tout, parce qu'ils rentraient comme ça par surprise. Après, une fille de 10 ans, notre voisine, ils leur ont pris 300 chèvres. Elle pleurait : \"Redonnez-moi ma petite chèvre, redonnez-moi ma petite chèvre\", mais rien du tout, ils ne lui ont pas rendu sa petite chèvre."
+            "text": "À cause du stress, de la peur, ils avaient peur de tout, parce qu'ils rentraient comme ça par surprise. Après, une fille de 10 ans, notre voisine, ils leur ont pris 300 chèvres. Elle pleurait : <em> «Redonnez-moi ma petite chèvre, redonnez-moi ma petite chèvre » </em>, mais rien du tout, ils ne lui ont pas rendu sa petite chèvre."
         },
         {
             "id": "seg-75",

@@ -8,7 +8,7 @@ import { SegmentedTranscript } from '../../../../core/models/transcript.model';
 
 const mockSegmentedData: SegmentedTranscript = {
   metadata: {
-    title: 'Entretien avec Fatima',
+    title: 'Échange avec Fatima',
     speakers: {
       S1: { name: 'Fatima Marwazouzal', role: 'Artiste' },
       S2: { name: 'Habib Hadjar', role: 'Interviewer' }
@@ -31,7 +31,7 @@ const mockCarreWithTranscript: Carre = {
   priceFormatted: '495 €',
   colorName: 'Blanc / Noir',
   year: 2026,
-  artist: 'Fatima-Marwa Zouzal',
+  artist: 'Fatima Marwa Zouzal',
   dimensions: '90 x 90 cm',
   composition: '100 % soie',
   careInstructions: ['Nettoyage à sec'],
@@ -45,7 +45,7 @@ const mockCarreWithTranscript: Carre = {
     transcriptUrl: '/carres/carre-laures/segmented-transcript.json',
     durationSeconds: 1800,
     durationFormatted: '00:30:00',
-    title: 'Entretien avec Fatima',
+    title: 'Échange avec Fatima',
     interviewees: ['Fatima Marwazouzal', 'Habib Hadjar'],
     synopsis: 'Synopsis test'
   }
@@ -94,11 +94,73 @@ describe('TranscriptComponent', () => {
     const subtitle = compiled.querySelector('.transcript-subtitle-muted');
     expect(subtitle).not.toBeNull();
     expect(subtitle?.textContent).toContain("Transcription de l'échange entre");
-    expect(subtitle?.textContent).toContain('et Fatima-Marwa');
+    expect(subtitle?.textContent).toContain('et Fatima Marwa');
 
     const redactedBar = subtitle?.querySelector('.redacted-bar');
     expect(redactedBar).not.toBeNull();
     expect(redactedBar?.getAttribute('aria-label')).toBe('Identité caviardée');
+  });
+
+  it('should not render a static disclaimer in the header', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.transcript-content-warning')).toBeNull();
+  });
+
+  describe('Transcript Disclaimer Overlay', () => {
+    it('should show the disclaimer overlay by default over the transcript wrapper', () => {
+      const compiled = fixture.nativeElement as HTMLElement;
+      const overlay = compiled.querySelector('.transcript-disclaimer-overlay');
+      expect(overlay).toBeTruthy();
+      expect(overlay?.classList.contains('is-hidden')).toBe(false);
+
+      expect(overlay?.textContent).toContain('Contenu sensible');
+      expect(overlay?.textContent).toContain('Cet enregistrement et sa transcription comportent des récits éprouvants.');
+
+      const warningIcon = overlay?.querySelector('svg.warning-icon');
+      expect(warningIcon).toBeTruthy();
+
+      const unlockBtn = overlay?.querySelector('.unlock-btn');
+      expect(unlockBtn).toBeTruthy();
+      expect(unlockBtn?.textContent).toContain('Lire la transcription');
+
+      const playBtn = overlay?.querySelector('.play-btn');
+      expect(playBtn).toBeTruthy();
+      expect(playBtn?.textContent).toContain('Écouter');
+    });
+
+    it('should unlock the transcript when unlock button is clicked', () => {
+      const compiled = fixture.nativeElement as HTMLElement;
+      const unlockBtn = compiled.querySelector('.unlock-btn') as HTMLButtonElement;
+      unlockBtn.click();
+      fixture.detectChanges();
+
+      expect(component.isOverlayVisible()).toBe(false);
+      const overlay = compiled.querySelector('.transcript-disclaimer-overlay');
+      expect(overlay?.classList.contains('is-hidden')).toBe(true);
+      expect(audioService.dismissedDisclaimerCarres().has(mockCarreWithTranscript.id)).toBe(true);
+    });
+
+    it('should unlock and start playback when play button is clicked', () => {
+      const playSpy = vi.spyOn(audioService, 'playCarre');
+      const compiled = fixture.nativeElement as HTMLElement;
+      const playBtn = compiled.querySelector('.disclaimer-actions .play-btn') as HTMLButtonElement;
+      playBtn.click();
+      fixture.detectChanges();
+
+      expect(playSpy).toHaveBeenCalledWith(mockCarreWithTranscript);
+      expect(component.isOverlayVisible()).toBe(false);
+    });
+
+    it('should hide the overlay automatically when audio is playing', () => {
+      audioService.currentCarre.set(mockCarreWithTranscript);
+      audioService.isPlaying.set(true);
+      fixture.detectChanges();
+
+      expect(component.isOverlayVisible()).toBe(false);
+      const compiled = fixture.nativeElement as HTMLElement;
+      const overlay = compiled.querySelector('.transcript-disclaimer-overlay');
+      expect(overlay?.classList.contains('is-hidden')).toBe(true);
+    });
   });
 
   it('should be collapsed by default', () => {

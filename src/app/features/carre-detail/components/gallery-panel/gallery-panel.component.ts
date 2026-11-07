@@ -135,7 +135,7 @@ import { SvgIconComponent } from '../../../../shared/components/svg-icon/svg-ico
         }
 
         <!-- Panel Superposé Flottant ISO Hermès (Compact & Ancré en Bas à Droite) -->
-        <aside class="selector-panel" aria-label="Détails et écoute de l'entretien">
+        <aside class="selector-panel" aria-label="Détails et écoute de l'échange">
           <div class="selector-template-wrapper">
             <div class="product-selector">
               <!-- En-tête : Titre -->
@@ -180,25 +180,15 @@ import { SvgIconComponent } from '../../../../shared/components/svg-icon/svg-ico
                       type="button"
                       class="button button-color-primary button-layout-full button-radius-small button-size-medium button-variant-filled"
                       (click)="onActionClick()"
-                      [attr.aria-label]="
-                        isCurrentPlaying() ? 'Mettre en pause' : 'Écouter l’entretien audio'
-                      "
+                      aria-label="Faire défiler jusqu'à l'écoute de l'échange audio"
                     >
                       <span class="button-icon">
-                        @if (isCurrentPlaying()) {
-                          <span class="micro-equalizer" aria-hidden="true">
-                            <span class="eq-bar eq-bar-1"></span>
-                            <span class="eq-bar eq-bar-2"></span>
-                            <span class="eq-bar eq-bar-3"></span>
-                          </span>
-                        } @else {
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                            <polygon points="6,4 20,12 6,20"></polygon>
-                          </svg>
-                        }
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                          <polygon points="6,4 20,12 6,20"></polygon>
+                        </svg>
                       </span>
                       <span class="button-label label-medium">
-                        {{ isCurrentPlaying() ? 'Mettre en pause' : (isCurrentStarted() ? 'Reprendre l’écoute' : 'Écouter l’entretien') }}
+                        Écouter l’échange
                       </span>
                     </button>
 
@@ -212,7 +202,7 @@ import { SvgIconComponent } from '../../../../shared/components/svg-icon/svg-ico
                       (click)="scrollToTranscript()"
                     >
                       <app-svg-icon name="ng__clock" size="13px" customClass="mr-1.5"></app-svg-icon>
-                      <span>Lire la transcription de l'interview</span>
+                      <span>Lire la transcription de l'échange</span>
                     </button>
                   </div>
                 } @else {
@@ -484,10 +474,15 @@ export class ZoneAGalleryPanelComponent implements OnDestroy {
 
   onActionClick(): void {
     if (!this.carre().interview) return;
-    if (this.audioService.currentCarre()?.id !== this.carre().id) {
-      this.audioService.playCarre(this.carre());
-    } else {
-      this.audioService.togglePlay();
+    this.scrollToAudioPlayer();
+  }
+
+  scrollToAudioPlayer(): void {
+    if (typeof window !== 'undefined') {
+      const section = document.getElementById('audio-sticky-section');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   }
 

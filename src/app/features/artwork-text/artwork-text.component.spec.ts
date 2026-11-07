@@ -10,7 +10,7 @@ describe('ArtworkTextComponent', () => {
   let fixture: ComponentFixture<ArtworkTextComponent>;
 
   const mockData: ArtworkText = {
-    artist: 'Fatima-Marwa Zouzal',
+    artist: 'Fatima Marwa Zouzal',
     title: 'Le Chant de la Soie',
     author: 'Habib Hadjar',
     paragraphs: [
@@ -50,7 +50,7 @@ describe('ArtworkTextComponent', () => {
     const title = el.querySelector('.artwork-title');
     const author = el.querySelector('.author-name');
 
-    expect(artist?.textContent?.trim()).toBe('Fatima-Marwa Zouzal');
+    expect(artist?.textContent?.trim()).toBe('Fatima Marwa Zouzal');
     expect(title?.textContent?.trim()).toBe('Le Chant de la Soie');
     expect(author?.textContent?.trim()).toBe('par Habib Hadjar');
   });

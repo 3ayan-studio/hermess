@@ -105,6 +105,100 @@ describe('HomeQuoteCarouselComponent', () => {
     expect(component.activeIndex()).toBe(1);
   });
 
+  describe('Hover pause behavior', () => {
+    it('should pause auto-cycling on mouseenter and keep paused indefinitely while hovering', () => {
+      const section = fixture.nativeElement.querySelector('.home-quote-section') as HTMLElement;
+      expect(component.isPaused()).toBe(false);
+      expect(component.isHovered()).toBe(false);
+
+      section.dispatchEvent(new MouseEvent('mouseenter'));
+      fixture.detectChanges();
+
+      expect(component.isHovered()).toBe(true);
+      expect(component.isPaused()).toBe(true);
+
+      // Advance 30 seconds: should remain at quote 0 because hovered
+      vi.advanceTimersByTime(30000);
+      expect(component.activeIndex()).toBe(0);
+
+      // Mouse leaves: resumes autoplay with fresh 7000ms
+      section.dispatchEvent(new MouseEvent('mouseleave'));
+      fixture.detectChanges();
+
+      expect(component.isHovered()).toBe(false);
+      expect(component.isPaused()).toBe(false);
+
+      vi.advanceTimersByTime(7000);
+      expect(component.activeIndex()).toBe(1);
+    });
+
+    it('should maintain pause if pointerup occurs while isHovered is true', () => {
+      const section = fixture.nativeElement.querySelector('.home-quote-section') as HTMLElement;
+      section.dispatchEvent(new MouseEvent('mouseenter'));
+      fixture.detectChanges();
+
+      expect(component.isHovered()).toBe(true);
+      expect(component.isPaused()).toBe(true);
+
+      // Simulate click inside viewport (pointerdown then pointerup)
+      const viewport = fixture.nativeElement.querySelector('.quotes-slider-viewport') as HTMLElement;
+      const pointerDown = new PointerEvent('pointerdown', { button: 0, clientX: 100, clientY: 100, bubbles: true });
+      viewport.dispatchEvent(pointerDown);
+
+      const pointerUp = new PointerEvent('pointerup', { button: 0, clientX: 100, clientY: 100, bubbles: true });
+      viewport.dispatchEvent(pointerUp);
+      fixture.detectChanges();
+
+      // Crucial: isPaused must STILL be true because isHovered is true!
+      expect(component.isPaused()).toBe(true);
+
+      vi.advanceTimersByTime(14000);
+      expect(component.activeIndex()).toBe(0);
+    });
+
+    it('should maintain pause if focusout occurs while isHovered is true', () => {
+      const section = fixture.nativeElement.querySelector('.home-quote-section') as HTMLElement;
+      section.dispatchEvent(new MouseEvent('mouseenter'));
+      fixture.detectChanges();
+
+      expect(component.isHovered()).toBe(true);
+
+      section.dispatchEvent(new FocusEvent('focusout'));
+      fixture.detectChanges();
+
+      expect(component.isPaused()).toBe(true);
+    });
+
+    it('should activate isHovered and pause on mousemove if not already hovered', () => {
+      const section = fixture.nativeElement.querySelector('.home-quote-section') as HTMLElement;
+      expect(component.isHovered()).toBe(false);
+
+      section.dispatchEvent(new MouseEvent('mousemove'));
+      fixture.detectChanges();
+
+      expect(component.isHovered()).toBe(true);
+      expect(component.isPaused()).toBe(true);
+    });
+
+    it('should reset autoplay timer on goToQuote so user gets full 7000ms on the selected quote', () => {
+      vi.advanceTimersByTime(5000); // 5s elapsed
+      expect(component.activeIndex()).toBe(0);
+
+      // Bullet click at 5s
+      component.goToQuote(1);
+      fixture.detectChanges();
+      expect(component.activeIndex()).toBe(1);
+
+      // Advance 5000ms (total 10s from start, but only 5s on quote 1)
+      vi.advanceTimersByTime(5000);
+      expect(component.activeIndex()).toBe(1); // Should still be on quote 1!
+
+      // Advance remaining 2000ms -> now reaches 7000ms on quote 1 and moves to quote 0
+      vi.advanceTimersByTime(2000);
+      expect(component.activeIndex()).toBe(0);
+    });
+  });
+
   it('should navigate to specific quote when bullet is clicked', () => {
     component.goToQuote(1);
     fixture.detectChanges();
@@ -192,6 +286,33 @@ describe('HomeQuoteCarouselComponent', () => {
         seg: 'seg-3'
       }
     });
+  });
+
+  it('should render "Lire plus" button and navigate to artwork text page when artwork quote is clicked', () => {
+    const artworkQuote: AudioQuote = {
+      id: 'test-art-1',
+      type: 'artwork',
+      carreTitle: 'Her Story, Her Mess',
+      quote: 'Les récits sont difficiles à entendre.',
+      speaker: 'Virginie Bobin',
+      speakerRole: 'Texte de l’œuvre',
+      routeUrl: '/her-story-her-mess'
+    };
+
+    fixture.componentRef.setInput('quotes', [artworkQuote]);
+    fixture.detectChanges();
+
+    const activeSlide = fixture.nativeElement.querySelector('.quote-slide.is-active');
+    const button = activeSlide?.querySelector('.artwork-button') as HTMLButtonElement;
+    expect(button).not.toBeNull();
+    expect(button.textContent).toContain('Lire plus');
+    expect(button.querySelector('.icon-read')).not.toBeNull();
+
+    const navigateSpy = vi.spyOn(router, 'navigate').mockResolvedValue(true as never);
+
+    button.click();
+
+    expect(navigateSpy).toHaveBeenCalledWith(['/her-story-her-mess']);
   });
 
   it('should ignore pointerdown and not initiate drag when pointerdown originates from a button or link', () => {

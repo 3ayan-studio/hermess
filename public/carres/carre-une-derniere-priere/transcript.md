@@ -55,7 +55,7 @@
 **[05:53] [Locuteur 1] :** Oui !
 **[05:54] [Locuteur 3] :** Qui se sont fait torturer ?
 **[05:55] [Locuteur 1] :** Oui, oui, oui, il y avait beaucoup, beaucoup de choses.
-**[05:57] [Locuteur 3] :** Ah oui OK.
+**[05:57] [Locuteur 3] :** Ah oui ok.
 **[05:59] [Locuteur 1] :** Ils ont arrêté ma tante, parce que ma tante faisait des remèdes avec les plantes, tout ça.
 **[06:08] [Locuteur 3] :** Ah oui, OK, elle connaît les plantes quoi.
 **[06:10] [Locuteur 1] :** Elle connaît les plantes, quand quelqu'un avait une fracture, elle faisait...

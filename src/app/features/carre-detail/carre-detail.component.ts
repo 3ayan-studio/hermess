@@ -41,9 +41,9 @@ import { HomeQuoteCarouselComponent } from '../home/components/home-quote-carous
         <!-- ZONE B : Description & Accordéons ISO Hermès -->
         <app-accordions [carre]="current"></app-accordions>
 
-        <!-- ZONE C : Barre Audio Sticky Top + Transcription de l'Interview (si disponible) OU Citations -->
+        <!-- ZONE C : Barre Audio Sticky Top + Transcription de l'Échange (si disponible) OU Citations -->
         @if (current.hasInterview && current.interview) {
-          <div id="audio-sticky-section" class="w-full relative">
+          <div id="audio-sticky-section" class="w-full relative scroll-mt-14 lg:scroll-mt-12">
             <app-audio-sticky-bar [carre]="current"></app-audio-sticky-bar>
             <app-transcript [carre]="current" [targetSegmentId]="seg()"></app-transcript>
           </div>

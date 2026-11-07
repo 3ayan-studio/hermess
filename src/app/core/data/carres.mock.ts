@@ -8,9 +8,9 @@ export const CARRES_MOCK: Carre[] = [
     subtitle: 'Édition Spéciale Exposition 2026',
     ref: 'H003924S 01',
     priceFormatted: '495 €',
-    colorName: 'Noir / Émeraude / Ocre',
+    colorName: 'Noir / Nuages / BOOM',
     year: 2026,
-    artist: 'Fatima-Marwa Zouzal',
+    artist: 'Fatima Marwa Zouzal',
     dimensions: '90 x 90 cm',
     composition: '100 % soie de mûrier twill roulotté à la main en France',
     textile: '100 % soie de mûrier twill roulotté à la main',
@@ -23,7 +23,7 @@ export const CARRES_MOCK: Carre[] = [
       'Éviter le contact avec l’eau, le parfum et les produits chimiques.'
     ],
     description: `À travers ce Carré d'exception, l'artiste célèbre l'envol, la mémoire et la résilience. Dans une composition aérienne et géométrique où chaque détail est imprimé avec une précision d'orfèvre, les soies s'entremêlent pour offrir un voyage poétique et intime.`,
-    artisticNote: `« Concevoir ce carré a été une immersion profonde dans les récits transmis et l'architecture textile. » — Fatima-Marwa Zouzal`,
+    artisticNote: `« Concevoir ce carré a été une immersion profonde dans les récits transmis et l'architecture textile. » — Fatima Marwa Zouzal`,
     thumbnail: '/carres/carre-laures/main.jpeg',
     hasInterview: true,
     images: [
@@ -49,9 +49,9 @@ export const CARRES_MOCK: Carre[] = [
       transcriptUrl: '/carres/carre-laures/segmented-transcript.json',
       durationSeconds: 1345,
       durationFormatted: '00:22:25',
-      title: "Entretien avec Fatima-Marwa Zouzal : Autour de L'Aurès",
-      interviewees: ['Fatima-Marwa Zouzal (Artiste)', 'Témoin familial'],
-      interviewer: 'Fatima-Marwa Zouzal',
+      title: "Échange avec Fatima Marwa Zouzal : Autour de L'Aurès",
+      interviewees: ['Fatima Marwa Zouzal (Artiste)', 'Témoin familial'],
+      interviewer: 'Fatima Marwa Zouzal',
       synopsis: 'Échange intime autour de l’exode forcé dans les montagnes de l’Aurès lors de la guerre d’Algérie, la fuite nocturne à cheval et les bombardements subis par la famille.',
       transcript: [
         {
@@ -252,7 +252,7 @@ export const CARRES_MOCK: Carre[] = [
           timestampFormatted: '00:20:00',
           speaker: 'Fatima Marwazouzal',
           speakerRole: 'Artiste',
-          text: 'Au fil de l’entretien, je réalise combien cette œuvre est le reflet d’un long cheminement intime entre deux rives.'
+          text: 'Au fil de l’échange, je réalise combien cette œuvre est le reflet d’un long cheminement intime entre deux rives.'
         },
         {
           id: 't1-26',
@@ -328,9 +328,9 @@ export const CARRES_MOCK: Carre[] = [
     subtitle: 'Édition Spéciale Exposition 2026',
     ref: 'H003924S 02',
     priceFormatted: '495 €',
-    colorName: 'Bleu Ciel / Cobalt / Argent',
+    colorName: 'Bleu / Blanc / Rouge',
     year: 2026,
-    artist: 'Fatima-Marwa Zouzal',
+    artist: 'Fatima Marwa Zouzal',
     dimensions: '90 x 90 cm',
     composition: '100 % soie de mûrier twill roulotté à la main en France',
     textile: '100 % soie de mûrier twill roulotté à la main',
@@ -343,7 +343,7 @@ export const CARRES_MOCK: Carre[] = [
       'Éviter le contact avec l’eau, le parfum et les produits chimiques.'
     ],
     description: `Une composition aérienne explorant les trajectoires de vol, la mémoire des voyages et les cartes imaginaires. Les nuances d'azur et de reflets métalliques évoquent la traversée des fuseaux et les lignes d'horizon.`,
-    artisticNote: `« L'avion comme symbole de traversée, de distance et de lien entre deux rives. » — Fatima-Marwa Zouzal`,
+    artisticNote: `« L'avion comme symbole de traversée, de distance et de lien entre deux rives. » — Fatima Marwa Zouzal`,
     thumbnail: '/carres/carre-1954-1962/main.jpeg',
     hasInterview: true,
     images: [
@@ -369,9 +369,9 @@ export const CARRES_MOCK: Carre[] = [
       transcriptUrl: '/carres/carre-1954-1962/segmented-transcript.json',
       durationSeconds: 2044,
       durationFormatted: '00:34:04',
-      title: 'Entretien avec Fatima-Marwa Zouzal : Autour de 1954-1962',
-      interviewees: ['Fatima-Marwa Zouzal (Artiste)', 'Témoin familial'],
-      interviewer: 'Fatima-Marwa Zouzal',
+      title: 'Échange avec Fatima Marwa Zouzal : Autour de 1954-1962',
+      interviewees: ['Fatima Marwa Zouzal (Artiste)', 'Témoin familial'],
+      interviewer: 'Fatima Marwa Zouzal',
       synopsis: 'Échange familial retraçant l’enfance sous les bombardements des avions français, la vie dans les abris de fortune et les déplacements successifs de village en village.',
       transcript: [
         {
@@ -379,7 +379,7 @@ export const CARRES_MOCK: Carre[] = [
           timestampSeconds: 0,
           timestampFormatted: '00:00:00',
           speaker: 'Commissaire de l’exposition',
-          speakerRole: 'Entretien',
+          speakerRole: 'Échange',
           text: 'Avec le Carré Avion, le voyage prend une dimension à la fois physique et introspective. Comment est née cette idée ?'
         },
         {
@@ -400,9 +400,9 @@ export const CARRES_MOCK: Carre[] = [
     subtitle: 'Édition Spéciale Exposition 2026',
     ref: 'H003924S 03',
     priceFormatted: '495 €',
-    colorName: 'Ocre / Terre de Sienne / Écru',
+    colorName: 'Terre / Eau / Sable',
     year: 2026,
-    artist: 'Fatima-Marwa Zouzal',
+    artist: 'Fatima Marwa Zouzal',
     dimensions: '90 x 90 cm',
     composition: '100 % soie de mûrier twill roulotté à la main en France',
     textile: '100 % soie de mûrier twill roulotté à la main',
@@ -414,7 +414,7 @@ export const CARRES_MOCK: Carre[] = [
       'Éviter le contact avec l’eau, le parfum et les produits chimiques.'
     ],
     description: `Une exploration sensible du retour aux origines, de l'ancrage et des récits intimes transmis à travers les générations. Les teintes telluriques célèbrent la terre natale et la circularité de la mémoire.`,
-    artisticNote: `« Revenir, c'est redécouvrir ce que l'on croyait déjà connaître d'un regard neuf. » — Fatima-Marwa Zouzal`,
+    artisticNote: `« Revenir, c'est redécouvrir ce que l'on croyait déjà connaître d'un regard neuf. » — Fatima Marwa Zouzal`,
     thumbnail: '/carres/carre-retour-a-la-terre/main.jpeg',
     hasInterview: false,
     images: [
@@ -443,9 +443,9 @@ export const CARRES_MOCK: Carre[] = [
     subtitle: 'Édition Spéciale Exposition 2026',
     ref: 'H003924S 04',
     priceFormatted: '495 €',
-    colorName: 'Sable / Ivoire / Cuivre',
+    colorName: 'Bleu / Ciel / Délivrance',
     year: 2026,
-    artist: 'Fatima-Marwa Zouzal',
+    artist: 'Fatima Marwa Zouzal',
     dimensions: '90 x 90 cm',
     composition: '100 % soie de mûrier twill roulotté à la main en France',
     textile: '100 % soie de mûrier twill roulotté à la main',
@@ -458,7 +458,7 @@ export const CARRES_MOCK: Carre[] = [
       'Éviter le contact avec l’eau, le parfum et les produits chimiques.'
     ],
     description: `Une mise en scène graphique d'objets du quotidien et d'artéfacts mémoriels, réinventés dans une géométrie sensible. Chaque élément devient le témoin silencieux d'un rituel familier.`,
-    artisticNote: `« Chaque objet porte une charge affective et un silence qui lui est propre. » — Fatima-Marwa Zouzal`,
+    artisticNote: `« Chaque objet porte une charge affective et un silence qui lui est propre. » — Fatima Marwa Zouzal`,
     thumbnail: '/carres/carre-une-derniere-priere/main.jpeg',
     hasInterview: true,
     images: [
@@ -484,9 +484,9 @@ export const CARRES_MOCK: Carre[] = [
       transcriptUrl: '/carres/carre-une-derniere-priere/segmented-transcript.json',
       durationSeconds: 553,
       durationFormatted: '00:09:13',
-      title: 'Entretien avec Fatima-Marwa Zouzal : Autour d’Une dernière prière',
-      interviewees: ['Fatima-Marwa Zouzal (Artiste)', 'Témoin familial'],
-      interviewer: 'Fatima-Marwa Zouzal',
+      title: 'Échange avec Fatima Marwa Zouzal : Autour d’Une dernière prière',
+      interviewees: ['Fatima Marwa Zouzal (Artiste)', 'Témoin familial'],
+      interviewer: 'Fatima Marwa Zouzal',
       synopsis: 'Échange intime à plusieurs voix évoquant les arrestations, les quarante jours d’emprisonnement d’un proche et la transmission des mémoires de lutte.',
       transcript: [
         {
@@ -515,9 +515,9 @@ export const CARRES_MOCK: Carre[] = [
     subtitle: 'Édition Spéciale Exposition 2026',
     ref: 'H003924S 05',
     priceFormatted: '495 €',
-    colorName: 'Pourpre / Nacre / Émeraude',
+    colorName: 'Rose, Rouge, Libre',
     year: 2026,
-    artist: 'Fatima-Marwa Zouzal',
+    artist: 'Fatima Marwa Zouzal',
     dimensions: '90 x 90 cm',
     composition: '100 % soie de mûrier twill roulotté à la main en France',
     textile: '100 % soie de mûrier twill roulotté à la main',
@@ -529,7 +529,7 @@ export const CARRES_MOCK: Carre[] = [
       'Éviter le contact avec l’eau, le parfum et les produits chimiques.'
     ],
     description: `Inspiré du bestiaire mythologique et de l'imaginaire féerique, La Licorne allie délicatesse végétale et force allégorique. Les nuances chatoyantes de pourpre et d'émeraude font vibrer la soie à chaque mouvement.`,
-    artisticNote: `« La licorne comme allégorie de la liberté sauvage et du secret préservé. » — Fatima-Marwa Zouzal`,
+    artisticNote: `« La licorne comme allégorie de la liberté sauvage et du secret préservé. » — Fatima Marwa Zouzal`,
     thumbnail: '/carres/carre-un-seul-heros-le-peuple/main.jpeg',
     hasInterview: false,
     images: [

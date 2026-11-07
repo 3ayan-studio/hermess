@@ -192,6 +192,53 @@
 }
 
 // ---------------------------------------------------------
+// MODULE PLAYER AUDIO FLOTTANT (Par-dessus tout le site en haut à droite)
+// ---------------------------------------------------------
+.header-floating-player {
+  position: fixed;
+  top: 15px; // Centré dans le header desktop de 64px ( (64 - 34) / 2 = 15px )
+  right: 24px; // Alignement marge desktop ISO Hermès
+  z-index: 105; // Par-dessus le header-main-container (100) et la barre sticky (40)
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+  // Transitions soyeuses : fondu enchaîné doux et ajustement vertical de position
+  transition: opacity 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
+              visibility 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
+              top 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  // Desktop scrollé (> 64px) : aligné au centre de la barre de menu de 46px ( (46 - 34) / 2 = 6px )
+  @media (min-width: 1024px) {
+    &.is-scrolled {
+      top: 6px;
+    }
+  }
+
+  // Mobile (< 1024px) : centré dans le header mobile de 50px ( (50 - 34) / 2 = 8px )
+  @media (max-width: 1023px) {
+    top: 8px;
+    right: 15px;
+  }
+
+  // Fondu enchaîné de disparition lorsque le player audio de l'échange est dans le viewport
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  // Masquage lorsque le drawer menu mobile plein écran est ouvert
+  &.is-menu-open {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+// ---------------------------------------------------------
 // PILULE DE LECTURE AUDIO DANS LE HEADER (Style Hermès Sobre & Carré)
 // ---------------------------------------------------------
 .audio-pill-indicator {
@@ -201,7 +248,7 @@
   background-color: #ffffff;
   color: #000000;
   border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 0.125rem; // Carré Hermès 2px
+  border-radius: 0; // Carré Hermès pur
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   font-family: var(--font-primary);
   user-select: none;
@@ -252,7 +299,7 @@
       max-width: calc(100vw - 80px);
       padding: 0;
       gap: 0;
-      border-radius: 0.125rem;
+      border-radius: 0;
       animation: mobilePillExpand 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 
       .audio-pill-body {
@@ -264,7 +311,7 @@
   // Comportement Desktop (>= 1024px) : toujours visible en ligne
   @media (min-width: 1024px) {
     width: auto !important;
-    border-radius: 0.125rem !important;
+    border-radius: 0 !important;
     padding: 0;
     gap: 0;
   }
@@ -425,7 +472,7 @@
   .eq-bar {
     width: 2px;
     background-color: #000000;
-    border-radius: 1px;
+    border-radius: 0;
     transition: height 0.2s ease, opacity 0.2s ease;
   }
 
@@ -1018,7 +1065,7 @@ a.menu-link-lvl3 {
   padding: 1.15rem 1.25rem;
   background-color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 0.125rem; // Carré Hermès 2px
+  border-radius: 0; // Carré Hermès pur
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 
   .tray-audio-title-row {

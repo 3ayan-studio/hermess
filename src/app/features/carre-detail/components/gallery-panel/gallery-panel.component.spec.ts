@@ -98,8 +98,17 @@ describe('ZoneAGalleryPanelComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     const actionBtn = compiled.querySelector('.button-color-primary');
     expect(actionBtn).toBeTruthy();
+    expect(actionBtn?.textContent).toContain('Écouter l’échange');
     const contemplation = compiled.querySelector('.contemplation-banner');
     expect(contemplation).toBeNull();
+  });
+
+  it('should scroll to the audio player section when the listen button is clicked', () => {
+    const scrollSpy = vi.spyOn(component, 'scrollToAudioPlayer');
+    const compiled = fixture.nativeElement as HTMLElement;
+    const actionBtn = compiled.querySelector('.button-color-primary') as HTMLButtonElement;
+    actionBtn.click();
+    expect(scrollSpy).toHaveBeenCalled();
   });
 
   it('should render only duration in interview meta without voice mention', () => {

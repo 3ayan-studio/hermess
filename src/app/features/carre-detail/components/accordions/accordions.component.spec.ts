@@ -125,5 +125,30 @@ describe('ZoneBAccordionsComponent', () => {
 
     expect(chevrons[1].classList.contains('is-expanded')).toBe(true);
   });
+
+  it('should have the first accordion cell (medium) open by default initially and reset when carre input changes', () => {
+    const carre1 = CARRES_MOCK[0];
+    fixture.componentRef.setInput('carre', carre1);
+    fixture.detectChanges();
+
+    expect(component.openSection()).toBe('medium');
+    const firstCollapse = fixture.nativeElement.querySelector('#panel-content-medium');
+    expect(firstCollapse.classList.contains('is-expanded')).toBe(true);
+
+    // Close the accordion
+    const buttons = fixture.nativeElement.querySelectorAll('.expansion-panel-header-btn') as NodeListOf<HTMLButtonElement>;
+    buttons[0].click();
+    fixture.detectChanges();
+    expect(component.openSection()).toBeNull();
+    expect(firstCollapse.classList.contains('is-expanded')).toBe(false);
+
+    // Switch carre -> should reset to first cell open by default
+    const carre2 = CARRES_MOCK[1];
+    fixture.componentRef.setInput('carre', carre2);
+    fixture.detectChanges();
+
+    expect(component.openSection()).toBe('medium');
+    expect(firstCollapse.classList.contains('is-expanded')).toBe(true);
+  });
 });
 

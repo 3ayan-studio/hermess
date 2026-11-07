@@ -5,7 +5,7 @@
                 "name": "Anonyme"
             },
             "S2": {
-                "name": "Fatima-Marwa"
+                "name": "Fatima Marwa"
             }
         }
     },
@@ -57,7 +57,7 @@
             "speaker": "S1",
             "start": 53.0,
             "end": 72.0,
-            "text": "Et puis, la France nous a dit : « Vous ne restez pas ici. » On a pris la route, on est venus de Kbach, on a traversé notre pays, le Ksar d'Ahyou, après Loulach."
+            "text": "Et puis, la France nous a dit : <em>« Vous ne restez pas ici.  »</em> On a pris la route, on est venus de Kbach, on a traversé notre pays, le Ksar d'Ahyou, après Loulach."
         },
         {
             "id": "seg-7",
@@ -596,7 +596,7 @@
             "speaker": "S1",
             "start": 418.0,
             "end": 420.0,
-            "text": "« Eh ben, débrouillez-vous ! » C'est comme ça."
+            "text": "<em>« Eh ben, débrouillez-vous !  »</em> C'est comme ça."
         },
         {
             "id": "seg-84",
@@ -624,7 +624,7 @@
             "speaker": "S1",
             "start": 423.0,
             "end": 449.0,
-            "text": "Avec deux enfants, oui. Et bah nous, on est restés quatre jours. Après, on a embarqué d'Annaba. D'Annaba, je me rappelle même, on y a été plusieurs fois, et quand je vois le port, les souvenirs me remontent : comment, à l'époque où j'étais petite – enfin j'avais treize ans –, je m'étais dit : « C'est grand, c'est un grand port ! » Mais en fin de compte, tu sais..."
+            "text": "Avec deux enfants, oui. Et bah nous, on est restés quatre jours. Après, on a embarqué d'Annaba. D'Annaba, je me rappelle même, on y a été plusieurs fois, et quand je vois le port, les souvenirs me remontent : comment, à l'époque où j'étais petite – enfin j'avais treize ans –, je m'étais dit : <em>« C'est grand, c'est un grand port !  »</em> Mais en fin de compte, tu sais..."
         },
         {
             "id": "seg-88",
@@ -1093,7 +1093,7 @@
             "speaker": "S1",
             "start": 849.0,
             "end": 863.0,
-            "text": "Bah, ils ont dit : « Qu'est-ce que vous faites ici ? Si vous restez là, vous n'allez rien faire, il faut aller travailler ! » Bah, ils sont venus, et on est venus ici, en Normandie. Et je ne t'ai pas dit : là-bas, les toilettes, c'était dehors !"
+            "text": "Bah, ils ont dit : <em>« Qu'est-ce que vous faites ici ? Si vous restez là, vous n'allez rien faire, il faut aller travailler !  »</em> Bah, ils sont venus, et on est venus ici, en Normandie. Et je ne t'ai pas dit : là-bas, les toilettes, c'était dehors !"
         },
         {
             "id": "seg-155",
@@ -1177,7 +1177,7 @@
             "speaker": "S1",
             "start": 935.0,
             "end": 941.0,
-            "text": "Ils avaient plus, ils habitaient dans un autre village. Nous, ça s'appelait le « Village 8 », on était dans le « Village 8 »."
+            "text": "Ils avaient plus, ils habitaient dans un autre village. Nous, ça s'appelait le <em>« Village 8  »</em>, on était dans le <em>« Village 8  »</em>."
         },
         {
             "id": "seg-167",
@@ -1191,7 +1191,7 @@
             "speaker": "S1",
             "start": 941.0,
             "end": 993.0,
-            "text": "Et les autres, je ne sais pas où, il y en avait plusieurs. Il y avait plein de monde de la famille. À la suite de ça, on est venus ici, en Normandie. Quand on est arrivés à Paris, c'est la gendarmerie qui est venue nous accueillir. Ils nous ont emmenés jusqu'au train, à Saint-Lazare. Après, on a pris le train de la gare Saint-Lazare jusqu'à Rouen. Et là, c'est pareil, c'est la police ou les gendarmes, je ne sais pas, qui sont venus. Ils nous ont emmenés jusqu'à l'endroit où on a habité. On a habité quelque temps rue de Lyons, à Rouen, juste en face de Charles-Nicolle. On a habité là-bas, ils nous donnaient à manger. Après, comme mon père travaillait, il a décidé : « Moi, je ne vais pas rester ici, je vais aller... » On a été rue Saint-Gilles, à côté de notre dernier logement, ce n'est pas loin de là."
+            "text": "Et les autres, je ne sais pas où, il y en avait plusieurs. Il y avait plein de monde de la famille. À la suite de ça, on est venus ici, en Normandie. Quand on est arrivés à Paris, c'est la gendarmerie qui est venue nous accueillir. Ils nous ont emmenés jusqu'au train, à Saint-Lazare. Après, on a pris le train de la gare Saint-Lazare jusqu'à Rouen. Et là, c'est pareil, c'est la police ou les gendarmes, je ne sais pas, qui sont venus. Ils nous ont emmenés jusqu'à l'endroit où on a habité. On a habité quelque temps rue de Lyons, à Rouen, juste en face de Charles-Nicolle. On a habité là-bas, ils nous donnaient à manger. Après, comme mon père travaillait, il a décidé : <em>« Moi, je ne vais pas rester ici, je vais aller...  »</em> On a été rue Saint-Gilles, à côté de notre dernier logement, ce n'est pas loin de là."
         },
         {
             "id": "seg-169",
@@ -1261,7 +1261,7 @@
             "speaker": "S1",
             "start": 1076.0,
             "end": 1087.0,
-            "text": "Ça, moi, jusqu'à présent, quand je vois... J'ai vu le film de Smaïn, je l'ai vu deux fois, et quand je le vois, je pleure. Je me dis : « C'est ce qui nous est arrivé. » C'était vraiment..."
+            "text": "Ça, moi, jusqu'à présent, quand je vois... J'ai vu le film de Smaïn, je l'ai vu deux fois, et quand je le vois, je pleure. Je me dis : <em>« C'est ce qui nous est arrivé.  »</em> C'était vraiment..."
         },
         {
             "id": "seg-179",
@@ -1359,7 +1359,7 @@
             "speaker": "S1",
             "start": 1142.0,
             "end": 1226.0,
-            "text": "Bah, les bombardements, pour ce qui est de voir, je n'ai pas vu. J'ai vu une fois, mais je n'ai pas vu des gens... Une fois, quand on était à Chekfa, à la fin de l'après-midi, j'ai vu une Jeep qui descendait dans les montagnes pour aller à Bordj Tahar – ça s'appelle Bordj Tahar. Je voyais une Jeep aller comme ça. Et puis, on entendait dire : « Telle personne est morte, telle personne... » Même que ce soit à M'Chouneche ou ailleurs, on entendait que telle personne avait été tuée, mais je n'ai pas vu exactement. Mais il y a des endroits, par exemple quand on était à Chekfa, il y avait des parachutistes, il y avait des trucs comme ça. On voyait, à un endroit, des gens qui ramenaient des civils. Parce que nous, comme on était curieux – à l'époque je n'avais pas treize ans, j'avais quoi, dix ans ? J'avais dix ans –, on regardait les camions qui passaient, des GMC, ça s'appelle des GMC, qui passaient. Et il y avait des soldats de chaque côté, ils ouvraient un petit peu la bâche, et il y avait plein de monde, des civils et tout ça."
+            "text": "Bah, les bombardements, pour ce qui est de voir, je n'ai pas vu. J'ai vu une fois, mais je n'ai pas vu des gens... Une fois, quand on était à Chekfa, à la fin de l'après-midi, j'ai vu une Jeep qui descendait dans les montagnes pour aller à Bordj Tahar – ça s'appelle Bordj Tahar. Je voyais une Jeep aller comme ça. Et puis, on entendait dire : <em>« Telle personne est morte, telle personne...  »</em> Même que ce soit à M'Chouneche ou ailleurs, on entendait que telle personne avait été tuée, mais je n'ai pas vu exactement. Mais il y a des endroits, par exemple quand on était à Chekfa, il y avait des parachutistes, il y avait des trucs comme ça. On voyait, à un endroit, des gens qui ramenaient des civils. Parce que nous, comme on était curieux – à l'époque je n'avais pas treize ans, j'avais quoi, dix ans ? J'avais dix ans –, on regardait les camions qui passaient, des GMC, ça s'appelle des GMC, qui passaient. Et il y avait des soldats de chaque côté, ils ouvraient un petit peu la bâche, et il y avait plein de monde, des civils et tout ça."
         },
         {
             "id": "seg-193",
@@ -1387,7 +1387,7 @@
             "speaker": "S1",
             "start": 1237.0,
             "end": 1258.0,
-            "text": "La terre était retournée, il n'y avait pas de... On voyait ça. Bon, celui qui s'en fout, il s'en fout, mais moi j'étais... J'étais en train de regarder, et quand je regardais, je me disais : « Ah, ce sont des gens qui sont morts et ils les ont mis dans la fosse. » Oui, oui, de toute façon, c'était la guerre."
+            "text": "La terre était retournée, il n'y avait pas de... On voyait ça. Bon, celui qui s'en fout, il s'en fout, mais moi j'étais... J'étais en train de regarder, et quand je regardais, je me disais : <em>« Ah, ce sont des gens qui sont morts et ils les ont mis dans la fosse.  »</em> Oui, oui, de toute façon, c'était la guerre."
         },
         {
             "id": "seg-197",
@@ -1450,7 +1450,7 @@
             "speaker": "S1",
             "start": 1297.0,
             "end": 1331.0,
-            "text": "On a vu un truc sur l'Algérie là-bas, à Rouen. Et en sortant, une femme m'a dit : « Ouais, le FLN... les harkis, ce sont des collabos. » Je lui ai dit : « Je vous arrête tout de suite ! » Je lui ai dit : « Je vous arrête tout de suite, ce ne sont pas des collabos. Il y a des gens, quand la France prend un fusil et vous le met comme ça : \"Tu vas combattre avec moi ou je te tue, toi et ta famille\", qu'est-ce que tu vas choisir ? »"
+            "text": "On a vu un truc sur l'Algérie là-bas, à Rouen. Et en sortant, une femme m'a dit : <em>« Ouais, le FLN... les harkis, ce sont des collabos.  »</em> Je lui ai dit : <em>« Je vous arrête tout de suite !  »</em> Je lui ai dit : <em>« Je vous arrête tout de suite, ce ne sont pas des collabos. Il y a des gens, quand la France prend un fusil et vous le met comme ça : <em>«Tu vas combattre avec moi ou je te tue, toi et ta famille»</em>, qu'est-ce que tu vas choisir ?  »</em>"
         },
         {
             "id": "seg-206",
@@ -1464,7 +1464,7 @@
             "speaker": "S1",
             "start": 1332.0,
             "end": 1367.0,
-            "text": "Elle m'a dit : « Ah, moi je ne savais pas. » Je lui ai dit : « C'est ça qui s'est passé en Algérie. » Je lui ai dit : « Il y en a qui se sont engagés de leur propre gré. Mais il y en a, c'était à cause de la faim ! » Parce que chez nous, dans les montagnes, je te dis : les Ouled Abderrahmane, les Aït Melkem, les Aït Slimane Ou Aïssa, Ahyou... Là, je te dis, en Algérie – moi je n'ai pas vu d'autres endroits en Algérie –, mais ceux-là, ils ont été les plus déracinés. Ils ont été déracinés, ils n'avaient même pas de nourriture, rien ! Ils ont été déracinés de leur..."
+            "text": "Elle m'a dit : <em>« Ah, moi je ne savais pas.  »</em> Je lui ai dit : <em>« C'est ça qui s'est passé en Algérie.  »</em> Je lui ai dit : <em>« Il y en a qui se sont engagés de leur propre gré. Mais il y en a, c'était à cause de la faim !  »</em> Parce que chez nous, dans les montagnes, je te dis : les Ouled Abderrahmane, les Aït Melkem, les Aït Slimane Ou Aïssa, Ahyou... Là, je te dis, en Algérie – moi je n'ai pas vu d'autres endroits en Algérie –, mais ceux-là, ils ont été les plus déracinés. Ils ont été déracinés, ils n'avaient même pas de nourriture, rien ! Ils ont été déracinés de leur..."
         },
         {
             "id": "seg-208",
@@ -1541,7 +1541,7 @@
             "speaker": "S1",
             "start": 1434.0,
             "end": 1470.0,
-            "text": "Nous, heureusement, il y avait ma grand-mère. Ma mère était malade – paix à son âme, à ma mère et à ma grand-mère –, elle était malade comme ça. Et nous, c'est ma grand-mère qui a essayé de ramener je ne sais pas quelle petite couverture. Elle n'avait pas pu prendre grand-chose parce qu'ils avaient dit : « Allez, vite, dans le camion ! » Heureusement, il y avait la tante de Friha, qui s'était mariée avec quelqu'un qui travaillait là, il nous a ramené quelque chose et sa tante nous a fait à manger, elle nous a fait de la galette. Elle nous a ramené ça, autrement on n'avait rien !"
+            "text": "Nous, heureusement, il y avait ma grand-mère. Ma mère était malade – paix à son âme, à ma mère et à ma grand-mère –, elle était malade comme ça. Et nous, c'est ma grand-mère qui a essayé de ramener je ne sais pas quelle petite couverture. Elle n'avait pas pu prendre grand-chose parce qu'ils avaient dit : <em>« Allez, vite, dans le camion !  »</em> Heureusement, il y avait la tante de Friha, qui s'était mariée avec quelqu'un qui travaillait là, il nous a ramené quelque chose et sa tante nous a fait à manger, elle nous a fait de la galette. Elle nous a ramené ça, autrement on n'avait rien !"
         },
         {
             "id": "seg-219",
@@ -1639,7 +1639,7 @@
             "speaker": "S1",
             "start": 1513.0,
             "end": 1528.0,
-            "text": "J'avais huit ans. Ah oui, c'est... Je te dis, quand cette femme a commencé à parler, je lui ai dit : « Je vous arrête tout de suite ! » Je lui ai dit : « Moi, je l'ai vécu. Ce n'est pas qu'on me l'a dit, j'ai vécu là-bas ! »"
+            "text": "J'avais huit ans. Ah oui, c'est... Je te dis, quand cette femme a commencé à parler, je lui ai dit : <em>« Je vous arrête tout de suite !  »</em> Je lui ai dit : <em>« Moi, je l'ai vécu. Ce n'est pas qu'on me l'a dit, j'ai vécu là-bas !  »</em>"
         },
         {
             "id": "seg-233",
@@ -1653,7 +1653,7 @@
             "speaker": "S1",
             "start": 1529.0,
             "end": 1534.0,
-            "text": "C'est ça. Elle m'a dit : « Ah, je ne savais pas ça. » Je lui ai dit : « Comme ça, maintenant vous savez ! »"
+            "text": "C'est ça. Elle m'a dit : <em>« Ah, je ne savais pas ça.  »</em> Je lui ai dit : <em>« Comme ça, maintenant vous savez !  »</em>"
         },
         {
             "id": "seg-235",
@@ -1667,21 +1667,21 @@
             "speaker": "S1",
             "start": 1535.0,
             "end": 1538.0,
-            "text": "« Vous savez tout ce qui s'est passé. »"
+            "text": "<em>« Vous savez tout ce qui s'est passé.  »</em>"
         },
         {
             "id": "seg-237",
             "speaker": "S2",
             "start": 1538.0,
             "end": 1542.0,
-            "text": "Parce que « harki », c'est trop vu comme « collabo », alors qu'ils ne savent pas la..."
+            "text": "Parce que <em>« harki  »</em>, c'est trop vu comme <em>« collabo  »</em>, alors qu'ils ne savent pas la..."
         },
         {
             "id": "seg-238",
             "speaker": "S1",
             "start": 1542.0,
             "end": 1580.0,
-            "text": "Oui ! Je lui ai dit : « Il y en a qui avaient faim, il y avait des jeunes qui n'avaient rien, ils se sont retrouvés là, leurs parents étaient morts aussi. Leurs pères étaient morts, parfois même les deux parents, ils n'avaient rien ! Ils étaient obligés d'aller s'engager pour manger. » C'était pour manger. Et nous, les gens des villages que je t'ai cités, s'ils se sont mis avec la France, c'était parce qu'ils n'avaient rien à manger. Parce qu'ils étaient comme une plante qu'on a arrachée avec ses racines et qu'on a jetée comme ça !"
+            "text": "Oui ! Je lui ai dit : <em>« Il y en a qui avaient faim, il y avait des jeunes qui n'avaient rien, ils se sont retrouvés là, leurs parents étaient morts aussi. Leurs pères étaient morts, parfois même les deux parents, ils n'avaient rien ! Ils étaient obligés d'aller s'engager pour manger.  »</em> C'était pour manger. Et nous, les gens des villages que je t'ai cités, s'ils se sont mis avec la France, c'était parce qu'ils n'avaient rien à manger. Parce qu'ils étaient comme une plante qu'on a arrachée avec ses racines et qu'on a jetée comme ça !"
         },
         {
             "id": "seg-239",
@@ -1716,7 +1716,7 @@
             "speaker": "S1",
             "start": 1605.0,
             "end": 1619.0,
-            "text": "Non, ils ont dit : « Il faut partir ! Il ne faut pas rester ici, il ne faut pas rester ici. » Parce que si les gens restaient là-bas, ils allaient nourrir le FLN et tout ça. Alors ils ont dit : « Vous allez tous partir. »"
+            "text": "Non, ils ont dit : <em>« Il faut partir ! Il ne faut pas rester ici, il ne faut pas rester ici.  »</em> Parce que si les gens restaient là-bas, ils allaient nourrir le FLN et tout ça. Alors ils ont dit : <em>« Vous allez tous partir.  »</em>"
         },
         {
             "id": "seg-244",
@@ -1730,7 +1730,7 @@
             "speaker": "S1",
             "start": 1620.0,
             "end": 1657.0,
-            "text": "« On va faire un camp. » Eh bah, ils les ont emmenés à M'Chouneche, tous les gens étaient là-bas, personne ne bougeait, ils les ont tous ramenés. Moi, je me rappelle, j'avais six ans quand j'ai marché à pied. Parce que mon père – que Dieu ait son âme – avait son mulet rempli de provisions, un petit peu de semoule, un petit peu de ceci, un petit peu de cela. Il y avait mes deux frères qui étaient plus petits que moi : Messaoud – que Dieu ait son âme – qui était plus petit que moi, et Moh qui était beaucoup plus petit, il n'avait même pas trois ans, je ne sais pas."
+            "text": "<em>« On va faire un camp.  »</em> Eh bah, ils les ont emmenés à M'Chouneche, tous les gens étaient là-bas, personne ne bougeait, ils les ont tous ramenés. Moi, je me rappelle, j'avais six ans quand j'ai marché à pied. Parce que mon père – que Dieu ait son âme – avait son mulet rempli de provisions, un petit peu de semoule, un petit peu de ceci, un petit peu de cela. Il y avait mes deux frères qui étaient plus petits que moi : Messaoud – que Dieu ait son âme – qui était plus petit que moi, et Moh qui était beaucoup plus petit, il n'avait même pas trois ans, je ne sais pas."
         },
         {
             "id": "seg-246",
@@ -1751,7 +1751,7 @@
             "speaker": "S1",
             "start": 1691.0,
             "end": 1708.0,
-            "text": "Ouais. Eh bah, je te dis, ce n'était pas... Après, il y avait l'armée, les militaires français qui étaient à gauche et à droite : « Allez, marchez tous en ligne ! » Je me rappelle, dans les montagnes, on marchait en ligne, en ligne."
+            "text": "Ouais. Eh bah, je te dis, ce n'était pas... Après, il y avait l'armée, les militaires français qui étaient à gauche et à droite : <em>« Allez, marchez tous en ligne !  »</em> Je me rappelle, dans les montagnes, on marchait en ligne, en ligne."
         },
         {
             "id": "seg-249",
@@ -1814,7 +1814,7 @@
             "speaker": "S1",
             "start": 1734.0,
             "end": 1756.0,
-            "text": "Non, je n'ai pas vu parce que nous, les enfants, on ne pouvait pas voir ça. Mais on entendait : « Telle personne est morte, telle personne... » Des femmes, et parfois des villages entiers qu'ils brûlaient comme ça. Même sans avoir vu les gens mourir, quand on est partis, je te dis, c'était difficile, difficile, difficile."
+            "text": "Non, je n'ai pas vu parce que nous, les enfants, on ne pouvait pas voir ça. Mais on entendait : <em>« Telle personne est morte, telle personne...  »</em> Des femmes, et parfois des villages entiers qu'ils brûlaient comme ça. Même sans avoir vu les gens mourir, quand on est partis, je te dis, c'était difficile, difficile, difficile."
         },
         {
             "id": "seg-258",
@@ -1856,7 +1856,7 @@
             "speaker": "S1",
             "start": 1800.0,
             "end": 1841.0,
-            "text": "Et puis, la France n'a pas reconnu que c'était une guerre jusqu'en 1999. C'est là où des Français – parce qu'eux aussi étaient là-bas, ils étaient forcés de faire le service militaire, ils étaient forcés d'aller combattre, ils ne voulaient pas mais ils étaient obligés – ont dit : « C'était la guerre ! » Moi, je me rappelle, depuis tout ce temps, c'était la guerre. Ce n'était pas une simple révolution, ou comme quand ils disaient : « Ce sont des bandits, les gens du FLN. » Non, non, c'était une guerre, une vraie guerre."
+            "text": "Et puis, la France n'a pas reconnu que c'était une guerre jusqu'en 1999. C'est là où des Français – parce qu'eux aussi étaient là-bas, ils étaient forcés de faire le service militaire, ils étaient forcés d'aller combattre, ils ne voulaient pas mais ils étaient obligés – ont dit : <em>« C'était la guerre !  »</em> Moi, je me rappelle, depuis tout ce temps, c'était la guerre. Ce n'était pas une simple révolution, ou comme quand ils disaient : <em>« Ce sont des bandits, les gens du FLN.  »</em> Non, non, c'était une guerre, une vraie guerre."
         },
         {
             "id": "seg-264",
@@ -1912,7 +1912,7 @@
             "speaker": "S1",
             "start": 1915.0,
             "end": 1934.0,
-            "text": "Les Français l'ont attrapé – enfin, il y avait des Français, des harkis et tout ça –, et ils lui ont dit : « Tu vas ramener ça au FLN ! » Il leur a dit : « Moi, j'habite à M'Chouneche », et il leur a montré le papier prouvant qu'il tenait la boucherie. Il leur a dit : « Non, non ! » Plusieurs fois, ils ont voulu le tuer."
+            "text": "Les Français l'ont attrapé – enfin, il y avait des Français, des harkis et tout ça –, et ils lui ont dit : <em>« Tu vas ramener ça au FLN !  »</em> Il leur a dit : <em>« Moi, j'habite à M'Chouneche  »</em>, et il leur a montré le papier prouvant qu'il tenait la boucherie. Il leur a dit : <em>« Non, non !  »</em> Plusieurs fois, ils ont voulu le tuer."
         },
         {
             "id": "seg-272",
@@ -1926,14 +1926,14 @@
             "speaker": "S1",
             "start": 1935.0,
             "end": 1959.0,
-            "text": "Ah bah, plusieurs fois, deux ou trois fois ! Et puis il y avait des gens là-bas : les jeunes lui disaient : « Mon oncle, il ne faut pas que tu restes ici », et les vieux lui disaient : « Mon fils, il ne faut pas que tu restes ici, il faut que tu partes. Soit à gauche, soit à droite ! Tu as deux routes : soit tu vas avec les Français, soit tu vas avec le FLN. »"
+            "text": "Ah bah, plusieurs fois, deux ou trois fois ! Et puis il y avait des gens là-bas : les jeunes lui disaient : <em>« Mon oncle, il ne faut pas que tu restes ici  »</em>, et les vieux lui disaient : <em>« Mon fils, il ne faut pas que tu restes ici, il faut que tu partes. Soit à gauche, soit à droite ! Tu as deux routes : soit tu vas avec les Français, soit tu vas avec le FLN.  »</em>"
         },
         {
             "id": "seg-274",
             "speaker": "S1",
             "start": 1959.0,
             "end": 1968.0,
-            "text": "Mon père est allé voir le FLN, mais ils ont dit : « Celui qui n'a pas de fusil, on n'a pas besoin de lui. »"
+            "text": "Mon père est allé voir le FLN, mais ils ont dit : <em>« Celui qui n'a pas de fusil, on n'a pas besoin de lui.  »</em>"
         },
         {
             "id": "seg-275",
@@ -1982,7 +1982,7 @@
             "speaker": "S1",
             "start": 2015.0,
             "end": 2042.0,
-            "text": "Oui, ils sont passés à M'Chouneche aussi, et après nous, on est partis à El M'Zaraa. Tout le monde est rentré au bercail. Mais après, là-bas aussi, il y avait des gens qui n'étaient pas honnêtes. Ils n'étaient pas honnêtes, ils ont commencé à dire... Au début ça allait, mais quelque temps après : « Ah, vous, vous êtes des harkis », ils commençaient. Alors après, nos parents ont dit : « C'est bon, on s'en va. »"
+            "text": "Oui, ils sont passés à M'Chouneche aussi, et après nous, on est partis à El M'Zaraa. Tout le monde est rentré au bercail. Mais après, là-bas aussi, il y avait des gens qui n'étaient pas honnêtes. Ils n'étaient pas honnêtes, ils ont commencé à dire... Au début ça allait, mais quelque temps après : <em>« Ah, vous, vous êtes des harkis  »</em>, ils commençaient. Alors après, nos parents ont dit : <em>« C'est bon, on s'en va.  »</em>"
         },
         {
             "id": "seg-282",

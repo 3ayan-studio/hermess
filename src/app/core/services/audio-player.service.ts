@@ -25,6 +25,8 @@ export class AudioPlayerService {
   readonly duration = signal<number>(0);
   readonly isBuffering = signal<boolean>(false);
   readonly isMuted = signal<boolean>(false);
+  readonly isExchangePlayerInViewport = signal<boolean>(false);
+  readonly dismissedDisclaimerCarres = signal<Set<string>>(new Set());
 
   // Signaux calculés (computed)
   readonly progressPercentage = computed(() => {
@@ -92,11 +94,21 @@ export class AudioPlayerService {
     });
   }
 
+  dismissDisclaimer(carreId: string): void {
+    this.dismissedDisclaimerCarres.update(set => {
+      const next = new Set(set);
+      next.add(carreId);
+      return next;
+    });
+  }
+
   /**
-   * Charge et joue l'interview associée au carré
+   * Charge et joue l'échange associé au carré
    */
   playCarre(carre: Carre): void {
     if (!this.audio || !carre.interview) return;
+
+    this.dismissDisclaimer(carre.id);
 
     const current = this.currentCarre();
     if (current?.id === carre.id) {
@@ -126,6 +138,8 @@ export class AudioPlayerService {
    */
   playFromTime(carre: Carre, timeInSeconds: number): void {
     if (!this.audio || !carre.interview) return;
+
+    this.dismissDisclaimer(carre.id);
 
     this.currentTime.set(timeInSeconds);
 
@@ -245,6 +259,10 @@ export class AudioPlayerService {
     }
   }
 
+  setExchangePlayerInViewport(visible: boolean): void {
+    this.isExchangePlayerInViewport.set(visible);
+  }
+
   closePlayer(): void {
     if (this.audio) {
       this.audio.pause();
@@ -255,5 +273,6 @@ export class AudioPlayerService {
     this.currentTime.set(0);
     this.duration.set(0);
     this.currentCarre.set(null);
+    this.isExchangePlayerInViewport.set(false);
   }
 }

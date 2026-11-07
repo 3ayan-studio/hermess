@@ -12,7 +12,7 @@ export const appConfig: ApplicationConfig = {
         onViewTransitionCreated: ({ transition, from, to }) => {
           const fromPath = from.url.map(s => s.path).join('/');
           const toPath = to.url.map(s => s.path).join('/');
-          if ((fromPath === '' || fromPath === '/') && toPath.startsWith('carre')) {
+          if (fromPath !== toPath) {
             transition.skipTransition();
           }
         }

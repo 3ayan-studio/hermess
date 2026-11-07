@@ -14,7 +14,7 @@ const mockCarre: Carre = {
   priceFormatted: '495 €',
   colorName: 'Blanc / Noir',
   year: 2026,
-  artist: 'Fatima-Marwa Zouzal',
+  artist: 'Fatima Marwa Zouzal',
   dimensions: '90 x 90 cm',
   composition: '100 % soie',
   careInstructions: ['Nettoyage à sec'],
@@ -27,7 +27,7 @@ const mockCarre: Carre = {
     audioUrl: 'https://example.com/audio.mp3',
     durationSeconds: 1800,
     durationFormatted: '00:30:00',
-    title: 'Entretien avec Fatima',
+    title: 'Échange avec Fatima',
     interviewees: ['Fatima Marwazouzal'],
     synopsis: 'Synopsis test',
     transcript: []
@@ -66,6 +66,47 @@ describe('HeaderComponent', () => {
 
     const pill = fixture.nativeElement.querySelector('.audio-pill-indicator');
     expect(pill).toBeNull();
+  });
+
+  it('should render header-floating-player and apply is-hidden when exchange player is in viewport', () => {
+    audioService.currentCarre.set(mockCarre);
+    fixture.detectChanges();
+
+    const floatingPlayer = fixture.nativeElement.querySelector('.header-floating-player');
+    expect(floatingPlayer).toBeTruthy();
+    expect(floatingPlayer.classList.contains('is-hidden')).toBe(false);
+
+    audioService.setExchangePlayerInViewport(true);
+    fixture.detectChanges();
+    expect(floatingPlayer.classList.contains('is-hidden')).toBe(true);
+
+    audioService.setExchangePlayerInViewport(false);
+    fixture.detectChanges();
+    expect(floatingPlayer.classList.contains('is-hidden')).toBe(false);
+  });
+
+  it('should apply is-scrolled class to floating player when page is scrolled', () => {
+    audioService.currentCarre.set(mockCarre);
+    fixture.detectChanges();
+
+    const floatingPlayer = fixture.nativeElement.querySelector('.header-floating-player');
+    expect(floatingPlayer.classList.contains('is-scrolled')).toBe(false);
+
+    component.isScrolled.set(true);
+    fixture.detectChanges();
+    expect(floatingPlayer.classList.contains('is-scrolled')).toBe(true);
+  });
+
+  it('should apply is-menu-open class to floating player when mobile menu drawer is open', () => {
+    audioService.currentCarre.set(mockCarre);
+    fixture.detectChanges();
+
+    const floatingPlayer = fixture.nativeElement.querySelector('.header-floating-player');
+    expect(floatingPlayer.classList.contains('is-menu-open')).toBe(false);
+
+    component.isMenuOpen.set(true);
+    fixture.detectChanges();
+    expect(floatingPlayer.classList.contains('is-menu-open')).toBe(true);
   });
 
   it('should display audio pill indicator when a carre is active', () => {
@@ -159,7 +200,7 @@ describe('HeaderComponent', () => {
   });
 
   describe('Navbar ISO Hermès', () => {
-    it('should contain Femme, Artwork text, and À Propos in correct order', () => {
+    it('should contain Femme, Artwork text, and À PROPOS in correct order', () => {
       const menuItems = fixture.nativeElement.querySelectorAll('.menu-bar-container .item');
       expect(menuItems.length).toBe(3);
 
@@ -167,10 +208,10 @@ describe('HeaderComponent', () => {
       expect(femmeBtn?.textContent?.trim()).toBe('Femme');
 
       const textLink = menuItems[1].querySelector('a');
-      expect(textLink?.getAttribute('routerLink') || textLink?.getAttribute('href')).toBe('/texte-oeuvre');
+      expect(textLink?.getAttribute('routerLink') || textLink?.getAttribute('href')).toBe('/her-story-her-mess');
 
       const aboutLink = menuItems[2].querySelector('a');
-      expect(aboutLink?.textContent?.trim()).toBe('À Propos');
+      expect(aboutLink?.textContent?.trim()).toBe("À PROPOS");
       expect(aboutLink?.getAttribute('routerLink') || aboutLink?.getAttribute('href')).toBe('/a-propos');
     });
 
@@ -222,9 +263,9 @@ describe('HeaderComponent', () => {
       expect(headerContainer.classList.contains('background-white')).toBe(false);
     });
 
-    it('should have background-white class when on /texte-oeuvre route', () => {
+    it('should have background-white class when on /her-story-her-mess route', () => {
       const headerContainer = fixture.nativeElement.querySelector('.header-main-container');
-      component.currentUrl.set('/texte-oeuvre');
+      component.currentUrl.set('/her-story-her-mess');
       fixture.detectChanges();
 
       expect(component.isHeaderWhite()).toBe(true);
@@ -244,7 +285,7 @@ describe('HeaderComponent', () => {
     it('should NOT keep active class on navbar buttons when on current page', () => {
       // Les boutons ne doivent plus avoir la classe active persistante
       const femmeBtn = fixture.nativeElement.querySelector('#collection-button');
-      const textLink = fixture.nativeElement.querySelector('a[routerLink="/texte-oeuvre"]');
+      const textLink = fixture.nativeElement.querySelector('a[routerLink="/her-story-her-mess"]');
       const aboutLink = fixture.nativeElement.querySelector('a[routerLink="/a-propos"]');
 
       expect(femmeBtn?.classList.contains('active')).toBe(false);
