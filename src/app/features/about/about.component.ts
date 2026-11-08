@@ -1,31 +1,31 @@
 import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  HostListener,
-  afterNextRender,
-  computed,
-  signal,
-  viewChild
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    HostListener,
+    afterNextRender,
+    computed,
+    signal,
+    viewChild
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SvgIconComponent } from '../../shared/components/svg-icon/svg-icon.component';
 
 export interface ExpoMediaItem {
-  id: string;
-  type: 'image' | 'video';
-  srcJpg?: string;
-  srcMp4?: string;
-  srcMov?: string;
-  alt: string;
-  caption: string;
+    id: string;
+    type: 'image' | 'video';
+    srcJpg?: string;
+    srcMp4?: string;
+    srcMov?: string;
+    alt: string;
+    caption: string;
 }
 
 @Component({
-  selector: 'app-about',
-  standalone: true,
-  imports: [RouterLink, SvgIconComponent],
-  template: `
+    selector: 'app-about',
+    standalone: true,
+    imports: [RouterLink, SvgIconComponent],
+    template: `
     <main class="expo-page" role="main">
       <!-- 1. En-tête Immersif Hero Media (ISO Référence 16 / 17: block-text-on-full-media) -->
       <section
@@ -52,7 +52,7 @@ export interface ExpoMediaItem {
             <span class="editorial-block-intro">À Propos</span>
             <h1 class="editorial-block-title hero-title">
               <span class="hero-title-line">HERMESS</span>
-              <span class="hero-title-line">FATIMA MARWA ZOUZAL</span>
+              <span class="hero-title-line">FATIMA-MARWAZOUZAL</span>
             </h1>
           </div>
         </div>
@@ -214,176 +214,176 @@ export interface ExpoMediaItem {
       </section>
     </main>
   `,
-  styleUrl: './about.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    styleUrl: './about.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AboutComponent {
-  readonly sliderTrack = viewChild<ElementRef<HTMLElement>>('sliderTrack');
+    readonly sliderTrack = viewChild<ElementRef<HTMLElement>>('sliderTrack');
 
-  // Médias de l'exposition issus de public/expo
-  readonly slides = signal<ExpoMediaItem[]>([
-    {
-      id: 'carre-laures',
-      type: 'image',
-      srcJpg: '/expo/photo1.jpeg',
-      alt: "Carré d'art Hermess — L'Aures imprimé sur sergé de soie",
-      caption: ''
-    },
-    {
-      id: 'video-floating',
-      type: 'video',
-      srcMp4: '/expo/video2.mp4',
-      srcMov: '/expo/video2.mov',
-      alt: 'Vidéo cinémagraphe du carré flottant au souffle de la pièce',
-      caption: ''
-    },
-    {
-      id: 'bordure-soie',
-      type: 'image',
-      srcJpg: '/expo/photo14.jpeg',
-      alt: 'Détail de la bordure et du roulotté sur soie',
-      caption: ''
-    },
-    {
-      id: 'contre-jour-soie',
-      type: 'image',
-      srcJpg: '/expo/photo121.jpeg',
-      alt: 'Contre-jour révélant le fil et la transparence du carré',
-      caption: 'Lumière traversante et fil de soie'
-    },
-    {
-      id: 'video-salon',
-      type: 'video',
-      srcMp4: '/expo/video34.mp4',
-      srcMov: '/expo/video34.mov',
-      alt: 'Vidéo cinémagraphe du salon avec les œuvres suspendues',
-      caption: ''
-    },
-    {
-      id: 'carre-alger',
-      type: 'image',
-      srcJpg: '/expo/photo166.jpeg',
-      alt: "Carré d'art Hermess — Alger suspendu dans l'espace",
-      caption: ''
-    },
-    {
-      id: 'scenographie-echelle',
-      type: 'image',
-      srcJpg: '/expo/photo113.jpeg',
-      alt: "Mise en place scénographique des carrés d'art",
-      caption: ''
-    },
-    {
-      id: 'perspective-atelier',
-      type: 'image',
-      srcJpg: '/expo/photo142.jpeg',
-      alt: 'Perspective scénographique et élévation de la pièce',
-      caption: 'Perspective et élévation'
-    }
-  ]);
+    // Médias de l'exposition issus de public/expo
+    readonly slides = signal<ExpoMediaItem[]>([
+        {
+            id: 'carre-laures',
+            type: 'image',
+            srcJpg: '/expo/photo1.jpeg',
+            alt: "Carré d'art Hermess — L'Aures imprimé sur sergé de soie",
+            caption: ''
+        },
+        {
+            id: 'video-floating',
+            type: 'video',
+            srcMp4: '/expo/video2.mp4',
+            srcMov: '/expo/video2.mov',
+            alt: 'Vidéo cinémagraphe du carré flottant au souffle de la pièce',
+            caption: ''
+        },
+        {
+            id: 'bordure-soie',
+            type: 'image',
+            srcJpg: '/expo/photo14.jpeg',
+            alt: 'Détail de la bordure et du roulotté sur soie',
+            caption: ''
+        },
+        {
+            id: 'contre-jour-soie',
+            type: 'image',
+            srcJpg: '/expo/photo121.jpeg',
+            alt: 'Contre-jour révélant le fil et la transparence du carré',
+            caption: 'Lumière traversante et fil de soie'
+        },
+        {
+            id: 'video-salon',
+            type: 'video',
+            srcMp4: '/expo/video34.mp4',
+            srcMov: '/expo/video34.mov',
+            alt: 'Vidéo cinémagraphe du salon avec les œuvres suspendues',
+            caption: ''
+        },
+        {
+            id: 'carre-alger',
+            type: 'image',
+            srcJpg: '/expo/photo166.jpeg',
+            alt: "Carré d'art Hermess — Alger suspendu dans l'espace",
+            caption: ''
+        },
+        {
+            id: 'scenographie-echelle',
+            type: 'image',
+            srcJpg: '/expo/photo113.jpeg',
+            alt: "Mise en place scénographique des carrés d'art",
+            caption: ''
+        },
+        {
+            id: 'perspective-atelier',
+            type: 'image',
+            srcJpg: '/expo/photo142.jpeg',
+            alt: 'Perspective scénographique et élévation de la pièce',
+            caption: 'Perspective et élévation'
+        }
+    ]);
 
-  // État du carrousel avec Signals
-  readonly activeSlideIndex = signal(0);
-  readonly canScrollLeft = signal(false);
-  readonly canScrollRight = signal(true);
+    // État du carrousel avec Signals
+    readonly activeSlideIndex = signal(0);
+    readonly canScrollLeft = signal(false);
+    readonly canScrollRight = signal(true);
 
-  // Gestion du pointer drag (desktop)
-  private isPointerDown = false;
-  private startX = 0;
-  private scrollLeftStart = 0;
+    // Gestion du pointer drag (desktop)
+    private isPointerDown = false;
+    private startX = 0;
+    private scrollLeftStart = 0;
 
-  constructor() {
-    afterNextRender(() => {
-      this.updateScrollButtons();
-    });
-  }
-
-  @HostListener('window:resize')
-  onWindowResize(): void {
-    this.updateScrollButtons();
-  }
-
-  onScroll(): void {
-    this.updateScrollButtons();
-  }
-
-  updateScrollButtons(): void {
-    const el = this.sliderTrack()?.nativeElement;
-    if (!el) return;
-
-    // Détection pour environnement jsdom sans moteur de layout
-    if (el.scrollWidth === 0 && el.clientWidth === 0) {
-      this.canScrollLeft.set(el.scrollLeft > 5);
-      this.canScrollRight.set(true);
-      return;
+    constructor() {
+        afterNextRender(() => {
+            this.updateScrollButtons();
+        });
     }
 
-    const containerRect = el.getBoundingClientRect();
-    const slides = el.querySelectorAll<HTMLElement>('.swiper-slide');
-    if (slides.length === 0) return;
+    @HostListener('window:resize')
+    onWindowResize(): void {
+        this.updateScrollButtons();
+    }
 
-    const firstSlide = slides[0];
-    const lastSlide = slides[slides.length - 1];
+    onScroll(): void {
+        this.updateScrollButtons();
+    }
 
-    const firstRect = firstSlide.getBoundingClientRect();
-    const lastRect = lastSlide.getBoundingClientRect();
+    updateScrollButtons(): void {
+        const el = this.sliderTrack()?.nativeElement;
+        if (!el) return;
 
-    // En bout de course gauche : premier média calé ou scrollLeft très faible
-    const isAtStart = firstRect.left >= containerRect.left - 4 || el.scrollLeft <= 5;
-    // En bout de course droite : dernier média entièrement visible ou scrollLeft proche du max
-    const isAtEnd = lastRect.right <= containerRect.right + 4 || (el.scrollLeft + el.clientWidth >= el.scrollWidth - 10);
+        // Détection pour environnement jsdom sans moteur de layout
+        if (el.scrollWidth === 0 && el.clientWidth === 0) {
+            this.canScrollLeft.set(el.scrollLeft > 5);
+            this.canScrollRight.set(true);
+            return;
+        }
 
-    this.canScrollLeft.set(!isAtStart);
-    this.canScrollRight.set(!isAtEnd);
+        const containerRect = el.getBoundingClientRect();
+        const slides = el.querySelectorAll<HTMLElement>('.swiper-slide');
+        if (slides.length === 0) return;
 
-    // Calcul dynamique de l'index actif
-    const slideWidth = (firstSlide.offsetWidth || 340) + 2;
-    const index = Math.round(el.scrollLeft / slideWidth);
-    this.activeSlideIndex.set(Math.min(Math.max(0, index), this.slides().length - 1));
-  }
+        const firstSlide = slides[0];
+        const lastSlide = slides[slides.length - 1];
 
-  scrollSlide(direction: number): void {
-    const el = this.sliderTrack()?.nativeElement;
-    if (!el) return;
+        const firstRect = firstSlide.getBoundingClientRect();
+        const lastRect = lastSlide.getBoundingClientRect();
 
-    const scrollAmount = Math.max(el.clientWidth * 0.75, 340);
-    el.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        // En bout de course gauche : premier média calé ou scrollLeft très faible
+        const isAtStart = firstRect.left >= containerRect.left - 4 || el.scrollLeft <= 5;
+        // En bout de course droite : dernier média entièrement visible ou scrollLeft proche du max
+        const isAtEnd = lastRect.right <= containerRect.right + 4 || (el.scrollLeft + el.clientWidth >= el.scrollWidth - 10);
 
-    // Réévaluation des boutons après l'animation fluide
-    setTimeout(() => this.updateScrollButtons(), 250);
-    setTimeout(() => this.updateScrollButtons(), 500);
-  }
+        this.canScrollLeft.set(!isAtStart);
+        this.canScrollRight.set(!isAtEnd);
 
-  onPointerDown(event: PointerEvent): void {
-    // Uniquement bouton principal souris
-    if (event.pointerType === 'mouse' && event.button !== 0) return;
+        // Calcul dynamique de l'index actif
+        const slideWidth = (firstSlide.offsetWidth || 340) + 2;
+        const index = Math.round(el.scrollLeft / slideWidth);
+        this.activeSlideIndex.set(Math.min(Math.max(0, index), this.slides().length - 1));
+    }
 
-    const el = this.sliderTrack()?.nativeElement;
-    if (!el) return;
+    scrollSlide(direction: number): void {
+        const el = this.sliderTrack()?.nativeElement;
+        if (!el) return;
 
-    this.isPointerDown = true;
-    this.startX = event.pageX;
-    this.scrollLeftStart = el.scrollLeft;
-  }
+        const scrollAmount = Math.max(el.clientWidth * 0.75, 340);
+        el.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
 
-  onPointerMove(event: PointerEvent): void {
-    if (!this.isPointerDown) return;
+        // Réévaluation des boutons après l'animation fluide
+        setTimeout(() => this.updateScrollButtons(), 250);
+        setTimeout(() => this.updateScrollButtons(), 500);
+    }
 
-    const el = this.sliderTrack()?.nativeElement;
-    if (!el) return;
+    onPointerDown(event: PointerEvent): void {
+        // Uniquement bouton principal souris
+        if (event.pointerType === 'mouse' && event.button !== 0) return;
 
-    const deltaX = event.pageX - this.startX;
-    el.scrollLeft = this.scrollLeftStart - deltaX;
-    this.updateScrollButtons();
-  }
+        const el = this.sliderTrack()?.nativeElement;
+        if (!el) return;
 
-  onPointerUp(event: PointerEvent): void {
-    this.isPointerDown = false;
-    this.updateScrollButtons();
-  }
+        this.isPointerDown = true;
+        this.startX = event.pageX;
+        this.scrollLeftStart = el.scrollLeft;
+    }
 
-  onPointerCancel(): void {
-    this.isPointerDown = false;
-    this.updateScrollButtons();
-  }
+    onPointerMove(event: PointerEvent): void {
+        if (!this.isPointerDown) return;
+
+        const el = this.sliderTrack()?.nativeElement;
+        if (!el) return;
+
+        const deltaX = event.pageX - this.startX;
+        el.scrollLeft = this.scrollLeftStart - deltaX;
+        this.updateScrollButtons();
+    }
+
+    onPointerUp(event: PointerEvent): void {
+        this.isPointerDown = false;
+        this.updateScrollButtons();
+    }
+
+    onPointerCancel(): void {
+        this.isPointerDown = false;
+        this.updateScrollButtons();
+    }
 }

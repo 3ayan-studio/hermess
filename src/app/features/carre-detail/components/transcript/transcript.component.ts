@@ -50,7 +50,7 @@ export function stripHtmlTags(text: string): string {
           <p class="transcript-subtitle-muted">
             Transcription de l'échange entre
             <span class="redacted-bar" role="img" aria-label="Identité caviardée"></span>
-            et Fatima Marwa
+            et Fatima-Marwa
           </p>
         </header>
 
