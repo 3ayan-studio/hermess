@@ -4,7 +4,7 @@ FROM node:22-alpine AS builder
 WORKDIR /app
 
 # Copie des fichiers de dépendances en premier pour bénéficier du cache Docker
-COPY package.json ./
+COPY package.json package-lock.json ./
 
 RUN npm ci
 
