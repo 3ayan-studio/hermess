@@ -1,0 +1,13 @@
+node_modules
+dist
+.angular
+.git
+.gitignore
+_references
+.DS_Store
+Thumbs.db
+.vscode
+.agents
+coverage
+.env
+

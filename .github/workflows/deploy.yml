@@ -1,0 +1,110 @@
+name: Deploy Release to VPS (Capistrano-Docker)
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'Tag Git de la version à déployer (ex: v0.3.1)'
+        required: true
+      keep_releases:
+        description: 'Nombre de releases à conserver dans l historique'
+        required: false
+        default: '5'
+
+jobs:
+  deploy:
+    name: Build & Deploy on VPS
+    runs-on: ubuntu-latest
+
+    env:
+      APP_NAME: 'hermess'                         # Nom du projet (doit correspondre à /var/www/<app_name>)
+      VPS_HOST: ${{ secrets.VPS_HOST }}         # IP ou nom de domaine du VPS OVH
+      VPS_PORT: 2222                            # Port SSH durci
+      VPS_USER: 'deploy'                        # Utilisateur dédié au déploiement CI/CD
+      KEEP_RELEASES: ${{ inputs.keep_releases || '1' }}
+
+    steps:
+      - name: Déterminer le tag de release
+        id: vars
+        run: |
+          if [ -n "${{ inputs.release_tag }}" ]; then
+            echo "RELEASE_TAG=${{ inputs.release_tag }}" >> $GITHUB_OUTPUT
+          else
+            echo "RELEASE_TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Récupérer le code source de la release
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.vars.outputs.RELEASE_TAG }}
+
+      - name: Configurer la clé SSH pour l'accès au VPS
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.VPS_DEPLOY_SSH_KEY }}
+
+      - name: Créer le répertoire de la release sur le VPS
+        run: |
+          ssh -o StrictHostKeyChecking=no -p ${{ env.VPS_PORT }} ${{ env.VPS_USER }}@${{ env.VPS_HOST }} \
+            "mkdir -p /var/www/${{ env.APP_NAME }}/releases/${{ steps.vars.outputs.RELEASE_TAG }}"
+
+      - name: Synchroniser le code source vers le VPS (rsync)
+        run: |
+          rsync -avz --delete \
+            -e "ssh -p ${{ env.VPS_PORT }} -o StrictHostKeyChecking=no" \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude 'node_modules' \
+            --exclude '.env' \
+            ./ ${{ env.VPS_USER }}@${{ env.VPS_HOST }}:/var/www/${{ env.APP_NAME }}/releases/${{ steps.vars.outputs.RELEASE_TAG }}/
+
+      - name: Lier les fichiers partagés (.env) & Builder sur le VPS
+        run: |
+          ssh -o StrictHostKeyChecking=no -p ${{ env.VPS_PORT }} ${{ env.VPS_USER }}@${{ env.VPS_HOST }} << 'EOF'
+            set -euo pipefail
+            APP_NAME="${{ env.APP_NAME }}"
+            TAG="${{ steps.vars.outputs.RELEASE_TAG }}"
+            RELEASE_DIR="/var/www/${APP_NAME}/releases/${TAG}"
+            SHARED_DIR="/var/www/${APP_NAME}/shared"
+            CURRENT_LINK="/var/www/${APP_NAME}/current"
+
+            echo "--> Liaison symbolique de shared/.env vers la release..."
+            if [ -f "${SHARED_DIR}/.env" ]; then
+              ln -sfn "${SHARED_DIR}/.env" "${RELEASE_DIR}/.env"
+            fi
+
+            # Si le projet utilise un dossier storage partagé
+            if [ -d "${SHARED_DIR}/storage" ]; then
+              ln -sfn "${SHARED_DIR}/storage" "${RELEASE_DIR}/storage"
+            fi
+
+            echo "--> Build Docker sur le VPS pour la release [${TAG}]..."
+            cd "${RELEASE_DIR}"
+            docker compose -p "${APP_NAME}" build
+
+            echo "--> Démarrage du conteneur Docker..."
+            docker compose -p "${APP_NAME}" up -d --remove-orphans
+
+            echo "--> Attente du démarrage du service (healthcheck)..."
+            sleep 5
+            docker compose -p "${APP_NAME}" ps
+
+            echo "--> Bascule atomique du symlink current vers [${TAG}]..."
+            ln -sfn "${RELEASE_DIR}" "${CURRENT_LINK}"
+
+            echo "--> Nettoyage des anciennes releases..."
+            if [ -f "/var/www/${APP_NAME}/bin/cleanup.sh" ]; then
+              /var/www/${APP_NAME}/bin/cleanup.sh "${{ env.KEEP_RELEASES }}"
+            fi
+
+            echo "--> Rechargement sécurisé de Nginx..."
+            if sudo -n /usr/sbin/nginx -t >/dev/null 2>&1; then
+              sudo -n systemctl reload nginx || sudo -n /usr/bin/systemctl reload nginx || sudo -n /bin/systemctl reload nginx
+            fi
+
+            echo "=== Déploiement de [${APP_NAME}] version [${TAG}] terminé avec succès ! ==="
+          EOF
+
