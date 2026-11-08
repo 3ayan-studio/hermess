@@ -4,7 +4,7 @@ FROM node:22-alpine AS builder
 WORKDIR /app
 
 # Copie des fichiers de dépendances en premier pour bénéficier du cache Docker
-COPY package.json package-lock.json ./
+COPY package.json ./
 
 RUN npm ci
 
@@ -28,7 +28,7 @@ EXPOSE 80
 
 # Healthcheck (utilisation explicite de 127.0.0.1 pour compatibilité Alpine)
 HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
-  CMD wget -q --spider http://127.0.0.1/healthz || exit 1
+    CMD wget -q --spider http://127.0.0.1/healthz || exit 1
 
 # Démarrage de Nginx au premier plan
 CMD ["nginx", "-g", "daemon off;"]
