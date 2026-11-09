@@ -8,7 +8,6 @@ import {
   effect,
   inject,
   input,
-  linkedSignal,
   signal,
   viewChild
 } from '@angular/core';
@@ -41,56 +40,8 @@ function pseudoNoise(n: number): number {
   standalone: true,
   imports: [],
   template: `
-    <!-- Voile Flou Transparent avec Disclaimer Contenu Sensible -->
-    <div
-      class="audio-disclaimer-overlay"
-      [class.is-hidden]="!isOverlayVisible()"
-      (click)="startPlaybackAndDismiss($event)"
-      role="region"
-      aria-label="Avertissement contenu sensible et démarrage de l'écoute"
-    >
-      <div class="disclaimer-inner">
-        <div class="disclaimer-content">
-          <svg
-            class="warning-icon"
-            viewBox="0 0 24 24"
-            width="14"
-            height="14"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-            focusable="false"
-          >
-            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
-            <line x1="12" y1="9" x2="12" y2="13" />
-            <line x1="12" y1="17" x2="12.01" y2="17" />
-          </svg>
-          <p class="disclaimer-text">
-            <strong class="warning-bold">Contenu sensible :</strong>
-            Cet enregistrement et sa transcription comportent des récits éprouvants.
-          </p>
-        </div>
-
-        <button
-          type="button"
-          class="disclaimer-cta-btn"
-          (click)="startPlaybackAndDismiss($event)"
-          aria-label="Écouter l'enregistrement"
-        >
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <polygon points="6,4 20,12 6,20"></polygon>
-          </svg>
-          <span>Écouter</span>
-        </button>
-      </div>
-    </div>
-
     <div
       class="sticky-bar-container"
-      [class.is-veiled]="isOverlayVisible()"
       role="region"
       aria-label="Lecteur audio de l'échange"
     >
@@ -377,26 +328,12 @@ export class AudioStickyBarComponent {
   readonly hoverPercentage = signal<number | null>(null);
   readonly hoverX = signal<number>(0);
 
-  readonly userDismissed = linkedSignal({
-    source: () => this.carre().id,
-    computation: () => false
-  });
-
   readonly isCurrentCarre = computed(() => {
     return this.audioService.currentCarre()?.id === this.carre().id;
   });
 
   readonly isCurrentPlaying = computed(() => {
     return this.isCurrentCarre() && this.audioService.isPlaying();
-  });
-
-  readonly isOverlayVisible = computed(() => {
-    const cid = this.carre().id;
-    if (this.audioService.dismissedDisclaimerCarres().has(cid)) return false;
-    if (this.userDismissed()) return false;
-    if (this.isCurrentPlaying()) return false;
-    if (this.isCurrentCarre() && this.audioService.currentTime() > 0) return false;
-    return true;
   });
 
   readonly displayCurrentTime = computed(() => {
@@ -486,21 +423,6 @@ export class AudioStickyBarComponent {
     return barsList;
   });
 
-  startPlaybackAndDismiss(event?: Event): void {
-    if (event) {
-      event.stopPropagation();
-    }
-    this.userDismissed.set(true);
-    this.audioService.dismissDisclaimer(this.carre().id);
-    if (!this.isCurrentPlaying()) {
-      if (this.audioService.currentCarre()?.id !== this.carre().id) {
-        this.audioService.playCarre(this.carre());
-      } else {
-        this.audioService.play();
-      }
-    }
-  }
-
   onPlayPause(): void {
     if (this.audioService.currentCarre()?.id !== this.carre().id) {
       this.audioService.playCarre(this.carre());
@@ -512,7 +434,6 @@ export class AudioStickyBarComponent {
   onStop(): void {
     if (this.audioService.currentCarre()?.id === this.carre().id) {
       this.audioService.stop();
-      this.userDismissed.set(false);
     }
   }
 

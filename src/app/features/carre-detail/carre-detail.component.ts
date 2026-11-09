@@ -1,10 +1,12 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  OnDestroy,
   computed,
   effect,
   inject,
-  input
+  input,
+  untracked
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CarresDataService } from '../../core/services/carres-data.service';
@@ -67,7 +69,7 @@ import { HomeQuoteCarouselComponent } from '../home/components/home-quote-carous
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CarreDetailComponent {
+export class CarreDetailComponent implements OnDestroy {
   readonly carresDataService = inject(CarresDataService);
   private readonly audioService = inject(AudioPlayerService);
   private readonly loadingService = inject(LoadingService);
@@ -78,6 +80,8 @@ export class CarreDetailComponent {
   readonly seg = input<string>();
 
   private handledTimestampKey = '';
+  private lastVisitedSlug = '';
+  private autoplayTimer: ReturnType<typeof setTimeout> | null = null;
 
   readonly carre = computed(() => {
     const s = this.slug();
@@ -86,6 +90,45 @@ export class CarreDetailComponent {
   });
 
   constructor() {
+    // 1. Autoplay automatique en non-mute à l'arrivée sur un carré avec interview (délai de 500ms)
+    effect(() => {
+      const current = this.carre();
+      const targetTime = this.t();
+      if (!current) return;
+
+      const slug = current.slug;
+      if (this.lastVisitedSlug === slug) return;
+      this.lastVisitedSlug = slug;
+
+      if (this.autoplayTimer) {
+        clearTimeout(this.autoplayTimer);
+        this.autoplayTimer = null;
+      }
+
+      // Si un timestamp ?t= est fourni, l'effet dédié ci-dessous s'en charge
+      if (targetTime !== undefined) return;
+
+      if (current.hasInterview && current.interview) {
+        untracked(() => {
+          const isPlaying = this.audioService.isPlaying();
+          const playingCarre = this.audioService.currentCarre();
+
+          if (!isPlaying || (playingCarre && playingCarre.id !== current.id)) {
+            this.autoplayTimer = setTimeout(() => {
+              if (this.carre()?.slug !== current.slug) return;
+              const currentPlaying = this.audioService.isPlaying();
+              const currentTrack = this.audioService.currentCarre();
+
+              if (!currentPlaying || (currentTrack && currentTrack.id !== current.id)) {
+                this.audioService.unmute();
+                this.audioService.playCarre(current);
+              }
+            }, 500);
+          }
+        });
+      }
+    });
+
     effect(() => {
       const current = this.carre();
       const targetTime = this.t();
@@ -101,6 +144,7 @@ export class CarreDetailComponent {
       const seconds = parseFloat(targetTime);
       if (isNaN(seconds)) return;
 
+      this.audioService.unmute();
       this.audioService.playFromTime(current, seconds);
     });
 
@@ -119,5 +163,12 @@ export class CarreDetailComponent {
         }, 120);
       }
     });
+  }
+
+  ngOnDestroy(): void {
+    if (this.autoplayTimer) {
+      clearTimeout(this.autoplayTimer);
+      this.autoplayTimer = null;
+    }
   }
 }

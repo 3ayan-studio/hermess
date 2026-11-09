@@ -108,6 +108,21 @@ describe('AudioPlayerService', () => {
         expect(service.isMuted()).toBe(false);
     });
 
+    it('should set and unmute state explicitly', () => {
+        service.setMuted(true);
+        expect(service.isMuted()).toBe(true);
+        service.unmute();
+        expect(service.isMuted()).toBe(false);
+    });
+
+    it('should increment autoFollowRequested when requestAutoFollow is called', () => {
+        expect(service.autoFollowRequested()).toBe(0);
+        service.requestAutoFollow();
+        expect(service.autoFollowRequested()).toBe(1);
+        service.requestAutoFollow();
+        expect(service.autoFollowRequested()).toBe(2);
+    });
+
     it('should stop playback and reset currentTime when stop is called', () => {
         service.isPlaying.set(true);
         service.currentTime.set(45);

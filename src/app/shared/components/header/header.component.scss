@@ -208,10 +208,15 @@
   // Transitions soyeuses : fondu enchaîné doux et ajustement vertical de position
   transition: opacity 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
               visibility 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
-              top 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+              top 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
+              transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
 
-  // Desktop scrollé (> 64px) : aligné au centre de la barre de menu de 46px ( (46 - 34) / 2 = 6px )
+  // Desktop (>= 1024px) : agrandi globalement de 35% sans altérer le style
   @media (min-width: 1024px) {
+    transform: scale(1.35);
+    transform-origin: right center;
+
+    // Desktop scrollé (> 64px) : aligné au centre de la barre de menu de 46px ( (46 - 34) / 2 = 6px )
     &.is-scrolled {
       top: 6px;
     }

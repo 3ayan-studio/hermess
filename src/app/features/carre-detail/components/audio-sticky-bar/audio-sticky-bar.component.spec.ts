@@ -212,89 +212,27 @@ describe('AudioStickyBarComponent', () => {
         expect(subtitle).toBeNull();
     });
 
-    describe('Audio Disclaimer Blurred Overlay', () => {
-        it('should show the disclaimer overlay by default when not playing', () => {
+    describe('Direct Audio Controls Access (No Disclaimer Overlay)', () => {
+        it('should not render any disclaimer overlay and keep sticky bar unveiled', () => {
             const compiled = fixture.nativeElement as HTMLElement;
             const overlay = compiled.querySelector('.audio-disclaimer-overlay');
-            expect(overlay).toBeTruthy();
-            expect(overlay?.classList.contains('is-hidden')).toBe(false);
+            expect(overlay).toBeNull();
 
-            expect(overlay?.textContent).toContain('Contenu sensible :');
-            expect(overlay?.textContent).toContain('Cet enregistrement et sa transcription comportent des récits éprouvants.');
-
-            const icon = overlay?.querySelector('svg.warning-icon');
-            expect(icon).toBeTruthy();
-
-            const cta = overlay?.querySelector('.disclaimer-cta-btn');
-            expect(cta).toBeTruthy();
-            expect(cta?.textContent).toContain('Écouter');
+            const container = compiled.querySelector('.sticky-bar-container');
+            expect(container).toBeTruthy();
+            expect(container?.classList.contains('is-veiled')).toBe(false);
         });
 
-        it('should hide the overlay and start playback when CTA is clicked', () => {
+        it('should allow direct play interaction without needing to dismiss an overlay', () => {
             const playSpy = vi.spyOn(audioService, 'playCarre');
             const compiled = fixture.nativeElement as HTMLElement;
-            const cta = compiled.querySelector('.disclaimer-cta-btn') as HTMLButtonElement;
-            cta.click();
+            const playPauseBtn = compiled.querySelector('.control-btn.play-btn') as HTMLButtonElement;
+            expect(playPauseBtn).toBeTruthy();
+
+            playPauseBtn.click();
             fixture.detectChanges();
 
             expect(playSpy).toHaveBeenCalledWith(mockCarre);
-            expect(component.isOverlayVisible()).toBe(false);
-            const overlay = compiled.querySelector('.audio-disclaimer-overlay');
-            expect(overlay?.classList.contains('is-hidden')).toBe(true);
-        });
-
-        it('should hide the overlay automatically when audio is playing', () => {
-            audioService.currentCarre.set(mockCarre);
-            audioService.isPlaying.set(true);
-            fixture.detectChanges();
-
-            expect(component.isOverlayVisible()).toBe(false);
-            const compiled = fixture.nativeElement as HTMLElement;
-            const overlay = compiled.querySelector('.audio-disclaimer-overlay');
-            expect(overlay?.classList.contains('is-hidden')).toBe(true);
-        });
-
-        it('should keep overlay hidden when paused if audio has started', () => {
-            audioService.currentCarre.set(mockCarre);
-            audioService.isPlaying.set(false);
-            audioService.currentTime.set(45);
-            fixture.detectChanges();
-
-            expect(component.isOverlayVisible()).toBe(false);
-        });
-
-        it('should restore overlay when stop is clicked and audio resets to 0', () => {
-            audioService.currentCarre.set(mockCarre);
-            audioService.isPlaying.set(true);
-            audioService.currentTime.set(45);
-            fixture.detectChanges();
-            expect(component.isOverlayVisible()).toBe(false);
-
-            component.onStop();
-            fixture.detectChanges();
-
-            expect(component.isOverlayVisible()).toBe(true);
-            const compiled = fixture.nativeElement as HTMLElement;
-            const overlay = compiled.querySelector('.audio-disclaimer-overlay');
-            expect(overlay?.classList.contains('is-hidden')).toBe(false);
-        });
-
-        it('should reset overlay visibility when carre input changes to another unplayed carre', () => {
-            // Simulate playback started on first carre
-            component.startPlaybackAndDismiss();
-            fixture.detectChanges();
-            expect(component.isOverlayVisible()).toBe(false);
-
-            // Switch to another carre
-            const newCarre: Carre = {
-                ...mockCarre,
-                id: 'carre-autre-nouveau',
-                slug: 'carre-autre-slug'
-            };
-            fixture.componentRef.setInput('carre', newCarre);
-            fixture.detectChanges();
-
-            expect(component.isOverlayVisible()).toBe(true);
         });
     });
 });

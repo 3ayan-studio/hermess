@@ -107,60 +107,22 @@ describe('TranscriptComponent', () => {
         expect(compiled.querySelector('.transcript-content-warning')).toBeNull();
     });
 
-    describe('Transcript Disclaimer Overlay', () => {
-        it('should show the disclaimer overlay by default over the transcript wrapper', () => {
+    describe('Direct Transcript Access (No Disclaimer Overlay)', () => {
+        it('should not render any disclaimer overlay and keep transcript scroll area unveiled', () => {
             const compiled = fixture.nativeElement as HTMLElement;
             const overlay = compiled.querySelector('.transcript-disclaimer-overlay');
-            expect(overlay).toBeTruthy();
-            expect(overlay?.classList.contains('is-hidden')).toBe(false);
+            expect(overlay).toBeNull();
 
-            expect(overlay?.textContent).toContain('Contenu sensible');
-            expect(overlay?.textContent).toContain('Cet enregistrement et sa transcription comportent des récits éprouvants.');
-
-            const warningIcon = overlay?.querySelector('svg.warning-icon');
-            expect(warningIcon).toBeTruthy();
-
-            const unlockBtn = overlay?.querySelector('.unlock-btn');
-            expect(unlockBtn).toBeTruthy();
-            expect(unlockBtn?.textContent).toContain('Lire la transcription');
-
-            const playBtn = overlay?.querySelector('.play-btn');
-            expect(playBtn).toBeTruthy();
-            expect(playBtn?.textContent).toContain('Écouter');
+            const scrollArea = compiled.querySelector('.transcript-scroll-area');
+            expect(scrollArea).toBeTruthy();
+            expect(scrollArea?.classList.contains('is-veiled')).toBe(false);
         });
 
-        it('should unlock the transcript when unlock button is clicked', () => {
+        it('should render the expand/collapse button directly without needing disclaimer dismissal', () => {
             const compiled = fixture.nativeElement as HTMLElement;
-            const unlockBtn = compiled.querySelector('.unlock-btn') as HTMLButtonElement;
-            unlockBtn.click();
-            fixture.detectChanges();
-
-            expect(component.isOverlayVisible()).toBe(false);
-            const overlay = compiled.querySelector('.transcript-disclaimer-overlay');
-            expect(overlay?.classList.contains('is-hidden')).toBe(true);
-            expect(audioService.dismissedDisclaimerCarres().has(mockCarreWithTranscript.id)).toBe(true);
-        });
-
-        it('should unlock and start playback when play button is clicked', () => {
-            const playSpy = vi.spyOn(audioService, 'playCarre');
-            const compiled = fixture.nativeElement as HTMLElement;
-            const playBtn = compiled.querySelector('.disclaimer-actions .play-btn') as HTMLButtonElement;
-            playBtn.click();
-            fixture.detectChanges();
-
-            expect(playSpy).toHaveBeenCalledWith(mockCarreWithTranscript);
-            expect(component.isOverlayVisible()).toBe(false);
-        });
-
-        it('should hide the overlay automatically when audio is playing', () => {
-            audioService.currentCarre.set(mockCarreWithTranscript);
-            audioService.isPlaying.set(true);
-            fixture.detectChanges();
-
-            expect(component.isOverlayVisible()).toBe(false);
-            const compiled = fixture.nativeElement as HTMLElement;
-            const overlay = compiled.querySelector('.transcript-disclaimer-overlay');
-            expect(overlay?.classList.contains('is-hidden')).toBe(true);
+            const toggleBtn = compiled.querySelector('.transcript-toggle-btn');
+            expect(toggleBtn).toBeTruthy();
+            expect(toggleBtn?.textContent).toContain('Afficher plus');
         });
     });
 
@@ -276,5 +238,14 @@ describe('TranscriptComponent', () => {
 
         expect(activeTurn?.classList.contains('is-active')).toBe(true);
         expect(inactiveTurn?.classList.contains('is-inactive')).toBe(true);
+    });
+
+    it('should call resumeAutoScroll when autoFollowRequested is triggered on audioService', () => {
+        const resumeSpy = vi.spyOn(component, 'resumeAutoScroll');
+
+        audioService.requestAutoFollow();
+        fixture.detectChanges();
+
+        expect(resumeSpy).toHaveBeenCalled();
     });
 });

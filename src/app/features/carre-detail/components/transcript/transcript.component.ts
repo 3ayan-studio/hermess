@@ -62,61 +62,6 @@ export function stripHtmlTags(text: string): string {
           (wheel)="onManualScroll()"
           (touchmove)="onManualScroll()"
         >
-          <!-- Voile blanc quasi transparent avec Disclaimer Contenu Sensible -->
-          <div
-            class="transcript-disclaimer-overlay"
-            [class.is-hidden]="!isOverlayVisible()"
-            (click)="unlockTranscript($event)"
-            role="region"
-            aria-label="Avertissement contenu sensible et accès à la transcription"
-          >
-            <div class="transcript-disclaimer-card" (click)="$event.stopPropagation()">
-              <div class="disclaimer-title-row">
-                <svg
-                  class="warning-icon"
-                  viewBox="0 0 24 24"
-                  width="15"
-                  height="15"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                  focusable="false"
-                >
-                  <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
-                  <line x1="12" y1="9" x2="12" y2="13" />
-                  <line x1="12" y1="17" x2="12.01" y2="17" />
-                </svg>
-                <strong class="warning-bold">Contenu sensible</strong>
-              </div>
-              <p class="disclaimer-desc">
-                Cet enregistrement et sa transcription comportent des récits éprouvants.
-              </p>
-              <div class="disclaimer-actions">
-                <button
-                  type="button"
-                  class="disclaimer-action-btn unlock-btn"
-                  (click)="unlockTranscript($event)"
-                  aria-label="Lire la transcription de l'échange"
-                >
-                  Lire la transcription
-                </button>
-                <button
-                  type="button"
-                  class="disclaimer-action-btn play-btn"
-                  (click)="playAndUnlock($event)"
-                  aria-label="Écouter l'enregistrement audio"
-                >
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <polygon points="6,4 20,12 6,20"></polygon>
-                  </svg>
-                  <span>Écouter</span>
-                </button>
-              </div>
-            </div>
-          </div>
           <!-- Dégradé fondu en haut en mode replié pendant la lecture audio -->
           @if (!isExpanded() && isAudioPlaying()) {
             <div class="fade-overlay-top" aria-hidden="true"></div>
@@ -127,7 +72,6 @@ export function stripHtmlTags(text: string): string {
             class="transcript-scroll-area"
             [class.is-collapsed]="!isExpanded()"
             [class.is-audio-playing]="isAudioPlaying()"
-            [class.is-veiled]="isOverlayVisible()"
           >
             <!-- État de chargement discret -->
             @if (isLoading()) {
@@ -184,7 +128,7 @@ export function stripHtmlTags(text: string): string {
         </div>
 
         <!-- Bouton de Déploiement / Réduction Hermès -->
-        @if (segments().length > 3 && !isOverlayVisible()) {
+        @if (segments().length > 3) {
           <div class="transcript-toggle-wrapper">
             <button
               type="button"
@@ -272,14 +216,6 @@ export class TranscriptComponent implements OnDestroy {
         );
     });
 
-    readonly isOverlayVisible = computed(() => {
-        const cid = this.carre().id;
-        if (this.audioService.dismissedDisclaimerCarres().has(cid)) return false;
-        if (this.isAudioPlaying()) return false;
-        if (this.audioService.currentCarre()?.id === cid && this.audioService.currentTime() > 0) return false;
-        return true;
-    });
-
     // Calcul haute performance du segment actif via O(1) / O(log N)
     readonly activeSegmentIndex = computed<number>(() => {
         if (this.audioService.currentCarre()?.id !== this.carre().id) {
@@ -357,6 +293,14 @@ export class TranscriptComponent implements OnDestroy {
                 setTimeout(() => {
                     this.scrollToSegmentAndWindow(targetSeg, true);
                 }, 120);
+            }
+        });
+
+        // 5. Réactivation et centrage immédiat sur demande explicite de suivi auto
+        effect(() => {
+            const trigger = this.audioService.autoFollowRequested();
+            if (trigger > 0) {
+                this.resumeAutoScroll();
             }
         });
     }
@@ -496,23 +440,6 @@ export class TranscriptComponent implements OnDestroy {
 
         // Réinitialise le mode scroll manuel pour recentrer immédiatement
         this.resumeAutoScroll();
-    }
-
-    unlockTranscript(event?: Event): void {
-        if (event) event.stopPropagation();
-        this.audioService.dismissDisclaimer(this.carre().id);
-    }
-
-    playAndUnlock(event?: Event): void {
-        if (event) event.stopPropagation();
-        this.audioService.dismissDisclaimer(this.carre().id);
-        if (!this.isAudioPlaying()) {
-            if (this.audioService.currentCarre()?.id !== this.carre().id) {
-                this.audioService.playCarre(this.carre());
-            } else {
-                this.audioService.play();
-            }
-        }
     }
 
     toggleExpanded(): void {

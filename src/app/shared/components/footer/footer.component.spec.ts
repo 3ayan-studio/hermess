@@ -56,5 +56,13 @@ describe('FooterComponent', () => {
     const oldLinks = fixture.nativeElement.querySelectorAll('.sub-footer-links, .legal-link');
     expect(oldLinks.length).toBe(0);
   });
+
+  it('should render the legal and artistic disclaimer in sub-footer-legal', () => {
+    const legalParagraph = fixture.nativeElement.querySelector('.sub-footer-legal .copyright');
+    expect(legalParagraph).not.toBeNull();
+    expect(legalParagraph?.textContent).toContain('© 2026 Fatima-Marwa Zouzal / Hermess – Tous droits réservés');
+    expect(legalParagraph?.textContent).toContain("Cette exposition s'inscrit dans une démarche exclusivement artistique et culturelle");
+    expect(legalParagraph?.textContent).toContain('indépendant de la société Hermès International');
+  });
 });
 

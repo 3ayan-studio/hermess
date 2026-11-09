@@ -94,22 +94,67 @@ describe('ZoneAGalleryPanelComponent', () => {
     expect(component.activeSlideIndex()).toBe(2);
   });
 
-  it('should render the listen button for carres with interview', () => {
+  it('should render the listen button for carres with interview when not playing', () => {
     // CARRES_MOCK[0] (carre-laures) has hasInterview: true
     const compiled = fixture.nativeElement as HTMLElement;
     const actionBtn = compiled.querySelector('.button-color-primary');
     expect(actionBtn).toBeTruthy();
     expect(actionBtn?.textContent).toContain('Écouter l’échange');
+    expect(compiled.querySelector('.button-equalizer')).toBeNull();
+    // Le lien secondaire doit être supprimé
+    expect(compiled.querySelector('.transcript-link-btn')).toBeNull();
     const contemplation = compiled.querySelector('.contemplation-banner');
     expect(contemplation).toBeNull();
   });
 
-  it('should scroll to the audio player section when the listen button is clicked', () => {
-    const scrollSpy = vi.spyOn(component, 'scrollToAudioPlayer');
+  it('should render the equalizer and "Lire la transcription" when audio is playing', () => {
+    component.audioService.currentCarre.set(CARRES_MOCK[0]);
+    component.audioService.isPlaying.set(true);
+    fixture.detectChanges();
+
+    const compiled = fixture.nativeElement as HTMLElement;
+    const actionBtn = compiled.querySelector('.button-color-primary');
+    expect(actionBtn).toBeTruthy();
+    expect(actionBtn?.textContent).toContain('Lire la transcription');
+
+    const equalizer = compiled.querySelector('.button-equalizer');
+    expect(equalizer).toBeTruthy();
+    expect(equalizer?.querySelectorAll('.eq-bar').length).toBe(4);
+    expect(compiled.querySelector('.transcript-link-btn')).toBeNull();
+  });
+
+  it('should scroll to transcript, trigger auto follow and start audio when clicked in pause', () => {
+    const scrollSpy = vi.spyOn(component, 'scrollToTranscript');
+    const autoFollowSpy = vi.spyOn(component.audioService, 'requestAutoFollow');
+    const playSpy = vi.spyOn(component.audioService, 'playCarre');
+
     const compiled = fixture.nativeElement as HTMLElement;
     const actionBtn = compiled.querySelector('.button-color-primary') as HTMLButtonElement;
     actionBtn.click();
+
     expect(scrollSpy).toHaveBeenCalled();
+    expect(autoFollowSpy).toHaveBeenCalled();
+    expect(playSpy).toHaveBeenCalledWith(CARRES_MOCK[0]);
+  });
+
+  it('should scroll to transcript and trigger auto follow without restarting audio when clicked while playing', () => {
+    component.audioService.currentCarre.set(CARRES_MOCK[0]);
+    component.audioService.isPlaying.set(true);
+    fixture.detectChanges();
+
+    const scrollSpy = vi.spyOn(component, 'scrollToTranscript');
+    const autoFollowSpy = vi.spyOn(component.audioService, 'requestAutoFollow');
+    const playSpy = vi.spyOn(component.audioService, 'play');
+    const playCarreSpy = vi.spyOn(component.audioService, 'playCarre');
+
+    const compiled = fixture.nativeElement as HTMLElement;
+    const actionBtn = compiled.querySelector('.button-color-primary') as HTMLButtonElement;
+    actionBtn.click();
+
+    expect(scrollSpy).toHaveBeenCalled();
+    expect(autoFollowSpy).toHaveBeenCalled();
+    expect(playSpy).not.toHaveBeenCalled();
+    expect(playCarreSpy).not.toHaveBeenCalled();
   });
 
   it('should render only duration in interview meta without voice mention', () => {

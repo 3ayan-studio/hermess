@@ -26,7 +26,7 @@ import { RouterLink } from '@angular/router';
           <div class="sub-footer-content">
             <div class="sub-footer-legal">
               <p class="copyright paragraph-xsmall">
-                © Hermess 2026. Exposition d'Art — Carrés &amp; Entretiens. Tous droits réservés.
+                © 2026 Fatima-Marwa Zouzal / Hermess – Tous droits réservés. Cette exposition s'inscrit dans une démarche exclusivement artistique et culturelle, sans visée commerciale détournée. Ce projet est totalement indépendant de la société Hermès International et de ses filiales. Les marques, logos et modèles éventuellement cités ou représentés restent la propriété exclusive de leurs détenteurs respectifs.
               </p>
             </div>
             <div class="sub-footer-social">

@@ -35,6 +35,87 @@ describe('CarreDetailComponent', () => {
     expect(component.carre()?.slug).toBe('carre-laures');
   });
 
+  it('should autoplay audio unmuted on visit with 500ms delay when carre has an interview and no audio is playing', () => {
+    const playCarreSpy = vi.spyOn(audioService, 'playCarre');
+    const unmuteSpy = vi.spyOn(audioService, 'unmute');
+
+    fixture.componentRef.setInput('slug', 'carre-laures');
+    fixture.detectChanges();
+
+    // Avant 500ms, la lecture ne s'est pas encore lancée
+    expect(playCarreSpy).not.toHaveBeenCalled();
+
+    // Après 500ms, la lecture se déclenche
+    vi.advanceTimersByTime(500);
+
+    expect(unmuteSpy).toHaveBeenCalled();
+    expect(playCarreSpy).toHaveBeenCalledWith(
+      expect.objectContaining({ slug: 'carre-laures' })
+    );
+  });
+
+  it('should replace another playing carre audio on visit after 500ms delay', () => {
+    const previousCarre = CARRES_MOCK[1];
+    audioService.currentCarre.set(previousCarre);
+    audioService.isPlaying.set(true);
+
+    const playCarreSpy = vi.spyOn(audioService, 'playCarre');
+    const unmuteSpy = vi.spyOn(audioService, 'unmute');
+
+    fixture.componentRef.setInput('slug', 'carre-laures');
+    fixture.detectChanges();
+
+    // Avant 500ms, pas encore d'appel
+    expect(playCarreSpy).not.toHaveBeenCalled();
+
+    // Après 500ms
+    vi.advanceTimersByTime(500);
+
+    expect(unmuteSpy).toHaveBeenCalled();
+    expect(playCarreSpy).toHaveBeenCalledWith(
+      expect.objectContaining({ slug: 'carre-laures' })
+    );
+  });
+
+  it('should keep playing if the current carre is already playing', () => {
+    const currentCarre = CARRES_MOCK[0]; // carre-laures
+    audioService.currentCarre.set(currentCarre);
+    audioService.isPlaying.set(true);
+
+    const playCarreSpy = vi.spyOn(audioService, 'playCarre');
+
+    fixture.componentRef.setInput('slug', 'carre-laures');
+    fixture.detectChanges();
+
+    vi.advanceTimersByTime(500);
+
+    expect(playCarreSpy).not.toHaveBeenCalled();
+  });
+
+  it('should not autoplay when visiting a carre without interview', () => {
+    const playCarreSpy = vi.spyOn(audioService, 'playCarre');
+
+    fixture.componentRef.setInput('slug', 'carre-retour-a-la-terre');
+    fixture.detectChanges();
+
+    vi.advanceTimersByTime(500);
+
+    expect(playCarreSpy).not.toHaveBeenCalled();
+  });
+
+  it('should cancel pending autoplay if component is destroyed before 500ms', () => {
+    const playCarreSpy = vi.spyOn(audioService, 'playCarre');
+
+    fixture.componentRef.setInput('slug', 'carre-laures');
+    fixture.detectChanges();
+
+    // Destruction avant écoulement du délai de 500ms
+    fixture.destroy();
+    vi.advanceTimersByTime(500);
+
+    expect(playCarreSpy).not.toHaveBeenCalled();
+  });
+
   it('should trigger playFromTime when t input is provided', () => {
     const playFromTimeSpy = vi.spyOn(audioService, 'playFromTime');
 

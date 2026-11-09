@@ -234,30 +234,30 @@ import { SvgIconComponent } from '../../../../shared/components/svg-icon/svg-ico
                       type="button"
                       class="button button-color-primary button-layout-full button-radius-small button-size-medium button-variant-filled"
                       (click)="onActionClick()"
-                      aria-label="Faire défiler jusqu'à l'écoute de l'échange audio"
+                      [attr.aria-label]="isCurrentPlaying() ? 'Lire la transcription avec suivi automatique' : 'Écouter l’échange audio et voir la transcription'"
                     >
                       <span class="button-icon">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                          <polygon points="6,4 20,12 6,20"></polygon>
-                        </svg>
+                        @if (isCurrentPlaying()) {
+                          <span class="button-equalizer" aria-hidden="true">
+                            <span class="eq-bar bar-1"></span>
+                            <span class="eq-bar bar-2"></span>
+                            <span class="eq-bar bar-3"></span>
+                            <span class="eq-bar bar-4"></span>
+                          </span>
+                        } @else {
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="6,4 20,12 6,20"></polygon>
+                          </svg>
+                        }
                       </span>
                       <span class="button-label label-medium">
-                        Écouter l’échange
+                        {{ isCurrentPlaying() ? 'Lire la transcription' : 'Écouter l’échange' }}
                       </span>
                     </button>
 
                     <p class="interview-meta">
                       Durée : {{ interview.durationFormatted }}
                     </p>
-
-                    <button
-                      type="button"
-                      class="transcript-link-btn"
-                      (click)="scrollToTranscript()"
-                    >
-                      <app-svg-icon name="ng__clock" size="13px" customClass="mr-1.5"></app-svg-icon>
-                      <span>Lire la transcription de l'échange</span>
-                    </button>
                   </div>
                 } @else {
                   <div class="contemplation-banner">
@@ -587,17 +587,24 @@ export class ZoneAGalleryPanelComponent implements OnDestroy {
   }
 
   onActionClick(): void {
-    if (!this.carre().interview) return;
-    this.scrollToAudioPlayer();
+    const current = this.carre();
+    if (!current.interview) return;
+
+    if (!this.isCurrentPlaying()) {
+      this.audioService.unmute();
+      if (this.audioService.currentCarre()?.id === current.id) {
+        this.audioService.play();
+      } else {
+        this.audioService.playCarre(current);
+      }
+    }
+
+    this.scrollToTranscript();
+    this.audioService.requestAutoFollow();
   }
 
   scrollToAudioPlayer(): void {
-    if (typeof window !== 'undefined') {
-      const section = document.getElementById('audio-sticky-section');
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
+    this.scrollToTranscript();
   }
 
   scrollToTranscript(): void {

@@ -27,6 +27,7 @@ export class AudioPlayerService {
   readonly isMuted = signal<boolean>(false);
   readonly isExchangePlayerInViewport = signal<boolean>(false);
   readonly dismissedDisclaimerCarres = signal<Set<string>>(new Set());
+  readonly autoFollowRequested = signal<number>(0);
 
   // Signaux calculés (computed)
   readonly progressPercentage = computed(() => {
@@ -215,6 +216,21 @@ export class AudioPlayerService {
   skip(deltaSeconds: number): void {
     if (!this.audio) return;
     this.seek(this.currentTime() + deltaSeconds);
+  }
+
+  requestAutoFollow(): void {
+    this.autoFollowRequested.update(n => n + 1);
+  }
+
+  setMuted(muted: boolean): void {
+    if (this.audio) {
+      this.audio.muted = muted;
+    }
+    this.isMuted.set(muted);
+  }
+
+  unmute(): void {
+    this.setMuted(false);
   }
 
   toggleMute(): void {

@@ -442,79 +442,11 @@ export const CARRES_MOCK: Carre[] = [
         }
     },
     {
-        id: 'carre-retour-a-la-terre',
-        slug: 'carre-retour-a-la-terre',
-        title: 'Retour à la terre',
-        subtitle: 'Édition Spéciale Exposition 2026',
-        ref: 'H003924S 03',
-        priceFormatted: '495 €',
-        colorName: 'Terre / Eau / Sable',
-        year: 2026,
-        artist: 'Fatima-Marwa Zouzal',
-        dimensions: '90 x 90 cm',
-        composition: '100 % soie de mûrier twill roulotté à la main en France',
-        textile: '100 % soie de mûrier twill roulotté à la main',
-        technique: 'Sérigraphie au cadre lyonnais, roulotté main en France',
-        careInstructions: [
-            'Nettoyage à sec par un professionnel uniquement.',
-            'Repassage doux sur l’envers sans vapeur.',
-            'Conserver à plat dans sa boîte d’origine à l’abri de l’humidité et du soleil direct.',
-            'Éviter le contact avec l’eau, le parfum et les produits chimiques.'
-        ],
-        description: `Une exploration sensible du retour aux origines, de l'ancrage et des récits intimes transmis à travers les générations. Les teintes telluriques célèbrent la terre natale et la circularité de la mémoire.`,
-        artisticNote: `« Revenir, c'est redécouvrir ce que l'on croyait déjà connaître d'un regard neuf. » — Fatima-Marwa Zouzal`,
-        thumbnail: '/carres/carre-retour-a-la-terre/numeric-01.jpeg',
-        media: [
-            {
-                id: "carre-retour-a-la-terre-numeric-01",
-                type: "image",
-                url: "/carres/carre-retour-a-la-terre/numeric-01.jpeg",
-                alt: "Retour à la Terre à plat",
-                aspectRatio: "1:1",
-                isMain: true
-            },
-            {
-                id: "carre-retour-a-la-terre-detail-02",
-                type: "image",
-                url: "/carres/carre-retour-a-la-terre/detail-02.jpg",
-                alt: "Détail de la trame et des motifs de Retour à la Terre",
-                aspectRatio: "3:4",
-                isMain: false
-            },
-            {
-                id: "carre-retour-a-la-terre-vent-03",
-                type: "video",
-                url: "/carres/carre-retour-a-la-terre/vent-03.mp4",
-                srcMp4: "/carres/carre-retour-a-la-terre/vent-03.mp4",
-                poster: "/carres/carre-retour-a-la-terre/vent-03-poster.jpg",
-                alt: "Geste textile et mouvement de soie Retour à la Terre",
-                aspectRatio: "3:4",
-                isMain: false
-            },
-            {
-                id: "carre-retour-a-la-terre-angle-04",
-                type: "image",
-                url: "/carres/carre-retour-a-la-terre/angle-04.jpg",
-                alt: "Vue sous angle de Retour à la Terre",
-                aspectRatio: "3:4",
-                isMain: false
-            }
-        ],
-        carouselMedia: {
-            id: "carre-retour-a-la-terre-angle-carousel",
-            type: "image",
-            url: "/carres/carre-retour-a-la-terre/angle-carousel.jpg",
-            alt: "Retour à la Terre — Présentation carrousel d'accueil",
-            aspectRatio: "1:1"
-        },
-        hasInterview: false,
-        },
-    {
         id: 'carre-une-derniere-priere',
         slug: 'carre-une-derniere-priere',
         title: 'Une dernière prière',
         subtitle: 'Édition Spéciale Exposition 2026',
-        ref: 'H003924S 04',
+        ref: 'H003924S 03',
         priceFormatted: '495 €',
         colorName: 'Bleu / Ciel / Délivrance',
         year: 2026,
@@ -597,6 +529,74 @@ export const CARRES_MOCK: Carre[] = [
                 }
             ]
         }
+    },
+    {
+        id: 'carre-retour-a-la-terre',
+        slug: 'carre-retour-a-la-terre',
+        title: 'Retour à la terre',
+        subtitle: 'Édition Spéciale Exposition 2026',
+        ref: 'H003924S 04',
+        priceFormatted: '495 €',
+        colorName: 'Terre / Eau / Sable',
+        year: 2026,
+        artist: 'Fatima-Marwa Zouzal',
+        dimensions: '90 x 90 cm',
+        composition: '100 % soie de mûrier twill roulotté à la main en France',
+        textile: '100 % soie de mûrier twill roulotté à la main',
+        technique: 'Sérigraphie au cadre lyonnais, roulotté main en France',
+        careInstructions: [
+            'Nettoyage à sec par un professionnel uniquement.',
+            'Repassage doux sur l’envers sans vapeur.',
+            'Conserver à plat dans sa boîte d’origine à l’abri de l’humidité et du soleil direct.',
+            'Éviter le contact avec l’eau, le parfum et les produits chimiques.'
+        ],
+        description: `Une exploration sensible du retour aux origines, de l'ancrage et des récits intimes transmis à travers les générations. Les teintes telluriques célèbrent la terre natale et la circularité de la mémoire.`,
+        artisticNote: `« Revenir, c'est redécouvrir ce que l'on croyait déjà connaître d'un regard neuf. » — Fatima-Marwa Zouzal`,
+        thumbnail: '/carres/carre-retour-a-la-terre/numeric-01.jpeg',
+        media: [
+            {
+                id: "carre-retour-a-la-terre-numeric-01",
+                type: "image",
+                url: "/carres/carre-retour-a-la-terre/numeric-01.jpeg",
+                alt: "Retour à la Terre à plat",
+                aspectRatio: "1:1",
+                isMain: true
+            },
+            {
+                id: "carre-retour-a-la-terre-detail-02",
+                type: "image",
+                url: "/carres/carre-retour-a-la-terre/detail-02.jpg",
+                alt: "Détail de la trame et des motifs de Retour à la Terre",
+                aspectRatio: "3:4",
+                isMain: false
+            },
+            {
+                id: "carre-retour-a-la-terre-vent-03",
+                type: "video",
+                url: "/carres/carre-retour-a-la-terre/vent-03.mp4",
+                srcMp4: "/carres/carre-retour-a-la-terre/vent-03.mp4",
+                poster: "/carres/carre-retour-a-la-terre/vent-03-poster.jpg",
+                alt: "Geste textile et mouvement de soie Retour à la Terre",
+                aspectRatio: "3:4",
+                isMain: false
+            },
+            {
+                id: "carre-retour-a-la-terre-angle-04",
+                type: "image",
+                url: "/carres/carre-retour-a-la-terre/angle-04.jpg",
+                alt: "Vue sous angle de Retour à la Terre",
+                aspectRatio: "3:4",
+                isMain: false
+            }
+        ],
+        carouselMedia: {
+            id: "carre-retour-a-la-terre-angle-carousel",
+            type: "image",
+            url: "/carres/carre-retour-a-la-terre/angle-carousel.jpg",
+            alt: "Retour à la Terre — Présentation carrousel d'accueil",
+            aspectRatio: "1:1"
+        },
+        hasInterview: false
     },
     {
         id: 'carre-un-seul-heros-le-peuple',
