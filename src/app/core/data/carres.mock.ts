@@ -47,7 +47,6 @@ export const CARRES_MOCK: Carre[] = [
                 type: "video",
                 url: "/carres/carre-laures/vent-03.mp4",
                 srcMp4: "/carres/carre-laures/vent-03.mp4",
-                srcMov: "/carres/carre-laures/vent-03.mov",
                 poster: "/carres/carre-laures/vent-03-poster.jpg",
                 alt: "Geste textile et mouvement de soie L'Aurès",
                 aspectRatio: "3:4",
@@ -63,9 +62,9 @@ export const CARRES_MOCK: Carre[] = [
             }
         ],
         carouselMedia: {
-            id: "carre-laures-angle-carousel",
+            id: "carre-laures-peek-carousel",
             type: "image",
-            url: "/carres/carre-laures/angle-carousel.jpg",
+            url: "/carres/carre-laures/peek-carousel.jpg",
             alt: "L'Aurès — Présentation carrousel d'accueil",
             aspectRatio: "1:1"
         },
@@ -487,7 +486,6 @@ export const CARRES_MOCK: Carre[] = [
                 type: "video",
                 url: "/carres/carre-retour-a-la-terre/vent-03.mp4",
                 srcMp4: "/carres/carre-retour-a-la-terre/vent-03.mp4",
-                srcMov: "/carres/carre-retour-a-la-terre/vent-03.MOV",
                 poster: "/carres/carre-retour-a-la-terre/vent-03-poster.jpg",
                 alt: "Geste textile et mouvement de soie Retour à la Terre",
                 aspectRatio: "3:4",
@@ -549,7 +547,6 @@ export const CARRES_MOCK: Carre[] = [
                 type: "video",
                 url: "/carres/carre-une-derniere-priere/vent-02.mp4",
                 srcMp4: "/carres/carre-une-derniere-priere/vent-02.mp4",
-                srcMov: "/carres/carre-une-derniere-priere/vent-02.mov",
                 poster: "/carres/carre-une-derniere-priere/vent-02-poster.jpg",
                 alt: "Geste textile et mouvement de soie Une Dernière Prière",
                 aspectRatio: "3:4",
@@ -565,9 +562,9 @@ export const CARRES_MOCK: Carre[] = [
             }
         ],
         carouselMedia: {
-            id: "carre-une-derniere-priere-large-carousel",
+            id: "carre-une-derniere-priere-face-carousel",
             type: "image",
-            url: "/carres/carre-une-derniere-priere/large-carousel.jpg",
+            url: "/carres/carre-une-derniere-priere/face-carousel.jpg",
             alt: "Une Dernière Prière — Présentation carrousel d'accueil",
             aspectRatio: "1:1"
         },
@@ -638,7 +635,6 @@ export const CARRES_MOCK: Carre[] = [
                 type: "video",
                 url: "/carres/carre-un-seul-heros-le-peuple/video-02.mp4",
                 srcMp4: "/carres/carre-un-seul-heros-le-peuple/video-02.mp4",
-                srcMov: "/carres/carre-un-seul-heros-le-peuple/video-02.mov",
                 poster: "/carres/carre-un-seul-heros-le-peuple/video-02-poster.jpg",
                 alt: "Geste textile et mouvement de soie Un Seul Héros le Peuple",
                 aspectRatio: "3:4",
@@ -666,7 +662,6 @@ export const CARRES_MOCK: Carre[] = [
             type: "video",
             url: "/carres/carre-un-seul-heros-le-peuple/video-carousel.mp4",
             srcMp4: "/carres/carre-un-seul-heros-le-peuple/video-carousel.mp4",
-            srcMov: "/carres/carre-un-seul-heros-le-peuple/video-carousel.mov",
             poster: "/carres/carre-un-seul-heros-le-peuple/video-carousel-poster.jpg",
             alt: "Un Seul Héros le Peuple — Présentation carrousel d'accueil",
             aspectRatio: "1:1"

@@ -7,7 +7,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '..');
 const carresPublicDir = path.join(rootDir, 'public', 'carres');
+const expoPublicDir = path.join(rootDir, 'public', 'expo');
 const mockFilePath = path.join(rootDir, 'src', 'app', 'core', 'data', 'carres.mock.ts');
+
+const MAX_IMAGE_DIM = 1800;
+const JPEG_QUALITY = 85;
 
 const IMAGE_EXTS_WEB = new Set(['.jpg', '.jpeg', '.png', '.webp', '.avif']);
 const IMAGE_EXTS_RAW = new Set(['.heic', '.heif', '.dng', '.raw', '.tiff', '.tif', '.bmp']);
@@ -28,7 +32,37 @@ function runCmd(cmd) {
 }
 
 /**
- * Convertit une image non-web (HEIC, DNG, etc.) en JPEG via l'utilitaire natif macOS sips.
+ * Optimise une image web existante : si sa dimension maximale dépasse MAX_IMAGE_DIM (1800px),
+ * elle est redimensionnée avec sips et compressée en JPEG à JPEG_QUALITY (85%).
+ */
+function optimizeWebImage(filePath) {
+  const ext = path.extname(filePath).toLowerCase();
+  if (!IMAGE_EXTS_WEB.has(ext) || ext === '.svg') return;
+
+  try {
+    const out = execSync(`sips -g pixelWidth -g pixelHeight "${filePath}"`, { stdio: 'pipe' }).toString();
+    let width = 0;
+    let height = 0;
+    for (const line of out.split('\n')) {
+      if (line.includes('pixelWidth:')) width = parseInt(line.split(':')[1].trim(), 10);
+      if (line.includes('pixelHeight:')) height = parseInt(line.split(':')[1].trim(), 10);
+    }
+
+    if (Math.max(width, height) > MAX_IMAGE_DIM) {
+      console.log(`  --> [sips] Optimisation image (${width}x${height} -> max ${MAX_IMAGE_DIM}px) : ${path.basename(filePath)}`);
+      const tmpPath = `${filePath}.tmp.jpg`;
+      const ok = runCmd(`sips -Z ${MAX_IMAGE_DIM} -s format jpeg -s formatOptions ${JPEG_QUALITY} "${filePath}" --out "${tmpPath}"`);
+      if (ok && fs.existsSync(tmpPath)) {
+        fs.renameSync(tmpPath, filePath);
+      }
+    }
+  } catch {
+    // Échec silencieux si le fichier n'est pas lisible par sips
+  }
+}
+
+/**
+ * Convertit une image non-web (HEIC, DNG, etc.) en JPEG via l'utilitaire natif macOS sips avec redimensionnement Retina max.
  */
 function convertImageIfNeeded(filePath) {
   const ext = path.extname(filePath).toLowerCase();
@@ -39,11 +73,12 @@ function convertImageIfNeeded(filePath) {
 
     if (!fs.existsSync(targetJpgPath)) {
       console.log(`  --> [sips] Conversion image : ${path.basename(filePath)} -> ${path.basename(targetJpgPath)}`);
-      const ok = runCmd(`sips -s format jpeg "${filePath}" --out "${targetJpgPath}"`);
+      const ok = runCmd(`sips -Z ${MAX_IMAGE_DIM} -s format jpeg -s formatOptions ${JPEG_QUALITY} "${filePath}" --out "${targetJpgPath}"`);
       if (ok) {
         return targetJpgPath;
       }
     } else {
+      optimizeWebImage(targetJpgPath);
       return targetJpgPath;
     }
   }
@@ -51,7 +86,7 @@ function convertImageIfNeeded(filePath) {
 }
 
 /**
- * Transcode une vidéo non-MP4 (.mov) en MP4 universel web via avconvert et extrait une frame poster.
+ * Transcode une vidéo non-MP4 (.mov) en MP4 universel web via avconvert (720p HD web-optimisé) et extrait une frame poster.
  */
 function convertVideoIfNeeded(filePath) {
   const ext = path.extname(filePath).toLowerCase();
@@ -63,7 +98,7 @@ function convertVideoIfNeeded(filePath) {
     mp4Path = path.join(dir, `${baseName}.mp4`);
     if (!fs.existsSync(mp4Path)) {
       console.log(`  --> [avconvert] Transcodage vidéo : ${path.basename(filePath)} -> ${path.basename(mp4Path)}`);
-      runCmd(`avconvert --source "${filePath}" --preset Preset1920x1080 --output "${mp4Path}" --replace`);
+      runCmd(`avconvert --source "${filePath}" --preset Preset1280x720 --output "${mp4Path}" --replace`);
     }
   }
 
@@ -75,7 +110,7 @@ function convertVideoIfNeeded(filePath) {
     const tmpPng = path.join(tmpDir, `${path.basename(mp4Path)}.png`);
     runCmd(`qlmanage -t -s 1200 -o ${tmpDir} "${mp4Path}"`);
     if (fs.existsSync(tmpPng)) {
-      runCmd(`sips -s format jpeg "${tmpPng}" --out "${posterPath}"`);
+      runCmd(`sips -Z ${MAX_IMAGE_DIM} -s format jpeg -s formatOptions ${JPEG_QUALITY} "${tmpPng}" --out "${posterPath}"`);
       fs.unlinkSync(tmpPng);
     }
   }
@@ -168,7 +203,7 @@ function analyzeCarreFolder(carreSlug, carreTitle) {
   // 2. Scan des fichiers présents
   const allEntries = fs.readdirSync(folderPath);
 
-  // 3. Conversion automatique des formats bruts (HEIC, DNG, MOV)
+  // 3. Conversion automatique et optimisation des formats
   for (const entry of allEntries) {
     if (entry.startsWith('.')) continue;
     const fullPath = path.join(folderPath, entry);
@@ -177,6 +212,8 @@ function analyzeCarreFolder(carreSlug, carreTitle) {
     const ext = path.extname(entry).toLowerCase();
     if (IMAGE_EXTS_RAW.has(ext)) {
       convertImageIfNeeded(fullPath);
+    } else if (IMAGE_EXTS_WEB.has(ext)) {
+      optimizeWebImage(fullPath);
     } else if (ext === '.mov' || ext === '.m4v') {
       convertVideoIfNeeded(fullPath);
     }
@@ -344,6 +381,30 @@ function analyzeCarreFolder(carreSlug, carreTitle) {
 }
 
 /**
+ * Analyse et optimise les médias de l'exposition (public/expo)
+ */
+function optimizeExpoMedia() {
+  if (!fs.existsSync(expoPublicDir)) return;
+  console.log(`\n📂 Optimisation des médias de l'exposition (public/expo)`);
+  const entries = fs.readdirSync(expoPublicDir);
+  for (const entry of entries) {
+    if (entry.startsWith('.')) continue;
+    const fullPath = path.join(expoPublicDir, entry);
+    if (fs.statSync(fullPath).isDirectory()) continue;
+
+    const ext = path.extname(entry).toLowerCase();
+    if (IMAGE_EXTS_RAW.has(ext)) {
+      convertImageIfNeeded(fullPath);
+    } else if (IMAGE_EXTS_WEB.has(ext)) {
+      optimizeWebImage(fullPath);
+    } else if (ext === '.mov' || ext === '.m4v') {
+      convertVideoIfNeeded(fullPath);
+    }
+  }
+  console.log(`  ✓ Médias d'exposition analysés et optimisés.`);
+}
+
+/**
  * Met à jour src/app/core/data/carres.mock.ts
  */
 function updateCarresMock() {
@@ -355,6 +416,9 @@ function updateCarresMock() {
     console.error(`Erreur : fichier mock introuvable ${mockFilePath}`);
     process.exit(1);
   }
+
+  // 1. Optimisation préalable des médias de l'exposition
+  optimizeExpoMedia();
 
   const mockContent = fs.readFileSync(mockFilePath, 'utf-8');
 
