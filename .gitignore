@@ -45,6 +45,8 @@ testem.log
 /typings
 __screenshots__/
 *.mov
+*.dng
+*.heic
 
 # System files
 .DS_Store

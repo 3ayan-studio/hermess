@@ -23,11 +23,12 @@ describe('ZoneAGalleryPanelComponent', () => {
 
   it('should create and render all slides horizontally', () => {
     expect(component).toBeTruthy();
-    expect(component.images().length).toBe(CARRES_MOCK[0].images.length);
+    const expectedCount = CARRES_MOCK[0].media.length;
+    expect(component.mediaItems().length).toBe(expectedCount);
 
     const compiled = fixture.nativeElement as HTMLElement;
     const slides = compiled.querySelectorAll('.swiper-slide');
-    expect(slides.length).toBe(CARRES_MOCK[0].images.length);
+    expect(slides.length).toBe(expectedCount);
 
     // Espace de fin desktop
     const spacer = compiled.querySelector('.slides-end-spacer');
@@ -144,7 +145,34 @@ describe('ZoneAGalleryPanelComponent', () => {
     const dots = compiled.querySelector('.mobile-dots-pagination');
     expect(dots).toBeTruthy();
     const dotElements = dots?.querySelectorAll('.dot');
-    expect(dotElements?.length).toBe(CARRES_MOCK[0].images.length);
+    const expectedCount = CARRES_MOCK[0].media.length;
+    expect(dotElements?.length).toBe(expectedCount);
+  });
+
+  it('should render video slides with autoplay, loop, muted and Hermès play/pause button', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    const video = compiled.querySelector('video.media-video') as HTMLVideoElement;
+    expect(video).toBeTruthy();
+    expect(video.hasAttribute('autoplay')).toBe(true);
+    expect(video.hasAttribute('loop')).toBe(true);
+    expect(video.muted).toBe(true);
+
+    const pauseBtn = compiled.querySelector('.video-play-pause-btn') as HTMLButtonElement;
+    expect(pauseBtn).toBeTruthy();
+    expect(pauseBtn.getAttribute('title')).toBe('Pause');
+
+    // Simulate clicking pause button
+    pauseBtn.click();
+    fixture.detectChanges();
+    expect(pauseBtn.getAttribute('title')).toBe('Lecture');
+  });
+
+  it('should apply cover-mode to narrow vertical images like carre-laures detail-02 to prevent horizontal gaps', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    const coverImages = compiled.querySelectorAll('.slide-image-btn img.cover-mode');
+    expect(coverImages.length).toBe(1);
+    const coverImg = coverImages[0] as HTMLImageElement;
+    expect(coverImg.getAttribute('src')).toContain('carre-laures/detail-02');
   });
 });
 

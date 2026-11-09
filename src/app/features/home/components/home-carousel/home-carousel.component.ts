@@ -75,15 +75,40 @@ export interface CarouselSlot {
                     <div class="media-wrapper is-fill-mode">
                       <div class="media-link">
                         <div class="media-container">
-                          <picture>
-                            <img
-                              [src]="item.carre.images[0]?.url || item.carre.thumbnail"
-                              [alt]="item.carre.title"
+                          @if (item.carre.carouselMedia.type === 'video') {
+                            <video
+                              autoplay
+                              muted
+                              [muted]="true"
+                              loop
+                              playsinline
+                              webkit-playsinline
+                              [controls]="false"
+                              preload="auto"
                               class="full-parent"
-                              loading="lazy"
-                              draggable="false"
-                            />
-                          </picture>
+                              [poster]="item.carre.carouselMedia.poster || item.carre.thumbnail"
+                            >
+                              @if (item.carre.carouselMedia.srcMp4) {
+                                <source [src]="item.carre.carouselMedia.srcMp4" type="video/mp4" />
+                              }
+                              @if (item.carre.carouselMedia.srcMov) {
+                                <source [src]="item.carre.carouselMedia.srcMov" type="video/quicktime" />
+                              }
+                              @if (!item.carre.carouselMedia.srcMp4 && !item.carre.carouselMedia.srcMov) {
+                                <source [src]="item.carre.carouselMedia.url" />
+                              }
+                            </video>
+                          } @else {
+                            <picture>
+                              <img
+                                [src]="item.carre.carouselMedia.url || item.carre.thumbnail"
+                                [alt]="item.carre.title"
+                                class="full-parent"
+                                loading="lazy"
+                                draggable="false"
+                              />
+                            </picture>
+                          }
                         </div>
                       </div>
                     </div>

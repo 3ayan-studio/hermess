@@ -19,7 +19,8 @@ const mockCarre: Carre = {
     careInstructions: ['Nettoyage à sec'],
     description: 'Description test',
     artisticNote: 'Note artistique',
-    images: [{ url: 'image.jpg', alt: "L'Aurès" }],
+    media: [{ id: 'm1', type: 'image', url: 'image.jpg', alt: "L'Aurès" }],
+    carouselMedia: { id: 'c1', type: 'image', url: 'image.jpg', alt: "L'Aurès" },
     thumbnail: 'thumb.jpg',
     hasInterview: true,
     interview: {

@@ -24,26 +24,52 @@ export const CARRES_MOCK: Carre[] = [
         ],
         description: `À travers ce Carré d'exception, l'artiste célèbre l'envol, la mémoire et la résilience. Dans une composition aérienne et géométrique où chaque détail est imprimé avec une précision d'orfèvre, les soies s'entremêlent pour offrir un voyage poétique et intime.`,
         artisticNote: `« Concevoir ce carré a été une immersion profonde dans les récits transmis et l'architecture textile. » — Fatima-Marwa Zouzal`,
-        thumbnail: '/carres/carre-laures/main.jpeg',
-        hasInterview: true,
-        images: [
+        thumbnail: '/carres/carre-laures/numeric-01.jpeg',
+        media: [
             {
-                url: '/carres/carre-laures/main.jpeg',
+                id: "carre-laures-numeric-01",
+                type: "image",
+                url: "/carres/carre-laures/numeric-01.jpeg",
                 alt: "L'Aurès à plat",
-                isMain: true,
-                aspectRatio: '1:1'
+                aspectRatio: "1:1",
+                isMain: true
             },
             {
-                url: '/carres/carre-laures/detail.webp',
+                id: "carre-laures-detail-02",
+                type: "image",
+                url: "/carres/carre-laures/detail-02.jpg",
                 alt: "Détail de la trame et des motifs de L'Aurès",
-                aspectRatio: '3:4'
+                aspectRatio: "3:4",
+                isMain: false
             },
             {
-                url: '/carres/carre-laures/worn.webp',
-                alt: "Vue portée et tombé de la soie L'Aurès",
-                aspectRatio: '3:4'
+                id: "carre-laures-vent-03",
+                type: "video",
+                url: "/carres/carre-laures/vent-03.mp4",
+                srcMp4: "/carres/carre-laures/vent-03.mp4",
+                srcMov: "/carres/carre-laures/vent-03.mov",
+                poster: "/carres/carre-laures/vent-03-poster.jpg",
+                alt: "Geste textile et mouvement de soie L'Aurès",
+                aspectRatio: "3:4",
+                isMain: false
+            },
+            {
+                id: "carre-laures-angle-04",
+                type: "image",
+                url: "/carres/carre-laures/angle-04.jpg",
+                alt: "Vue sous angle de L'Aurès",
+                aspectRatio: "3:4",
+                isMain: false
             }
         ],
+        carouselMedia: {
+            id: "carre-laures-angle-carousel",
+            type: "image",
+            url: "/carres/carre-laures/angle-carousel.jpg",
+            alt: "L'Aurès — Présentation carrousel d'accueil",
+            aspectRatio: "1:1"
+        },
+        hasInterview: true,
         interview: {
             audioUrl: '/carres/carre-laures/audio.m4a',
             transcriptUrl: '/carres/carre-laures/segmented-transcript.json',
@@ -344,26 +370,49 @@ export const CARRES_MOCK: Carre[] = [
         ],
         description: `Une composition aérienne explorant les trajectoires de vol, la mémoire des voyages et les cartes imaginaires. Les nuances d'azur et de reflets métalliques évoquent la traversée des fuseaux et les lignes d'horizon.`,
         artisticNote: `« L'avion comme symbole de traversée, de distance et de lien entre deux rives. » — Fatima-Marwa Zouzal`,
-        thumbnail: '/carres/carre-1954-1962/main.jpeg',
-        hasInterview: true,
-        images: [
+        thumbnail: '/carres/carre-1954-1962/numeric-01.jpeg',
+        media: [
             {
-                url: '/carres/carre-1954-1962/main.jpeg',
-                alt: '1954-1962 à plat',
-                isMain: true,
-                aspectRatio: '1:1'
+                id: "carre-1954-1962-numeric-01",
+                type: "image",
+                url: "/carres/carre-1954-1962/numeric-01.jpeg",
+                alt: "1954 - 1962 à plat",
+                aspectRatio: "1:1",
+                isMain: true
             },
             {
-                url: '/carres/carre-1954-1962/detail.webp',
-                alt: 'Détail de la trame et des motifs de 1954-1962',
-                aspectRatio: '3:4'
+                id: "carre-1954-1962-detail-02",
+                type: "image",
+                url: "/carres/carre-1954-1962/detail-02.jpg",
+                alt: "Détail de la trame et des motifs de 1954 - 1962",
+                aspectRatio: "3:4",
+                isMain: false
             },
             {
-                url: '/carres/carre-1954-1962/worn.webp',
-                alt: 'Vue portée et tombé de la soie 1954-1962',
-                aspectRatio: '3:4'
+                id: "carre-1954-1962-visit-03",
+                type: "image",
+                url: "/carres/carre-1954-1962/visit-03.jpg",
+                alt: "Vue immersive et détails de 1954 - 1962",
+                aspectRatio: "3:4",
+                isMain: false
+            },
+            {
+                id: "carre-1954-1962-angle-04",
+                type: "image",
+                url: "/carres/carre-1954-1962/angle-04.jpg",
+                alt: "Vue sous angle de 1954 - 1962",
+                aspectRatio: "3:4",
+                isMain: false
             }
         ],
+        carouselMedia: {
+            id: "carre-1954-1962-visit-carousel",
+            type: "image",
+            url: "/carres/carre-1954-1962/visit-carousel.jpg",
+            alt: "1954 - 1962 — Présentation carrousel d'accueil",
+            aspectRatio: "1:1"
+        },
+        hasInterview: true,
         interview: {
             audioUrl: '/carres/carre-1954-1962/audio.m4a',
             transcriptUrl: '/carres/carre-1954-1962/segmented-transcript.json',
@@ -415,27 +464,53 @@ export const CARRES_MOCK: Carre[] = [
         ],
         description: `Une exploration sensible du retour aux origines, de l'ancrage et des récits intimes transmis à travers les générations. Les teintes telluriques célèbrent la terre natale et la circularité de la mémoire.`,
         artisticNote: `« Revenir, c'est redécouvrir ce que l'on croyait déjà connaître d'un regard neuf. » — Fatima-Marwa Zouzal`,
-        thumbnail: '/carres/carre-retour-a-la-terre/main.jpeg',
-        hasInterview: false,
-        images: [
+        thumbnail: '/carres/carre-retour-a-la-terre/numeric-01.jpeg',
+        media: [
             {
-                url: '/carres/carre-retour-a-la-terre/main.jpeg',
-                alt: 'Retour à la terre à plat',
-                isMain: true,
-                aspectRatio: '1:1'
+                id: "carre-retour-a-la-terre-numeric-01",
+                type: "image",
+                url: "/carres/carre-retour-a-la-terre/numeric-01.jpeg",
+                alt: "Retour à la Terre à plat",
+                aspectRatio: "1:1",
+                isMain: true
             },
             {
-                url: '/carres/carre-retour-a-la-terre/detail.webp',
-                alt: 'Détail de la trame et des motifs de Retour à la terre',
-                aspectRatio: '3:4'
+                id: "carre-retour-a-la-terre-detail-02",
+                type: "image",
+                url: "/carres/carre-retour-a-la-terre/detail-02.jpg",
+                alt: "Détail de la trame et des motifs de Retour à la Terre",
+                aspectRatio: "3:4",
+                isMain: false
             },
             {
-                url: '/carres/carre-retour-a-la-terre/worn.webp',
-                alt: 'Vue portée et tombé de la soie Retour à la terre',
-                aspectRatio: '3:4'
+                id: "carre-retour-a-la-terre-vent-03",
+                type: "video",
+                url: "/carres/carre-retour-a-la-terre/vent-03.mp4",
+                srcMp4: "/carres/carre-retour-a-la-terre/vent-03.mp4",
+                srcMov: "/carres/carre-retour-a-la-terre/vent-03.MOV",
+                poster: "/carres/carre-retour-a-la-terre/vent-03-poster.jpg",
+                alt: "Geste textile et mouvement de soie Retour à la Terre",
+                aspectRatio: "3:4",
+                isMain: false
+            },
+            {
+                id: "carre-retour-a-la-terre-angle-04",
+                type: "image",
+                url: "/carres/carre-retour-a-la-terre/angle-04.jpg",
+                alt: "Vue sous angle de Retour à la Terre",
+                aspectRatio: "3:4",
+                isMain: false
             }
-        ]
-    },
+        ],
+        carouselMedia: {
+            id: "carre-retour-a-la-terre-angle-carousel",
+            type: "image",
+            url: "/carres/carre-retour-a-la-terre/angle-carousel.jpg",
+            alt: "Retour à la Terre — Présentation carrousel d'accueil",
+            aspectRatio: "1:1"
+        },
+        hasInterview: false,
+        },
     {
         id: 'carre-une-derniere-priere',
         slug: 'carre-une-derniere-priere',
@@ -459,26 +534,44 @@ export const CARRES_MOCK: Carre[] = [
         ],
         description: `Une mise en scène graphique d'objets du quotidien et d'artéfacts mémoriels, réinventés dans une géométrie sensible. Chaque élément devient le témoin silencieux d'un rituel familier.`,
         artisticNote: `« Chaque objet porte une charge affective et un silence qui lui est propre. » — Fatima-Marwa Zouzal`,
-        thumbnail: '/carres/carre-une-derniere-priere/main.jpeg',
-        hasInterview: true,
-        images: [
+        thumbnail: '/carres/carre-une-derniere-priere/numeric-01.jpeg',
+        media: [
             {
-                url: '/carres/carre-une-derniere-priere/main.jpeg',
-                alt: 'Une dernière prière à plat',
-                isMain: true,
-                aspectRatio: '1:1'
+                id: "carre-une-derniere-priere-numeric-01",
+                type: "image",
+                url: "/carres/carre-une-derniere-priere/numeric-01.jpeg",
+                alt: "Une Dernière Prière à plat",
+                aspectRatio: "1:1",
+                isMain: true
             },
             {
-                url: '/carres/carre-une-derniere-priere/detail.webp',
-                alt: 'Détail de la trame et des motifs d’Une dernière prière',
-                aspectRatio: '3:4'
+                id: "carre-une-derniere-priere-vent-02",
+                type: "video",
+                url: "/carres/carre-une-derniere-priere/vent-02.mp4",
+                srcMp4: "/carres/carre-une-derniere-priere/vent-02.mp4",
+                srcMov: "/carres/carre-une-derniere-priere/vent-02.mov",
+                poster: "/carres/carre-une-derniere-priere/vent-02-poster.jpg",
+                alt: "Geste textile et mouvement de soie Une Dernière Prière",
+                aspectRatio: "3:4",
+                isMain: false
             },
             {
-                url: '/carres/carre-une-derniere-priere/worn.webp',
-                alt: 'Vue portée et tombé de la soie Une dernière prière',
-                aspectRatio: '3:4'
+                id: "carre-une-derniere-priere-photo-03",
+                type: "image",
+                url: "/carres/carre-une-derniere-priere/photo-03.jpg",
+                alt: "Vue 3 de Une Dernière Prière",
+                aspectRatio: "3:4",
+                isMain: false
             }
         ],
+        carouselMedia: {
+            id: "carre-une-derniere-priere-large-carousel",
+            type: "image",
+            url: "/carres/carre-une-derniere-priere/large-carousel.jpg",
+            alt: "Une Dernière Prière — Présentation carrousel d'accueil",
+            aspectRatio: "1:1"
+        },
+        hasInterview: true,
         interview: {
             audioUrl: '/carres/carre-une-derniere-priere/audio.m4a',
             transcriptUrl: '/carres/carre-une-derniere-priere/segmented-transcript.json',
@@ -530,25 +623,54 @@ export const CARRES_MOCK: Carre[] = [
         ],
         description: `Inspiré du bestiaire mythologique et de l'imaginaire féerique, La Licorne allie délicatesse végétale et force allégorique. Les nuances chatoyantes de pourpre et d'émeraude font vibrer la soie à chaque mouvement.`,
         artisticNote: `« La licorne comme allégorie de la liberté sauvage et du secret préservé. » — Fatima-Marwa Zouzal`,
-        thumbnail: '/carres/carre-un-seul-heros-le-peuple/main.jpeg',
-        hasInterview: false,
-        images: [
+        thumbnail: '/carres/carre-un-seul-heros-le-peuple/numeric-01.jpeg',
+        media: [
             {
-                url: '/carres/carre-un-seul-heros-le-peuple/main.jpeg',
-                alt: 'Un seul héros, le peuple à plat',
-                isMain: true,
-                aspectRatio: '1:1'
+                id: "carre-un-seul-heros-le-peuple-numeric-01",
+                type: "image",
+                url: "/carres/carre-un-seul-heros-le-peuple/numeric-01.jpeg",
+                alt: "Un Seul Héros le Peuple à plat",
+                aspectRatio: "1:1",
+                isMain: true
             },
             {
-                url: '/carres/carre-un-seul-heros-le-peuple/detail.webp',
-                alt: 'Détail de la trame et des motifs d’Un seul héros, le peuple',
-                aspectRatio: '3:4'
+                id: "carre-un-seul-heros-le-peuple-video-02",
+                type: "video",
+                url: "/carres/carre-un-seul-heros-le-peuple/video-02.mp4",
+                srcMp4: "/carres/carre-un-seul-heros-le-peuple/video-02.mp4",
+                srcMov: "/carres/carre-un-seul-heros-le-peuple/video-02.mov",
+                poster: "/carres/carre-un-seul-heros-le-peuple/video-02-poster.jpg",
+                alt: "Geste textile et mouvement de soie Un Seul Héros le Peuple",
+                aspectRatio: "3:4",
+                isMain: false
             },
             {
-                url: '/carres/carre-un-seul-heros-le-peuple/worn.webp',
-                alt: 'Vue portée et tombé de la soie Un seul héros, le peuple',
-                aspectRatio: '3:4'
+                id: "carre-un-seul-heros-le-peuple-angle-03",
+                type: "image",
+                url: "/carres/carre-un-seul-heros-le-peuple/angle-03.jpg",
+                alt: "Vue sous angle de Un Seul Héros le Peuple",
+                aspectRatio: "3:4",
+                isMain: false
+            },
+            {
+                id: "carre-un-seul-heros-le-peuple-nuit-04",
+                type: "image",
+                url: "/carres/carre-un-seul-heros-le-peuple/nuit-04.jpg",
+                alt: "Reflets et nuances nocturnes de Un Seul Héros le Peuple",
+                aspectRatio: "3:4",
+                isMain: false
             }
-        ]
+        ],
+        carouselMedia: {
+            id: "carre-un-seul-heros-le-peuple-video-carousel",
+            type: "video",
+            url: "/carres/carre-un-seul-heros-le-peuple/video-carousel.mp4",
+            srcMp4: "/carres/carre-un-seul-heros-le-peuple/video-carousel.mp4",
+            srcMov: "/carres/carre-un-seul-heros-le-peuple/video-carousel.mov",
+            poster: "/carres/carre-un-seul-heros-le-peuple/video-carousel-poster.jpg",
+            alt: "Un Seul Héros le Peuple — Présentation carrousel d'accueil",
+            aspectRatio: "1:1"
+        },
+        hasInterview: false
     }
 ];

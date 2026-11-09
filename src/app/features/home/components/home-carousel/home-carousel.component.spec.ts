@@ -150,4 +150,13 @@ describe('HomeCarouselComponent', () => {
     expect(component.activeSlideWidth()).toBeCloseTo(800 * 0.7334, 2);
     expect(container.style.getPropertyValue('--active-slide-width')).toBe(`${800 * 0.7334}px`);
   });
+
+  it('should render video element when carre has video carouselMedia', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    const video = compiled.querySelector('video.full-parent') as HTMLVideoElement;
+    expect(video).toBeTruthy();
+    expect(video.hasAttribute('autoplay')).toBe(true);
+    expect(video.hasAttribute('loop')).toBe(true);
+    expect(video.muted).toBe(true);
+  });
 });

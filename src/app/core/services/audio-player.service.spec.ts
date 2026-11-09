@@ -18,7 +18,8 @@ const mockCarre: Carre = {
     careInstructions: ['Nettoyage à sec'],
     description: 'Description test',
     artisticNote: 'Note artistique',
-    images: [{ url: 'image.jpg', alt: 'Carré Parachute' }],
+    media: [{ id: 'm1', type: 'image', url: 'image.jpg', alt: 'Carré Parachute' }],
+    carouselMedia: { id: 'c1', type: 'image', url: 'image.jpg', alt: 'Carré Parachute' },
     thumbnail: 'thumb.jpg',
     hasInterview: true,
     interview: {

@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "tunnel": "node scripts/tunnel.mjs",
+    "sync:media": "node scripts/sync-carres-media.mjs",
+    "generate:og": "node scripts/generate-og-image.mjs",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

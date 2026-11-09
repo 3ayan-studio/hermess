@@ -21,11 +21,18 @@ export interface CarreInterview {
   transcript?: TranscriptEntry[];
 }
 
-export interface CarreImage {
+export type CarreMediaType = 'image' | 'video';
+
+export interface CarreMediaItem {
+  id: string;
+  type: CarreMediaType;
   url: string;
+  srcMp4?: string;
+  srcMov?: string;
+  poster?: string;
   alt: string;
-  isMain?: boolean;
   aspectRatio?: '1:1' | '3:4';
+  isMain?: boolean;
 }
 
 export interface Carre {
@@ -46,7 +53,8 @@ export interface Carre {
   careInstructions: string[];
   description: string;
   artisticNote: string;
-  images: CarreImage[];
+  media: CarreMediaItem[];
+  carouselMedia: CarreMediaItem;
   thumbnail: string;
   hasInterview: boolean;
   interview?: CarreInterview;

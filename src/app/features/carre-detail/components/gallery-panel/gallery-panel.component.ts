@@ -11,7 +11,7 @@ import {
   viewChild
 } from '@angular/core';
 import { Router } from '@angular/router';
-import { Carre, CarreImage } from '../../../../core/models/carre.model';
+import { Carre, CarreMediaItem } from '../../../../core/models/carre.model';
 import { AudioPlayerService } from '../../../../core/services/audio-player.service';
 import { SvgIconComponent } from '../../../../shared/components/svg-icon/svg-icon.component';
 
@@ -45,28 +45,82 @@ import { SvgIconComponent } from '../../../../shared/components/svg-icon/svg-ico
               role="region"
               aria-label="Piste des photos du carré"
             >
-              @for (img of images(); track img.url; let idx = $index) {
+              @for (item of mediaItems(); track item.id; let idx = $index) {
                 <div
                   class="swiper-slide"
                   [class.swiper-slide-active]="activeSlideIndex() === idx"
                   role="group"
-                  [attr.aria-label]="(idx + 1) + ' / ' + images().length"
+                  [attr.aria-label]="(idx + 1) + ' / ' + mediaItems().length"
                 >
                   <div class="asset-wrapper f34" [id]="'tabpanel-default-' + idx">
-                    <button
-                      type="button"
-                      class="slide-image-btn"
-                      (click)="onSlideClick(idx)"
-                      [attr.aria-label]="'Agrandir la vue ' + (idx + 1) + ' sur ' + images().length"
-                    >
-                      <img
-                        [src]="img.url"
-                        [alt]="img.alt || carre().title"
-                        [loading]="idx === 0 ? 'eager' : 'lazy'"
-                        [class.contain-mode]="idx === 0"
-                        draggable="false"
-                      />
-                    </button>
+                    @if (item.type === 'video') {
+                      <div class="slide-video-container" (click)="onSlideClick(item, videoRef)">
+                        <video
+                          #videoRef
+                          autoplay
+                          muted
+                          [muted]="true"
+                          loop
+                          playsinline
+                          webkit-playsinline
+                          [controls]="false"
+                          preload="auto"
+                          class="media-asset media-video"
+                          tabindex="-1"
+                          aria-hidden="true"
+                          [poster]="item.poster || item.url"
+                          [class.contain-mode]="item.aspectRatio === '1:1' && idx === 0"
+                        >
+                          @if (item.srcMp4) {
+                            <source [src]="item.srcMp4" type="video/mp4" />
+                          }
+                          @if (item.srcMov) {
+                            <source [src]="item.srcMov" type="video/quicktime" />
+                          }
+                          @if (!item.srcMp4 && !item.srcMov) {
+                            <source [src]="item.url" />
+                          }
+                        </video>
+
+                        <!-- Bouton Pause/Lecture ISO Hermès -->
+                        <button
+                          type="button"
+                          class="video-play-pause-btn"
+                          (click)="toggleVideoPlayPause(item, videoRef, $event)"
+                          [attr.aria-label]="isVideoPaused(item.id) ? 'Relancer la lecture de la vidéo' : 'Mettre en pause la vidéo'"
+                          [title]="isVideoPaused(item.id) ? 'Lecture' : 'Pause'"
+                        >
+                          @if (isVideoPaused(item.id)) {
+                            <!-- Icône Play ISO Hermès (triangle contour fin noir) -->
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <polygon points="2.5,1.5 10.5,6 2.5,10.5" stroke="#000" stroke-width="1.3" stroke-linejoin="round" fill="none" />
+                            </svg>
+                          } @else {
+                            <!-- Icône Pause ISO Hermès (deux barres verticales fines noires) -->
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <line x1="3.5" y1="2" x2="3.5" y2="10" stroke="#000" stroke-width="1.5" stroke-linecap="square" />
+                              <line x1="8.5" y1="2" x2="8.5" y2="10" stroke="#000" stroke-width="1.5" stroke-linecap="square" />
+                            </svg>
+                          }
+                        </button>
+                      </div>
+                    } @else {
+                      <button
+                        type="button"
+                        class="slide-image-btn"
+                        (click)="onSlideClick(item)"
+                        [attr.aria-label]="'Agrandir la vue ' + (idx + 1) + ' sur ' + mediaItems().length"
+                      >
+                        <img
+                          [src]="item.url"
+                          [alt]="item.alt || carre().title"
+                          [loading]="idx === 0 ? 'eager' : 'lazy'"
+                          [class.contain-mode]="idx === 0"
+                          [class.cover-mode]="isCoverMode(item)"
+                          draggable="false"
+                        />
+                      </button>
+                    }
                   </div>
                 </div>
               }
@@ -101,7 +155,7 @@ import { SvgIconComponent } from '../../../../shared/components/svg-icon/svg-ico
 
             <!-- Pagination Mobile : Points centrés -->
             <div class="mobile-dots-pagination" aria-hidden="true">
-              @for (img of images(); track img.url; let idx = $index) {
+              @for (item of mediaItems(); track item.id; let idx = $index) {
                 <span class="dot" [class.active]="activeSlideIndex() === idx"></span>
               }
             </div>
@@ -109,11 +163,11 @@ import { SvgIconComponent } from '../../../../shared/components/svg-icon/svg-ico
         </div>
 
         <!-- Miniatures Galerie Produit (Angle inférieur gauche sur desktop) -->
-        @if (images().length > 1) {
+        @if (mediaItems().length > 1) {
           <div class="images-galery" role="tablist" aria-label="Vues du carré">
             <div class="images-gallery-container">
               <div class="gallery-wrapper">
-                @for (img of images(); track img.url; let idx = $index) {
+                @for (item of mediaItems(); track item.id; let idx = $index) {
                   <button
                     type="button"
                     class="gallery-button"
@@ -121,7 +175,7 @@ import { SvgIconComponent } from '../../../../shared/components/svg-icon/svg-ico
                     (click)="scrollToSlide(idx)"
                     [attr.aria-label]="'Afficher la vue ' + (idx + 1)"
                   >
-                    <img [src]="img.url" [alt]="img.alt" />
+                    <img [src]="item.poster || (item.type === 'image' ? item.url : carre().thumbnail)" [alt]="item.alt || carre().title" />
                   </button>
                 }
               </div>
@@ -238,13 +292,15 @@ import { SvgIconComponent } from '../../../../shared/components/svg-icon/svg-ico
         </button>
 
         <div class="fullscreen-image-container" (click)="$event.stopPropagation()">
-          <img
-            [src]="images()[zoomIndex()].url"
-            [alt]="images()[zoomIndex()].alt || carre().title"
-          />
+          @if (currentZoomImage(); as zoomImg) {
+            <img
+              [src]="zoomImg.url"
+              [alt]="zoomImg.alt || carre().title"
+            />
+          }
         </div>
 
-        @if (images().length > 1) {
+        @if (zoomableImages().length > 1) {
           <button
             type="button"
             class="fullscreen-nav-btn prev"
@@ -263,7 +319,7 @@ import { SvgIconComponent } from '../../../../shared/components/svg-icon/svg-ico
           </button>
 
           <div class="fullscreen-counter" (click)="$event.stopPropagation()">
-            {{ zoomIndex() + 1 }} / {{ images().length }}
+            {{ zoomIndex() + 1 }} / {{ zoomableImages().length }}
           </div>
         }
       </div>
@@ -293,11 +349,60 @@ export class ZoneAGalleryPanelComponent implements OnDestroy {
   private pointerStartScrollLeft = 0;
   private hasDragged = false;
 
-  readonly images = computed<CarreImage[]>(() => {
-    const list = this.carre().images;
-    if (list && list.length > 0) return list;
-    return [{ url: this.carre().thumbnail, alt: this.carre().title }];
+  readonly mediaItems = computed<CarreMediaItem[]>(() => {
+    return this.carre().media ?? [];
   });
+
+  readonly images = computed<CarreMediaItem[]>(() => this.mediaItems());
+
+  readonly zoomableImages = computed<CarreMediaItem[]>(() => {
+    return this.mediaItems().filter(m => m.type === 'image');
+  });
+
+  readonly currentZoomImage = computed<CarreMediaItem | null>(() => {
+    const list = this.zoomableImages();
+    if (list.length === 0) return null;
+    return list[this.zoomIndex()] || list[0];
+  });
+
+  readonly pausedVideoIds = signal<Set<string>>(new Set<string>());
+
+  isVideoPaused(id: string): boolean {
+    return this.pausedVideoIds().has(id);
+  }
+
+  isCoverMode(item: CarreMediaItem): boolean {
+    return item.url.includes('carre-laures/detail-02');
+  }
+
+  toggleVideoPlayPause(item: CarreMediaItem, videoEl: HTMLVideoElement, event?: Event): void {
+    if (event) {
+      event.stopPropagation();
+    }
+    const currentlyPaused = this.isVideoPaused(item.id);
+    if (currentlyPaused) {
+      try {
+        const res = videoEl.play();
+        if (res && typeof res.catch === 'function') {
+          res.catch(() => {});
+        }
+      } catch {}
+      this.pausedVideoIds.update(set => {
+        const next = new Set(set);
+        next.delete(item.id);
+        return next;
+      });
+    } else {
+      try {
+        videoEl.pause();
+      } catch {}
+      this.pausedVideoIds.update(set => {
+        const next = new Set(set);
+        next.add(item.id);
+        return next;
+      });
+    }
+  }
 
   readonly isCurrentPlaying = computed(() => {
     return this.audioService.currentCarre()?.id === this.carre().id && this.audioService.isPlaying();
@@ -432,9 +537,16 @@ export class ZoneAGalleryPanelComponent implements OnDestroy {
     }
   }
 
-  onSlideClick(idx: number): void {
+  onSlideClick(item: CarreMediaItem, videoEl?: HTMLVideoElement): void {
     if (this.hasDragged) return;
-    this.openZoom(idx);
+    if (item.type === 'video') {
+      if (videoEl) {
+        this.toggleVideoPlayPause(item, videoEl);
+      }
+      return;
+    }
+    const zoomIdx = this.zoomableImages().findIndex(img => img.id === item.id);
+    this.openZoom(zoomIdx >= 0 ? zoomIdx : 0);
   }
 
   openZoom(idx: number): void {
@@ -453,12 +565,14 @@ export class ZoneAGalleryPanelComponent implements OnDestroy {
   }
 
   prevZoom(): void {
-    const count = this.images().length;
+    const count = this.zoomableImages().length;
+    if (count === 0) return;
     this.zoomIndex.update(i => (i > 0 ? i - 1 : count - 1));
   }
 
   nextZoom(): void {
-    const count = this.images().length;
+    const count = this.zoomableImages().length;
+    if (count === 0) return;
     this.zoomIndex.update(i => (i < count - 1 ? i + 1 : 0));
   }
 
