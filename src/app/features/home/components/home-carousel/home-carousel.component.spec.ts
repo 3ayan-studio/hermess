@@ -26,10 +26,10 @@ describe('HomeCarouselComponent', () => {
     vi.useRealTimers();
   });
 
-  it('should create and initialize 9 dynamic slots centered around Carre 0', () => {
+  it('should create and initialize 15 permanent slides centered around Carre 0', () => {
     expect(component).toBeTruthy();
     expect(component.carres().length).toBe(CARRES_MOCK.length);
-    expect(component.displaySlots().length).toBe(9);
+    expect(component.displaySlots().length).toBe(15);
     expect(component.activeCarreIndex()).toBe(0);
     expect(component.activeSlot()).toBe(0);
 
@@ -158,5 +158,22 @@ describe('HomeCarouselComponent', () => {
     expect(video.hasAttribute('autoplay')).toBe(true);
     expect(video.hasAttribute('loop')).toBe(true);
     expect(video.muted).toBe(true);
+  });
+
+  it('should play all videos in the carousel track continuously even on inactive/peek slides without pausing', () => {
+    const playSpy = vi.spyOn(HTMLMediaElement.prototype, 'play').mockImplementation(() => Promise.resolve());
+    const pauseSpy = vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => {});
+
+    // Déclenche explicitement updateVideosPlayback
+    (component as any).updateVideosPlayback();
+
+    const compiled = fixture.nativeElement as HTMLElement;
+    const videos = compiled.querySelectorAll('video');
+    expect(videos.length).toBeGreaterThan(0);
+    expect(playSpy).toHaveBeenCalled();
+    expect(pauseSpy).not.toHaveBeenCalled();
+
+    playSpy.mockRestore();
+    pauseSpy.mockRestore();
   });
 });

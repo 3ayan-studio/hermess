@@ -18,9 +18,11 @@ import { Carre } from '../../../../core/models/carre.model';
 import { LoadingService } from '../../../../core/services/loading.service';
 
 export interface CarouselSlot {
-    slotOffset: number; // -4 à +4 (0 étant le centre actif)
+    slideIndex: number;
+    slotOffset: number; // Offset relatif par rapport au centre actuel (-1, 0, +1...)
     carre: Carre;
     isCenter: boolean;
+    key: string;
 }
 
 @Component({
@@ -54,7 +56,7 @@ export interface CarouselSlot {
           [class.no-transition]="!withTransition()"
           [style.transform]="trackTransform()"
         >
-          @for (item of displaySlots(); track item.slotOffset) {
+          @for (item of displaySlots(); track item.key) {
             <div
               class="swiper-slide is-initialized"
               [class.swiper-slide-active]="item.slotOffset === activeSlot()"
@@ -113,29 +115,29 @@ export interface CarouselSlot {
                       </div>
                     </div>
                   </div>
-
-                  <!-- Bouton Pill Hermès superposé -->
-                  <!-- Affiché UNIQUEMENT sur le slide central (slot 0) et masqué pendant la transition pour éliminer tout flash -->
-                  @if (item.slotOffset === 0) {
-                    <div
-                      class="editorial-cta"
-                      [class.show]="!isAnimating()"
-                    >
-                      <button
-                        type="button"
-                        class="button button-color-secondary button-layout-hug button-radius-small button-size-medium button-variant-filled"
-                        (click)="onButtonClick(item.carre, $event)"
-                        tabindex="-1"
-                      >
-                        <span class="button-label label-medium">{{ item.carre.title }}</span>
-                      </button>
-                    </div>
-                  }
                 </div>
               </div>
             </div>
           }
         </div>
+
+        <!-- Bouton Pill Hermès superposé -->
+        <!-- Affiché UNIQUEMENT sur le slide actif et masqué pendant la transition -->
+        @if (currentActiveCarre(); as activeCarre) {
+          <div
+            class="editorial-cta"
+            [class.show]="!isAnimating()"
+          >
+            <button
+              type="button"
+              class="button button-color-secondary button-layout-hug button-radius-small button-size-medium button-variant-filled"
+              (click)="onButtonClick(activeCarre, $event)"
+              tabindex="-1"
+            >
+              <span class="button-label label-medium">{{ activeCarre.title }}</span>
+            </button>
+          </div>
+        }
       </div>
 
       <!-- Navigateur de Progression ISO Hermès -->
@@ -168,13 +170,13 @@ export class HomeCarouselComponent implements OnInit, AfterViewInit, OnDestroy {
     // Index absolu du carré actuellement actif (0 à N-1)
     readonly activeCarreIndex = signal<number>(0);
 
-    // Slot visuellement actif lors de l'animation (-4 à +4, 0 au repos)
+    // Slot visuellement actif lors de l'animation (-1, 0, +1)
     readonly activeSlot = signal<number>(0);
 
     // Verrou pendant l'animation pour empêcher les clics en cascade et masquer le bouton
     readonly isAnimating = signal<boolean>(false);
 
-    // Contrôle de l'animation CSS (désactivée lors des réalignements transparents)
+    // Contrôle de l'animation CSS (désactivée lors des normalisations transparentes)
     readonly withTransition = signal<boolean>(true);
 
     // Décalage en pixels lors du drag/swipe
@@ -189,6 +191,22 @@ export class HomeCarouselComponent implements OnInit, AfterViewInit, OnDestroy {
     private resizeObserver?: ResizeObserver;
     private slideTimeout?: ReturnType<typeof setTimeout>;
 
+    // Index du slide physique dans le buffer des 15 slides (3 séries de N)
+    readonly activeSlideIndex = computed(() => {
+        const total = this.carres().length;
+        if (!total) return 0;
+        return total + this.activeCarreIndex() + this.activeSlot();
+    });
+
+    // Carré actuellement actif pour le bouton pill
+    readonly currentActiveCarre = computed(() => {
+        const list = this.carres();
+        if (!list.length) return undefined;
+        const total = list.length;
+        const idx = ((this.activeCarreIndex() % total) + total) % total;
+        return list[idx];
+    });
+
     // Mode Desktop (>= 1024px) vs Mobile (< 1024px)
     readonly isDesktop = computed(() => this.containerWidth() >= 1024);
 
@@ -198,26 +216,35 @@ export class HomeCarouselComponent implements OnInit, AfterViewInit, OnDestroy {
         return this.isDesktop() ? 0.6134 * w : 0.7334 * w;
     });
 
-    // 9 Slots dynamiques centrés autour du carré actif (-4 à +4)
-    readonly displaySlots = computed<CarouselSlot[]>(() => {
+    // 15 Slides persistantes (3 séries de N carrés : Set 0, Set 1, Set 2)
+    // Garantit l'identité immuable des nœuds DOM : AUCUN échange d'images ou de vidéos à chaud !
+    readonly displaySlides = computed<CarouselSlot[]>(() => {
         const list = this.carres();
         const total = list.length;
         if (!total) return [];
 
-        const centerIdx = this.activeCarreIndex();
-        const slots: CarouselSlot[] = [];
+        const slides: CarouselSlot[] = [];
+        const baseCenter = total + this.activeCarreIndex();
 
-        for (let offset = -4; offset <= 4; offset++) {
-            const itemIndex = ((centerIdx + offset) % total + total) % total;
-            slots.push({
-                slotOffset: offset,
-                carre: list[itemIndex],
-                isCenter: offset === 0
-            });
+        for (let set = 0; set < 3; set++) {
+            for (let i = 0; i < total; i++) {
+                const slideIndex = set * total + i;
+                const slotOffset = slideIndex - baseCenter;
+                slides.push({
+                    slideIndex,
+                    slotOffset,
+                    carre: list[i],
+                    isCenter: slotOffset === 0,
+                    key: `set-${set}-${list[i].id}`
+                });
+            }
         }
 
-        return slots;
+        return slides;
     });
+
+    // Alias pour compatibilité avec l'API publique
+    readonly displaySlots = this.displaySlides;
 
     // Largeur de l'indicateur sur la barre de 120px
     readonly indicatorWidth = computed(() => {
@@ -232,32 +259,29 @@ export class HomeCarouselComponent implements OnInit, AfterViewInit, OnDestroy {
     });
 
     // Calcul mathématique exact de la translation ISO Hermès
+    // Chaque slide inactif + gap mesure exactement 0.09665 * w (Desktop) ou 0.1333 * w (Mobile)
     readonly trackTransform = computed(() => {
         const w = this.containerWidth();
-        const slot = this.activeSlot();
+        const idx = this.activeSlideIndex();
         const drag = this.dragOffset();
 
         if (this.isDesktop()) {
             // DESKTOP :
             // - Slide actif au centre : 61.34% de la largeur
-            // - Slides inactifs : (38.66% - 16px) / 4 de la largeur
-            // - Écart inter-slide : 4px
-            // - Chaque slide inactif + gap = 0.09665 * w
-            // - Position du slide actif dans le viewport : 19.33% de la largeur
+            // - Base offset de centrage : (1 - 0.6134) / 2 = 0.1933 * w
+            // - Pas inter-slide : (38.66% - 16px) / 4 + 4px = 0.09665 * w
             const baseOffset = 0.1933 * w;
             const step = 0.09665 * w;
-            const x = baseOffset - (4 + slot) * step + drag;
+            const x = baseOffset - idx * step + drag;
             return `translate3d(${x}px, 0, 0)`;
         } else {
             // MOBILE :
             // - Slide actif au centre : 73.34% de la largeur
-            // - Slides inactifs : (26.66% - 8px) / 2 de la largeur
-            // - Écart inter-slide : 4px
-            // - Chaque slide inactif + gap = 0.1333 * w
-            // - Position du slide actif dans le viewport : 13.33% de la largeur
+            // - Base offset de centrage : (1 - 0.7334) / 2 = 0.1333 * w
+            // - Pas inter-slide : (26.66% - 8px) / 2 + 4px = 0.1333 * w
             const baseOffset = 0.1333 * w;
             const step = 0.1333 * w;
-            const x = baseOffset - (4 + slot) * step + drag;
+            const x = baseOffset - idx * step + drag;
             return `translate3d(${x}px, 0, 0)`;
         }
     });
@@ -280,8 +304,11 @@ export class HomeCarouselComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     ngAfterViewInit(): void {
-        if (typeof window !== 'undefined' && this.resizeObserver && this.container()?.nativeElement) {
-            this.resizeObserver.observe(this.container()!.nativeElement);
+        if (typeof window !== 'undefined') {
+            if (this.resizeObserver && this.container()?.nativeElement) {
+                this.resizeObserver.observe(this.container()!.nativeElement);
+            }
+            this.updateVideosPlayback();
         }
     }
 
@@ -309,9 +336,16 @@ export class HomeCarouselComponent implements OnInit, AfterViewInit, OnDestroy {
         this.goToRelative(1);
     }
 
-    // Déplacement relatif d'un nombre de slots (-2, -1, +1, +2)
+    // Déplacement relatif d'un nombre de crans (-2, -1, +1, +2)
     goToRelative(offset: number): void {
         if (this.isAnimating() || offset === 0) return;
+
+        const total = this.carres().length;
+        if (total <= 0) return;
+
+        if (this.slideTimeout) {
+            clearTimeout(this.slideTimeout);
+        }
 
         this.isAnimating.set(true);
         this.withTransition.set(true);
@@ -319,25 +353,19 @@ export class HomeCarouselComponent implements OnInit, AfterViewInit, OnDestroy {
 
         // Durée de la transition CSS (0.5s = 500ms)
         this.slideTimeout = setTimeout(() => {
-            const total = this.carres().length;
-            if (total <= 0) {
-                this.isAnimating.set(false);
-                return;
-            }
+            const nextCarreIndex = ((this.activeCarreIndex() + offset) % total + total) % total;
 
-            const newIndex = ((this.activeCarreIndex() + offset) % total + total) % total;
-
-            // 1. Coupe temporairement toute transition
+            // 1. Coupe temporairement toute transition pour normalisation silencieuse
             this.withTransition.set(false);
 
             // 2. Met à jour l'index absolu et réaligne le slot actif sur 0
-            this.activeCarreIndex.set(newIndex);
+            this.activeCarreIndex.set(nextCarreIndex);
             this.activeSlot.set(0);
 
-            // 3. Force la détection de changements synchrone
+            // 3. Force la détection synchrone
             this.cdr.detectChanges();
 
-            // 4. Force le reflow synchrone pour que le navigateur fige immédiatement la position sans animer
+            // 4. Force le reflow synchrone pour figer immédiatement la position
             if (this.container()?.nativeElement) {
                 void this.container()!.nativeElement.offsetHeight;
             }
@@ -346,6 +374,7 @@ export class HomeCarouselComponent implements OnInit, AfterViewInit, OnDestroy {
             requestAnimationFrame(() => {
                 this.withTransition.set(true);
                 this.isAnimating.set(false);
+                this.updateVideosPlayback();
             });
         }, 500);
     }
@@ -375,6 +404,18 @@ export class HomeCarouselComponent implements OnInit, AfterViewInit, OnDestroy {
     openCarre(slug: string): void {
         this.loadingService.startLoader();
         this.router.navigate(['/carre', slug]);
+    }
+
+    // Lecture continue de toutes les vidéos du carrousel (actives et non-actives/peek)
+    private updateVideosPlayback(): void {
+        if (typeof window === 'undefined' || !this.wrapper()?.nativeElement) return;
+        const videos = this.wrapper()!.nativeElement.querySelectorAll('video');
+        videos.forEach((video: HTMLVideoElement) => {
+            video.muted = true;
+            if (video.paused) {
+                video.play()?.catch(() => {});
+            }
+        });
     }
 
     // Gestion du Drag / Swipe tactile et souris

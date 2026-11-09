@@ -76,6 +76,8 @@
   gap: 4px;
   will-change: transform;
   transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 
   @media (min-width: 1024px) {
     gap: 4px;
@@ -99,6 +101,7 @@
   overflow: hidden;
   cursor: pointer;
   box-sizing: border-box;
+  contain: layout paint;
 
   // Largeur inactive Mobile : (26.66% - 2 * gap(4px)) / 2 = (26.66% - 8px) / 2
   inline-size: calc((26.66% - 8px) / 2);
@@ -143,6 +146,7 @@
   overflow: hidden;
   background-color: var(--hermes-bg-secondary, #f6f1eb);
   transition: transform 0.6s ease;
+  contain: paint;
 
   // Effet de vignetage sombre subtil et progressif sur les cellules inactives
   &::after {

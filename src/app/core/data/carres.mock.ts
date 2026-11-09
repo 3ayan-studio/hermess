@@ -405,9 +405,9 @@ export const CARRES_MOCK: Carre[] = [
             }
         ],
         carouselMedia: {
-            id: "carre-1954-1962-visit-carousel",
+            id: "carre-1954-1962-large-carousel",
             type: "image",
-            url: "/carres/carre-1954-1962/visit-carousel.jpg",
+            url: "/carres/carre-1954-1962/large-carousel.jpg",
             alt: "1954 - 1962 — Présentation carrousel d'accueil",
             aspectRatio: "1:1"
         },
