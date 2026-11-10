@@ -174,6 +174,11 @@ describe('ZoneAGalleryPanelComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     const contemplation = compiled.querySelector('.contemplation-banner');
     expect(contemplation).toBeTruthy();
+    expect(contemplation?.textContent).toContain('PIÈCE CONTEMPLATIVE');
+
+    const meta = compiled.querySelector('.interview-meta');
+    expect(meta).toBeTruthy();
+    expect(meta?.textContent).toContain('Exposition Hermess 2026');
 
     const actionBtn = compiled.querySelector('.button-color-primary');
     expect(actionBtn).toBeNull();

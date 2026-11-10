@@ -260,10 +260,16 @@ import { SvgIconComponent } from '../../../../shared/components/svg-icon/svg-ico
                     </p>
                   </div>
                 } @else {
-                  <div class="contemplation-banner">
-                    <span class="contemplation-text">
-                      Œuvre Visuelle • Exposition 2026
-                    </span>
+                  <div class="actions">
+                    <div class="contemplation-banner" role="status">
+                      <span class="contemplation-text">
+                        PIÈCE CONTEMPLATIVE
+                      </span>
+                    </div>
+
+                    <p class="interview-meta">
+                      Exposition Hermess 2026
+                    </p>
                   </div>
                 }
               </div>

@@ -76,7 +76,7 @@
 
   @media (max-width: 1023px) {
     width: 100vw;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 3 / 4;
     scroll-snap-align: center;
   }
 
@@ -285,7 +285,7 @@
     gap: 8px;
     padding: 6px 0;
     position: absolute;
-    bottom: 8px;
+    bottom: 12px;
     left: 0;
     right: 0;
     width: 100%;
@@ -660,11 +660,21 @@
 }
 
 .contemplation-banner {
-  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  padding: 8px 16px;
+  box-sizing: border-box;
   background-color: #f6f1eb;
   border: 1px solid var(--hermes-border-light);
   text-align: center;
-  border-radius: 2px;
+  border-radius: 0.125rem;
+
+  @media (max-width: 1023px) {
+    min-height: 44px;
+    height: 44px;
+  }
 }
 
 .contemplation-text {
