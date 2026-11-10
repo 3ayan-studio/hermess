@@ -68,8 +68,8 @@ describe('ZoneBAccordionsComponent', () => {
 
     const text = mediumList?.textContent || '';
     expect(text).toContain(carre.dimensions);
-    expect(text).toContain(carre.textile || carre.composition);
-    expect(text).toContain(carre.technique || 'Sérigraphie au cadre lyonnais');
+    expect(text).toContain('Textile : Satin de soie');
+    expect(text).toContain('Techniques : Impression numérique sur tissu');
   });
 
   it('should toggle sections when accordion header buttons are clicked', () => {

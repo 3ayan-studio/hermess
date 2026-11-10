@@ -48,8 +48,8 @@ import { SvgIconComponent } from '../../../../shared/components/svg-icon/svg-ico
                 <div class="expansion-panel-content">
                   <ul class="medium-list">
                     <li><strong>Dimensions :</strong> {{ carre().dimensions }}</li>
-                    <li><strong>Textile :</strong> {{ carre().textile || carre().composition }}</li>
-                    <li><strong>Techniques :</strong> {{ carre().technique || 'Sérigraphie au cadre lyonnais, roulotté main en France' }}</li>
+                    <li><strong>Textile :</strong> {{ carre().textile || 'Satin de soie' }}</li>
+                    <li><strong>Techniques :</strong> {{ carre().technique || 'Impression numérique sur tissu' }}</li>
                   </ul>
                 </div>
               </div>
