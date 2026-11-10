@@ -174,8 +174,8 @@ export interface ExpoMediaItem {
         <div class="duo-media-col media-left">
           <div class="media-container">
             <img
-              src="/expo/img_2.png"
-              alt="Fatima-Marwa Zouzal assise sous le cartel mural Hermess Alger"
+              src="/expo/bottomleft.png"
+              alt="Espace scénographique et cartel mural Hermess Alger"
               class="media-asset media-image artist-portrait"
               loading="lazy"
             />
@@ -193,12 +193,12 @@ export interface ExpoMediaItem {
               webkit-playsinline
               [controls]="false"
               preload="auto"
-              poster="/expo/video2-poster.jpg"
+              poster="/expo/IMG_6562-poster.jpg"
               class="media-asset media-video"
               tabindex="-1"
               aria-hidden="true"
             >
-              <source src="/expo/video2.mp4" type="video/mp4" />
+              <source src="/expo/IMG_6562.mp4" type="video/mp4" />
             </video>
           </div>
         </div>
@@ -257,14 +257,6 @@ export class AboutComponent {
             type: 'image',
             srcJpg: '/expo/IMG_7556.jpg',
             alt: "Dialogue et regard du public face aux détails de l'œuvre",
-            caption: ''
-        },
-        {
-            id: 'video-salon-flottant',
-            type: 'video',
-            srcMp4: '/expo/video34.mp4',
-            poster: '/expo/video34-poster.jpg',
-            alt: "Cinémagraphe des œuvres textiles flottant au souffle de la pièce",
             caption: ''
         },
         {

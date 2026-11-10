@@ -54,7 +54,7 @@ describe('AboutComponent (Page À Propos ISO Hermès)', () => {
         expect(carousel).not.toBeNull();
 
         const slides = carousel?.querySelectorAll('.swiper-slide');
-        expect(slides?.length).toBe(8);
+        expect(slides?.length).toBe(7);
 
         const captions = carousel?.querySelectorAll('.slide-caption');
         expect(captions?.length).toBe(0);
