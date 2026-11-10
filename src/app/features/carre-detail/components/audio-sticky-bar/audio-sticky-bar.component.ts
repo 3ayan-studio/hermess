@@ -76,7 +76,7 @@ function pseudoNoise(n: number): number {
               type="button"
               class="control-btn stop-btn"
               (click)="onStop()"
-              title="Arrêter et revenir au début"
+              title="Arrêter la lecture"
               aria-label="Arrêter la lecture"
             >
               <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">

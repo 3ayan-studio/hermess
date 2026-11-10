@@ -123,14 +123,18 @@ describe('AudioPlayerService', () => {
         expect(service.autoFollowRequested()).toBe(2);
     });
 
-    it('should stop playback and reset currentTime when stop is called', () => {
+    it('should stop playback, reset currentTime and clear currentCarre when stop is called', () => {
+        service.currentCarre.set(mockCarre);
         service.isPlaying.set(true);
         service.currentTime.set(45);
+        service.duration.set(1800);
 
         service.stop();
 
         expect(service.isPlaying()).toBe(false);
         expect(service.currentTime()).toBe(0);
+        expect(service.duration()).toBe(0);
+        expect(service.currentCarre()).toBeNull();
     });
 
     it('should pause playback when pause is called', () => {

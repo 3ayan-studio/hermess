@@ -246,12 +246,14 @@ export class AudioPlayerService {
   stop(): void {
     if (this.audio) {
       this.audio.pause();
-      try {
-        this.audio.currentTime = 0;
-      } catch {}
+      this.audio.removeAttribute('src');
+      this.audio.load();
     }
     this.isPlaying.set(false);
     this.currentTime.set(0);
+    this.duration.set(0);
+    this.currentCarre.set(null);
+    this.isExchangePlayerInViewport.set(false);
   }
 
   pause(): void {
@@ -280,15 +282,6 @@ export class AudioPlayerService {
   }
 
   closePlayer(): void {
-    if (this.audio) {
-      this.audio.pause();
-      this.audio.removeAttribute('src');
-      this.audio.load();
-    }
-    this.isPlaying.set(false);
-    this.currentTime.set(0);
-    this.duration.set(0);
-    this.currentCarre.set(null);
-    this.isExchangePlayerInViewport.set(false);
+    this.stop();
   }
 }

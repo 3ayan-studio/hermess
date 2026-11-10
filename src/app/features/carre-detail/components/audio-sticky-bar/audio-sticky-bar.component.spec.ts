@@ -172,7 +172,7 @@ describe('AudioStickyBarComponent', () => {
         expect(audioService.currentCarre()?.id).toBe(mockCarre.id);
     });
 
-    it('should call stop on audioService when onStop is called', () => {
+    it('should call stop on audioService and reset player when onStop is called', () => {
         audioService.currentCarre.set(mockCarre);
         audioService.isPlaying.set(true);
         audioService.currentTime.set(45);
@@ -181,6 +181,8 @@ describe('AudioStickyBarComponent', () => {
 
         expect(audioService.isPlaying()).toBe(false);
         expect(audioService.currentTime()).toBe(0);
+        expect(audioService.currentCarre()).toBeNull();
+        expect(component.isCurrentCarre()).toBe(false);
     });
 
     it('should toggle mute on audioService when onToggleMute is called', () => {

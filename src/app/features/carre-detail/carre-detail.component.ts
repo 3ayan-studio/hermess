@@ -110,16 +110,16 @@ export class CarreDetailComponent implements OnDestroy {
 
       if (current.hasInterview && current.interview) {
         untracked(() => {
-          const isPlaying = this.audioService.isPlaying();
-          const playingCarre = this.audioService.currentCarre();
+          const currentTrack = this.audioService.currentCarre();
 
-          if (!isPlaying || (playingCarre && playingCarre.id !== current.id)) {
+          // L'autoplay automatique ne doit se lancer QUE si aucun audio n'est actif
+          // (si un audio est en cours de lecture ou en pause, l'audio du nouveau carré ne doit pas se lancer).
+          if (!currentTrack) {
             this.autoplayTimer = setTimeout(() => {
               if (this.carre()?.slug !== current.slug) return;
-              const currentPlaying = this.audioService.isPlaying();
-              const currentTrack = this.audioService.currentCarre();
+              const trackAtTimeout = this.audioService.currentCarre();
 
-              if (!currentPlaying || (currentTrack && currentTrack.id !== current.id)) {
+              if (!trackAtTimeout) {
                 this.audioService.unmute();
                 this.audioService.playCarre(current);
               }

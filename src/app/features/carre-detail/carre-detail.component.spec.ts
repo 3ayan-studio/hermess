@@ -54,10 +54,39 @@ describe('CarreDetailComponent', () => {
     );
   });
 
-  it('should replace another playing carre audio on visit after 500ms delay', () => {
+  it('should NOT autoplay when another carre audio is already playing on visit', () => {
     const previousCarre = CARRES_MOCK[1];
     audioService.currentCarre.set(previousCarre);
     audioService.isPlaying.set(true);
+
+    const playCarreSpy = vi.spyOn(audioService, 'playCarre');
+
+    fixture.componentRef.setInput('slug', 'carre-laures');
+    fixture.detectChanges();
+
+    vi.advanceTimersByTime(500);
+
+    expect(playCarreSpy).not.toHaveBeenCalled();
+  });
+
+  it('should NOT autoplay when an audio is paused on visit', () => {
+    const previousCarre = CARRES_MOCK[1];
+    audioService.currentCarre.set(previousCarre);
+    audioService.isPlaying.set(false);
+
+    const playCarreSpy = vi.spyOn(audioService, 'playCarre');
+
+    fixture.componentRef.setInput('slug', 'carre-laures');
+    fixture.detectChanges();
+
+    vi.advanceTimersByTime(500);
+
+    expect(playCarreSpy).not.toHaveBeenCalled();
+  });
+
+  it('should autoplay after 500ms when audio was stopped (currentCarre is null)', () => {
+    audioService.currentCarre.set(null);
+    audioService.isPlaying.set(false);
 
     const playCarreSpy = vi.spyOn(audioService, 'playCarre');
     const unmuteSpy = vi.spyOn(audioService, 'unmute');
@@ -65,10 +94,8 @@ describe('CarreDetailComponent', () => {
     fixture.componentRef.setInput('slug', 'carre-laures');
     fixture.detectChanges();
 
-    // Avant 500ms, pas encore d'appel
     expect(playCarreSpy).not.toHaveBeenCalled();
 
-    // Après 500ms
     vi.advanceTimersByTime(500);
 
     expect(unmuteSpy).toHaveBeenCalled();
