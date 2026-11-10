@@ -40,7 +40,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center 45%;
     display: block;
   }
 
@@ -231,23 +231,14 @@
     height: 100%;
     object-fit: cover;
     display: block;
+
+    &.artist-portrait {
+      object-position: center 30%;
+    }
   }
 
   .media-video {
     pointer-events: none;
-  }
-
-  .slide-caption {
-    margin: 10px 0 0;
-    min-height: 18px;
-    font-family: var(--font-primary);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--hermes-text-secondary);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   // Contrôles de navigation ISO Vue Détail Hermès
@@ -349,6 +340,10 @@
     height: 100%;
     object-fit: cover;
     display: block;
+
+    &.artist-portrait {
+      object-position: center;
+    }
   }
 
   .media-video {

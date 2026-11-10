@@ -17,8 +17,9 @@ export interface ExpoMediaItem {
     srcJpg?: string;
     srcMp4?: string;
     srcMov?: string;
+    poster?: string;
     alt: string;
-    caption: string;
+    caption?: string;
 }
 
 @Component({
@@ -36,10 +37,10 @@ export interface ExpoMediaItem {
       >
         <div class="media-wrapper">
           <picture class="hero-picture">
-            <source srcset="/expo/photo45.jpeg" type="image/jpeg" />
+            <source srcset="/expo/IMG_7614.jpg" type="image/jpeg" />
             <img
-              src="/expo/photo45.jpeg"
-              alt="Scénographie et espace d'exposition Hermess"
+              src="/expo/IMG_7614.jpg"
+              alt="Scénographie et espace d'exposition Hermess avec les carrés d'art suspendus"
               class="hero-media-asset"
               fetchpriority="high"
             />
@@ -108,12 +109,15 @@ export interface ExpoMediaItem {
                       webkit-playsinline
                       [controls]="false"
                       preload="auto"
+                      [poster]="slide.poster"
                       class="media-asset media-video"
                       tabindex="-1"
                       aria-hidden="true"
                     >
                       <source [src]="slide.srcMp4" type="video/mp4" />
-                      <source [src]="slide.srcMov" type="video/quicktime" />
+                      @if (slide.srcMov) {
+                        <source [src]="slide.srcMov" type="video/quicktime" />
+                      }
                     </video>
                   } @else {
                     <img
@@ -125,9 +129,6 @@ export interface ExpoMediaItem {
                     />
                   }
                 </div>
-                @if (slide.caption) {
-                  <p class="slide-caption">{{ slide.caption }}</p>
-                }
               </article>
             }
           </div>
@@ -173,9 +174,9 @@ export interface ExpoMediaItem {
         <div class="duo-media-col media-left">
           <div class="media-container">
             <img
-              src="/expo/photo11.jpeg"
-              alt="Perspective du salon et banc d'écoute"
-              class="media-asset media-image"
+              src="/expo/img_2.png"
+              alt="Fatima-Marwa Zouzal assise sous le cartel mural Hermess Alger"
+              class="media-asset media-image artist-portrait"
               loading="lazy"
             />
           </div>
@@ -192,12 +193,12 @@ export interface ExpoMediaItem {
               webkit-playsinline
               [controls]="false"
               preload="auto"
+              poster="/expo/video2-poster.jpg"
               class="media-asset media-video"
               tabindex="-1"
               aria-hidden="true"
             >
               <source src="/expo/video2.mp4" type="video/mp4" />
-              <source src="/expo/video2.mov" type="video/quicktime" />
             </video>
           </div>
         </div>
@@ -223,62 +224,62 @@ export class AboutComponent {
     // Médias de l'exposition issus de public/expo
     readonly slides = signal<ExpoMediaItem[]>([
         {
-            id: 'carre-laures',
+            id: 'scenographie-pavillon-nuit',
             type: 'image',
-            srcJpg: '/expo/photo1.jpeg',
-            alt: "Carré d'art Hermess — L'Aures imprimé sur sergé de soie",
+            srcJpg: '/expo/IMG_7545.jpg',
+            alt: "Façade et ambiance nocturne du lieu d'exposition",
             caption: ''
         },
         {
-            id: 'video-floating',
+            id: 'video-carre-mouvement',
             type: 'video',
-            srcMp4: '/expo/video2.mp4',
-            srcMov: '/expo/video2.mov',
-            alt: 'Vidéo cinémagraphe du carré flottant au souffle de la pièce',
+            srcMp4: '/expo/IMG_7585.mp4',
+            poster: '/expo/IMG_7585-poster.jpg',
+            alt: "Détail vidéo de la soie en mouvement",
             caption: ''
         },
         {
-            id: 'bordure-soie',
+            id: 'scenographie-perspective',
             type: 'image',
-            srcJpg: '/expo/photo14.jpeg',
-            alt: 'Détail de la bordure et du roulotté sur soie',
+            srcJpg: '/expo/IMG_6554.jpg',
+            alt: "Enfilade et suspension des carrés d'art Hermess dans l'espace",
             caption: ''
         },
         {
-            id: 'contre-jour-soie',
+            id: 'scenographie-alger',
             type: 'image',
-            srcJpg: '/expo/photo121.jpeg',
-            alt: 'Contre-jour révélant le fil et la transparence du carré',
-            caption: 'Lumière traversante et fil de soie'
+            srcJpg: '/expo/IMG_7559.jpg',
+            alt: "Carré d'art Hermess Alger suspendu au cœur de la scénographie",
+            caption: ''
         },
         {
-            id: 'video-salon',
+            id: 'scenographie-visiteurs',
+            type: 'image',
+            srcJpg: '/expo/IMG_7556.jpg',
+            alt: "Dialogue et regard du public face aux détails de l'œuvre",
+            caption: ''
+        },
+        {
+            id: 'video-salon-flottant',
             type: 'video',
             srcMp4: '/expo/video34.mp4',
-            srcMov: '/expo/video34.mov',
-            alt: 'Vidéo cinémagraphe du salon avec les œuvres suspendues',
+            poster: '/expo/video34-poster.jpg',
+            alt: "Cinémagraphe des œuvres textiles flottant au souffle de la pièce",
             caption: ''
         },
         {
-            id: 'carre-alger',
+            id: 'scenographie-cheminee',
             type: 'image',
-            srcJpg: '/expo/photo166.jpeg',
-            alt: "Carré d'art Hermess — Alger suspendu dans l'espace",
+            srcJpg: '/expo/IMG_7578.jpg',
+            alt: "Visiteurs contemplant les carrés d'art suspendus devant la cheminée",
             caption: ''
         },
         {
-            id: 'scenographie-echelle',
+            id: 'scenographie-hospitalite',
             type: 'image',
-            srcJpg: '/expo/photo113.jpeg',
-            alt: "Mise en place scénographique des carrés d'art",
+            srcJpg: '/expo/IMG_7565.jpg',
+            alt: "Instant de partage, thé et douceur devant la création textile",
             caption: ''
-        },
-        {
-            id: 'perspective-atelier',
-            type: 'image',
-            srcJpg: '/expo/photo142.jpeg',
-            alt: 'Perspective scénographique et élévation de la pièce',
-            caption: 'Perspective et élévation'
         }
     ]);
 

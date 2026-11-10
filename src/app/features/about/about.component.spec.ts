@@ -49,7 +49,7 @@ describe('AboutComponent (Page À Propos ISO Hermès)', () => {
         expect(link).toBeNull();
     });
 
-    it('should render the gallery carousel with media slides and only 2 captions (4th and last media)', () => {
+    it('should render the gallery carousel with media slides without captions', () => {
         const carousel = element.querySelector('[data-testid="gallery-carousel"]');
         expect(carousel).not.toBeNull();
 
@@ -57,9 +57,7 @@ describe('AboutComponent (Page À Propos ISO Hermès)', () => {
         expect(slides?.length).toBe(8);
 
         const captions = carousel?.querySelectorAll('.slide-caption');
-        expect(captions?.length).toBe(2);
-        expect(captions?.[0].textContent).toContain('Lumière traversante et fil de soie');
-        expect(captions?.[1].textContent).toContain('Perspective et élévation');
+        expect(captions?.length).toBe(0);
     });
 
     it('should ensure all videos are configured as living images (autoplay, muted, loop, playsinline, no controls)', () => {
