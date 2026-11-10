@@ -12,7 +12,7 @@ on:
       keep_releases:
         description: 'Nombre de releases à conserver dans l historique'
         required: false
-        default: '5'
+        default: '2'
 
 jobs:
   deploy:
@@ -24,7 +24,7 @@ jobs:
       VPS_HOST: ${{ secrets.VPS_HOST }}         # IP ou nom de domaine du VPS OVH
       VPS_PORT: 2222                            # Port SSH durci
       VPS_USER: ${{ secrets.VPS_USERNAME }}                        # Utilisateur dédié au déploiement CI/CD
-      KEEP_RELEASES: ${{ inputs.keep_releases || '1' }}
+      KEEP_RELEASES: ${{ inputs.keep_releases || '2' }}
 
     steps:
       - name: Déterminer le tag de release
