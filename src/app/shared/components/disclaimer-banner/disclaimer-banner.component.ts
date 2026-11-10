@@ -17,8 +17,8 @@ export const HERMESS_DISCLAIMER_KEY = 'hermess_disclaimer_dismissed';
             <svg
               class="warning-icon"
               viewBox="0 0 24 24"
-              width="16"
-              height="16"
+              width="32"
+              height="32"
               fill="none"
               stroke="currentColor"
               stroke-width="2"
