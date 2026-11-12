@@ -35,15 +35,17 @@ describe('AboutComponent (Page À Propos ISO Hermès)', () => {
         expect(heroTitle?.textContent).toContain('FATIMA-MARWAZOUZAL');
     });
 
-    it('should render the first editorial text block with intro text and without discover link', () => {
+    it('should render the first editorial text block without title and with new intro text', () => {
         const introBlock = element.querySelector('[data-testid="block-text-intro"]');
         expect(introBlock).not.toBeNull();
 
         const title = introBlock?.querySelector('.editorial-block-title');
-        expect(title?.textContent).toContain("L'Étoffe et la Voix");
+        expect(title).toBeNull();
 
         const paragraph = introBlock?.querySelector('.editorial-block-text');
-        expect(paragraph?.textContent).toContain('Conçue comme une immersion');
+        expect(paragraph?.textContent).toContain('Hermess est exposé dans la Project room de la Maison du Shed');
+        expect(paragraph?.textContent).toContain("l'enfumade de Dahra en Algérie");
+        expect(introBlock?.querySelector('em')?.textContent).toBe('Hermess');
 
         const link = introBlock?.querySelector('a.link-editorial');
         expect(link).toBeNull();
@@ -54,7 +56,7 @@ describe('AboutComponent (Page À Propos ISO Hermès)', () => {
         expect(carousel).not.toBeNull();
 
         const slides = carousel?.querySelectorAll('.swiper-slide');
-        expect(slides?.length).toBe(7);
+        expect(slides?.length).toBe(6);
 
         const captions = carousel?.querySelectorAll('.slide-caption');
         expect(captions?.length).toBe(0);
@@ -73,15 +75,16 @@ describe('AboutComponent (Page À Propos ISO Hermès)', () => {
         });
     });
 
-    it('should render the second editorial text block for scenography', () => {
+    it('should render the second editorial text block without title and with research text', () => {
         const scenographyBlock = element.querySelector('[data-testid="block-text-scenography"]');
         expect(scenographyBlock).not.toBeNull();
 
         const title = scenographyBlock?.querySelector('.editorial-block-title');
-        expect(title?.textContent).toContain('La Soie Suspendue');
+        expect(title).toBeNull();
 
         const paragraph = scenographyBlock?.querySelector('.editorial-block-text');
-        expect(paragraph?.textContent).toContain('Dans la lumière des salons');
+        expect(paragraph?.textContent).toContain("Ce travail s'inscrit dans la continuité du mémoire de Zouzal Fatima-Marwa");
+        expect(scenographyBlock?.querySelector('em')?.textContent).toBe('Zouzal ou Zouzali, 2023');
     });
 
     it('should render the duo-media block with both media columns and no captions', () => {

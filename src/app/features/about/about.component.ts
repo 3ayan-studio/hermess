@@ -59,12 +59,11 @@ export interface ExpoMediaItem {
         </div>
       </section>
 
-      <!-- 2. Premier Bloc Éditorial (ISO block-text : 2 phrases) -->
+      <!-- 2. Premier Bloc Éditorial (ISO block-text) -->
       <section class="block-text first-block" data-testid="block-text-intro">
         <div class="editorial-container">
-          <h2 class="editorial-block-title">L'Étoffe et la Voix</h2>
           <p class="editorial-block-text">
-            Conçue comme une immersion au croisement du geste textile et de la parole intime, l'exposition détourne l'iconique carré de soie pour en faire le réceptacle d'histoires vécues. Chaque pièce suspendue dans l'espace dialogue avec un échange sonore au long cours capté au plus près des voix.
+            <em>Hermess</em> est exposé dans la Project room de la Maison du Shed, à Maromme, anciennement maison natale du Maréchal Pélissier, tristement célèbre pour l'enfumade de Dahra en Algérie.
           </p>
         </div>
       </section>
@@ -159,12 +158,11 @@ export interface ExpoMediaItem {
         </div>
       </section>
 
-      <!-- 4. Second Bloc Éditorial (ISO block-text : 1 phrase d'évocation) -->
+      <!-- 4. Second Bloc Éditorial (ISO block-text) -->
       <section class="block-text second-block" data-testid="block-text-scenography">
         <div class="editorial-container">
-          <h2 class="editorial-block-title">La Soie Suspendue</h2>
           <p class="editorial-block-text">
-            Dans la lumière des salons, les soies flottent librement sans cadre, laissant la matière respirer au rythme des récits.
+            Ce travail s'inscrit dans la continuité du mémoire de Zouzal Fatima-Marwa, <em>Zouzal ou Zouzali, 2023</em>.
           </p>
         </div>
       </section>
@@ -264,13 +262,6 @@ export class AboutComponent {
             type: 'image',
             srcJpg: '/expo/IMG_7578.jpg',
             alt: "Visiteurs contemplant les carrés d'art suspendus devant la cheminée",
-            caption: ''
-        },
-        {
-            id: 'scenographie-hospitalite',
-            type: 'image',
-            srcJpg: '/expo/IMG_7565.jpg',
-            alt: "Instant de partage, thé et douceur devant la création textile",
             caption: ''
         }
     ]);
